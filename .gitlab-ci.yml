@@ -1,0 +1,18 @@
+stages:
+  - deploy
+
+variables:
+  GIT_STRATEGY: clone    
+
+deploy:
+  stage: deploy
+  only:
+    - master
+  tags:
+    - cwebuster
+  script:
+    - npm i
+    - npm run-script build
+    - rm -rf /home/gitlab-runner/cwebuster-front
+    - mkdir -p /home/gitlab-runner/cwebuster-front/    
+    - cp -R * /home/gitlab-runner/cwebuster-front/
