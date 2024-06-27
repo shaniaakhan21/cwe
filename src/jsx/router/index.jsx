@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { Routes, Route, Outlet } from "react-router-dom";
+import React, { lazy, useContext, useEffect, useState } from "react";
+import { Routes, Route, Outlet, useNavigate, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 /// Css
 import './../index.css'
@@ -127,7 +127,13 @@ import Error404 from './../pages/error/Error404'
 import Error500 from './../pages/error/Error500'
 import Error503 from './../pages/error/Error503'
 import RightWalletBar from "../layouts/nav/RightWalletBar";
+import { ToastContainer } from "react-toastify";
 
+
+import Login from "./../pages/authentication/Login";
+import Registration from "./../pages/authentication/Registration";
+
+import { useLocation } from "react-router-dom";
 
 const Markup = () => {
   const allroutes = [
@@ -233,10 +239,12 @@ const Markup = () => {
     { url: "empty-page", component: <EmptyPage /> },
   ]
 
-
   return (
     <>
       <Routes>
+        <Route path='/login' element={<Login />} />
+        <Route path='/register/:referralId' element={<Registration />} />
+        <Route path='/register' element={<Registration />} />
         <Route path='/page-lock-screen' element={<LockScreen />} />
         <Route path='/page-error-400' element={<Error400 />} />
         <Route path='/page-error-403' element={<Error403 />} />
@@ -244,7 +252,7 @@ const Markup = () => {
         <Route path='/page-error-500' element={<Error500 />} />
         <Route path='/page-error-503' element={<Error503 />} />
         <Route element={<MainLayout />} >
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Navigate to="/dashboard" replace />} />
           <Route path='/dashboard' element={<Home />} />
           <Route path='/index-2' element={<DashboardDark />} />
         </Route>
@@ -268,6 +276,14 @@ function MainLayout() {
   const { sidebariconHover, headWallet } = useContext(ThemeContext);
   const sideMenu = useSelector(state => state.sideMenu);
 
+  const navigate = useNavigate()
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if(!token){
+        navigate('/login')
+    }
+  }, [navigate]);
+
   return (
     <>
       <div id="main-wrapper"
@@ -277,6 +293,7 @@ function MainLayout() {
         <RightWalletBar />
         <div className="content-body" >
           <div className="container-fluid" style={{ minHeight: window.screen.height - 45 }}>
+          <ToastContainer />
             <Outlet />
           </div>
         </div>
@@ -288,6 +305,15 @@ function MainLayout() {
 function MainLayout2() {
   const { sidebariconHover } = useContext(ThemeContext);
   const sideMenu = useSelector(state => state.sideMenu);
+
+  const navigate = useNavigate()
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if(!token){
+        navigate('/login')
+    }
+  }, [navigate]);
+
   return (
     <>
       <div id="main-wrapper" className={`show ${sidebariconHover ? "iconhover-toggle" : ""} ${sideMenu ? "menu-toggle" : ""}`}>

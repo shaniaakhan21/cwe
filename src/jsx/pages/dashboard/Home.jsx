@@ -1,6 +1,6 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {Link, useLocation} from 'react-router-dom';
-import { Col, Row } from 'react-bootstrap';
+import { Button, Card, Col, Row } from 'react-bootstrap';
 
 //Import 
 import { SVGICON } from '../../constant/theme';
@@ -9,6 +9,8 @@ import StatisticsBlog from '../../elements/dashboard/StatisticsBlog';
 import MarketOverViewBlog from '../../elements/dashboard/MarketOverViewBlog';
 import RecentTransaction from '../../elements/dashboard/RecentTransaction';
 import { ThemeContext } from '../../../context/ThemeContext';
+import axiosInstance from '../../../services/AxiosInstance';
+import { toast } from 'react-toastify';
 
 //Charts
 // const SurveyChart = loadable(() =>
@@ -16,12 +18,81 @@ import { ThemeContext } from '../../../context/ThemeContext';
 // );
 
 export function MainComponent(){
+	const [me, setMe] = useState(null)
+
+
+	const fetchMe = async () => {
+
+		try{
+			const token = localStorage.getItem('token')
+			if(token){
+					const response = await axiosInstance.get("/api/user/me", {
+						headers: {
+						Authorization: `Bearer ${token}`,
+						},
+					});
+
+					setMe(response.data.user)
+				}
+		} catch (error) {
+			// do nothing
+			console.log(error)
+		}
+  
+
+	}
+
+	useEffect(() => {
+		fetchMe();
+	}, [])
+
+	let referralLink = ''
+	if (me){
+		referralLink = `https://www.cwebuster.com/register/${me.id}`
+	}
+
+	const copyReferralLink = (referralLink) => {
+		toast.success("✔️ Referral Link Coppied to Clipboard", {
+			position: "top-right",
+			autoClose: 5000,
+			hideProgressBar: false,
+			closeOnClick: false,
+			pauseOnHover: true,
+			draggable: true,
+		});
+		navigator.clipboard.writeText(referralLink)
+
+	}
+
 	return(
 		<Row>
 			<Col xl={12}>			
 				<div className="row main-card">
 					<MainSlider />
 				</div>
+
+				<Row>
+					<div className=" col-12">
+						<div className='card'>
+						<Card.Body className=" mb-0">
+							<Card.Header>
+							<h4>My Referral Link</h4>
+						</Card.Header>
+						<Card.Text style={{marginTop: 20}}>
+							{referralLink}
+						</Card.Text>
+						<Button
+							onClick={() => copyReferralLink(referralLink)}
+							variant=" "
+							className="btn-card btn-success text-white mt-3"
+						>
+							<i className="fa fa-copy"  /> Copy
+						</Button>
+						</Card.Body>
+						</div>
+					
+					</div>
+				</Row>
 				<Row>
 					<div className="col-xl-6">
 						<div className="card crypto-chart">
