@@ -182,7 +182,7 @@ const Exchanges = () => {
                     <Alert variant="danger" show={true} style={{marginTop: 20}}>
                         <strong>IMPORTANT! </strong> 
                         <br/>
-                        <br/>You need to able trading permissions
+                        <br/>You need to enable trading permissions
                     </Alert>
 
 
