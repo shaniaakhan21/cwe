@@ -1,35 +1,65 @@
-import React, { useState } from 'react';
-import { Dropdown, Nav, Tab } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import { Button, Nav, Tab } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import FutureOrderTable from './FutureOrderTable';
-import FutureHistory from './FutureHistory';
-import FutureTrade from './FutureTrade';
-import FutureChart from './FutureChart';
 import Select from "react-select";
-
-const orderTable = [
-    { color: 'text-success', price: '19972.43', size: '0.0488', total: '6.8312' },
-    { color: 'text-danger', price: '20972.43 ', size: '0.0588', total: '5.8312' },
-    { color: 'text-success', price: '19972.43', size: '0.0188', total: '7.8310' },
-    { color: 'text-danger', price: '19850.20', size: '0.0210', total: '1.0310' },
-    { color: 'text-success', price: '20972.43', size: '0.0654', total: '2.3314' },
-    { color: 'text-danger', price: '20972.43', size: '0.0123', total: '3.6313' },
-    { color: 'text-success', price: '19972.43', size: '0.0147', total: '4.5315' },
-    { color: 'text-danger', price: '19850.20', size: '0.0120', total: '2.4316' },
-    { color: 'text-danger', price: '20972.43', size: '0.0320', total: '1.3317' },
-    { color: 'text-success', price: '19850.20', size: '0.0388', total: '2.1319' },
-];
+import FutureOrderTable from './trading/FutureOrderTable';
+import FutureHistory from './trading/FutureHistory';
+import FutureTrade from './trading/FutureTrade';
+import axiosInstance from '../../services/AxiosInstance';
 
 
-const options = [
-    { value: "chocolate", label: "SafeMoon" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
-];
-
-const FutureTrading = () => {
+const Trading = () => {
 
     const [selectedOption, setSelectedOption] = useState(null);
+    const [options, setOptions] = useState([]);
+    const [stopgain, setStopGain] = useState(3);
+    const [stoploss, setStopLoss] = useState(99);
+    const [balance, setBalance] = useState(undefined);
+
+
+    const getCoins = async () => {
+        try {
+            const token = localStorage.getItem('token')
+            if (token) {
+                const response = await axiosInstance.get("/api/robots/getCoins", {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+                const options = []
+                for (const coin of response.data.coins) {
+                    options.push({ value: coin.mercado, label: coin.coin })
+                }
+                setOptions(options)
+            }
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    const getUSDTBalance = async () => {
+        try {
+            const token = localStorage.getItem('token')
+            if (token) {
+                const response = await axiosInstance.get("/api/robots/getUSDTBalance", {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+                setBalance(response.data.balance)
+            }
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    useEffect(() => {
+        getCoins()
+        getUSDTBalance()
+    }, [])
+
+    console.log(balance)
+
     return (
         <>
             <div className="row">
@@ -42,7 +72,15 @@ const FutureTrading = () => {
                         <div className="card-body pt-2">
                             <div className="d-flex align-items-center justify-content-between mt-3 mb-2">
                                 <span className="small text-muted">Available Balance</span>
-                                <span className="text-dark">210.800 USDT</span>
+
+                                {balance === undefined && (
+                                <div className="spinner-border spinner-border-sm" role="status">
+                                    <span className="visually-hidden">Loading...</span>
+                                </div>
+                                )}
+                                {(balance !== null && balance !== undefined) && (
+                                    <span className="text-dark">{balance} USDT</span>
+                                )}
                             </div>
                             <form>
                                 <div className="mb-3">
@@ -67,19 +105,19 @@ const FutureTrading = () => {
 
                                 <div className="input-group mb-3">
                                     <span className="input-group-text">Stop Gain</span>
-                                    <input type="text" className="form-control" />
+                                    <input type="text" value={stopgain} onChange={(e) => {setStopGain(e.target.value)} } className="form-control" />
                                     <span className="input-group-text">%</span>
                                 </div>
 
                                 <div className="input-group mb-3">
                                     <span className="input-group-text">Stop Loss</span>
-                                    <input type="text" className="form-control" />
+                                    <input type="text" value={stoploss} onChange={(e) => {setStopLoss(e.target.value)} }  className="form-control" />
                                     <span className="input-group-text">%</span>
-                                </div>                                
+                                </div>
 
 
                                 <div className="mt-3 d-flex justify-content-between">
-                                    <Link to={"#"} className="btn btn-success btn-sm light text-uppercase  btn-block">Start Hybrid</Link>
+                                    <Button variant="success" className="btn btn-sm  text-uppercase  btn-block">Start Hybrid</Button>
                                 </div>
                             </form>
                         </div>
@@ -88,27 +126,23 @@ const FutureTrading = () => {
 
                 <div className="col-xl-8">
                     <div className="card">
-                        <Tab.Container defaultActiveKey={'Order'}>
+                        <Tab.Container defaultActiveKey={'Open'}>
                             <div className="card-header border-0 pb-3 flex-wrap">
-                                <h4 className="card-title">Trade Status</h4>
+                                <h4 className="card-title">My Orders</h4>
                                 <nav>
                                     <Nav as="div" className="nav-pills light" >
-                                        <Nav.Link as="button" eventKey="Order">Order</Nav.Link>
-                                        <Nav.Link as="button" eventKey="History">Order History</Nav.Link>
-                                        <Nav.Link as="button" eventKey="Trade">Trade Histroy</Nav.Link>
+                                        <Nav.Link as="button" eventKey="Open">Open</Nav.Link>
+                                        <Nav.Link as="button" eventKey="Closed">Closed</Nav.Link>
                                     </Nav>
                                 </nav>
                             </div>
                             <div className="card-body pt-0">
                                 <Tab.Content>
-                                    <Tab.Pane eventKey="Order">
+                                    <Tab.Pane eventKey="Open">
                                         <FutureOrderTable />
                                     </Tab.Pane>
-                                    <Tab.Pane eventKey="History">
+                                    <Tab.Pane eventKey="Closed">
                                         <FutureHistory />
-                                    </Tab.Pane>
-                                    <Tab.Pane eventKey="Trade">
-                                        <FutureTrade />
                                     </Tab.Pane>
                                 </Tab.Content>
                             </div>
@@ -120,4 +154,4 @@ const FutureTrading = () => {
     );
 };
 
-export default FutureTrading;
+export default Trading;
