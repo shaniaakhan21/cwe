@@ -171,13 +171,18 @@ const Exchanges = () => {
                     API Secret
                     <input type="text" value={secret} onChange={(e) => { setSecret(e.target.value) }} className="form-control" />
 
-                    <Alert variant="info" show={true} style={{marginTop: 20}}>
+                    <Alert variant="warning" show={true} style={{marginTop: 20}}>
                         <strong>IMPORTANT! </strong> 
                         <br/>
-                        <br/>You must enable the following ips on your account:
+                        <br/>You must enable the following ip on your account:
                         <br/><br/>
                         <li>* 165.227.170.107</li>
-                        <li>* 157.230.96.143</li>
+                    </Alert>
+
+                    <Alert variant="danger" show={true} style={{marginTop: 20}}>
+                        <strong>IMPORTANT! </strong> 
+                        <br/>
+                        <br/>You need to able trading permissions
                     </Alert>
 
 
