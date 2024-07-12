@@ -30,7 +30,7 @@ const SignupSchema = z
 
 // image
 //@ts-ignore
-import logoFull from "../../../assets/images/logo-full.png";
+import logoFull from "../../../assets/images/logo-white.png";
 import axiosInstance from "../../../services/AxiosInstance";
 
 function Register(props) {
