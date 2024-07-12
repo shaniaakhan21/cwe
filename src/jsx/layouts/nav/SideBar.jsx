@@ -7,6 +7,8 @@ import { MenuList } from './Menu';
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { ThemeContext } from "../../../context/ThemeContext";
 import SidebarExtraContent from "./SidebarExtraContent";
+import { useDispatch } from "react-redux";
+import { navtoggle } from "../../../store/actions/AuthActions";
 
 const reducer = (previousState, updatedState) => ({
   ...previousState,
@@ -52,6 +54,25 @@ const SideBar = () => {
       setState({ activeSubmenu: "" })
     }
   }
+  const [width, setWidth] = useState(window.innerWidth);
+
+    function handleWindowSizeChange() {
+      setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+      window.addEventListener('resize', handleWindowSizeChange);
+      return () => {
+          window.removeEventListener('resize', handleWindowSizeChange);
+      }
+  }, []);
+
+
+  const dispatch = useDispatch();
+  const handleToogle = () => {
+    if (width <= 768) {
+      dispatch(navtoggle());
+    }
+  };
 
   /// Path
   let path = window.location.pathname;
@@ -153,7 +174,7 @@ const SideBar = () => {
                         </Collapse>
                       </>
                       :
-                      <Link to={data.to} className={`${data.to === path ? 'mm-active' : ''}`}>
+                      <Link onClick={() => {handleToogle()}} to={data.to} className={`${data.to === path ? 'mm-active' : ''}`}>
                         {data.iconStyle}
                         <span className="nav-text">{data.title}</span>
                       </Link>
