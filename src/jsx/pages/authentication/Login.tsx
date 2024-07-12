@@ -32,8 +32,8 @@ function Login() {
     <>
       <div className="authincation d-flex flex-column flex-lg-row flex-column-fluid">
         <div className="login-aside text-center  d-flex flex-column flex-row-auto">
-          <div className="d-flex flex-column-auto flex-column pt-lg-40 pt-15">
-            <div className="text-center mb-lg-4 mb-2 pt-5 logo">
+          <div className="d-flex flex-column-auto flex-column pt-lg-40 ">
+            <div className="text-center mb-lg-4 mb-2 logo">
               <img src={IMAGES.LogoWhite} alt="" />
             </div>
             <h3 className="mb-2 text-white">Welcome back!</h3>
