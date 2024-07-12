@@ -1,0 +1,19 @@
+.trade {
+    font-weight: bold;
+}
+
+.positive-trade {
+    color: green;
+}
+
+.negative-trade {
+    color: red;
+}
+
+.neutral-trade {
+    font-weight: bold;
+}
+
+.MuiDataGrid-cell:focus {
+    outline: none !important;
+}
