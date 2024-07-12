@@ -95,7 +95,7 @@ const TradingTable = (params) => {
         },
         { field: 'coin', headerName: 'Coin', flex: 0.4, },
         {
-            field: 'percent', headerName: 'Profit', flex: 0.4,
+            field: 'percent', headerName: 'Profit', flex: 0.5,
             cellClassName: (params) => {
                 if (params.value < 0) {
                     return 'negative-trade trade';
