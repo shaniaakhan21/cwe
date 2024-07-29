@@ -9,6 +9,7 @@ import { ThemeContext } from "../../../context/ThemeContext";
 import SidebarExtraContent from "./SidebarExtraContent";
 import { useDispatch } from "react-redux";
 import { navtoggle } from "../../../store/actions/AuthActions";
+import axiosInstance from "../../../services/AxiosInstance";
 
 const reducer = (previousState, updatedState) => ({
   ...previousState,
@@ -94,6 +95,37 @@ const SideBar = () => {
     })
   }, [path]);
 
+
+  const [me, setMe] = useState(null)
+
+
+	const fetchMe = async () => {
+
+		try{
+			const token = localStorage.getItem('token')
+			if(token){
+					const response = await axiosInstance.get("/api/user/me", {
+						headers: {
+						Authorization: `Bearer ${token}`,
+						},
+					});
+
+					setMe(response.data.user)
+				}
+		} catch (error) {
+			// do nothing
+			console.log(error)
+		}
+  
+
+	}
+
+	useEffect(() => {
+		fetchMe();
+	}, [])
+
+  console.log(me?.isAdmin)
+
   return (
     <div
       onMouseEnter={() => ChangeIconSidebar(true)}
@@ -118,6 +150,10 @@ const SideBar = () => {
           </Link>
           <ul className="metismenu" id="menu">
             {MenuList.map((data, index) => {
+              console.log(data.isAdmin, me?.isAdmin)
+              if(data.isAdmin && (me?.isAdmin || 0) === 0){
+                return
+              }
               let menuClass = data.classsChange;
               if (menuClass === "menu-title") {
                 return (

@@ -22,7 +22,21 @@ export const MenuList = [
         title: 'Network',	
         classsChange: 'mm-collapse',		
         iconStyle: <i className="material-symbols-outlined">dashboard</i>,
-        to: 'network',
+        to: 'network'
+    },
+    {
+        title: 'Users [Admin]',	
+        classsChange: 'mm-collapse',		
+        iconStyle: <i className="material-symbols-outlined">dashboard</i>,
+        to: 'users',
+        isAdmin: true
+    },
+    {
+        title: 'Sales [Admin]',	
+        classsChange: 'mm-collapse',		
+        iconStyle: <i className="material-symbols-outlined">dashboard</i>,
+        to: 'sales',
+        isAdmin: true
     },
     
 ]
