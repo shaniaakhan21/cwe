@@ -4,6 +4,7 @@ import Select from "react-select";
 import axiosInstance from '../../services/AxiosInstance';
 import { isAxiosError } from 'axios';
 import TradingTable from './TradingTable';
+import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
 
 
 const Trading = () => {
@@ -16,6 +17,8 @@ const Trading = () => {
     const [investment, setInvesment] = useState(0);
     const [errorSaving, setErrorSaving] = useState('');
     const [saving, setSaving] = useState(false);
+
+    console.log(selectedOption)
 
 
     const getCoins = async () => {
@@ -179,6 +182,20 @@ const Trading = () => {
                 </div>
 
                 <div className="col-xl-8">
+                <div className="card">
+                    {selectedOption && (
+                        <AdvancedRealTimeChart symbol={`${selectedOption.label}USDT`} autosize></AdvancedRealTimeChart>
+                    )}
+                    {!selectedOption && (
+                        <div style={{textAlign: "center", marginTop: 50}}>
+ <h3>Select a Coin to see the graph</h3>
+                            </div>
+                       
+                    )}
+                </div>
+                </div>
+
+                <div className="col-xl-12">
                     <div className="card">
                         <Tab.Container defaultActiveKey={'Open'}>
                             <div className="card-header border-0 pb-3 flex-wrap">

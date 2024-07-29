@@ -112,6 +112,10 @@ const SideBar = () => {
       <span className="main-menu">Main Menu</span>
       <div className="menu-scroll">
         <div className="dlabnav-scroll">
+
+          <Link to="/upgrade" style={{display:'block', textAlign: "center", marginTop: 20, backgroundColor: "#e79e01", color: "white", padding: 10, margin: 20, cursor: "pointer"}}>
+            UPGRADE
+          </Link>
           <ul className="metismenu" id="menu">
             {MenuList.map((data, index) => {
               let menuClass = data.classsChange;

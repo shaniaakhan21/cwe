@@ -34,12 +34,15 @@ import Registration from "./../pages/authentication/Registration";
 
 import Exchanges from "../pages/Exchanges";
 import Trading from "../pages/Trading";
+import Upgrade from "../pages/Upgrade";
+import Network from "../pages/Network";
 
 const Markup = () => {
   const allroutes = [
     { url: "trading", component: <Trading /> },
     { url: "exchanges", component: <Exchanges /> },
-    /// pages    
+    { url: "upgrade", component: <Upgrade /> },
+    { url: "network", component: <Network /> },
     { url: "empty-page", component: <EmptyPage /> },
   ]
 
@@ -94,7 +97,6 @@ function MainLayout() {
         className={`show wallet-open ${headWallet ? "" : 'active'} ${sidebariconHover ? "iconhover-toggle" : ""} ${sideMenu ? "menu-toggle" : ""}`}
       >
         <Nav />
-        <RightWalletBar />
         <div className="content-body" >
           <div className="container-fluid" style={{ minHeight: window.screen.height - 45 }}>
           <ToastContainer />

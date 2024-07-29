@@ -17,6 +17,12 @@ export const MenuList = [
         classsChange: 'mm-collapse',		
         iconStyle: <i className="material-symbols-outlined">monitoring</i>,
         to: 'trading',
-    }
+    },
+    {
+        title: 'Network',	
+        classsChange: 'mm-collapse',		
+        iconStyle: <i className="material-symbols-outlined">dashboard</i>,
+        to: 'network',
+    },
     
 ]

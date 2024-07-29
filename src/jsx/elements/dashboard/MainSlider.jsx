@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import SwiperLineChart from './SwiperLineChart';
 import { SVGICON } from '../../constant/theme';
+import axiosInstance from '../../../services/AxiosInstance';
 
 const swiperData = [
     { color: 'bg-secondary', amount: '65,123', chartcolor: 'rgba(163, 199, 241, 1) ', svgicon: SVGICON.SwiperPepSvg },
@@ -14,6 +15,30 @@ const swiperData = [
 ];
 
 const MainSlider = () => {
+
+    const [dashboardData, setDashboardData] = useState([null,null,null])
+
+
+    const getDahsboardData = async () =>{
+        try {
+            const token = localStorage.getItem('token')
+            if (token) {
+                const response = await axiosInstance.get("/api/robots/dashboardData", {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+                return setDashboardData(response.data.dashboardData)
+            }
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    useEffect(() => {
+        getDahsboardData()
+    }, [])
+
     return (
         <>
             <Swiper
@@ -50,29 +75,60 @@ const MainSlider = () => {
                     },
                 }}
             >
-                {swiperData.map((item, i) => (
-                    <SwiperSlide key={i}>
-                        <div className={`card card-box bg-secondary ${item.color}`}>
-                            <div className="card-header border-0 pb-0">
-                                <div className="chart-num">
-                                    <p>
-                                        <i className="fa-solid fa-sort-down me-2" />
-                                        4%(30 days)
-                                    </p>
-                                    <h2 className="font-w600 mb-0">${item.amount}</h2>
-                                </div>
-                                <div className="dlab-swiper-circle">
-                                    {item.svgicon}
-                                </div>
-                            </div>
-                            <div className="card-body p-0">
-                                <div id="widgetChart1" className="chart-primary">
-                                    <SwiperLineChart chartcolor={item.chartcolor} />
-                                </div>
+                <SwiperSlide>
+                    <div className={`card card-box bg-secondary bg-secondary`}>
+                        <div className="card-header border-0 pb-0">
+                            <div className="chart-num">
+                                <p>
+                                    <i className="fa-solid fa-sort-down me-2" />
+                                    Total Hybrid Operations
+                                </p>
+                                <h2 className="font-w600 mb-0">{dashboardData[0]}</h2>
                             </div>
                         </div>
-                    </SwiperSlide>
-                ))}
+                        <div className="card-body p-0">
+                            <div id="widgetChart1" className="chart-primary">
+                                <SwiperLineChart chartcolor="rgba(163, 199, 241, 1) " />
+                            </div>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className={`card card-box bg-secondary bg-pink`}>
+                        <div className="card-header border-0 pb-0">
+                            <div className="chart-num">
+                                <p>
+                                    <i className="fa-solid fa-sort-down me-2" />
+                                    Total Positive Operations
+                                </p>
+                                <h2 className="font-w600 mb-0">{dashboardData[1]}</h2>
+                            </div>
+                        </div>
+                        <div className="card-body p-0">
+                            <div id="widgetChart1" className="chart-primary">
+                                <SwiperLineChart chartcolor="rgba(229, 159, 241, 1)" />
+                            </div>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className={`card card-box bg-secondary bg-dark`}>
+                        <div className="card-header border-0 pb-0">
+                            <div className="chart-num">
+                                <p>
+                                    <i className="fa-solid fa-sort-down me-2" />
+                                    Average Profit
+                                </p>
+                                <h2 className="font-w600 mb-0">{dashboardData[2]}</h2>
+                            </div>
+                        </div>
+                        <div className="card-body p-0">
+                            <div id="widgetChart1" className="chart-primary">
+                                <SwiperLineChart chartcolor="rgba(148, 150, 176, 1)" />
+                            </div>
+                        </div>
+                    </div>
+                </SwiperSlide>                
             </Swiper>
         </>
     );
