@@ -185,6 +185,8 @@ const Exchanges = () => {
                         <br/>You need to enable trading permissions
                     </Alert>
 
+                    <a style={{color : "red"}} rel="noreferrer" href="https://youtu.be/80Izk4cBeTI" target="_blank">Click here for Tutorial for creating Binance API KEY</a>
+
 
                 </Modal.Body>
                 <Modal.Footer>
