@@ -7,6 +7,9 @@ import { MenuList } from './Menu';
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { ThemeContext } from "../../../context/ThemeContext";
 import SidebarExtraContent from "./SidebarExtraContent";
+import { useDispatch } from "react-redux";
+import { navtoggle } from "../../../store/actions/AuthActions";
+import axiosInstance from "../../../services/AxiosInstance";
 
 const reducer = (previousState, updatedState) => ({
   ...previousState,
@@ -52,6 +55,25 @@ const SideBar = () => {
       setState({ activeSubmenu: "" })
     }
   }
+  const [width, setWidth] = useState(window.innerWidth);
+
+    function handleWindowSizeChange() {
+      setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+      window.addEventListener('resize', handleWindowSizeChange);
+      return () => {
+          window.removeEventListener('resize', handleWindowSizeChange);
+      }
+  }, []);
+
+
+  const dispatch = useDispatch();
+  const handleToogle = () => {
+    if (width <= 768) {
+      dispatch(navtoggle());
+    }
+  };
 
   /// Path
   let path = window.location.pathname;
@@ -73,6 +95,37 @@ const SideBar = () => {
     })
   }, [path]);
 
+
+  const [me, setMe] = useState(null)
+
+
+	const fetchMe = async () => {
+
+		try{
+			const token = localStorage.getItem('token')
+			if(token){
+					const response = await axiosInstance.get("/api/user/me", {
+						headers: {
+						Authorization: `Bearer ${token}`,
+						},
+					});
+
+					setMe(response.data.user)
+				}
+		} catch (error) {
+			// do nothing
+			console.log(error)
+		}
+  
+
+	}
+
+	useEffect(() => {
+		fetchMe();
+	}, [])
+
+  console.log(me?.isAdmin)
+
   return (
     <div
       onMouseEnter={() => ChangeIconSidebar(true)}
@@ -91,8 +144,16 @@ const SideBar = () => {
       <span className="main-menu">Main Menu</span>
       <div className="menu-scroll">
         <div className="dlabnav-scroll">
+
+          <Link to="/upgrade" style={{display:'block', textAlign: "center", marginTop: 20, backgroundColor: "#e79e01", color: "white", padding: 10, margin: 20, cursor: "pointer"}}>
+            UPGRADE
+          </Link>
           <ul className="metismenu" id="menu">
             {MenuList.map((data, index) => {
+              console.log(data.isAdmin, me?.isAdmin)
+              if(data.isAdmin && (me?.isAdmin || 0) === 0){
+                return
+              }
               let menuClass = data.classsChange;
               if (menuClass === "menu-title") {
                 return (
@@ -153,7 +214,7 @@ const SideBar = () => {
                         </Collapse>
                       </>
                       :
-                      <Link to={data.to} className={`${data.to === path ? 'mm-active' : ''}`}>
+                      <Link onClick={() => {handleToogle()}} to={data.to} className={`${data.to === path ? 'mm-active' : ''}`}>
                         {data.iconStyle}
                         <span className="nav-text">{data.title}</span>
                       </Link>

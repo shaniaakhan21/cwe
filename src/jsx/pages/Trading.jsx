@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Button, Nav, Tab } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Alert, Button, Nav, Tab } from 'react-bootstrap';
 import Select from "react-select";
-import FutureOrderTable from './trading/FutureOrderTable';
-import FutureHistory from './trading/FutureHistory';
-import FutureTrade from './trading/FutureTrade';
 import axiosInstance from '../../services/AxiosInstance';
+import { isAxiosError } from 'axios';
+import TradingTable from './TradingTable';
+import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
 
 
 const Trading = () => {
@@ -15,6 +14,11 @@ const Trading = () => {
     const [stopgain, setStopGain] = useState(3);
     const [stoploss, setStopLoss] = useState(99);
     const [balance, setBalance] = useState(undefined);
+    const [investment, setInvesment] = useState(0);
+    const [errorSaving, setErrorSaving] = useState('');
+    const [saving, setSaving] = useState(false);
+
+    console.log(selectedOption)
 
 
     const getCoins = async () => {
@@ -58,7 +62,56 @@ const Trading = () => {
         getUSDTBalance()
     }, [])
 
-    console.log(balance)
+    const createHybrid = async () => {
+        setSaving(true)
+        try {
+            const token = localStorage.getItem('token')
+            if (token) {
+                await axiosInstance.post("/api/robots/createHybrid", {
+                    investment: investment,
+                    mercado: selectedOption ? selectedOption.value : null,
+                    stopgain,
+                    stoploss
+                },
+                     {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+                setSelectedOption(null)
+                setInvesment(0)
+                setStopGain(3)
+                setStopLoss(99)
+                await getHybridTrades()
+            }
+        } catch (error) {
+            if(isAxiosError(error)){
+                const { response } = error;
+                if (response?.status === 400) {
+                  const { data } = response;
+                  setErrorSaving(data.message);
+                }
+            }
+        }
+        setSaving(false)
+    }
+
+    const [rows, setRows] = useState([])
+    const getHybridTrades = async () => {
+        try {
+            const token = localStorage.getItem('token')
+            if (token) {
+                const response = await axiosInstance.get("/api/robots/getHybridTrades", {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+                setRows(response.data.trades)
+            }
+        } catch (error) {
+            console.error(error)
+        }
+    }
 
     return (
         <>
@@ -70,6 +123,10 @@ const Trading = () => {
                             <h4 className="card-title mb-0">New Hybrid</h4>
                         </div>
                         <div className="card-body pt-2">
+
+                        <Alert variant="danger" show={errorSaving.length > 0}>
+                            <strong>Error! </strong> {errorSaving}
+                        </Alert>
                             <div className="d-flex align-items-center justify-content-between mt-3 mb-2">
                                 <span className="small text-muted">Available Balance</span>
 
@@ -86,7 +143,7 @@ const Trading = () => {
                                 <div className="mb-3">
                                     <Select
                                         placeholder="Select Coin"
-                                        defaultValue={selectedOption}
+                                        value={selectedOption}
                                         onChange={setSelectedOption}
                                         options={options}
                                         style={{
@@ -99,7 +156,7 @@ const Trading = () => {
 
                                 <div className="input-group mb-3">
                                     <span className="input-group-text">Investment</span>
-                                    <input type="text" className="form-control" />
+                                    <input type="text" value={investment} onChange={(e) => {setInvesment(e.target.value)} } className="form-control" />
                                     <span className="input-group-text">USDT</span>
                                 </div>
 
@@ -117,7 +174,7 @@ const Trading = () => {
 
 
                                 <div className="mt-3 d-flex justify-content-between">
-                                    <Button variant="success" className="btn btn-sm  text-uppercase  btn-block">Start Hybrid</Button>
+                                    <Button disabled={saving || !balance} onClick={() =>{createHybrid()}} variant="success" className="btn btn-sm  text-uppercase  btn-block">Start Hybrid</Button>
                                 </div>
                             </form>
                         </div>
@@ -125,26 +182,32 @@ const Trading = () => {
                 </div>
 
                 <div className="col-xl-8">
+                <div className="card">
+                    {selectedOption && (
+                        <AdvancedRealTimeChart symbol={`${selectedOption.label}USDT`} autosize></AdvancedRealTimeChart>
+                    )}
+                    {!selectedOption && (
+                        <div style={{textAlign: "center", marginTop: 50}}>
+ <h3>Select a Coin to see the graph</h3>
+                            </div>
+                       
+                    )}
+                </div>
+                </div>
+
+                <div className="col-xl-12">
                     <div className="card">
                         <Tab.Container defaultActiveKey={'Open'}>
                             <div className="card-header border-0 pb-3 flex-wrap">
                                 <h4 className="card-title">My Orders</h4>
                                 <nav>
                                     <Nav as="div" className="nav-pills light" >
-                                        <Nav.Link as="button" eventKey="Open">Open</Nav.Link>
-                                        <Nav.Link as="button" eventKey="Closed">Closed</Nav.Link>
+                                        <Nav.Link onClick={() => getHybridTrades() } as="button" eventKey="Open">Refresh</Nav.Link>
                                     </Nav>
                                 </nav>
                             </div>
                             <div className="card-body pt-0">
-                                <Tab.Content>
-                                    <Tab.Pane eventKey="Open">
-                                        <FutureOrderTable />
-                                    </Tab.Pane>
-                                    <Tab.Pane eventKey="Closed">
-                                        <FutureHistory />
-                                    </Tab.Pane>
-                                </Tab.Content>
+                                <TradingTable getHybridTrades={getHybridTrades} rows={rows} />
                             </div>
                         </Tab.Container>
                     </div>
