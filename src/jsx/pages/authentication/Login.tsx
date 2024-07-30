@@ -31,7 +31,7 @@ function Login() {
   return (
     <>
       <div className="authincation d-flex flex-column flex-lg-row flex-column-fluid">
-        <div className="login-aside text-center  d-flex flex-column flex-row-auto">
+        <div className="login-aside text-center  d-flex flex-column flex-row-auto justify-content-center">
           <div className="d-flex flex-column-auto flex-column pt-lg-40 ">
             <div className="text-center mb-lg-4 mb-2 logo">
               <img src={IMAGES.LogoWhite} alt="" />
@@ -41,14 +41,6 @@ function Login() {
               User Experience & Interface Design <br />
               Strategy SaaS Solutions
             </p>
-          </div>
-          <div
-            className="aside-image position-relative"
-            style={{ backgroundImage: `url(${IMAGES.BgPic2})` }}
-          >
-            <img className="img1 move-1" src={IMAGES.BgPic3} alt="" />
-            <img className="img2 move-2" src={IMAGES.BgPic4} alt="" />
-            <img className="img3 move-3" src={IMAGES.BgPic5} alt="" />
           </div>
         </div>
         <div className="container flex-row-fluid d-flex flex-column justify-content-center position-relative overflow-hidden p-7 mx-auto">

@@ -25838,7 +25838,6 @@ table.dataTable > tfoot > tr > th, table.dataTable > tfoot > tr > td {
   min-height: 100vh; }
   .authincation .login-aside {
     background: var(--primary);
-    padding-top: 3rem;
     max-width: 35rem;
     width: 100%;
     z-index: 1;
