@@ -17,3 +17,16 @@
 .MuiDataGrid-cell:focus {
     outline: none !important;
 }
+
+.css-14mxsc7-MuiDataGrid-root {
+    border-color: #cea62d!important;
+    color: white!important;
+}
+
+.css-14mxsc7-MuiDataGrid-root .MuiDataGrid-container--top [role=row] {
+    background: #cea62d!important;
+}
+
+.css-1oudwrl::after {
+    background-color: #cea62d!important;
+}

@@ -4,7 +4,7 @@ export const ThemeContext = createContext();
 
 const ThemeContextProvider = (props) => {
   const body = document.querySelector("body");
-  const [background, setBackground] = useState({ value: "light", label: "Light", });
+  const [background, setBackground] = useState({ value: "dark", label: "Dark", });
   const [sidebarLayout, setSidebarLayout] = useState({ value: "vertical", label: "Vertical", });
   const [navigationHader, setNavigationHader] = useState("color_3");
   const [haderColor, setHaderColor] = useState("color_3");

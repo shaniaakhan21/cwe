@@ -122,7 +122,6 @@ const Exchanges = () => {
                     <i className="fa-solid fa-add me-2"></i> Add Exchange
                 </Button>
             </div>
-            <hr></hr>
 
             <div className="row">
                 {apikeys && apikeys.map((apiKey) => {
