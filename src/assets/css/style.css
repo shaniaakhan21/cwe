@@ -4038,7 +4038,6 @@ fieldset:disabled .btn {
   border-radius: 8px!important;
   color: black!important;
   border: 2px solid #cea62d!important;
-  padding: 4px 3%!important;
   font-weight: 700!important;
 }
 
@@ -4053,9 +4052,19 @@ fieldset:disabled .btn {
   scale: 1.005!important;
 }
 
-.header-cwe a:hover{
+.header-cwe a:hover, .footer-cwe .links-btm a:hover{
   color: #cea62d!important;
   font-size: 12.5px!important;
+}
+
+.icons-us:hover{
+  scale: 1.005!important;
+  color: white!important;
+}
+
+
+.padding-cstm{
+  padding: 4px 13%!important;
 }
 
 .btn-white-cwe{
@@ -4063,8 +4072,11 @@ fieldset:disabled .btn {
   border-radius: 8px!important;
   color: #fff!important;
   border: 2px solid #fff!important;
-  padding: 4px 3%!important;
   font-weight: 700!important;
+}
+
+.padding-cstm-2{
+  padding: 0.5% 3%!important;
 }
 
 .btn-bg:hover{

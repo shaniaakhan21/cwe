@@ -1,4 +1,5 @@
 import Header from "./Header";
+import Footer from "./Footer";
 
 const PublicPage = () => {
 
@@ -6,6 +7,7 @@ const PublicPage = () => {
 	return(
 		<>			
 			<Header/>
+            <Footer/>
 		</>		
 		
 	)

@@ -38,8 +38,8 @@ const Header = () => {
 
                 {/* Right-end Buttons */}
                 <Box sx={{ display: 'flex', gap: 2 }} className='w-65 justify-content-end'>
-                    <Button variant="outlined" color="inherit" className='btn-white-cwe'>Login</Button>
-                    <Button variant="contained" className='btn-yellow-cwe'>Sign Up</Button>
+                    <Button variant="outlined" color="inherit" className='btn-white-cwe padding-cstm-2'>Login</Button>
+                    <Button variant="contained" className='btn-yellow-cwe padding-cstm-2{'>Sign Up</Button>
                 </Box>
             </Toolbar>
         </AppBar>
