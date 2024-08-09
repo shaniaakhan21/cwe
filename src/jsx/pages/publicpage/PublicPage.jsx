@@ -1,9 +1,11 @@
+import Header from "./Header";
+
 const PublicPage = () => {
 
 	
 	return(
 		<>			
-			<h1>Hi Public!</h1>		
+			<Header/>
 		</>		
 		
 	)

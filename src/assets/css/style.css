@@ -4033,6 +4033,40 @@ fieldset:disabled .btn {
   background-color: #cea62d!important;
 }
 
+.btn-yellow-cwe{
+  background-color: #cea62d!important;
+  border-radius: 8px!important;
+  color: black!important;
+  border: 2px solid #cea62d!important;
+  padding: 4px 3%!important;
+  font-weight: 700!important;
+}
+
+.btn-yellow-cwe:hover{
+  background-color: #e1b634!important;
+  color: black!important;
+  border: 2px solid #e1b634!important;
+  scale: 1.005!important;
+}
+
+.btn-white-cwe:hover{
+  scale: 1.005!important;
+}
+
+.header-cwe a:hover{
+  color: #cea62d!important;
+  font-size: 12.5px!important;
+}
+
+.btn-white-cwe{
+  background-color: transparent!important;
+  border-radius: 8px!important;
+  color: #fff!important;
+  border: 2px solid #fff!important;
+  padding: 4px 3%!important;
+  font-weight: 700!important;
+}
+
 .btn-bg:hover{
   background-color: #e6bb38!important;
 }
@@ -8871,12 +8905,20 @@ fieldset:disabled .btn {
   --bs-border-opacity: 1;
 }
 
+.w-10 {
+  width: 10% !important;
+}
+
 .w-25 {
   width: 25% !important;
 }
 
 .w-50 {
   width: 50% !important;
+}
+
+.w-65 {
+  width: 65% !important;
 }
 
 .w-75 {
