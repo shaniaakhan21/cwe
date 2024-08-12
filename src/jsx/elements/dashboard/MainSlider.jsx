@@ -76,7 +76,7 @@ const MainSlider = () => {
                 }}
             >
                 <SwiperSlide>
-                    <div className={`card card-box bg-secondary bg-secondary`}>
+                    <div className={`card card-box borderShadow`}>
                         <div className="card-header border-0 pb-0">
                             <div className="chart-num">
                                 <p>
@@ -88,13 +88,13 @@ const MainSlider = () => {
                         </div>
                         <div className="card-body p-0">
                             <div id="widgetChart1" className="chart-primary">
-                                <SwiperLineChart chartcolor="rgba(163, 199, 241, 1) " />
+                                <SwiperLineChart chartcolor="#cea62d" />
                             </div>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className={`card card-box bg-secondary bg-pink`}>
+                    <div className={`card card-box  borderShadow`}>
                         <div className="card-header border-0 pb-0">
                             <div className="chart-num">
                                 <p>
@@ -106,13 +106,13 @@ const MainSlider = () => {
                         </div>
                         <div className="card-body p-0">
                             <div id="widgetChart1" className="chart-primary">
-                                <SwiperLineChart chartcolor="rgba(229, 159, 241, 1)" />
+                                <SwiperLineChart chartcolor="#cea62d" />
                             </div>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className={`card card-box bg-secondary bg-dark`}>
+                    <div className={`card card-box  borderShadow`}>
                         <div className="card-header border-0 pb-0">
                             <div className="chart-num">
                                 <p>
@@ -124,7 +124,7 @@ const MainSlider = () => {
                         </div>
                         <div className="card-body p-0">
                             <div id="widgetChart1" className="chart-primary">
-                                <SwiperLineChart chartcolor="rgba(148, 150, 176, 1)" />
+                                <SwiperLineChart chartcolor="#cea62d" />
                             </div>
                         </div>
                     </div>

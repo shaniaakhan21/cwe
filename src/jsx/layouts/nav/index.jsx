@@ -15,12 +15,12 @@ const JobieNav = ({ title, onClick: ClickToAddEvent, onClick2, onClick3 }) => {
 
   return (
     <Fragment>
-        {
+        {/* {
           path === "dashboard" || path === "index-2" ? 
             <div className="header-banner" style={{backgroundImage:`url(${bgimg})`}}></div>
             :
             ""
-       }
+       } */}
       <NavHader />
       <ChatBox onClick={() => onClick("chatbox")} toggle={toggle} />
       <Header

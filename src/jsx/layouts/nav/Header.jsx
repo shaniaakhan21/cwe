@@ -4,7 +4,7 @@ import { Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 /// Image
-import profile from "../../../assets/images/user.jpg";
+import profile from "../../../assets/images/user.png";
 import avatar from "../../../assets/images/avatar/1.jpg";
 
 import { ThemeContext } from "../../../context/ThemeContext";
@@ -39,7 +39,7 @@ const Header = ({ onNote }) => {
     headWallet,setHeadWallet } = useContext(ThemeContext);
     const handleThemeMode = () => {
       if(background.value === 'dark'){
-        changeBackground({ value: "light", label: "Light" });
+        changeBackground({ value: "dark", label: "Dark" });
       }else{
         changeBackground({ value: "dark", label: "Dark" });
       }
@@ -103,6 +103,7 @@ const Header = ({ onNote }) => {
                       <Link to={"#"} 
                         className={`nav-link bell dz-theme-mode ${background.value === "dark" ? "active" : ""}`}
                         onClick={()=>handleThemeMode()}
+                        hidden
                       >
                         {SVGICON.LightSvgIcon}
                         {SVGICON.DarkSvgIcon}

@@ -2,12 +2,26 @@
     background: none !important;
   }
   
+  .orgchart-container {
+    background-color: #cea62d1c!important;
+    border: 2px dashed #cea62d36!important;
+ }
+
+ .orgchart ul li .oc-node {
+  padding: 2px;
+  border: 2px dashed #cea62d7a;
+
+}
+
   .orgchart ul li .oc-node .oc-heading{
-    background-color: #DD4C37!important;
+    background-color: #cea62d7a!important;
+    border: 1px solid #cea62d7a!important;
   }
   
   .orgchart ul li .oc-node .oc-content{
     height: 35px!important;
+    border: 1px solid #cea62d7a!important;
+    background-color: black!important;
   }
   
   .orgchart ul li .oc-node .oc-heading-available{
@@ -33,4 +47,8 @@
   .oc-view{
     cursor: pointer;
   }
+
+  .orgchart ul li .oc-node:hover {
+    background-color: #ffc0007a;
+}
   

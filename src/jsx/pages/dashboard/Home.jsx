@@ -73,7 +73,7 @@ export function MainComponent(){
 
 				<Row>
 					<div className=" col-12">
-						<div className='card'>
+						<div className='card borderShadow'>
 						<Card.Body className=" mb-0">
 							<Card.Header>
 							<h4>My Referral Link</h4>
@@ -103,7 +103,7 @@ export function MainComponent(){
 const Home = () => {	
 	// const { changeBackground } = useContext(ThemeContext);
 	// useEffect(() => {
-	// 	changeBackground({ value: "light", label: "Light" });
+	// 	changeBackground({ value: "dark", label: "Dark" });
 	// }, []);	
 
 
@@ -121,20 +121,20 @@ const Home = () => {
 
 		switch (locact.search) {
 			case "?theme=1" :
-				changeBackground({ value: "light", label: "Light" });				
+				changeBackground({ value: "dark", label: "Dark" });				
 				changeNavigationHader('color_3')
 				chnageHaderColor('color_3')
 				changePrimaryColor('color_1')
 				break;
 			case "?theme=2":
-					changeBackground({ value: "light", label: "Light" });
+					changeBackground({ value: "dark", label: "Dark" });
 					changeSideBarStyle({ value: "mini", label: "Mini" });
 					changeNavigationHader('color_13')
 					chnageHaderColor('color_13')
 					changePrimaryColor('color_13')
 				break;
 			case "?theme=4":
-				changeBackground({ value: "light", label: "Light" });
+				changeBackground({ value: "dark", label: "Dark" });
 				changeSideBarLayout({ value: "horizontal", label: "Horizontal" });
 				changeSideBarStyle({ value: "full", label: "Full" });
 				changeNavigationHader('color_1')
@@ -144,7 +144,7 @@ const Home = () => {
 				break;
 
 			case "?theme=5" :
-				changeBackground({ value: "light", label: "Light" });
+				changeBackground({ value: "dark", label: "Dark" });
 				changeSideBarLayout({ value: "horizontal", label: "Horizontal" });
 				changeSideBarStyle({ value: "full", label: "Full" });
 				changeNavigationHader('color_3')
@@ -153,14 +153,14 @@ const Home = () => {
 				changePrimaryColor('color_1')
 				break;
 			case "?theme=6":
-				changeBackground({ value: "light", label: "Light" });				
+				changeBackground({ value: "dark", label: "Dark" });				
 				changeNavigationHader('color_10')
 				chnageHaderColor('color_13')
 				chnageSidebarColor('color_10')
 				changePrimaryColor('color_13')
 			break;
 			default:
-				changeBackground({ value: "light", label: "Light" });				
+				changeBackground({ value: "dark", label: "Dark" });				
 				changeNavigationHader('color_3')
 				chnageHaderColor('color_3')
 				changePrimaryColor('color_1')

@@ -113,6 +113,39 @@ const Trading = () => {
         }
     }
 
+    const customStyles = {
+        control: (provided, state) => ({
+          ...provided,
+          backgroundColor: '#cea62d80', // Background color of the control
+          borderColor: state.isFocused ? '#cea62d80' : '#7e7e7e', // Border color based on focus state
+          boxShadow: state.isFocused ? '0 0 0 1px #cea62d80' : null, // Box shadow on focus
+          '&:hover': {
+            borderColor: '#cea62d80' // Border color on hover
+          },
+          color: '#7e7e7e', // Text color
+          padding: '0 15px', // Padding inside the control
+        }),
+        placeholder: (provided) => ({
+          ...provided,
+          color: '#7e7e7e', // Placeholder text color
+        }),
+        singleValue: (provided) => ({
+          ...provided,
+          color: '#fff', // Selected option text color
+        }),
+        menu: (provided) => ({
+          ...provided,
+          borderColor: '#cea62d80',
+          border: '1px solid #cea62d80',
+          backgroundColor: '#cea62d80'
+        }),
+        option: (provided, state) => ({
+          ...provided,
+          backgroundColor: state.isFocused ? '#000' : '#cea62d80', // Background color on hover
+          color: state.isFocused ? '#fff' : '#fff', // Text color on hover
+        }),
+      };
+
     return (
         <>
             <div className="row">
@@ -146,6 +179,7 @@ const Trading = () => {
                                         value={selectedOption}
                                         onChange={setSelectedOption}
                                         options={options}
+                                        styles={customStyles}
                                         style={{
                                             lineHeight: "40px",
                                             color: "#7e7e7e",
