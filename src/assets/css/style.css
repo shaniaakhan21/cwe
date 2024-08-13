@@ -8622,6 +8622,14 @@ fieldset:disabled .btn {
   display: flex !important;
 }
 
+.row-flex {
+ flex-direction: row;
+} 
+
+.col-flex {
+  flex-direction: column;
+ } 
+
 .d-inline-flex {
   display: inline-flex !important;
 }
@@ -9291,6 +9299,9 @@ fieldset:disabled .btn {
   margin-top: 3rem !important;
 }
 
+.mt-10 {
+  margin-top: 12rem !important;
+}
 .mt-auto {
   margin-top: auto !important;
 }
@@ -43632,23 +43643,25 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-repeat: no-repeat;
 }
 
-.bg-bitcoin h1 , .bg-bitcoin-2 h1 {
+.bg-bitcoin h1 , .bg-bitcoin-2 h1, .bg-bitcoin-3 h1 {
   font-size: 65px !important;
   line-height: 72px !important;
   font-family: 'Fira Sans', sans-serif !important;
   font-weight: 500 !important;
 }
 
-.bg-bitcoin-2 h1 {
+.bg-bitcoin-2 h1 , .bg-bitcoin-3 h1{
   text-align: center;
 }
+
+
 
 .pdg{
   padding: 12.5rem 1.5rem !important;
 }
 
 .pdgn-2 {
-  padding: 6.5rem 1.5rem !important;
+  padding: 6.5rem 1.5rem 4rem 1.5rem!important;
 }
 
 .bg-bitcoin h5 {
@@ -43685,6 +43698,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-weight: 200;
 }
 
+.bg-bitcoin-3 .d-flex-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 4%!important;
+}
+
+.bg-bitcoin-3 .d-flex-center p{
+  text-align: center;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 200;
+}
+
 .bg-bitcoin-2 .btn-end{
   display: flex;
   justify-content: flex-end;
@@ -43699,6 +43726,124 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .bg-bitcoin  .MuiButton-root button {
   font-weight: 200!important;
   text-transform: none!important;
+}
+
+.cryptos{
+  border-radius: 20px;
+  border: 2px solid #646464;
+}
+
+.cryptos h3{
+  font-weight: 400;
+}
+
+.cryptos li{
+  display: flex;
+  align-items: center;
+  padding: 2%;
+  margin: 2% 0;
+}
+
+.cryptos li:hover{
+  border-radius: 10px;
+  background-color: #f6c22587;
+  cursor: pointer;
+  scale: 1.004;
+}
+
+.cryptos li img{
+  width: 10%;
+  height: 10%;
+  margin-right: 4%;
+}
+
+.cryptos ul .dataList{
+  display: flex;
+  flex-direction: row; 
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cryptos ul li h4{
+  font-weight: 200;
+}
+
+.cryptos ul .dataList .h4-w, 
+.cryptos ul .dataList .p-w, 
+.cryptos ul .dataList .p-w{
+  width: calc(100% / 3);
+}
+
+.cryptos ul .dataList .h4-w, 
+.cryptos ul .dataList .p-w p, 
+.cryptos ul .dataList .p-w p{
+  margin-bottom: 0;
+}
+
+.cryptos ul .dataList .p-w, 
+.cryptos ul .dataList .p-w{
+  text-align: end;
+}
+
+.buysell button , .buysell input{
+   color: white!important;
+}
+
+.buysell button:hover , .buysell button:active, .buysell  .Mui-selected {
+  color: #cea62d!important;
+}
+
+.buysell .css-1eed5fa-MuiInputBase-root-MuiInput-root{
+  color: white!important;
+}
+
+.buysell .Mui-focused{
+  color: #cea62d!important;
+}
+
+.buysell .btn-yellow-cwe {
+  font-size: large!important;
+}
+.buysell .btn-yellow-cwe:hover {
+  color: black!important;
+}
+
+.buysell .MuiTab-root {
+  font-size: 20px!important;
+  font-weight: bold!important;
+}
+
+.SS .firstSS img{
+  border: 2px solid #cea62dc4;
+    border-radius: 24px;
+}
+
+
+.SS .firstSS {
+  margin-right: 4%;
+}
+
+.SS .borderWhite {
+  margin-left: 4%;
+}
+
+.SS .borderWhite{
+  border: 2px solid #fff;
+    border-radius: 24px;
+}
+
+.SS .borderWhite h3{
+  font-weight: 400;
+  text-align: center;
+}
+
+.SS .borderWhite button{
+  font-size: 20px;
+}
+
+.css-1aquho2-MuiTabs-indicator  {
+  background-color:  #cea62d!important;
 }
 
 [data-theme-version="dark"] {
