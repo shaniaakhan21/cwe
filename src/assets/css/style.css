@@ -8941,6 +8941,10 @@ fieldset:disabled .btn {
   width: 25% !important;
 }
 
+.w-35 {
+  width: 35% !important;
+}
+
 .w-50 {
   width: 50% !important;
 }
@@ -43842,8 +43846,92 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-size: 20px;
 }
 
+.SS h2{
+  font-weight: 400;
+}
+
+.CardSec .cryptCard{
+  border-radius: 20px;
+  border: 2px solid #646464;
+}
+
 .css-1aquho2-MuiTabs-indicator  {
   background-color:  #cea62d!important;
+}
+
+.CardSec {
+  padding: 2%;
+}
+
+.CardSec .css-bhweh5-MuiTypography-root{
+  margin-left: 0;
+} 
+
+.CryptoTable .MuiTableCell-root {
+  color: white;
+  font-size: 1.2rem!important;
+}
+
+.CryptoTable .MuiTableRow-root:hover{
+  background: #423202;
+  cursor: pointer;
+}
+
+.CryptoTable .MuiTableHead-root .MuiTableRow-root:hover{
+  background: #000!important;
+}
+
+.FAQSection .MuiTypography-root {
+  font-weight: 400;
+  font-size: 1.7rem;
+}
+
+.FAQSection .MuiAccordionSummary-root {
+  border-bottom: 1px solid white;
+}
+
+.Start2Day{
+  background-color: #cea62d;
+  padding: 2% 0;
+}
+
+.Start2Day .align-btn{
+  text-align: center;
+}
+
+.Start2Day .align-btn .btn-black{
+  border-radius: 12px;
+  margin: 2% 0;
+  padding: 1% 0!important;
+}
+
+.Start2Day .btn-black {
+  background: #000!important;
+  color: white;
+}
+
+.Start2Day button{
+  font-size: 1.6em;
+}
+
+.Start2Day h1{
+  color: black;
+}
+
+.CryptoTable .MuiTypography-root{
+  font-size: 1.2rem!important;
+}
+
+.CryptoTable .MuiSvgIcon-root{
+  padding-bottom: 6%;
+  width: 1.8em;
+  height: 1.8em;
+}
+
+.CryptoTable .MuiTable-root {
+  margin: 0px 2%;
+  width: 96%;
+  border-top: 1px solid white;
 }
 
 [data-theme-version="dark"] {

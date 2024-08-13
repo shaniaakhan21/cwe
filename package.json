@@ -26,6 +26,7 @@
     "@n8tb1t/use-scroll-position": "^2.0.3",
     "apexcharts": "^3.51.0",
     "axios": "^1.6.8",
+    "chart.js": "^4.4.3",
     "formik": "^2.4.6",
     "lightgallery": "^2.7.2",
     "p-min-delay": "^4.0.2",

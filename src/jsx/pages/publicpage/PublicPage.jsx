@@ -5,6 +5,9 @@ import CryptoList from "./TopCrypto";
 import BuySell from "./BuySell";
 import ReferralImg from '../../../assets/images/publicpages/ss-refer.jpg'
 import RewardImg from '../../../assets/images/publicpages/rewards.png'
+import CryptoCard from "./CryptoCard";
+import CryptoTable from "./CryptoTable";
+import FAQAccordion from "./FAQAccordion";
 
 const PublicPage = () => {
 
@@ -96,7 +99,7 @@ const PublicPage = () => {
                             </h1>
                         </div>
                         <div className="w-100 justify-content-center d-flex-center">
-                            <div className="w-50 py-3">
+                            <div className="w-35 py-3">
                                 <p>
                                     Simple & Secure. Refer your friends using  referral link and earn as soon as they start trading.
                                 </p>
@@ -131,6 +134,74 @@ const PublicPage = () => {
                     </div>
                 </div>
             </section>
+
+            <section className="mt-5 mb-5">
+                <div className="bg-bitcoin-3 SS">
+                    <div className="pdgn-3">
+                        <div>
+                            <h1>
+                                <b>Crypto Prices</b>
+                            </h1>
+                        </div>
+                        <div className="w-100 justify-content-center d-flex-center">
+                            <div className="w-35 pt-3 pb-2">
+                                <p>
+                                    Watch the Latest Crypto trends and stay updated on top movers and do some smart trading over here.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="w-100 justify-content-center d-flex-center">
+                            <h2>
+                                Top Movers
+                            </h2>
+                        </div>
+                    </div>
+                    <div>
+                        <CryptoCard />
+                    </div>
+                    <div className="w-100 justify-content-center d-flex-center py-4">
+                        <h2>
+                            Today&apos;s Cryptocurrency Prices
+                        </h2>
+                    </div>
+                    <div>
+                        <CryptoTable />
+                    </div>
+                </div>
+            </section>
+
+            <section className="mt-5 mb-5">
+                <div className="bg-bitcoin-3 SS">
+                    <div className="pdgn-3">
+                        <div>
+                            <h1>
+                                <b>Frequently Asked Questions</b>
+                            </h1>
+                        </div>
+                    </div>
+                    <div>
+                        <FAQAccordion />
+                    </div>
+                </div>
+            </section>
+
+            <section className="mt-5 Start2Day">
+                <div className="bg-bitcoin-3 SS">
+                    <div className="pdgn-3">
+                        <div>
+                            <h1>
+                                Start earning today
+                            </h1>
+                        </div>
+                        <div className="align-btn">
+                            <Button variant="contained" className='btn-black padding-cstm-2 w-25'>
+                                Sign Up Now!!
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <Footer />
         </>
 
