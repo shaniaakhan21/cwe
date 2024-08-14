@@ -11,8 +11,9 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-// Register the required components
 ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -28,6 +29,11 @@ const CryptoCard = () => {
     useEffect(() => {
         fetchCryptoData();
     }, []);
+
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+      }, []);
 
     const fetchCryptoData = async () => {
         try {
@@ -53,6 +59,7 @@ const CryptoCard = () => {
                     key={crypto.id}
                     sx={{ width: '18%', backgroundColor: '#000', color: 'white', padding: '10px' }}
                     className='cryptCard'
+                    data-aos="flip-left" data-aos-duration="2000"
                 >
 
                     <Box display="flex" alignItems="center" mb={1}>

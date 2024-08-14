@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Header from "./Header";
 import Footer from "./Footer";
 import Button from '@mui/material/Button';
@@ -8,6 +9,9 @@ import RewardImg from '../../../assets/images/publicpages/rewards.png'
 import CryptoCard from "./CryptoCard";
 import CryptoTable from "./CryptoTable";
 import { useNavigate } from 'react-router-dom';
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 const PublicPage = () => {
     const navigate = useNavigate();
@@ -16,12 +20,17 @@ const PublicPage = () => {
         navigate('/register');
     };
 
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+      }, []);
+
     return (
         <>
             <Header />
-            <section>
-                <div className="bg-bitcoin">
-                    <div className="pdg">
+            <section >
+                <div className="bg-bitcoin" >
+                    <div className="pdg" data-aos="fade-up" data-aos-duration="3000">
                         <div>
                             <h1>
                                 <b>Revolutionizing</b> <br />  Cryptocurrency Trading
@@ -37,7 +46,7 @@ const PublicPage = () => {
                 </div>
             </section>
 
-            <section>
+            <section data-aos="fade-up" data-aos-duration="3000">
                 <div className="bg-bitcoin-2">
                     <div className="pdgn-2">
                         <div>
@@ -62,7 +71,7 @@ const PublicPage = () => {
                 </div>
             </section>
 
-            <section>
+            <section data-aos="fade-up" data-aos-duration="3000">
                 <div className="bg-bitcoin-3 mb-4" id="buy-crypto-section">
                     <div className="pdgn-3">
                         <div>
@@ -80,12 +89,12 @@ const PublicPage = () => {
                         </div>
                         <div className="w-100 d-flex cryptosFlex">
                             <div className="w-50 mx-5  d-flex justify-content-center listC">
-                                <div className="w-65 listC2">
+                                <div className="w-65 listC2"  data-aos="fade-right" data-aos-duration="2000">
                                     <CryptoList />
                                 </div>
                             </div>
                             <div className="w-50 mx-5  d-flex justify-content-start listC justify-content-c">
-                                <div className="w-65 listC2">
+                                <div className="w-65 listC2"  data-aos="fade-left" data-aos-duration="2000">
                                     <BuySell />
                                 </div>
                             </div>
@@ -94,7 +103,7 @@ const PublicPage = () => {
                 </div>
             </section>
 
-            <section className="mb-5" id="earn-section">
+            <section className="mb-5" id="earn-section" data-aos="fade-up" data-aos-duration="3000">
                 <div className="bg-bitcoin-3 SS">
                     <div className="pdgn-3">
                         <div>
@@ -109,15 +118,15 @@ const PublicPage = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="w-100 justify-content-center d-flex row-flex cryptosFlex">
-                            <div className="w-25 d-flex justify-content-start firstSS listC2">
+                        <div className="w-100 justify-content-center d-flex row-flex cryptosFlex" >
+                            <div className="w-25 d-flex justify-content-start firstSS listC2" data-aos="fade-right" data-aos-duration="3000">
                                 <img
                                     src={ReferralImg}
                                     className="w-100"
                                     alt=""
                                 />
                             </div>
-                            <div className="w-25 d-flex col-flex justify-content-between align-items-center borderWhite py-5 px-2 listC2">
+                            <div className="w-25 d-flex col-flex justify-content-between align-items-center borderWhite py-5 px-2 listC2" data-aos="fade-left" data-aos-duration="3000">
                                 <h3>
                                     <b>Copy </b>and <b>Share</b>  referral link with your friends and
                                     <span style={{ color: '#cea62d' }}><b> earn points </b></span>
@@ -139,7 +148,7 @@ const PublicPage = () => {
                 </div>
             </section>
 
-            <section className="mt-5 mb-5" id="markets-section">
+            <section className="mt-5 mb-5" id="markets-section" data-aos="fade-up" data-aos-duration="3000">
                 <div className="bg-bitcoin-3 SS">
                     <div className="pdgn-3">
                         <div>

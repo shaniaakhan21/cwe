@@ -44108,30 +44108,72 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .header-cwe .ImgPhn {
     width: 25% !important;
   }
+
+  .bg-bitcoin h1,
+  .bg-bitcoin-2 h1,
+  .bg-bitcoin-3 h1 {
+    font-size: 30px !important;
+    line-height: 32px !important;
+  }
+
+  .padding-cstm {
+    padding: 2px 4%  !important;
+}
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
   /* Styles for medium devices */
+  .bg-bitcoin h1,
+  .bg-bitcoin-2 h1,
+  .bg-bitcoin-3 h1 {
+    font-size: 40px !important;
+    line-height: 42px !important;
+  }
 
+  .padding-cstm {
+    padding: 2px 4%  !important;
+}
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
   /* Styles for large devices */
+  .bg-bitcoin h1,
+  .bg-bitcoin-2 h1,
+  .bg-bitcoin-3 h1 {
+    font-size: 40px !important;
+    line-height: 42px !important;
+  }
+
+  .padding-cstm {
+    padding: 3px 9% !important;
+}
 
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) and (max-width: 1439.98px) {
   /* Styles for extra large devices */
+  .bg-bitcoin h1,
+  .bg-bitcoin-2 h1,
+  .bg-bitcoin-3 h1 {
+    font-size: 50px !important;
+    line-height: 52px !important;
+  }
+
+  .padding-cstm {
+    padding: 3px 11% !important;
+}
 
 }
 
 /* Extra extra large devices (very large desktops, 1440px and up) */
 @media (min-width: 1440px) {
   /* Styles for extra extra large devices */
-
+  .padding-cstm {
+    padding: 3px 11% !important;
+}
 }
 
 
