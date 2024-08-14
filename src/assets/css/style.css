@@ -4053,7 +4053,7 @@ fieldset:disabled .btn {
 }
 
 .header-cwe a,
-.footer-cwe .links-btm a{
+.footer-cwe .links-btm a {
   font-size: 16px !important;
 }
 
@@ -8623,12 +8623,12 @@ fieldset:disabled .btn {
 }
 
 .row-flex {
- flex-direction: row;
-} 
+  flex-direction: row;
+}
 
 .col-flex {
   flex-direction: column;
- } 
+}
 
 .d-inline-flex {
   display: inline-flex !important;
@@ -9306,6 +9306,7 @@ fieldset:disabled .btn {
 .mt-10 {
   margin-top: 12rem !important;
 }
+
 .mt-auto {
   margin-top: auto !important;
 }
@@ -43647,25 +43648,28 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-repeat: no-repeat;
 }
 
-.bg-bitcoin h1 , .bg-bitcoin-2 h1, .bg-bitcoin-3 h1 {
+.bg-bitcoin h1,
+.bg-bitcoin-2 h1,
+.bg-bitcoin-3 h1 {
   font-size: 65px !important;
   line-height: 72px !important;
   font-family: 'Fira Sans', sans-serif !important;
   font-weight: 500 !important;
 }
 
-.bg-bitcoin-2 h1 , .bg-bitcoin-3 h1{
+.bg-bitcoin-2 h1,
+.bg-bitcoin-3 h1 {
   text-align: center;
 }
 
 
 
-.pdg{
+.pdg {
   padding: 12.5rem 1.5rem !important;
 }
 
 .pdgn-2 {
-  padding: 6.5rem 1.5rem 4rem 1.5rem!important;
+  padding: 6.5rem 1.5rem 4rem 1.5rem !important;
 }
 
 .bg-bitcoin h5 {
@@ -43674,7 +43678,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-size: 26px !important;
 }
 
-.bg-bitcoin .line-it::after{
+.bg-bitcoin .line-it::after {
   content: '';
   height: 4px;
   width: 160px;
@@ -43684,39 +43688,39 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   display: block;
 }
 
-.bg-bitcoin .btn-yellow-cwe{
+.bg-bitcoin .btn-yellow-cwe {
   box-shadow: 2px 2px 6px 0px #fedd647d !important;
 }
 
-.bg-bitcoin-2 .d-flex-end{
+.bg-bitcoin-2 .d-flex-end {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding-right: 4%!important;
+  padding-right: 4% !important;
 }
 
-.bg-bitcoin-2 .d-flex-end p{
+.bg-bitcoin-2 .d-flex-end p {
   text-align: end;
   font-size: 29px;
   line-height: 33px;
   font-weight: 200;
 }
 
-.bg-bitcoin-3 .d-flex-center{
+.bg-bitcoin-3 .d-flex-center {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-right: 4%!important;
+  padding-right: 4% !important;
 }
 
-.bg-bitcoin-3 .d-flex-center p{
+.bg-bitcoin-3 .d-flex-center p {
   text-align: center;
   font-size: 16px;
   line-height: 18px;
   font-weight: 200;
 }
 
-.bg-bitcoin-2 .btn-end{
+.bg-bitcoin-2 .btn-end {
   display: flex;
   justify-content: flex-end;
 }
@@ -43727,100 +43731,104 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   box-shadow: 2px 2px 6px 0px #fedd647d !important;
 }
 
-.bg-bitcoin  .MuiButton-root button {
-  font-weight: 200!important;
-  text-transform: none!important;
+.bg-bitcoin .MuiButton-root button {
+  font-weight: 200 !important;
+  text-transform: none !important;
 }
 
-.cryptos{
+.cryptos {
   border-radius: 20px;
   border: 2px solid #646464;
 }
 
-.cryptos h3{
+.cryptos h3 {
   font-weight: 400;
 }
 
-.cryptos li{
+.cryptos li {
   display: flex;
   align-items: center;
   padding: 2%;
   margin: 2% 0;
 }
 
-.cryptos li:hover{
+.cryptos li:hover {
   border-radius: 10px;
   background-color: #f6c22587;
   cursor: pointer;
   scale: 1.004;
 }
 
-.cryptos li img{
+.cryptos li img {
   width: 10%;
   height: 10%;
   margin-right: 4%;
 }
 
-.cryptos ul .dataList{
+.cryptos ul .dataList {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   width: 100%;
   justify-content: space-between;
   align-items: center;
 }
 
-.cryptos ul li h4{
+.cryptos ul li h4 {
   font-weight: 200;
 }
 
-.cryptos ul .dataList .h4-w, 
-.cryptos ul .dataList .p-w, 
-.cryptos ul .dataList .p-w{
+.cryptos ul .dataList .h4-w,
+.cryptos ul .dataList .p-w,
+.cryptos ul .dataList .p-w {
   width: calc(100% / 3);
 }
 
-.cryptos ul .dataList .h4-w, 
-.cryptos ul .dataList .p-w p, 
-.cryptos ul .dataList .p-w p{
+.cryptos ul .dataList .h4-w,
+.cryptos ul .dataList .p-w p,
+.cryptos ul .dataList .p-w p {
   margin-bottom: 0;
 }
 
-.cryptos ul .dataList .p-w, 
-.cryptos ul .dataList .p-w{
+.cryptos ul .dataList .p-w,
+.cryptos ul .dataList .p-w {
   text-align: end;
 }
 
-.buysell button , .buysell input{
-   color: white!important;
+.buysell button,
+.buysell input {
+  color: white !important;
 }
 
-.buysell button:hover , .buysell button:active, .buysell  .Mui-selected {
-  color: #cea62d!important;
+.buysell button:hover,
+.buysell button:active,
+.buysell .Mui-selected {
+  color: #cea62d !important;
 }
 
-.buysell .css-1eed5fa-MuiInputBase-root-MuiInput-root{
-  color: white!important;
+.buysell .css-1eed5fa-MuiInputBase-root-MuiInput-root {
+  color: white !important;
 }
 
-.buysell .Mui-focused{
-  color: #cea62d!important;
+.buysell .Mui-focused {
+  color: #cea62d !important;
 }
 
 .buysell .btn-yellow-cwe {
-  font-size: large!important;
+  font-size: large !important;
 }
+
 .buysell .btn-yellow-cwe:hover {
-  color: black!important;
+  color: black !important;
 }
 
 .buysell .MuiTab-root {
-  font-size: 20px!important;
-  font-weight: bold!important;
+  font-size: 20px !important;
+  font-weight: bold !important;
 }
 
-.SS .firstSS img{
+.SS .firstSS img {
   border: 2px solid #cea62dc4;
-    border-radius: 24px;
+  border-radius: 24px;
 }
 
 
@@ -43832,53 +43840,53 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-left: 4%;
 }
 
-.SS .borderWhite{
+.SS .borderWhite {
   border: 2px solid #fff;
-    border-radius: 24px;
+  border-radius: 24px;
 }
 
-.SS .borderWhite h3{
+.SS .borderWhite h3 {
   font-weight: 400;
   text-align: center;
 }
 
-.SS .borderWhite button{
+.SS .borderWhite button {
   font-size: 20px;
 }
 
-.SS h2{
+.SS h2 {
   font-weight: 400;
 }
 
-.CardSec .cryptCard{
+.CardSec .cryptCard {
   border-radius: 20px;
   border: 2px solid #646464;
 }
 
-.css-1aquho2-MuiTabs-indicator  {
-  background-color:  #cea62d!important;
+.css-1aquho2-MuiTabs-indicator {
+  background-color: #cea62d !important;
 }
 
 .CardSec {
   padding: 2%;
 }
 
-.CardSec .css-bhweh5-MuiTypography-root{
+.CardSec .css-bhweh5-MuiTypography-root {
   margin-left: 0;
-} 
+}
 
 .CryptoTable .MuiTableCell-root {
   color: white;
-  font-size: 1.2rem!important;
+  font-size: 1.2rem !important;
 }
 
-.CryptoTable .MuiTableRow-root:hover{
+.CryptoTable .MuiTableRow-root:hover {
   background: #423202;
   cursor: pointer;
 }
 
-.CryptoTable .MuiTableHead-root .MuiTableRow-root:hover{
-  background: #000!important;
+.CryptoTable .MuiTableHead-root .MuiTableRow-root:hover {
+  background: #000 !important;
 }
 
 .FAQSection .MuiTypography-root {
@@ -43890,39 +43898,39 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-bottom: 1px solid white;
 }
 
-.Start2Day{
+.Start2Day {
   background-color: #cea62d;
   padding: 2% 0;
 }
 
-.Start2Day .align-btn{
+.Start2Day .align-btn {
   text-align: center;
 }
 
-.Start2Day .align-btn .btn-black{
+.Start2Day .align-btn .btn-black {
   border-radius: 12px;
   margin: 2% 0;
-  padding: 1% 0!important;
+  padding: 1% 0 !important;
 }
 
 .Start2Day .btn-black {
-  background: #000!important;
+  background: #000 !important;
   color: white;
 }
 
-.Start2Day button{
+.Start2Day button {
   font-size: 1.6em;
 }
 
-.Start2Day h1{
+.Start2Day h1 {
   color: black;
 }
 
-.CryptoTable .MuiTypography-root{
-  font-size: 1.2rem!important;
+.CryptoTable .MuiTypography-root {
+  font-size: 1.2rem !important;
 }
 
-.CryptoTable .MuiSvgIcon-root{
+.CryptoTable .MuiSvgIcon-root {
   padding-bottom: 6%;
   width: 1.8em;
   height: 1.8em;
@@ -43934,36 +43942,172 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-top: 1px solid white;
 }
 
-.header-cwe .ImgPhn{
-  width: 50%!important;
+.header-cwe .ImgPhn {
+  width: 50% !important;
 }
 
-.header-cwe .headerMenu, .css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper{
-  top: 16px!important;
-  left: 7px!important;
-  width: 91%!important;
-  border: 1px solid white!important;
-  background-color: #000000!important;
+.header-cwe .headerMenu,
+.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+  top: 16px !important;
+  left: 7px !important;
+  width: 91% !important;
+  border: 1px solid white !important;
+  background-color: #000000 !important;
 }
 
-.headerMenu .MuiButtonBase-root{
-  color: white!important;
+.headerMenu .MuiButtonBase-root {
+  color: white !important;
 }
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+
   /* Styles for extra small devices */
-  .header-cwe .ImgPhn{
+  .header-cwe .ImgPhn {
+    width: 20% !important;
+  }
+
+  .bg-bitcoin h1,
+  .bg-bitcoin-2 h1,
+  .bg-bitcoin-3 h1 {
+    font-size: 18px !important;
+    line-height: 20px !important;
+  }
+
+  .pdg {
+    padding: 2.5rem 1.5rem !important;
+  }
+
+  .bg-bitcoin h5 {
+    font-size: 12px !important;
+  }
+
+  .bg-bitcoin-2 .d-flex-end p,
+  .bg-bitcoin-3 .d-flex-center p {
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .pdgn-2 .padding-phn {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  .bg-bitcoin-2 button {
+    font-size: 0.875rem;
+    padding: 1.5% 8% !important;
+  }
+
+  .bg-bitcoin-2 .btn-end {
+    padding: 0 !important;
+  }
+
+  .bg-bitcoin-3 .w-phn {
+    width: 75% !important;
+  }
+
+  .cryptosFlex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cryptosFlex .listC {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .css-o65z3l-MuiPaper-root-MuiCard-root {
+    width: 46% !important;
+    margin: 2%;
+  }
+
+  .CryptoTable .MuiTypography-root,
+  .CryptoTable .MuiTableCell-root {
+    font-size: 0.6rem !important;
+    padding: 4px;
+  }
+
+  .css-1ex1afd-MuiTableCell-root {
+    margin: 2% !important;
+  }
+
+  .CryptoTable .MuiSvgIcon-root {
+    display: none!important;
+  }
+
+  .bg-bitcoin-3 .d-flex-center {
+    padding: 4px !important;
+  }
+
+  .CardSec {
+    flex-wrap: wrap;
+  }
+
+  .Start2Day button {
+    font-size: 0.6em;
+  }
+
+  .footer-cwe .links-btm a {
+    font-size: 6px !important;
+  }
+
+  .css-1821gv5 {
+    gap: 4px!important;
+  }
+
+  .css-hyum1k-MuiToolbar-root{
+    padding-left: 4%!important;
+    padding-right: 4%!important;
+  }
+
+  .footer-cwe button{
+    font-size: 5px;
+    padding: 2px !important;
+  }
+
+  .footer-cwe .widthSh{
+    width: 50%!important;
+  }
+
+  .mt-4 {
+    margin-top: 0.5rem !important;
+  }
+
+  .footer-cwe .widthSh2{
+    width: 30%!important;
+  }
+
+  .footer-cwe .widthSh3{
     width: 20%!important;
-}
+  }
+
+  .footer-cwe .css-i4bv87-MuiSvgIcon-root {
+    font-size: 0.5em;
+  }
+
+  .SS .firstSS {
+    margin-left: 4%;
+    margin-bottom: 8%;
+  }
+
+  .cryptosFlex .justify-content-c {
+    justify-content: center !important;
+  }
+
+  .cryptosFlex .listC2 {
+    width: 90% !important;
+  }
+
+
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
+
   /* Styles for small devices */
-  .header-cwe .ImgPhn{
-    width: 25%!important;
-}
+  .header-cwe .ImgPhn {
+    width: 25% !important;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */

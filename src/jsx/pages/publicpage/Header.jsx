@@ -12,6 +12,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import logo from '../../../assets/images/publicpages/CWE-Logo1.png';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
     const theme = useTheme();
@@ -24,6 +25,23 @@ const Header = () => {
 
     const handleClose = () => {
         setAnchorEl(null);
+    };
+
+    const navigate = useNavigate();
+
+    const handleNavigationSignUp = () => {
+        navigate('/register');
+    };
+
+    const handleNavigationLogIn = () => {
+        navigate('/login');
+    };
+
+    const scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
     };
 
     return (
@@ -41,17 +59,14 @@ const Header = () => {
                 {/* Navigation Links for Desktop */}
                 {!isMobile && (
                     <Box sx={{ display: 'flex', flexGrow: 1, justifyContent: 'left', gap: 3 }} className='w-25 mt-3'>
-                        <Link href="#" color="inherit" underline="none">
+                        <Link href="/#markets-section" color="inherit" underline="none">
                             Markets
                         </Link>
-                        <Link href="#" color="inherit" underline="none">
+                        <Link href="/#buy-crypto-section" color="inherit" underline="none">
                             Buy Crypto
                         </Link>
-                        <Link href="#" color="inherit" underline="none">
+                        <Link href="/#earn-section" color="inherit" underline="none">
                             Earn
-                        </Link>
-                        <Link href="#" color="inherit" underline="none">
-                            Contact
                         </Link>
                     </Box>
                 )}
@@ -96,18 +111,17 @@ const Header = () => {
                                     <CloseIcon />
                                 </IconButton>
                             </MenuItem>
-                            <MenuItem onClick={handleClose}><Link href="#" color="inherit" underline="none">Markets</Link></MenuItem>
-                            <MenuItem onClick={handleClose}><Link href="#" color="inherit" underline="none">Buy Crypto</Link></MenuItem>
-                            <MenuItem onClick={handleClose}><Link href="#" color="inherit" underline="none">Earn</Link></MenuItem>
-                            <MenuItem onClick={handleClose}><Link href="#" color="inherit" underline="none">Contact</Link></MenuItem>
-                            <MenuItem onClick={handleClose}><Button variant="outlined" color="inherit" className='btn-white-cwe padding-cstm-2'>Login</Button></MenuItem>
-                            <MenuItem onClick={handleClose}><Button variant="contained" className='btn-yellow-cwe padding-cstm-2'>Sign Up</Button></MenuItem>
+                            <MenuItem onClick={handleClose}><Link href="/#markets-section" color="inherit" underline="none">Markets</Link></MenuItem>
+                            <MenuItem onClick={handleClose}><Link href="/#buy-crypto-section" color="inherit" underline="none">Buy Crypto</Link></MenuItem>
+                            <MenuItem onClick={handleClose}><Link href="/#earn-section" color="inherit" underline="none">Earn</Link></MenuItem>
+                            <MenuItem onClick={handleClose}><Button variant="outlined" color="inherit" className='btn-white-cwe padding-cstm-2' onClick={handleNavigationLogIn}>Login</Button></MenuItem>
+                            <MenuItem onClick={handleClose}><Button variant="contained" className='btn-yellow-cwe padding-cstm-2' onClick={handleNavigationSignUp}>Sign Up</Button></MenuItem>
                         </Menu>
                     </>
                 ) : (
                     <Box sx={{ display: 'flex', gap: 2 }} className='w-65 justify-content-end'>
-                        <Button variant="outlined" color="inherit" className='btn-white-cwe padding-cstm-2'>Login</Button>
-                        <Button variant="contained" className='btn-yellow-cwe padding-cstm-2'>Sign Up</Button>
+                        <Button variant="outlined" color="inherit" className='btn-white-cwe padding-cstm-2'  onClick={handleNavigationLogIn}>Login</Button>
+                        <Button variant="contained" className='btn-yellow-cwe padding-cstm-2' onClick={handleNavigationSignUp}>Sign Up</Button>
                     </Box>
                 )}
             </Toolbar>

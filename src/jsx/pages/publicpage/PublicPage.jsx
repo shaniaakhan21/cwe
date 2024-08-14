@@ -7,10 +7,14 @@ import ReferralImg from '../../../assets/images/publicpages/ss-refer.jpg'
 import RewardImg from '../../../assets/images/publicpages/rewards.png'
 import CryptoCard from "./CryptoCard";
 import CryptoTable from "./CryptoTable";
-import FAQAccordion from "./FAQAccordion";
+import { useNavigate } from 'react-router-dom';
 
 const PublicPage = () => {
+    const navigate = useNavigate();
 
+    const handleNavigation = () => {
+        navigate('/register');
+    };
 
     return (
         <>
@@ -27,7 +31,7 @@ const PublicPage = () => {
                             </h5>
                         </div>
                         <div className="py-3">
-                            <Button variant="contained" className='btn-yellow-cwe padding-cstm-2'><b>Get Started</b></Button>
+                            <Button variant="contained" className='btn-yellow-cwe padding-cstm-2' onClick={handleNavigation}><b>Get Started</b></Button>
                         </div>
                     </div>
                 </div>
@@ -42,7 +46,7 @@ const PublicPage = () => {
                             </h1>
                         </div>
                         <div className="w-100 justify-content-end d-flex-end">
-                            <div className="w-65 py-5">
+                            <div className="w-65 py-5 padding-phn">
                                 <p>
                                     At CWE Buster, we&apos;re not just about trading;
                                     we&apos;re about creating seamless and profitable experiences.
@@ -51,7 +55,7 @@ const PublicPage = () => {
                                 </p>
                             </div>
                             <div className="py-3 w-50 btn-end">
-                                <Button variant="contained" className='btn-yellow-cwe padding-cstm-2'><b>Trade Now!</b></Button>
+                                <Button variant="contained" className='btn-yellow-cwe padding-cstm-2' onClick={handleNavigation}><b>Trade Now!</b></Button>
                             </div>
                         </div>
                     </div>
@@ -59,7 +63,7 @@ const PublicPage = () => {
             </section>
 
             <section>
-                <div className="bg-bitcoin-3 mb-4">
+                <div className="bg-bitcoin-3 mb-4" id="buy-crypto-section">
                     <div className="pdgn-3">
                         <div>
                             <h1>
@@ -67,21 +71,21 @@ const PublicPage = () => {
                             </h1>
                         </div>
                         <div className="w-100 justify-content-center d-flex-center">
-                            <div className="w-50 py-3">
+                            <div className="w-50 w-phn py-3">
                                 <p>
                                     Subscribe and unlock a world of trading possibilities. Request as many trade setups as you need,
                                     and receive them within just a few business days. Our commitment to your satisfaction means we offer unlimited revisions until you&apos;re completely happy with the outcome.
                                 </p>
                             </div>
                         </div>
-                        <div className="w-100 d-flex">
-                            <div className="w-50 mx-5  d-flex justify-content-center">
-                                <div className="w-65">
+                        <div className="w-100 d-flex cryptosFlex">
+                            <div className="w-50 mx-5  d-flex justify-content-center listC">
+                                <div className="w-65 listC2">
                                     <CryptoList />
                                 </div>
                             </div>
-                            <div className="w-50 mx-5  d-flex justify-content-start">
-                                <div className="w-65">
+                            <div className="w-50 mx-5  d-flex justify-content-start listC justify-content-c">
+                                <div className="w-65 listC2">
                                     <BuySell />
                                 </div>
                             </div>
@@ -90,7 +94,7 @@ const PublicPage = () => {
                 </div>
             </section>
 
-            <section className="mb-5">
+            <section className="mb-5" id="earn-section">
                 <div className="bg-bitcoin-3 SS">
                     <div className="pdgn-3">
                         <div>
@@ -99,21 +103,21 @@ const PublicPage = () => {
                             </h1>
                         </div>
                         <div className="w-100 justify-content-center d-flex-center">
-                            <div className="w-35 py-3">
+                            <div className="w-35 py-3 w-phn">
                                 <p>
                                     Simple & Secure. Refer your friends using  referral link and earn as soon as they start trading.
                                 </p>
                             </div>
                         </div>
-                        <div className="w-100 justify-content-center d-flex row-flex ">
-                            <div className="w-25 d-flex justify-content-start firstSS">
+                        <div className="w-100 justify-content-center d-flex row-flex cryptosFlex">
+                            <div className="w-25 d-flex justify-content-start firstSS listC2">
                                 <img
                                     src={ReferralImg}
                                     className="w-100"
                                     alt=""
                                 />
                             </div>
-                            <div className="w-25 d-flex col-flex justify-content-between align-items-center borderWhite py-5 px-2">
+                            <div className="w-25 d-flex col-flex justify-content-between align-items-center borderWhite py-5 px-2 listC2">
                                 <h3>
                                     <b>Copy </b>and <b>Share</b>  referral link with your friends and
                                     <span style={{ color: '#cea62d' }}><b> earn points </b></span>
@@ -125,7 +129,7 @@ const PublicPage = () => {
                                     alt=""
                                 />
                                 <div className='w-100 px-4'>
-                                    <Button variant="contained" className='btn-yellow-cwe padding-cstm-2 w-100'>
+                                    <Button variant="contained" className='btn-yellow-cwe padding-cstm-2 w-100' onClick={handleNavigation}>
                                         Get Started Now!
                                     </Button>
                                 </div>
@@ -135,7 +139,7 @@ const PublicPage = () => {
                 </div>
             </section>
 
-            <section className="mt-5 mb-5">
+            <section className="mt-5 mb-5" id="markets-section">
                 <div className="bg-bitcoin-3 SS">
                     <div className="pdgn-3">
                         <div>
@@ -144,7 +148,7 @@ const PublicPage = () => {
                             </h1>
                         </div>
                         <div className="w-100 justify-content-center d-flex-center">
-                            <div className="w-35 pt-3 pb-2">
+                            <div className="w-35 pt-3 pb-2 w-phn">
                                 <p>
                                     Watch the Latest Crypto trends and stay updated on top movers and do some smart trading over here.
                                 </p>
@@ -194,8 +198,8 @@ const PublicPage = () => {
                             </h1>
                         </div>
                         <div className="align-btn">
-                            <Button variant="contained" className='btn-black padding-cstm-2 w-25'>
-                                Sign Up Now!!
+                            <Button variant="contained" className='btn-black padding-cstm-2 w-25' onClick={handleNavigation}>
+                                Sign Up Now!
                             </Button>
                         </div>
                     </div>

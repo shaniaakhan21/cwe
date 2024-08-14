@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Tabs, Tab, Box, TextField, Button, MenuItem } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const BuySell = () => {
     const [tabIndex, setTabIndex] = useState(0);
@@ -12,6 +13,11 @@ const BuySell = () => {
 
     const currencies = ['USD', 'EUR', 'GBP'];
     const cryptos = ['BTC', 'ETH', 'USDT'];
+    const navigate = useNavigate();
+
+    const handleNavigationLogIn = () => {
+        navigate('/login');
+    };
 
     return (
         <div className='cryptos buysell py-3 px-5 mb-5 mt-2'>
@@ -115,7 +121,7 @@ const BuySell = () => {
                 />
                 <br/>
                 <div className='w-100 mt-10 mb-2'>
-                    <Button variant="contained" className='btn-yellow-cwe padding-cstm-2 w-100'>
+                    <Button variant="contained" className='btn-yellow-cwe padding-cstm-2 w-100' onClick={handleNavigationLogIn}>
                         Log In / Sign Up
                     </Button>
                 </div>
