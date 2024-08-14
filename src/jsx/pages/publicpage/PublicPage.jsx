@@ -170,7 +170,7 @@ const PublicPage = () => {
                 </div>
             </section>
 
-            <section className="mt-5 mb-5">
+            {/* <section className="mt-5 mb-5">
                 <div className="bg-bitcoin-3 SS">
                     <div className="pdgn-3">
                         <div>
@@ -183,7 +183,7 @@ const PublicPage = () => {
                         <FAQAccordion />
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             <section className="mt-5 Start2Day">
                 <div className="bg-bitcoin-3 SS">
