@@ -5,6 +5,7 @@ import axiosInstance from '../../services/AxiosInstance';
 import { isAxiosError } from 'axios';
 import TradingTable from './TradingTable';
 import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
+import Swal from 'sweetalert2';
 
 
 const Trading = () => {
@@ -17,9 +18,7 @@ const Trading = () => {
     const [investment, setInvesment] = useState(0);
     const [errorSaving, setErrorSaving] = useState('');
     const [saving, setSaving] = useState(false);
-
-    console.log(selectedOption)
-
+    const [meStopGain, setMeStopGain] = useState(0);
 
     const getCoins = async () => {
         try {
@@ -57,10 +56,66 @@ const Trading = () => {
         }
     }
 
+    const [me, setMe] = useState(null)
+
+
+    const fetchMe = async () => {
+
+        try {
+            const token = localStorage.getItem('token')
+            if (token) {
+                const response = await axiosInstance.get("/api/user/me", {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+
+                setMe(response.data.user)
+                setMeStopGain(response.data.user.stopgain)
+            }
+        } catch (error) {
+            // do nothing
+            console.log(error)
+        }
+    }
+
+    console.log(me)
+
     useEffect(() => {
         getCoins()
         getUSDTBalance()
+        fetchMe();
     }, [])
+
+    const updateStopGain = async () => {
+        try {
+            const token = localStorage.getItem('token')
+            if (token) {
+                await axiosInstance.post("/api/user/updateStopGain", {
+                    stopgain: meStopGain
+                },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    });
+            }
+        } catch (error) {
+            if (isAxiosError(error)) {
+                const { response } = error;
+                if (response?.status === 400) {
+                    const { data } = response;
+                    Swal.fire({
+                        title: "Error",
+                        text: data.message,
+                        icon: 'error',
+                        showCancelButton: false,
+                    })
+                }
+            }
+        }
+        setSaving(false)
+    }
 
     const createHybrid = async () => {
         setSaving(true)
@@ -73,11 +128,11 @@ const Trading = () => {
                     stopgain,
                     stoploss
                 },
-                     {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                });
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    });
                 setSelectedOption(null)
                 setInvesment(0)
                 setStopGain(3)
@@ -85,11 +140,11 @@ const Trading = () => {
                 await getHybridTrades()
             }
         } catch (error) {
-            if(isAxiosError(error)){
+            if (isAxiosError(error)) {
                 const { response } = error;
                 if (response?.status === 400) {
-                  const { data } = response;
-                  setErrorSaving(data.message);
+                    const { data } = response;
+                    setErrorSaving(data.message);
                 }
             }
         }
@@ -115,36 +170,36 @@ const Trading = () => {
 
     const customStyles = {
         control: (provided, state) => ({
-          ...provided,
-          backgroundColor: '#cea62d80', // Background color of the control
-          borderColor: state.isFocused ? '#cea62d80' : '#7e7e7e', // Border color based on focus state
-          boxShadow: state.isFocused ? '0 0 0 1px #cea62d80' : null, // Box shadow on focus
-          '&:hover': {
-            borderColor: '#cea62d80' // Border color on hover
-          },
-          color: '#7e7e7e', // Text color
-          padding: '0 15px', // Padding inside the control
+            ...provided,
+            backgroundColor: '#cea62d80', // Background color of the control
+            borderColor: state.isFocused ? '#cea62d80' : '#7e7e7e', // Border color based on focus state
+            boxShadow: state.isFocused ? '0 0 0 1px #cea62d80' : null, // Box shadow on focus
+            '&:hover': {
+                borderColor: '#cea62d80' // Border color on hover
+            },
+            color: '#7e7e7e', // Text color
+            padding: '0 15px', // Padding inside the control
         }),
         placeholder: (provided) => ({
-          ...provided,
-          color: '#7e7e7e', // Placeholder text color
+            ...provided,
+            color: '#7e7e7e', // Placeholder text color
         }),
         singleValue: (provided) => ({
-          ...provided,
-          color: '#fff', // Selected option text color
+            ...provided,
+            color: '#fff', // Selected option text color
         }),
         menu: (provided) => ({
-          ...provided,
-          borderColor: '#cea62d80',
-          border: '1px solid #cea62d80',
-          backgroundColor: '#cea62d80'
+            ...provided,
+            borderColor: '#cea62d80',
+            border: '1px solid #cea62d80',
+            backgroundColor: '#cea62d80'
         }),
         option: (provided, state) => ({
-          ...provided,
-          backgroundColor: state.isFocused ? '#000' : '#cea62d80', // Background color on hover
-          color: state.isFocused ? '#fff' : '#fff', // Text color on hover
+            ...provided,
+            backgroundColor: state.isFocused ? '#000' : '#cea62d80', // Background color on hover
+            color: state.isFocused ? '#fff' : '#fff', // Text color on hover
         }),
-      };
+    };
 
     return (
         <>
@@ -157,16 +212,16 @@ const Trading = () => {
                         </div>
                         <div className="card-body pt-2">
 
-                        <Alert variant="danger" show={errorSaving.length > 0}>
-                            <strong>Error! </strong> {errorSaving}
-                        </Alert>
+                            <Alert variant="danger" show={errorSaving.length > 0}>
+                                <strong>Error! </strong> {errorSaving}
+                            </Alert>
                             <div className="d-flex align-items-center justify-content-between mt-3 mb-2">
                                 <span className="small text-muted">Available Balance</span>
 
                                 {balance === undefined && (
-                                <div className="spinner-border spinner-border-sm" role="status">
-                                    <span className="visually-hidden">Loading...</span>
-                                </div>
+                                    <div className="spinner-border spinner-border-sm" role="status">
+                                        <span className="visually-hidden">Loading...</span>
+                                    </div>
                                 )}
                                 {(balance !== null && balance !== undefined) && (
                                     <span className="text-dark">{balance} USDT</span>
@@ -190,25 +245,25 @@ const Trading = () => {
 
                                 <div className="input-group mb-3">
                                     <span className="input-group-text">Investment</span>
-                                    <input type="text" value={investment} onChange={(e) => {setInvesment(e.target.value)} } className="form-control" />
+                                    <input type="text" value={investment} onChange={(e) => { setInvesment(e.target.value) }} className="form-control" />
                                     <span className="input-group-text">USDT</span>
                                 </div>
 
                                 <div className="input-group mb-3">
                                     <span className="input-group-text">Stop Gain</span>
-                                    <input type="text" value={stopgain} onChange={(e) => {setStopGain(e.target.value)} } className="form-control" />
+                                    <input type="text" value={stopgain} onChange={(e) => { setStopGain(e.target.value) }} className="form-control" />
                                     <span className="input-group-text">%</span>
                                 </div>
 
                                 <div className="input-group mb-3">
                                     <span className="input-group-text">Stop Loss</span>
-                                    <input type="text" value={stoploss} onChange={(e) => {setStopLoss(e.target.value)} }  className="form-control" />
+                                    <input type="text" value={stoploss} onChange={(e) => { setStopLoss(e.target.value) }} className="form-control" />
                                     <span className="input-group-text">%</span>
                                 </div>
 
 
                                 <div className="mt-3 d-flex justify-content-between">
-                                    <Button disabled={saving || !balance} onClick={() =>{createHybrid()}} variant="success" className="btn btn-sm  text-uppercase  btn-block">Start Hybrid</Button>
+                                    <Button disabled={saving || !balance} onClick={() => { createHybrid() }} variant="success" className="btn btn-sm  text-uppercase  btn-block">Start Hybrid</Button>
                                 </div>
                             </form>
                         </div>
@@ -216,17 +271,32 @@ const Trading = () => {
                 </div>
 
                 <div className="col-xl-8">
-                <div className="card">
-                    {selectedOption && (
-                        <AdvancedRealTimeChart symbol={`${selectedOption.label}USDT`} autosize></AdvancedRealTimeChart>
-                    )}
-                    {!selectedOption && (
-                        <div style={{textAlign: "center", marginTop: 50}}>
- <h3>Select a Coin to see the graph</h3>
+                    <div className="card">
+                        {selectedOption && (
+                            <AdvancedRealTimeChart symbol={`${selectedOption.label}USDT`} autosize></AdvancedRealTimeChart>
+                        )}
+                        {!selectedOption && (
+                            <div style={{ textAlign: "center", marginTop: 50 }}>
+                                <h3>Select a Coin to see the graph</h3>
                             </div>
-                       
-                    )}
+
+                        )}
+                    </div>
                 </div>
+
+                <div className="col-xl-12">
+                    <div className="card">
+                        <div className="card-header border-0 pb-0">
+                            <h4 className="card-title mb-0">Stop Profit Global</h4>
+                        </div>
+                        <div className="card-body pt-2" style={{ fontSize: 22 }}>
+                            Current Global Profit: <span style={{ color: Number(me?.profit) > 0 ? 'green' : "red" }}>{Number(me?.profit).toFixed(2)} %</span>
+                            <div style={{marginTop: 10}}>
+                                Closes at <input style={{width: 80, textAlign: "center"}} type="text" value={meStopGain} onChange={(e) => { setMeStopGain(e.target.value) }}  />
+                                <Button style={{marginLeft: 20}} onClick={() => { updateStopGain() }} variant="success" className="btn btn-sm  text-uppercase ">Save</Button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="col-xl-12">
@@ -236,7 +306,7 @@ const Trading = () => {
                                 <h4 className="card-title">My Orders</h4>
                                 <nav>
                                     <Nav as="div" className="nav-pills light" >
-                                        <Nav.Link onClick={() => getHybridTrades() } as="button" eventKey="Open">Refresh</Nav.Link>
+                                        <Nav.Link onClick={() => { getHybridTrades(); fetchMe(); }} as="button" eventKey="Open">Refresh</Nav.Link>
                                     </Nav>
                                 </nav>
                             </div>
