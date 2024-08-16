@@ -36,14 +36,16 @@
     .MuiDataGrid-sortIcon{
         display: none!important;
     }
-  }
 
-  @media (max-width: 600px) {
     .MuiDataGrid-cell[data-field='estado'] {
-      flex: 1 !important;
-    }
-  
-    .MuiDataGrid-cell[data-field='coin'] {
-      flex: 1 !important;
-    }
+        flex: 1 !important;
+      }
+    
+      .MuiDataGrid-cell[data-field='coin'] {
+        flex: 1 !important;
+      }
+
+      .MuiDataGrid-cell{
+        padding: 0 1.1%!important;
+      }
   }

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { DataGrid } from '@mui/x-data-grid';
 import './TradingTable.css';
@@ -8,6 +8,12 @@ import Swal from 'sweetalert2';
 
 const TradingTable = (params) => {
     const isMobile = useMediaQuery('(max-width:600px)');
+    const [tableWidth, setTableWidth] = useState('130%');
+
+    useEffect(() => {
+        const hasPendingBuy = params.rows.some((row) => row.mercado && row.estado === 97);
+        setTableWidth(hasPendingBuy ? '200%' : '115%');
+    }, [params.rows]);
 
     const verifyBuyNow = async (id) => {
         Swal.fire({
@@ -60,7 +66,7 @@ const TradingTable = (params) => {
 
 
     const columns = [
-        { field: 'id', headerName: 'ID', flex: isMobile ? 0.6 : 0.4, hide: true, },
+        { field: 'id', headerName: 'ID', flex: isMobile ? 1 : 0.4, hide: true, },
     
         {
             field: 'estado',
@@ -86,7 +92,7 @@ const TradingTable = (params) => {
                 }
 
                 if (params.value === 4) {
-                    return <Badge style={{ cursor: "pointer", backgroundColor: 'green' }} bg="">Completed <i className='fa fa-circle-info' /></Badge>
+                    return <Badge className='p-1' style={{ cursor: "pointer", backgroundColor: 'green' }} bg="">Completed <i className='fa fa-circle-info' /></Badge>
                 }
                 
     
@@ -95,7 +101,7 @@ const TradingTable = (params) => {
         },
         { field: 'coin', headerName: 'Coin', flex: isMobile ? 0.6 : 0.4, },
         {
-            field: 'percent', headerName: 'Profit', flex: 0.5,
+            field: 'percent', headerName: 'Profit', flex: isMobile ? 0.6 : 0.4,
             cellClassName: (params) => {
                 if (params.value < 0) {
                     return 'negative-trade trade';
@@ -114,7 +120,7 @@ const TradingTable = (params) => {
             headerName: 'Action',
             description: 'This column has a value getter and is not sortable.',
             sortable: false,
-            flex: isMobile ? 0.6 : 1,
+            flex: isMobile ? 0.7 : 1,
             renderCell: (params) => {
                 if (params.row.estado === 97) {
                     return <div>
@@ -124,7 +130,7 @@ const TradingTable = (params) => {
                 }
                 if (params.row.estado === 1) {
                     return <div>
-                        <Button onClick={() => {verifySellNow(params.row.id)}} style={{ marginLeft: 10 }} size='xs' variant='danger'>Sell Now</Button>
+                        <Button onClick={() => {verifySellNow(params.row.id)}} className='m-1' size='xs' variant='danger'>Sell Now</Button>
                     </div>
                 }                
                 return <></>
@@ -191,7 +197,7 @@ const TradingTable = (params) => {
 
 
     return (
-        <div style={{ width: '100%' }}>
+        <div style={{ width: isMobile ? tableWidth : '100%' }}>
             <DataGrid
                 rows={params.rows}
                 columns={columns}
