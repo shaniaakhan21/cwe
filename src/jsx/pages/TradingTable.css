@@ -18,15 +18,34 @@
     outline: none !important;
 }
 
-.css-14mxsc7-MuiDataGrid-root {
+.MuiDataGrid-root {
     border-color: #cea62d!important;
     color: white!important;
 }
 
-.css-14mxsc7-MuiDataGrid-root .MuiDataGrid-container--top [role=row] {
-    background: #cea62d!important;
-}
+.MuiDataGrid-root {
+    --DataGrid-containerBackground: #cea62d!important;
+    --DataGrid-rowBorderColor: #cea62d!important;
+  }
 
 .css-1oudwrl::after {
     background-color: #cea62d!important;
 }
+
+@media (max-width: 600px) {
+    .MuiDataGrid-sortIcon{
+        display: none!important;
+    }
+
+    .MuiDataGrid-cell[data-field='estado'] {
+        flex: 1 !important;
+      }
+    
+      .MuiDataGrid-cell[data-field='coin'] {
+        flex: 1 !important;
+      }
+
+      .MuiDataGrid-cell{
+        padding: 0 1.1%!important;
+      }
+  }
