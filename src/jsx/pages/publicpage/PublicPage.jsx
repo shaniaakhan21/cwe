@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import Button from '@mui/material/Button';
 import CryptoList from "./TopCrypto";
 import BuySell from "./BuySell";
-import ReferralImg from '../../../assets/images/publicpages/ss-refer.jpg'
+import ReferralImg from '../../../assets/images/publicpages/ss-refer.png'
 import RewardImg from '../../../assets/images/publicpages/rewards.png'
 import CryptoCard from "./CryptoCard";
 import CryptoTable from "./CryptoTable";
