@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-
+import useMediaQuery from '@mui/material/useMediaQuery';
 import { DataGrid } from '@mui/x-data-grid';
 import './TradingTable.css';
 import axiosInstance from '../../services/AxiosInstance';
@@ -7,7 +7,7 @@ import { Badge, Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 
 const TradingTable = (params) => {
-
+    const isMobile = useMediaQuery('(max-width:600px)');
 
     const verifyBuyNow = async (id) => {
         Swal.fire({
@@ -60,7 +60,7 @@ const TradingTable = (params) => {
 
 
     const columns = [
-        { field: 'id', headerName: 'ID', flex: 0.4, hide: true, },
+        { field: 'id', headerName: 'ID', flex: isMobile ? 0.6 : 0.4, hide: true, },
     
         {
             field: 'estado',
@@ -93,7 +93,7 @@ const TradingTable = (params) => {
                 return <></>
             }
         },
-        { field: 'coin', headerName: 'Coin', flex: 0.4, },
+        { field: 'coin', headerName: 'Coin', flex: isMobile ? 0.6 : 0.4, },
         {
             field: 'percent', headerName: 'Profit', flex: 0.5,
             cellClassName: (params) => {
@@ -114,7 +114,7 @@ const TradingTable = (params) => {
             headerName: 'Action',
             description: 'This column has a value getter and is not sortable.',
             sortable: false,
-            flex: 1,
+            flex: isMobile ? 0.6 : 1,
             renderCell: (params) => {
                 if (params.row.estado === 97) {
                     return <div>
