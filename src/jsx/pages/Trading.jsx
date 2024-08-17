@@ -281,7 +281,7 @@ const Trading = () => {
                         )}
                         {!selectedOption && (
                             <div style={{ textAlign: "center", marginTop: 50 }}>
-                                <h3>Select a Coin to see the graph</h3>
+                                <h5>Select a Coin to see the graph</h5>
                             </div>
 
                         )}
@@ -298,7 +298,7 @@ const Trading = () => {
                         )}
                         {!selectedOption && (
                             <div style={{ textAlign: "center", marginTop: 50 }}>
-                                <h3>Select a Coin to see the graph</h3>
+                                <h5>Select a Coin to see the graph</h5>
                             </div>
 
                         )}
