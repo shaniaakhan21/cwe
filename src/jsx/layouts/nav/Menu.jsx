@@ -31,7 +31,7 @@ export const MenuList = [
         to: 'leaders'
     },
     {
-        title: 'feed',	
+        title: 'Feed',	
         classsChange: 'mm-collapse',		
         iconStyle: <i className="material-symbols-outlined">dashboard</i>,
         to: 'Feed'
