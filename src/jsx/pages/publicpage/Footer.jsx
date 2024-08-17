@@ -36,19 +36,17 @@ const Footer = () => {
                             <Link href="#" color="inherit" underline="none">
                                 Home
                             </Link>
-                            <Link href="#" color="inherit" underline="none">
+                            <Link href="/#markets-section" color="inherit" underline="none">
                                 Markets
                             </Link>
-                            <Link href="#" color="inherit" underline="none">
-                                Earn
-                            </Link>
+
                         </Box>
                         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }} className='links-btm'>
-                            <Link href="#" color="inherit" underline="none">
-                                Contact
-                            </Link>
-                            <Link href="#" color="inherit" underline="none">
+                            <Link href="/#buy-crypto-section" color="inherit" underline="none">
                                 Buy Crypto
+                            </Link>
+                            <Link href="/#earn-section" color="inherit" underline="none">
+                                Earn
                             </Link>
                         </Box>
                     </Box>

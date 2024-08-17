@@ -37,13 +37,6 @@ const Header = () => {
         navigate('/login');
     };
 
-    const scrollToSection = (sectionId) => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
     return (
         <AppBar position="static" color="transparent" elevation={0} className='header-cwe'>
             <Toolbar>
