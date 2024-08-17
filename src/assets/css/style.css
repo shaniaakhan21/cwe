@@ -43955,7 +43955,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .header-cwe .headerMenu,
-.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+.MuiPopover-paper {
   top: 16px !important;
   left: 7px !important;
   width: 91% !important;
@@ -44024,9 +44024,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin: 0 !important;
   }
 
-  .css-o65z3l-MuiPaper-root-MuiCard-root {
+  .CardSec .MuiCard-root {
     width: 46% !important;
-    margin: 2%;
+    margin: 2% !important;
   }
 
   .CryptoTable .MuiTypography-root,
@@ -44089,7 +44089,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     width: 20%!important;
   }
 
-  .footer-cwe .css-i4bv87-MuiSvgIcon-root {
+  .footer-cwe .MuiSvgIcon-root {
     font-size: 0.5em;
   }
 
