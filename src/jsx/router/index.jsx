@@ -27,6 +27,7 @@ import Error500 from './../pages/error/Error500'
 import Error503 from './../pages/error/Error503'
 import RightWalletBar from "../layouts/nav/RightWalletBar";
 import { ToastContainer } from "react-toastify";
+import PublicPage from '../pages/publicpage/PublicPage'
 
 
 import Login from "./../pages/authentication/Login";
@@ -50,6 +51,8 @@ const Markup = () => {
     { url: "empty-page", component: <EmptyPage /> },
   ]
 
+  const token = localStorage.getItem('token');
+
   return (
     <>
       <Routes>
@@ -62,11 +65,15 @@ const Markup = () => {
         <Route path='/page-error-404' element={<Error404 />} />
         <Route path='/page-error-500' element={<Error500 />} />
         <Route path='/page-error-503' element={<Error503 />} />
-        <Route element={<MainLayout />} >
-          <Route path='/' element={<Navigate to="/dashboard" replace />} />
-          <Route path='/dashboard' element={<Home />} />
-          <Route path='/index-2' element={<DashboardDark />} />
-        </Route>
+        {token ? (
+          <Route element={<MainLayout />}>
+            <Route path='/' element={<Navigate to="/dashboard" replace />} />
+            <Route path='/dashboard' element={<Home />} />
+            <Route path='/index-2' element={<DashboardDark />} />
+          </Route>
+        ) : (
+          <Route path='/' element={<PublicPage />} />
+        )}
         <Route element={<MainLayout2 />} >
           {allroutes.map((data, i) => (
             <Route
