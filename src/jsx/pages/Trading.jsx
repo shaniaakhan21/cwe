@@ -7,10 +7,13 @@ import TradingTable from './TradingTable';
 import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
 import Swal from 'sweetalert2';
 import { TechnicalAnalysis } from "react-ts-tradingview-widgets";
+import { useParams } from 'react-router-dom';
 
 
 const Trading = () => {
 
+    
+    const { mercado } = useParams();
     const [selectedOption, setSelectedOption] = useState(null);
     const [options, setOptions] = useState([]);
     const [stopgain, setStopGain] = useState(3);
@@ -20,6 +23,12 @@ const Trading = () => {
     const [errorSaving, setErrorSaving] = useState('');
     const [saving, setSaving] = useState(false);
     const [meStopGain, setMeStopGain] = useState(0);
+
+    useEffect(() => {
+        if(mercado){
+            setSelectedOption({ value: mercado, label: mercado.split("-")[1] })
+        }
+    }, [mercado])
 
     const getCoins = async () => {
         try {
@@ -79,8 +88,6 @@ const Trading = () => {
             console.log(error)
         }
     }
-
-    console.log(me)
 
     useEffect(() => {
         getCoins()

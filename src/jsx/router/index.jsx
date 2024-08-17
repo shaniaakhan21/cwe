@@ -40,13 +40,16 @@ import Network from "../pages/Network";
 import Users from "../pages/Users";
 import Sales from "../pages/Sales";
 import Leaders from "../pages/Leaders";
+import Feed from "../pages/Feed";
 
 const Markup = () => {
   const allroutes = [
     { url: "trading", component: <Trading /> },
+    { url: "trading/:mercado", component: <Trading /> },
     { url: "exchanges", component: <Exchanges /> },
     { url: "upgrade", component: <Upgrade /> },
     { url: "network", component: <Network /> },
+    { url: "feed", component: <Feed /> },
     { url: "leaders", component: <Leaders /> },
     { url: "users", component: <Users /> },
     { url: "sales", component: <Sales /> },
