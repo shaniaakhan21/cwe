@@ -6,6 +6,7 @@ import { isAxiosError } from 'axios';
 import TradingTable from './TradingTable';
 import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
 import Swal from 'sweetalert2';
+import { TechnicalAnalysis } from "react-ts-tradingview-widgets";
 
 
 const Trading = () => {
@@ -205,7 +206,7 @@ const Trading = () => {
         <>
             <div className="row">
 
-                <div className="col-xl-4">
+                <div className="col-xl-3">
                     <div className="card">
                         <div className="card-header border-0 pb-0">
                             <h4 className="card-title mb-0">New Hybrid</h4>
@@ -270,10 +271,13 @@ const Trading = () => {
                     </div>
                 </div>
 
-                <div className="col-xl-8">
-                    <div className="card">
+                <div className="col-xl-3">
+                    <div className="card" style={{height: 600}}>
                         {selectedOption && (
-                            <AdvancedRealTimeChart symbol={`${selectedOption.label}USDT`} autosize></AdvancedRealTimeChart>
+                            <>
+                            <TechnicalAnalysis symbol={`${selectedOption.label}USDT`} colorTheme="dark" width="100%"></TechnicalAnalysis>
+                            </>
+                            
                         )}
                         {!selectedOption && (
                             <div style={{ textAlign: "center", marginTop: 50 }}>
@@ -283,6 +287,29 @@ const Trading = () => {
                         )}
                     </div>
                 </div>
+
+                <div className="col-xl-6">
+                    <div className="card" style={{height: 600}}>
+                        {selectedOption && (
+                            <>
+                            <AdvancedRealTimeChart symbol={`${selectedOption.label}USDT`} autosize></AdvancedRealTimeChart>
+                            </>
+                            
+                        )}
+                        {!selectedOption && (
+                            <div style={{ textAlign: "center", marginTop: 50 }}>
+                                <h3>Select a Coin to see the graph</h3>
+                            </div>
+
+                        )}
+                    </div>
+                </div>
+
+
+
+
+
+                
 
                 <div className="col-xl-12">
                     <div className="card">
