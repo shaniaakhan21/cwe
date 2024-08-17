@@ -39,6 +39,7 @@ import Upgrade from "../pages/Upgrade";
 import Network from "../pages/Network";
 import Users from "../pages/Users";
 import Sales from "../pages/Sales";
+import Leaders from "../pages/Leaders";
 
 const Markup = () => {
   const allroutes = [
@@ -46,6 +47,7 @@ const Markup = () => {
     { url: "exchanges", component: <Exchanges /> },
     { url: "upgrade", component: <Upgrade /> },
     { url: "network", component: <Network /> },
+    { url: "leaders", component: <Leaders /> },
     { url: "users", component: <Users /> },
     { url: "sales", component: <Sales /> },
     { url: "empty-page", component: <EmptyPage /> },

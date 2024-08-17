@@ -25,6 +25,18 @@ export const MenuList = [
         to: 'network'
     },
     {
+        title: 'Leaders',	
+        classsChange: 'mm-collapse',		
+        iconStyle: <i className="material-symbols-outlined">dashboard</i>,
+        to: 'leaders'
+    },
+    {
+        title: 'feed',	
+        classsChange: 'mm-collapse',		
+        iconStyle: <i className="material-symbols-outlined">dashboard</i>,
+        to: 'Feed'
+    },
+    {
         title: 'Users [Admin]',	
         classsChange: 'mm-collapse',		
         iconStyle: <i className="material-symbols-outlined">dashboard</i>,
