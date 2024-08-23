@@ -74,6 +74,10 @@ const TradingTable = (params) => {
             headerName: 'Status',
             flex: 0.6,
             renderCell: (params) => {
+
+                if(params.row.global_profit){
+                    return <Badge className='p-1' style={{ cursor: "pointer", backgroundColor: 'green' }} bg="">Global Profit <i className='fa fa-circle-info' /></Badge>
+                }
     
                 if (params.value === 97) {
                     return <Badge style={{ cursor: "pointer", backgroundColor: '#e79e01' }} bg="">Pending Buy <i className='fa fa-circle-info' /></Badge>
