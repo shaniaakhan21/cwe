@@ -12,7 +12,7 @@ import { useParams } from 'react-router-dom';
 
 const Trading = () => {
 
-    
+
     const { mercado } = useParams();
     const [selectedOption, setSelectedOption] = useState(null);
     const [options, setOptions] = useState([]);
@@ -25,7 +25,7 @@ const Trading = () => {
     const [meStopGain, setMeStopGain] = useState(0);
 
     useEffect(() => {
-        if(mercado){
+        if (mercado) {
             setSelectedOption({ value: mercado, label: mercado.split("-")[1] })
         }
     }, [mercado])
@@ -211,80 +211,99 @@ const Trading = () => {
 
     return (
         <>
-            <div className="row">
+            <div className="col">
+                <div className="row">
 
-                <div className="col-xl-3">
-                    <div className="card">
-                        <div className="card-header border-0 pb-0">
-                            <h4 className="card-title mb-0">New Hybrid</h4>
-                        </div>
-                        <div className="card-body pt-2">
+                    <div className="col-xl-12">
+                        <div className="card">
+                            <div className="card-header border-0 pb-0">
+                                <h4 className="card-title mb-0">New Hybrid</h4>
+                            </div>
+                            <div className="card-body pt-2">
 
-                            <Alert variant="danger" show={errorSaving.length > 0}>
-                                <strong>Error! </strong> {errorSaving}
-                            </Alert>
-                            <div className="d-flex align-items-center justify-content-between mt-3 mb-2">
-                                <span className="small text-muted">Available Balance</span>
+                                <Alert variant="danger" show={errorSaving.length > 0}>
+                                    <strong>Error! </strong> {errorSaving}
+                                </Alert>
+                                <div className="d-flex align-items-center justify-content-between mt-3 mb-2">
+                                    <span className="small text-muted">Available Balance</span>
 
-                                {balance === undefined && (
-                                    <div className="spinner-border spinner-border-sm" role="status">
-                                        <span className="visually-hidden">Loading...</span>
+                                    {balance === undefined && (
+                                        <div className="spinner-border spinner-border-sm" role="status">
+                                            <span className="visually-hidden">Loading...</span>
+                                        </div>
+                                    )}
+                                    {(balance !== null && balance !== undefined) && (
+                                        <span className="text-dark">{balance} USDT</span>
+                                    )}
+                                </div>
+                                <form>
+                                    <div className="mb-3">
+                                        <Select
+                                            placeholder="Select Coin"
+                                            value={selectedOption}
+                                            onChange={setSelectedOption}
+                                            options={options}
+                                            styles={customStyles}
+                                            style={{
+                                                lineHeight: "40px",
+                                                color: "#7e7e7e",
+                                                paddingLeft: " 15px",
+                                            }}
+                                        />
                                     </div>
-                                )}
-                                {(balance !== null && balance !== undefined) && (
-                                    <span className="text-dark">{balance} USDT</span>
-                                )}
+
+                                    <div className="input-group mb-3">
+                                        <span className="input-group-text">Investment</span>
+                                        <input type="text" value={investment} onChange={(e) => { setInvesment(e.target.value) }} className="form-control" />
+                                        <span className="input-group-text">USDT</span>
+                                    </div>
+
+                                    <div className="input-group mb-3">
+                                        <span className="input-group-text">Stop Gain</span>
+                                        <input type="text" value={stopgain} onChange={(e) => { setStopGain(e.target.value) }} className="form-control" />
+                                        <span className="input-group-text">%</span>
+                                    </div>
+
+                                    <div className="input-group mb-3">
+                                        <span className="input-group-text">Stop Loss</span>
+                                        <input type="text" value={stoploss} onChange={(e) => { setStopLoss(e.target.value) }} className="form-control" />
+                                        <span className="input-group-text">%</span>
+                                    </div>
+
+
+                                    <div className="mt-3 d-flex justify-content-between">
+                                        <Button disabled={saving || !balance} onClick={() => { createHybrid() }} variant="success" className="btn btn-sm  text-uppercase  btn-block">Start Hybrid</Button>
+                                    </div>
+                                </form>
                             </div>
-                            <form>
-                                <div className="mb-3">
-                                    <Select
-                                        placeholder="Select Coin"
-                                        value={selectedOption}
-                                        onChange={setSelectedOption}
-                                        options={options}
-                                        styles={customStyles}
-                                        style={{
-                                            lineHeight: "40px",
-                                            color: "#7e7e7e",
-                                            paddingLeft: " 15px",
-                                        }}
-                                    />
+                        </div>
+                    </div>
+
+                    <div className="col-xl-12">
+                        <div className="card" style={{ height: 600 }}>
+                            {selectedOption && (
+                                <>
+                                    <TechnicalAnalysis symbol={`${selectedOption.label}USDT`} colorTheme="dark" width="100%"></TechnicalAnalysis>
+                                </>
+
+                            )}
+                            {!selectedOption && (
+                                <div style={{ textAlign: "center", marginTop: 50 }}>
+                                    <h5>Select a Coin to see the graph</h5>
                                 </div>
 
-                                <div className="input-group mb-3">
-                                    <span className="input-group-text">Investment</span>
-                                    <input type="text" value={investment} onChange={(e) => { setInvesment(e.target.value) }} className="form-control" />
-                                    <span className="input-group-text">USDT</span>
-                                </div>
-
-                                <div className="input-group mb-3">
-                                    <span className="input-group-text">Stop Gain</span>
-                                    <input type="text" value={stopgain} onChange={(e) => { setStopGain(e.target.value) }} className="form-control" />
-                                    <span className="input-group-text">%</span>
-                                </div>
-
-                                <div className="input-group mb-3">
-                                    <span className="input-group-text">Stop Loss</span>
-                                    <input type="text" value={stoploss} onChange={(e) => { setStopLoss(e.target.value) }} className="form-control" />
-                                    <span className="input-group-text">%</span>
-                                </div>
-
-
-                                <div className="mt-3 d-flex justify-content-between">
-                                    <Button disabled={saving || !balance} onClick={() => { createHybrid() }} variant="success" className="btn btn-sm  text-uppercase  btn-block">Start Hybrid</Button>
-                                </div>
-                            </form>
+                            )}
                         </div>
                     </div>
                 </div>
 
-                <div className="col-xl-3">
-                    <div className="card" style={{height: 600}}>
+                <div className="col-xl-12">
+                    <div className="card" style={{ height: 600 }}>
                         {selectedOption && (
                             <>
-                            <TechnicalAnalysis symbol={`${selectedOption.label}USDT`} colorTheme="dark" width="100%"></TechnicalAnalysis>
+                                <AdvancedRealTimeChart symbol={`${selectedOption.label}USDT`} autosize></AdvancedRealTimeChart>
                             </>
-                            
+
                         )}
                         {!selectedOption && (
                             <div style={{ textAlign: "center", marginTop: 50 }}>
@@ -294,29 +313,6 @@ const Trading = () => {
                         )}
                     </div>
                 </div>
-
-                <div className="col-xl-6">
-                    <div className="card" style={{height: 600}}>
-                        {selectedOption && (
-                            <>
-                            <AdvancedRealTimeChart symbol={`${selectedOption.label}USDT`} autosize></AdvancedRealTimeChart>
-                            </>
-                            
-                        )}
-                        {!selectedOption && (
-                            <div style={{ textAlign: "center", marginTop: 50 }}>
-                                <h5>Select a Coin to see the graph</h5>
-                            </div>
-
-                        )}
-                    </div>
-                </div>
-
-
-
-
-
-                
 
                 <div className="col-xl-12">
                     <div className="card">
@@ -325,9 +321,9 @@ const Trading = () => {
                         </div>
                         <div className="card-body pt-2" style={{ fontSize: 22 }}>
                             Current Global Profit: <span style={{ color: Number(me?.profit) > 0 ? 'green' : "red" }}>{Number(me?.profit).toFixed(2)} %</span>
-                            <div style={{marginTop: 10}}>
-                                Closes at <input style={{width: 80, textAlign: "center"}} type="text" value={meStopGain} onChange={(e) => { setMeStopGain(e.target.value) }}  />
-                                <Button style={{marginLeft: 20}} onClick={() => { updateStopGain() }} variant="success" className="btn btn-sm  text-uppercase ">Save</Button>
+                            <div style={{ marginTop: 10 }}>
+                                Closes at <input style={{ width: 80, textAlign: "center" }} type="text" value={meStopGain} onChange={(e) => { setMeStopGain(e.target.value) }} />
+                                <Button style={{ marginLeft: 20 }} onClick={() => { updateStopGain() }} variant="success" className="btn btn-sm  text-uppercase ">Save</Button>
                             </div>
                         </div>
                     </div>
