@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
 import { Alert, Button, Nav, Tab } from 'react-bootstrap';
 import Select from "react-select";
@@ -10,9 +11,7 @@ import { TechnicalAnalysis } from "react-ts-tradingview-widgets";
 import { useParams } from 'react-router-dom';
 
 
-const Trading = () => {
-
-    
+const Trading = (props) => {    
     const { mercado } = useParams();
     const [selectedOption, setSelectedOption] = useState(null);
     const [options, setOptions] = useState([]);
@@ -134,7 +133,8 @@ const Trading = () => {
                     investment: investment,
                     mercado: selectedOption ? selectedOption.value : null,
                     stopgain,
-                    stoploss
+                    stoploss,
+                    type: props.type
                 },
                     {
                         headers: {
@@ -165,6 +165,9 @@ const Trading = () => {
             const token = localStorage.getItem('token')
             if (token) {
                 const response = await axiosInstance.get("/api/robots/getHybridTrades", {
+                    params:{
+                        type: props.type
+                    },
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -317,6 +320,7 @@ const Trading = () => {
 
 
                 
+                {props.type === 'group' && (
 
                 <div className="col-xl-12">
                     <div className="card">
@@ -332,6 +336,7 @@ const Trading = () => {
                         </div>
                     </div>
                 </div>
+                )}
 
                 <div className="col-xl-12">
                     <div className="card">
@@ -345,7 +350,7 @@ const Trading = () => {
                                 </nav>
                             </div>
                             <div className="card-body pt-0">
-                                <TradingTable getHybridTrades={getHybridTrades} rows={rows} />
+                                <TradingTable getHybridTrades={getHybridTrades} type={props.type} rows={rows} />
                             </div>
                         </Tab.Container>
                     </div>

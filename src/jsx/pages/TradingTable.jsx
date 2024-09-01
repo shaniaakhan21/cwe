@@ -144,7 +144,7 @@ const TradingTable = (params) => {
 
     useEffect(() => {
         params.getHybridTrades()
-    }, [])
+    }, [params.type])
 
 
 

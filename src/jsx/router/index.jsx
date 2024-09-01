@@ -44,8 +44,9 @@ import Feed from "../pages/Feed";
 
 const Markup = () => {
   const allroutes = [
-    { url: "trading", component: <Trading /> },
-    { url: "trading/:mercado", component: <Trading /> },
+    { url: "single-trading", component: <Trading type={"single"} /> },
+    { url: "single-trading/:mercado", component: <Trading type={"single"} /> },
+    { url: "group-trading", component: <Trading type={"group"} /> },
     { url: "exchanges", component: <Exchanges /> },
     { url: "upgrade", component: <Upgrade /> },
     { url: "network", component: <Network /> },
