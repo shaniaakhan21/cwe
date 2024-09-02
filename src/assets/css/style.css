@@ -4068,6 +4068,17 @@ fieldset:disabled .btn {
   color: white !important;
 }
 
+.tiktok {
+  width: 20px;
+}
+
+
+@media (max-width: 400px) {
+  .tiktok {
+    width: 12px;
+  }
+}
+
 
 .padding-cstm {
   padding: 4px 13% !important;

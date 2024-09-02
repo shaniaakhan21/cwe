@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import { AppBar, Toolbar, Box, Link, Button, IconButton } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import XIcon from '@mui/icons-material/X'; // X (Twitter) icon
 import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import TikTokYellowIcon from '../../../assets/images/tiktok-yellow.png'
+import TikTokWhiteIcon from '../../../assets/images/tiktok-white.png'
 import logo from '../../../assets/images/publicpages/CWE-Logo1.png'
 import { useNavigate } from 'react-router-dom';
 
@@ -16,6 +18,9 @@ const Footer = () => {
     const handleNavigationLogIn = () => {
         navigate('/login');
     };
+
+    const [hovered, setHovered] = useState(false);
+
     return (
         <AppBar position="static" color="transparent" elevation={0} sx={{ borderTop: '1px solid #cea62d', padding: '0' }} className='py-4 footer-cwe' >
             <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', flexDirection: 'column', alignItems: 'flex-start', padding: '0' }}>
@@ -54,18 +59,17 @@ const Footer = () => {
                     {/* Social Media Icons */}
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 1 }} className='w-65 justify-content-end widthSh'>
                         <Box sx={{ display: 'flex', gap: 1 }}>
-                            <IconButton color="inherit" href="#" className='text-our-yellow icons-us'>
+                            <IconButton color="inherit" href="https://www.facebook.com/profile.php?id=61565491131625" className='text-our-yellow icons-us'>
                                 <FacebookIcon />
                             </IconButton>
-                            <IconButton color="inherit" href="#" className='text-our-yellow icons-us'>
+                            <IconButton color="inherit" href="https://x.com/cwebuster58173" className='text-our-yellow icons-us'>
                                 <XIcon />
                             </IconButton>
-                            <IconButton color="inherit" href="#" className='text-our-yellow icons-us'>
+                            <IconButton color="inherit" href="https://www.instagram.com/cwebuster/" className='text-our-yellow icons-us'>
                                 <InstagramIcon />
                             </IconButton>
-                            <IconButton color="inherit" href="#" className='text-our-yellow icons-us'>
-                                <LinkedInIcon />
-                            </IconButton>
+                            <a className='d-flex align-items-center' onMouseEnter={() => setHovered(true)}
+                                onMouseLeave={() => setHovered(false)} href="https://www.tiktok.com/@cwebuster"><img src={hovered ? TikTokWhiteIcon : TikTokYellowIcon} className='tiktok' alt="TikTok Icon" /></a>
                         </Box>
                         {/* Buttons */}
                         <Box sx={{ display: 'flex', gap: 1 }} className='w-25 justify-content-end'>
