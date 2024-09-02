@@ -75,14 +75,14 @@ const Leaders = () => {
 
     return (
         <>
-            <div className="row">
+            <div className="row justify-content-around d-flex flex-column align-items-center">
                 {leaders && leaders.map((leader, index) => {
                     return (
                         <div key={index} className="col-lg-6">
-                            <div className="card">
-                                <div className="card-body">
+                            <div className="card border-white-leaders">
+                                <div className="card-body d-flex flex-column justify-content-end">
                                     <div className="profile-statistics">
-                                        <div className="text-center">
+                                        <div className="text-center d-flex flex-column justify-content-between">
                                             <div className="row">
                                                 <div className="col" style={{marginBottom: 10}}>
                                                     <h3 style={{marginBottom: -2}}>{leader.name}</h3>  
