@@ -376,7 +376,9 @@ const Trading = (props) => {
                                 <Button onClick={() => { sellAllGroup() }} variant="danger" className="btn btn-sm  text-uppercase ">Sell All Group NOW</Button>
                             </div>
                             <div className="card-body pt-2" style={{ fontSize: 22 }}>
-                                Current Global Profit: <span style={{ color: Number(me?.profit) > 0 ? 'green' : "red" }}>{Number(me?.profit).toFixed(2)} %</span>
+                                Current Global Investment: <span >{Number(me?.investment).toFixed(2)} USDT</span> <br/>
+                                Current Global Profit USDT: <span style={{ color: Number(me?.profit_usd) > 0 ? 'green' : "red" }}>{Number(me?.profit_usd).toFixed(2)} USDT</span> <br/>
+                                Current Global Profit %: <span style={{ color: Number(me?.profit) > 0 ? 'green' : "red" }}>{Number(me?.profit).toFixed(2)} %</span>
                                 <div style={{ marginTop: 10 }}>
                                     Closes at <input style={{ width: 80, textAlign: "center" }} type="text" value={meStopGain} onChange={(e) => { setMeStopGain(e.target.value) }} />
                                     <Button style={{ marginLeft: 20 }} onClick={() => { updateStopGain() }} variant="success" className="btn btn-sm  text-uppercase ">Save</Button>

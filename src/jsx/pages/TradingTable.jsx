@@ -63,11 +63,37 @@ const TradingTable = (params) => {
         })
     }
 
+    const openDetails = (row) => {
+
+
+
+        Swal.fire({
+
+            title: 'Trade Details',
+            html: `
+            <div class="text-start">
+                <p><strong>ID:</strong> ${row.id}</p>
+                <p><strong>Stop Gain:</strong> ${row.stopgain} %</p>
+                <p><strong>Stop Loss:</strong> ${row.stoploss} %</p>
+                <p><strong>Investment in USDT:</strong> ${row.cost_inicial} USDT</p>
+                <p><strong>Buy Price:</strong> ${row.precio_inicial}</p>
+                <p><strong>${row.estado === 4 ? 'Sell' : 'Current'} Price:</strong> ${row.precio_final}</p>
+                <p><strong>Profit in USDT:</strong> ${row.profit_usd} USDT</p>
+            </div>
+            `,
+            showCloseButton: true,
+            showCancelButton: false,
+            focusConfirm: false,
+            confirmButtonText: 'Close',
+        })
+
+
+    }
 
 
     const columns = [
         { field: 'id', headerName: 'ID', flex: isMobile ? 1 : 0.4, hide: true, },
-    
+
         {
             field: 'estado',
             selectable: false,
@@ -75,31 +101,27 @@ const TradingTable = (params) => {
             flex: 0.6,
             renderCell: (params) => {
 
-                if(params.row.global_profit){
-                    return <Badge className='p-1' style={{ cursor: "pointer", backgroundColor: 'green' }} bg="">Global Profit <i className='fa fa-circle-info' /></Badge>
-                }
-    
                 if (params.value === 97) {
-                    return <Badge style={{ cursor: "pointer", backgroundColor: '#e79e01' }} bg="">Pending Buy <i className='fa fa-circle-info' /></Badge>
+                    return <Badge onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer", backgroundColor: '#e79e01' }} bg="">Pending Buy <i className='fa fa-circle-info' /></Badge>
                 }
 
-                if ([99,0].includes(params.value)) {
-                    return <Badge style={{ cursor: "pointer", backgroundColor: '#e79e01' }} bg="">Buying <i className='fa fa-circle-info' /></Badge>
+                if ([99, 0].includes(params.value)) {
+                    return <Badge onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer", backgroundColor: '#e79e01' }} bg="">Buying <i className='fa fa-circle-info' /></Badge>
                 }
 
                 if ([67].includes(params.value)) {
-                    return <Badge style={{ cursor: "pointer" }} bg="danger">Canceled <i className='fa fa-circle-info' /></Badge>
+                    return <Badge onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer" }} bg="danger">Canceled <i className='fa fa-circle-info' /></Badge>
                 }
 
                 if (params.value === 1) {
-                    return <Badge style={{ cursor: "pointer"}} bg="info">Operating <i className='fa fa-circle-info' /></Badge>
+                    return <Badge onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer" }} bg="info">Operating <i className='fa fa-circle-info' /></Badge>
                 }
 
                 if (params.value === 4) {
-                    return <Badge className='p-1' style={{ cursor: "pointer", backgroundColor: 'green' }} bg="">Completed <i className='fa fa-circle-info' /></Badge>
+                    return <Badge onClick={() => { openDetails(params.row) }} className='p-1' style={{ cursor: "pointer", backgroundColor: 'green' }} bg="">Completed <i className='fa fa-circle-info' /></Badge>
                 }
-                
-    
+
+
                 return <></>
             }
         },
@@ -116,7 +138,17 @@ const TradingTable = (params) => {
                 return 'neutral-trade trade';
             },
             renderCell: (params) => {
-                return `${params.value} %`
+                return (
+
+                    <>
+                    
+                        {params.value} %
+                    </>
+
+
+                )
+
+
             }
         },
         {
@@ -128,15 +160,26 @@ const TradingTable = (params) => {
             renderCell: (params) => {
                 if (params.row.estado === 97) {
                     return <div>
-                        <Button onClick={() => {verifyBuyNow(params.row.id)}} size='xs' variant='info'>Buy Now</Button>
-                        <Button onClick={() => {verifyCancel(params.row.id)}} style={{ marginLeft: 10 }} size='xs' variant='danger'>Cancel</Button>
+                        <Button onClick={() => { verifyBuyNow(params.row.id) }} size='xs' variant='info'>Buy Now</Button>
+                        <Button onClick={() => { verifyCancel(params.row.id) }} style={{ marginLeft: 10 }} size='xs' variant='danger'>Cancel</Button>
                     </div>
                 }
                 if (params.row.estado === 1) {
                     return <div>
-                        <Button onClick={() => {verifySellNow(params.row.id)}} className='m-1' size='xs' variant='danger'>Sell Now</Button>
+                        <Button onClick={() => { verifySellNow(params.row.id) }} className='m-1' size='xs' variant='danger'>Sell Now</Button>
                     </div>
-                }                
+                }
+
+                if (params.row.sell_now === 1 && params.row.global_profit) {
+                    return <div>
+                        <Badge className='p-1' style={{ cursor: "pointer", backgroundColor: '#1e21d4', marginRight: 20 }} bg="">GLOBAL PROFIT</Badge>
+                    </div>
+                }
+                if (params.row.sell_now === 1) {
+                    return <div>
+                        <Badge className='p-1' style={{ cursor: "pointer", backgroundColor: '#1e21d4', marginRight: 20 }} bg="">USER SOLD</Badge>
+                    </div>
+                }
                 return <></>
             }
         },
@@ -152,12 +195,12 @@ const TradingTable = (params) => {
         try {
             const token = localStorage.getItem('token')
             if (token) {
-                await axiosInstance.post("/api/robots/setBuyNow", {id},
-                     {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                });
+                await axiosInstance.post("/api/robots/setBuyNow", { id },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    });
                 params.getHybridTrades()
             }
         } catch (error) {
@@ -169,12 +212,12 @@ const TradingTable = (params) => {
         try {
             const token = localStorage.getItem('token')
             if (token) {
-                await axiosInstance.post("/api/robots/sellNow", {id},
-                     {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                });
+                await axiosInstance.post("/api/robots/sellNow", { id },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    });
                 params.getHybridTrades()
             }
         } catch (error) {
@@ -186,12 +229,12 @@ const TradingTable = (params) => {
         try {
             const token = localStorage.getItem('token')
             if (token) {
-                await axiosInstance.post("/api/robots/setCancel", {id},
-                     {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                });
+                await axiosInstance.post("/api/robots/setCancel", { id },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    });
                 params.getHybridTrades()
             }
         } catch (error) {
