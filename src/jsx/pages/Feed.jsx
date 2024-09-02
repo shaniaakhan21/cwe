@@ -74,7 +74,7 @@ export const Feed = () => {
                     {post.createdAt.split('T')[0]}  {post.createdAt.split('T')[1].split('.')[0]}
                 </p>
                 {post?.type === 1 && (
-                <Link className="btn btn-primary me-2" to={`/trading/${metadata?.mercado ||''}`} >
+                <Link className="btn btn-primary me-2" to={`/single-trading/${metadata?.mercado ||''}`} >
 
                         <>
                             <span className="me-2"> <i className="fa fa-share" /> </span>Replicate Order

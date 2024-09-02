@@ -13,10 +13,16 @@ export const MenuList = [
         to: 'exchanges',
     },
     {
-        title: 'Trading',	
+        title: 'Single Trading',	
         classsChange: 'mm-collapse',		
         iconStyle: <i className="material-symbols-outlined">monitoring</i>,
-        to: 'trading',
+        to: 'single-trading',
+    },
+    {
+        title: 'Group Trading',	
+        classsChange: 'mm-collapse',		
+        iconStyle: <i className="material-symbols-outlined">monitoring</i>,
+        to: 'group-trading',
     },
     {
         title: 'Network',	

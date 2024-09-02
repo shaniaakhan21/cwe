@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
 import { Alert, Button, Nav, Tab } from 'react-bootstrap';
 import Select from "react-select";
@@ -10,9 +11,7 @@ import { TechnicalAnalysis } from "react-ts-tradingview-widgets";
 import { useParams } from 'react-router-dom';
 
 
-const Trading = () => {
-
-
+const Trading = (props) => {
     const { mercado } = useParams();
     const [selectedOption, setSelectedOption] = useState(null);
     const [options, setOptions] = useState([]);
@@ -134,7 +133,8 @@ const Trading = () => {
                     investment: investment,
                     mercado: selectedOption ? selectedOption.value : null,
                     stopgain,
-                    stoploss
+                    stoploss,
+                    type: props.type
                 },
                     {
                         headers: {
@@ -159,12 +159,60 @@ const Trading = () => {
         setSaving(false)
     }
 
+    const sellAllGroup = async () => {
+
+        Swal.fire({
+            title: "Do you want to sell all your group?",
+            showDenyButton: true,
+            confirmButtonText: "Yes",
+            denyButtonText: `No`
+          }).then(async (result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                try {
+                    const token = localStorage.getItem('token')
+                    if (token) {
+                        await axiosInstance.post("/api/robots/sellAllGroup", {},
+                            {
+                                headers: {
+                                    Authorization: `Bearer ${token}`,
+                                },
+                            });
+        
+                    }
+                } catch (error) {
+                    if (isAxiosError(error)) {
+                        const { response } = error;
+                        if (response?.status === 400) {
+                            const { data } = response;
+                            Swal.fire({
+                                title: "Error",
+                                text: data.message,
+                                icon: 'error',
+                                showCancelButton: false,
+                            })
+                        }
+                    }
+                }
+            } 
+          });
+
+    }
+
+
+
+
+
+
     const [rows, setRows] = useState([])
     const getHybridTrades = async () => {
         try {
             const token = localStorage.getItem('token')
             if (token) {
                 const response = await axiosInstance.get("/api/robots/getHybridTrades", {
+                    params: {
+                        type: props.type
+                    },
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -279,18 +327,18 @@ const Trading = () => {
                         </div>
                     </div>
 
-                    <div className="col-xl-12">
-                        <div className="card" style={{ height: 600 }}>
-                            {selectedOption && (
-                                <>
-                                    <TechnicalAnalysis symbol={`${selectedOption.label}USDT`} colorTheme="dark" width="100%"></TechnicalAnalysis>
-                                </>
+                <div className="col-xl-12">
+                    <div className="card" style={{ height: 600 }}>
+                        {selectedOption && (
+                            <>
+                                <TechnicalAnalysis symbol={`${selectedOption.label}USDT`} colorTheme="dark" width="100%"></TechnicalAnalysis>
+                            </>
 
-                            )}
-                            {!selectedOption && (
-                                <div style={{ textAlign: "center", marginTop: 50 }}>
-                                    <h5>Select a Coin to see the graph</h5>
-                                </div>
+                        )}
+                        {!selectedOption && (
+                            <div style={{ textAlign: "center", marginTop: 50 }}>
+                                <h5>Select a Coin to see the graph</h5>
+                            </div>
 
                             )}
                         </div>
@@ -314,20 +362,29 @@ const Trading = () => {
                     </div>
                 </div>
 
-                <div className="col-xl-12">
-                    <div className="card">
-                        <div className="card-header border-0 pb-0">
-                            <h4 className="card-title mb-0">Stop Profit Global</h4>
-                        </div>
-                        <div className="card-body pt-2" style={{ fontSize: 22 }}>
-                            Current Global Profit: <span style={{ color: Number(me?.profit) > 0 ? 'green' : "red" }}>{Number(me?.profit).toFixed(2)} %</span>
-                            <div style={{ marginTop: 10 }}>
-                                Closes at <input style={{ width: 80, textAlign: "center" }} type="text" value={meStopGain} onChange={(e) => { setMeStopGain(e.target.value) }} />
-                                <Button style={{ marginLeft: 20 }} onClick={() => { updateStopGain() }} variant="success" className="btn btn-sm  text-uppercase ">Save</Button>
+
+
+
+
+
+                {props.type === 'group' && (
+
+                    <div className="col-xl-12">
+                        <div className="card">
+                            <div className="card-header border-0 pb-0">
+                                <h4 className="card-title mb-0">Stop Profit Global</h4>
+                                <Button onClick={() => { sellAllGroup() }} variant="danger" className="btn btn-sm  text-uppercase ">Sell All Group NOW</Button>
+                            </div>
+                            <div className="card-body pt-2" style={{ fontSize: 22 }}>
+                                Current Global Profit: <span style={{ color: Number(me?.profit) > 0 ? 'green' : "red" }}>{Number(me?.profit).toFixed(2)} %</span>
+                                <div style={{ marginTop: 10 }}>
+                                    Closes at <input style={{ width: 80, textAlign: "center" }} type="text" value={meStopGain} onChange={(e) => { setMeStopGain(e.target.value) }} />
+                                    <Button style={{ marginLeft: 20 }} onClick={() => { updateStopGain() }} variant="success" className="btn btn-sm  text-uppercase ">Save</Button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                )}
 
                 <div className="col-xl-12">
                     <div className="card">
@@ -341,7 +398,7 @@ const Trading = () => {
                                 </nav>
                             </div>
                             <div className="card-body pt-0">
-                                <TradingTable getHybridTrades={getHybridTrades} rows={rows} />
+                                <TradingTable getHybridTrades={getHybridTrades} type={props.type} rows={rows} />
                             </div>
                         </Tab.Container>
                     </div>
