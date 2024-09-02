@@ -31,6 +31,12 @@ export const MenuList = [
         to: 'network'
     },
     {
+        title: 'Wallet',	
+        classsChange: 'mm-collapse',		
+        iconStyle: <i className="material-symbols-outlined">wallet</i>,
+        to: 'wallet'
+    },
+    {
         title: 'Leaders',	
         classsChange: 'mm-collapse',		
         iconStyle: <i className="material-symbols-outlined">dashboard</i>,
