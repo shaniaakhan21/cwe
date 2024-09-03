@@ -117,7 +117,7 @@ const Exchanges = () => {
 
     return (
         <>
-            <div style={{ textAlign: apikeys && apikeys.length === 0 ? "center" : "right", marginTop: apikeys && apikeys.length === 0 ? 10 : 0 }}>
+            <div style={{ textAlign: apikeys && apikeys.length === 0 ? "center" : "right", marginTop: apikeys && apikeys.length === 0 ? 100 : 0 }}>
                 <Button variant="success" onClick={() => { openModal(), setErrorSaving("") }}>
                     <i className="fa-solid fa-add me-2"></i>
                     {apikeys && apikeys.length === 0 ? "+ Add Exchange" : "Add Exchange"}

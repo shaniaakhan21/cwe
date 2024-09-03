@@ -4466,7 +4466,7 @@ fieldset:disabled .btn {
   clear: both;
   font-weight: 400;
   color: var(--bs-dropdown-link-color);
-  text-align: inherit;
+  text-align: center;
   text-decoration: none;
   white-space: nowrap;
   background-color: transparent;
@@ -4512,6 +4512,11 @@ fieldset:disabled .btn {
   display: block;
   padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
   color: var(--bs-dropdown-link-color);
+}
+
+.header-profile2 .dropdown-menu .dropdown-item:hover{
+  color: #fff;
+  background: #cea62d;
 }
 
 .dropdown-menu-dark {
@@ -27608,6 +27613,9 @@ pre code {
 
 .profile-info {
   padding: 0.9375rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media only screen and (max-width: 35.9375rem) {
@@ -34434,7 +34442,7 @@ button:focus {
   font-size: 1rem;
   color: var(--text);
   padding: 0.5rem 1.75rem;
-  text-align: left;
+  text-align: center;
 }
 
 @media only screen and (max-width: 87.5rem) {
@@ -34445,12 +34453,13 @@ button:focus {
 }
 
 .dropdown-menu:hover {
-  background-color: #bb972a !important;
-  border-color: #BB830B !important;
+  border: 2px solid #cea62d !important;
+  background-color: black;
 }
 
 .dropdown-menu {
-  background-color: #cea62d !important;
+  border: 2px solid #cea62d !important;
+  background-color: black;
 }
 
 .dropdown-menu .dropdown-item.active,

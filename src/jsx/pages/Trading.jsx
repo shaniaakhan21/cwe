@@ -370,17 +370,17 @@ const Trading = (props) => {
                                 <Button onClick={() => { sellAllGroup() }} variant="dark" className="btn btn-sm  text-uppercase ">Sell All Group NOW</Button>
                             </div>
                             <div className="card-body pt-2" style={{ fontSize: 18 }}>
-                                <div className='d-flex justify-content-between p-1' >
+                                <div className='d-flex justify-content-between p-1 pt-2' >
                                     <h4 className='w-50'>Current Global Investment:</h4><h4 className='w-50 text-end'><span >{Number(me?.investment).toFixed(2)} USDT</span></h4>  <br />
                                 </div>
-                                <div className='d-flex justify-content-between p-1' style={{ borderTop: '1px solid #cea62d' }}>
+                                <div className='d-flex justify-content-between p-1 pt-2' style={{ borderTop: '1px solid #cea62d' }}>
                                     <h4 className='w-50'>Current Global Profit USDT: </h4><h4 className='w-50 text-end'><span style={{ color: Number(me?.profit_usd) > 0 ? 'green' : "#fd5353" }}>{Number(me?.profit_usd).toFixed(2)} USDT</span></h4>  <br />
                                 </div>
-                                <div className='d-flex justify-content-between p-1' style={{ borderTop: '1px solid #cea62d' }}>
+                                <div className='d-flex justify-content-between p-1 pt-2' style={{ borderTop: '1px solid #cea62d' }}>
                                     <h4 className='w-50'>Current Global Profit %:</h4><h4 className='w-50 text-end'><span style={{ color: Number(me?.profit) > 0 ? 'green' : "#fd5353" }}>{Number(me?.profit).toFixed(2)} %</span></h4>  <br />
                                 </div>
 
-                                <div style={{ marginTop: 10, borderTop: '1px solid #cea62d', paddingTop: 10 }} className='d-flex justify-content-between align-items-center'>
+                                <div style={{ borderTop: '1px solid #cea62d', paddingTop: 10 }} className='d-flex justify-content-between align-items-center'>
                                     <h4>Closes At </h4>
                                     <div className='d-flex justify-content-between align-items-center'>
                                         <input type="text" value={meStopGain} onChange={(e) => { setMeStopGain(e.target.value) }} />
