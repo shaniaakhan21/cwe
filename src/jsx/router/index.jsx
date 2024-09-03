@@ -117,7 +117,7 @@ function MainLayout() {
       >
         <Nav />
         <div className="content-body" >
-          <div className="container-fluid" style={{ minHeight: window.screen.height - 45 }}>
+          <div className="container-fluid" style={{ minHeight: '65vh' }}>
           <ToastContainer />
             <Outlet />
           </div>
@@ -144,7 +144,7 @@ function MainLayout2() {
       <div id="main-wrapper" className={`show ${sidebariconHover ? "iconhover-toggle" : ""} ${sideMenu ? "menu-toggle" : ""}`}>
         <Nav />
         <div className="content-body" >
-          <div className="container-fluid" style={{ minHeight: window.screen.height - 45 }}>
+          <div className="container-fluid" style={{ minHeight: '65vh' }}>
             <Outlet />
           </div>
         </div>

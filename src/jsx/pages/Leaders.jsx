@@ -107,7 +107,7 @@ const Leaders = () => {
                                                     <a onClick={() =>  { follow(leader.id)}} className="btn btn-primary mb-1 me-1" >Follow</a>
                                                 )}
                                                 {leader.follows === 1 && (
-                                                    <a onClick={() =>  { unfollow(leader.id)}} className="btn btn-info mb-1 me-1" >Stop Following</a>
+                                                    <a onClick={() =>  { unfollow(leader.id)}} className="btn btn-bt mb-1 me-1" >Stop Following</a>
                                                 )}
                                             </div>
                                         </div>

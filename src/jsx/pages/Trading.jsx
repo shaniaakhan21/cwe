@@ -13,7 +13,7 @@ import { useParams } from 'react-router-dom';
 
 const Trading = (props) => {
     const { mercado } = useParams();
-    const [selectedOption, setSelectedOption] = useState(null);
+    const [selectedOption, setSelectedOption] = useState({ value: 'BTC', label: 'BTC' })
     const [options, setOptions] = useState([]);
     const [stopgain, setStopGain] = useState(3);
     const [stoploss, setStopLoss] = useState(99);
@@ -166,7 +166,7 @@ const Trading = (props) => {
             showDenyButton: true,
             confirmButtonText: "Yes",
             denyButtonText: `No`
-          }).then(async (result) => {
+        }).then(async (result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
                 try {
@@ -178,7 +178,7 @@ const Trading = (props) => {
                                     Authorization: `Bearer ${token}`,
                                 },
                             });
-        
+
                     }
                 } catch (error) {
                     if (isAxiosError(error)) {
@@ -194,8 +194,8 @@ const Trading = (props) => {
                         }
                     }
                 }
-            } 
-          });
+            }
+        });
 
     }
 
@@ -262,7 +262,7 @@ const Trading = (props) => {
             <div className="col">
                 <div className="row">
 
-                    <div className="col-xl-12">
+                    <div className="col-xl-4">
                         <div className="card">
                             <div className="card-header border-0 pb-0">
                                 <h4 className="card-title mb-0">New Hybrid</h4>
@@ -326,41 +326,35 @@ const Trading = (props) => {
                             </div>
                         </div>
                     </div>
-
-                <div className="col-xl-12">
-                    <div className="card" style={{ height: 600 }}>
-                        {selectedOption && (
-                            <>
-                                <TechnicalAnalysis symbol={`${selectedOption.label}USDT`} colorTheme="dark" width="100%"></TechnicalAnalysis>
-                            </>
-
-                        )}
-                        {!selectedOption && (
-                            <div style={{ textAlign: "center", marginTop: 50 }}>
-                                <h5>Select a Coin to see the graph</h5>
+                    {selectedOption && (
+                        <div className="col-xl-8">
+                            <div className="card" style={{ height: '100%' }}>
+                                <>
+                                    <TechnicalAnalysis symbol={`${selectedOption.label}USDT`} colorTheme="dark" width="100%"></TechnicalAnalysis>
+                                </>
                             </div>
+                        </div>
+                    )}
+                    {/* {!selectedOption && (
+                        <div className="col-xl-8 card-select">
+                            <div className='card-in col-xl-8'>
+                                <img width={60} src={selectIcon} />
+                                <h3>Select a Coin to get Technical<br /> Analysis and  AAVEUSDT Chart</h3>
+                            </div>
+                        </div>
 
-                            )}
+                    )} */}
+                </div>
+                {selectedOption && (
+                    <div className="col-xl-12">
+                        <div className="card" style={{ height: 500 }}>
+
+                            <>
+                                <AdvancedRealTimeChart symbol={`${selectedOption.label}USDT`} colorTheme="dark" autosize></AdvancedRealTimeChart>
+                            </>
                         </div>
                     </div>
-                </div>
-
-                <div className="col-xl-12">
-                    <div className="card" style={{ height: 600 }}>
-                        {selectedOption && (
-                            <>
-                                <AdvancedRealTimeChart symbol={`${selectedOption.label}USDT`} autosize></AdvancedRealTimeChart>
-                            </>
-
-                        )}
-                        {!selectedOption && (
-                            <div style={{ textAlign: "center", marginTop: 50 }}>
-                                <h5>Select a Coin to see the graph</h5>
-                            </div>
-
-                        )}
-                    </div>
-                </div>
+                )}
 
 
 
@@ -370,18 +364,28 @@ const Trading = (props) => {
                 {props.type === 'group' && (
 
                     <div className="col-xl-12">
-                        <div className="card">
-                            <div className="card-header border-0 pb-0">
+                        <div className="card card-btn-b-y">
+                            <div className="card-header yellow-it">
                                 <h4 className="card-title mb-0">Stop Profit Global</h4>
-                                <Button onClick={() => { sellAllGroup() }} variant="danger" className="btn btn-sm  text-uppercase ">Sell All Group NOW</Button>
+                                <Button onClick={() => { sellAllGroup() }} variant="dark" className="btn btn-sm  text-uppercase ">Sell All Group NOW</Button>
                             </div>
-                            <div className="card-body pt-2" style={{ fontSize: 22 }}>
-                                Current Global Investment: <span >{Number(me?.investment).toFixed(2)} USDT</span> <br/>
-                                Current Global Profit USDT: <span style={{ color: Number(me?.profit_usd) > 0 ? 'green' : "red" }}>{Number(me?.profit_usd).toFixed(2)} USDT</span> <br/>
-                                Current Global Profit %: <span style={{ color: Number(me?.profit) > 0 ? 'green' : "red" }}>{Number(me?.profit).toFixed(2)} %</span>
-                                <div style={{ marginTop: 10 }}>
-                                    Closes at <input style={{ width: 80, textAlign: "center" }} type="text" value={meStopGain} onChange={(e) => { setMeStopGain(e.target.value) }} />
-                                    <Button style={{ marginLeft: 20 }} onClick={() => { updateStopGain() }} variant="success" className="btn btn-sm  text-uppercase ">Save</Button>
+                            <div className="card-body pt-2" style={{ fontSize: 18 }}>
+                                <div className='d-flex justify-content-between p-1' >
+                                    <h4 className='w-50'>Current Global Investment:</h4><h4 className='w-50 text-end'><span >{Number(me?.investment).toFixed(2)} USDT</span></h4>  <br />
+                                </div>
+                                <div className='d-flex justify-content-between p-1' style={{ borderTop: '1px solid #cea62d' }}>
+                                    <h4 className='w-50'>Current Global Profit USDT: </h4><h4 className='w-50 text-end'><span style={{ color: Number(me?.profit_usd) > 0 ? 'green' : "#fd5353" }}>{Number(me?.profit_usd).toFixed(2)} USDT</span></h4>  <br />
+                                </div>
+                                <div className='d-flex justify-content-between p-1' style={{ borderTop: '1px solid #cea62d' }}>
+                                    <h4 className='w-50'>Current Global Profit %:</h4><h4 className='w-50 text-end'><span style={{ color: Number(me?.profit) > 0 ? 'green' : "#fd5353" }}>{Number(me?.profit).toFixed(2)} %</span></h4>  <br />
+                                </div>
+
+                                <div style={{ marginTop: 10, borderTop: '1px solid #cea62d', paddingTop: 10 }} className='d-flex justify-content-between align-items-center'>
+                                    <h4>Closes At </h4>
+                                    <div className='d-flex justify-content-between align-items-center'>
+                                        <input type="text" value={meStopGain} onChange={(e) => { setMeStopGain(e.target.value) }} />
+                                        <Button style={{ marginLeft: 20 }} onClick={() => { updateStopGain() }} variant="success" className="btn py-2 text-uppercase ">Save</Button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -399,7 +403,7 @@ const Trading = (props) => {
                                     </Nav>
                                 </nav>
                             </div>
-                            <div className="card-body pt-0">
+                            <div className="card-body pt-0 trading-tb p-0">
                                 <TradingTable getHybridTrades={getHybridTrades} type={props.type} rows={rows} />
                             </div>
                         </Tab.Container>

@@ -5,6 +5,7 @@
   .orgchart-container {
     background-color: #cea62d1c!important;
     border: 2px dashed #cea62d36!important;
+    height: fit-content!important;
  }
 
  .orgchart ul li .oc-node {

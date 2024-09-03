@@ -7,7 +7,7 @@
 }
 
 .negative-trade {
-    color: red;
+    color: #fd5353;
 }
 
 .neutral-trade {
@@ -28,9 +28,41 @@
     --DataGrid-rowBorderColor: #cea62d!important;
   }
 
+  .MuiDataGrid-withBorderColor{
+    border-color: #cea62d!important;
+  }
+
 .css-1oudwrl::after {
     background-color: #cea62d!important;
 }
+
+div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
+    background-color: #fd5353!important;
+    border: 2px solid #fd5353!important;
+}
+
+div:where(.swal2-container).swal2-center>.swal2-popup {
+    display: grid;
+    border: 2px solid #cea62d;
+    border-radius: 12px;
+    box-shadow: 2px 2px 6px 1px #cea62d52;
+}
+
+div:where(.swal2-container) h2:where(.swal2-title){
+    color: #cea62d!important;
+}
+
+div:where(.swal2-container) .swal2-html-container p{
+    display: flex;
+    justify-content: space-between;
+}
+
+div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel){
+    background-color: transparent!important;
+    border-color: white!important;
+    border: 2px solid white!important;
+}
+
 
 @media (max-width: 600px) {
     .MuiDataGrid-sortIcon{

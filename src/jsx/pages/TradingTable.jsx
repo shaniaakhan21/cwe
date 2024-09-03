@@ -102,23 +102,23 @@ const TradingTable = (params) => {
             renderCell: (params) => {
 
                 if (params.value === 97) {
-                    return <Badge onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer", backgroundColor: '#e79e01' }} bg="">Pending Buy <i className='fa fa-circle-info' /></Badge>
+                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer", backgroundColor: '#e79e01' }} bg="">Pending Buy <i className='fa fa-circle-info' /></Button>
                 }
 
                 if ([99, 0].includes(params.value)) {
-                    return <Badge onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer", backgroundColor: '#e79e01' }} bg="">Buying <i className='fa fa-circle-info' /></Badge>
+                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer", backgroundColor: '#e79e01' }} bg="">Buying <i className='fa fa-circle-info' /></Button>
                 }
 
                 if ([67].includes(params.value)) {
-                    return <Badge onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer" }} bg="danger">Canceled <i className='fa fa-circle-info' /></Badge>
+                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer" }} bg="danger">Canceled <i className='fa fa-circle-info' /></Button>
                 }
 
                 if (params.value === 1) {
-                    return <Badge onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer" }} bg="info">Operating <i className='fa fa-circle-info' /></Badge>
+                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer" }} bg="dark">Operating <i className='fa fa-circle-info' /></Button>
                 }
 
                 if (params.value === 4) {
-                    return <Badge onClick={() => { openDetails(params.row) }} className='p-1' style={{ cursor: "pointer", backgroundColor: 'green' }} bg="">Completed <i className='fa fa-circle-info' /></Badge>
+                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer", backgroundColor: 'green', borderColor: 'green' }} bg="">Completed <i className='fa fa-circle-info' /></Button>
                 }
 
 
@@ -172,12 +172,12 @@ const TradingTable = (params) => {
 
                 if (params.row.sell_now === 1 && params.row.global_profit) {
                     return <div>
-                        <Badge className='p-1' style={{ cursor: "pointer", backgroundColor: '#1e21d4', marginRight: 20 }} bg="">GLOBAL PROFIT</Badge>
+                        <Button size='xs' style={{ cursor: "pointer", backgroundColor: '#1e21d4', borderColor:'#1e21d4', marginRight: 20 }} bg="">GLOBAL PROFIT</Button>
                     </div>
                 }
                 if (params.row.sell_now === 1) {
                     return <div>
-                        <Badge className='p-1' style={{ cursor: "pointer", backgroundColor: '#1e21d4', marginRight: 20 }} bg="">USER SOLD</Badge>
+                        <Button size='xs' style={{ cursor: "pointer", backgroundColor: '#1e21d4', borderColor:'#1e21d4', marginRight: 20 }} bg="">USER SOLD</Button>
                     </div>
                 }
                 return <></>
