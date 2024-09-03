@@ -44,11 +44,11 @@ const Exchanges = () => {
                 setShowModal(false)
             }
         } catch (error) {
-            if(isAxiosError(error)){
+            if (isAxiosError(error)) {
                 const { response } = error;
                 if (response?.status === 400) {
-                  const { data } = response;
-                  setErrorSaving(data.message);
+                    const { data } = response;
+                    setErrorSaving(data.message);
                 }
             }
             console.error(error)
@@ -117,9 +117,10 @@ const Exchanges = () => {
 
     return (
         <>
-            <div style={{ textAlign: "right" }}>
-                <Button className="me-2" variant="success" onClick={() => { openModal(), setErrorSaving("") }}>
-                    <i className="fa-solid fa-add me-2"></i> Add Exchange
+            <div style={{ textAlign: apikeys && apikeys.length === 0 ? "center" : "right", marginTop: apikeys && apikeys.length === 0 ? 10 : 0 }}>
+                <Button variant="success" onClick={() => { openModal(), setErrorSaving("") }}>
+                    <i className="fa-solid fa-add me-2"></i>
+                    {apikeys && apikeys.length === 0 ? "+ Add Exchange" : "Add Exchange"}
                 </Button>
             </div>
 
@@ -170,21 +171,21 @@ const Exchanges = () => {
                     API Secret
                     <input type="text" value={secret} onChange={(e) => { setSecret(e.target.value) }} className="form-control" />
 
-                    <Alert variant="warning" show={true} style={{marginTop: 20}}>
-                        <strong>IMPORTANT! </strong> 
-                        <br/>
-                        <br/>You must enable the following ip on your account:
-                        <br/><br/>
+                    <Alert variant="warning" show={true} style={{ marginTop: 20 }}>
+                        <strong>IMPORTANT! </strong>
+                        <br />
+                        <br />You must enable the following ip on your account:
+                        <br /><br />
                         <li>* 165.227.170.107</li>
                     </Alert>
 
-                    <Alert variant="danger" show={true} style={{marginTop: 20}}>
-                        <strong>IMPORTANT! </strong> 
-                        <br/>
-                        <br/>You need to enable trading permissions
+                    <Alert variant="danger" show={true} style={{ marginTop: 20 }}>
+                        <strong>IMPORTANT! </strong>
+                        <br />
+                        <br />You need to enable trading permissions
                     </Alert>
 
-                    <a style={{color : "red"}} rel="noreferrer" href="https://youtu.be/80Izk4cBeTI" target="_blank">Click here for Tutorial for creating Binance API KEY</a>
+                    <a style={{ color: "red" }} rel="noreferrer" href="https://youtu.be/80Izk4cBeTI" target="_blank">Click here for Tutorial for creating Binance API KEY</a>
 
 
                 </Modal.Body>
