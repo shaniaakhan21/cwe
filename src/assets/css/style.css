@@ -5399,6 +5399,11 @@ fieldset:disabled .btn {
   border-bottom: var(--bs-card-border-width) solid var(--bs-card-border-color);
 }
 
+.border-btn-bot{
+  border-bottom: 1px solid #cea62d8c !important;
+  padding-bottom: 2%;
+}
+
 .card-header:first-child {
   border-radius: var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius) 0 0;
 }
@@ -39108,17 +39113,8 @@ body>* {
   }
 }
 
-.Toastify__toast-body {
-  margin-top: 6% !important;
-  padding: 2% !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-}
-
-.Toastify__zoom-enter {
-  width: 10% !important;
-  padding-bottom: 1%;
+.snackbar-it .MuiAlert-icon {
+  color: #000000!important;
 }
 
 .card-box {
