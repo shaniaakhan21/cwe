@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
@@ -13,11 +14,17 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import logo from '../../../assets/images/publicpages/CWE-Logo1.png';
 import { useNavigate } from 'react-router-dom';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import XIcon from '@mui/icons-material/X'; // X (Twitter) icon
+import InstagramIcon from '@mui/icons-material/Instagram';
+import TikTokYellowIcon from '../../../assets/images/tiktok-yellow.png'
+import TikTokWhiteIcon from '../../../assets/images/tiktok-white.png'
 
 const Header = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const [hovered, setHovered] = useState(false);
 
     const handleMenu = (event) => {
         setAnchorEl(event.currentTarget);
@@ -38,8 +45,8 @@ const Header = () => {
     };
 
     return (
-        <AppBar position="static" color="transparent" elevation={0} className='header-cwe'>
-            <Toolbar>
+        <AppBar position="sticky" color="transparent" elevation={0} className='header-cwe'>
+            <Toolbar sx={{ background: '#000' }}>
                 {/* Logo */}
                 <Link href="#" sx={{ flexGrow: 1 }} className='w-10 mt-2'>
                     <img
@@ -112,10 +119,25 @@ const Header = () => {
                         </Menu>
                     </>
                 ) : (
-                    <Box sx={{ display: 'flex', gap: 2 }} className='w-65 justify-content-end'>
-                        <Button variant="outlined" color="inherit" className='btn-white-cwe padding-cstm-2'  onClick={handleNavigationLogIn}>Login</Button>
-                        <Button variant="contained" className='btn-yellow-cwe padding-cstm-2' onClick={handleNavigationSignUp}>Sign Up</Button>
-                    </Box>
+                    <>
+
+                        <Box sx={{ display: 'flex', gap: 2 }} className='w-65 justify-content-end'>
+                            <div className='d-flex'>
+                                <IconButton color="inherit" href="https://www.facebook.com/profile.php?id=61565491131625" className='text-our-yellow icons-us'>
+                                    <FacebookIcon />
+                                </IconButton><IconButton color="inherit" href="https://x.com/cwebuster58173" className='text-our-yellow icons-us'>
+                                    <XIcon />
+                                </IconButton><IconButton color="inherit" href="https://www.instagram.com/cwebuster/" className='text-our-yellow icons-us'>
+                                    <InstagramIcon />
+                                </IconButton>
+                                <a className='d-flex align-items-center p-2' onMouseEnter={() => setHovered(true)}
+                                    onMouseLeave={() => setHovered(false)} href="https://www.tiktok.com/@cwebuster">
+                                    <img src={hovered ? TikTokWhiteIcon : TikTokYellowIcon} className='tiktok' alt="TikTok Icon" />
+                                </a>
+                            </div>
+                            <Button variant="outlined" color="inherit" className='btn-white-cwe padding-cstm-2' onClick={handleNavigationLogIn}>Login</Button>
+                            <Button variant="contained" className='btn-yellow-cwe padding-cstm-2' onClick={handleNavigationSignUp}>Sign Up</Button>
+                        </Box></>
                 )}
             </Toolbar>
         </AppBar>

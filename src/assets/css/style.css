@@ -4059,7 +4059,7 @@ fieldset:disabled .btn {
 
 .header-cwe a:hover,
 .footer-cwe .links-btm a:hover {
-  color: #cea62d !important;
+  color: #cea62d ;
   font-size: 16.5px !important;
 }
 
