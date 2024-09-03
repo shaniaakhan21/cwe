@@ -48,12 +48,12 @@ export const MenuList = [
         iconStyle: <i className="material-symbols-outlined">dashboard</i>,
         to: 'Feed'
     },
-    {
-        title: 'Profile',	
-        classsChange: 'mm-collapse',		
-        iconStyle: <i className="material-symbols-outlined">dashboard</i>,
-        to: 'Profile'
-    },
+    // {
+    //     title: 'Profile',	
+    //     classsChange: 'mm-collapse',		
+    //     iconStyle: <i className="material-symbols-outlined">dashboard</i>,
+    //     to: 'Profile'
+    // },
     {
         title: 'Users [Admin]',	
         classsChange: 'mm-collapse',		

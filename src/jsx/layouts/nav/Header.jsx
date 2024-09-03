@@ -124,12 +124,12 @@ const Header = ({ onNote }) => {
                     <div className="profile-info text-center mb-3 p-2">
                       <img src={profile} alt="profile" className="mb-2"/>
                       <h6 className="text-dark">John Doe</h6>
-                      <p className="text-muted mb-0">john.doe@example.com</p>
+                      <p className="text-white mb-0">john.doe@example.com</p>
                     </div>
-                    <Dropdown.Item as={Link} to="/profile" className="dropdown-item">
+                    {/* <Dropdown.Item as={Link} to="/profile" className="dropdown-item">
                       {SVGICON.EditSvgIcon}
                       <span className="ms-2">Edit Profile</span>
-                    </Dropdown.Item>
+                    </Dropdown.Item> */}
                     <Dropdown.Divider />
                     <Logout />
                   </Dropdown.Menu>
