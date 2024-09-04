@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import {Link, useLocation} from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 
 //Import 
@@ -11,34 +11,36 @@ import RecentTransaction from '../../elements/dashboard/RecentTransaction';
 import { ThemeContext } from '../../../context/ThemeContext';
 import axiosInstance from '../../../services/AxiosInstance';
 import { toast } from 'react-toastify';
+import { Snackbar, Alert } from '@mui/material';
 
 //Charts
 // const SurveyChart = loadable(() =>
 //  	pMinDelay(import("../../elements/dashboard/SurveyChart"), 500)
 // );
 
-export function MainComponent(){
+export function MainComponent() {
 	const [me, setMe] = useState(null)
-
+	const [openSnackbar, setOpenSnackbar] = useState(false);
+	const [copied, setCopied] = useState(false);
 
 	const fetchMe = async () => {
 
-		try{
+		try {
 			const token = localStorage.getItem('token')
-			if(token){
-					const response = await axiosInstance.get("/api/user/me", {
-						headers: {
+			if (token) {
+				const response = await axiosInstance.get("/api/user/me", {
+					headers: {
 						Authorization: `Bearer ${token}`,
-						},
-					});
+					},
+				});
 
-					setMe(response.data.user)
-				}
+				setMe(response.data.user)
+			}
 		} catch (error) {
 			// do nothing
 			console.log(error)
 		}
-  
+
 
 	}
 
@@ -47,26 +49,24 @@ export function MainComponent(){
 	}, [])
 
 	let referralLink = ''
-	if (me){
+	if (me) {
 		referralLink = `https://www.cwebuster.com/register/${me.id}`
 	}
 
 	const copyReferralLink = (referralLink) => {
-		toast.success("✔️ Referral Link Coppied to Clipboard", {
-			position: "top-right",
-			autoClose: 2000,
-			hideProgressBar: false,
-			closeOnClick: false,
-			pauseOnHover: true,
-			draggable: true,
-		});
-		navigator.clipboard.writeText(referralLink)
+		navigator.clipboard.writeText(referralLink);
+		setCopied(true);
+		setTimeout(() => setCopied(false), 3000);
+		setOpenSnackbar(true);
+	};
 
-	}
+	const handleCloseSnackbar = () => {
+		setOpenSnackbar(false);
+	};
 
-	return(
+	return (
 		<Row>
-			<Col xl={12}>			
+			<Col xl={12}>
 				<div className="row main-card">
 					<MainSlider />
 				</div>
@@ -74,33 +74,44 @@ export function MainComponent(){
 				<Row>
 					<div className=" col-12">
 						<div className='card borderShadow'>
-						<Card.Body className=" mb-0">
-							<Card.Header>
-							<h4>My Referral Link</h4>
-						</Card.Header>
-						<Card.Text style={{marginTop: 20}}>
-							{referralLink}
-						</Card.Text>
-						<Button
-							onClick={() => copyReferralLink(referralLink)}
-							variant=" "
-							className="btn-card btn-success text-white mt-3"
-						>
-							<i className="fa fa-copy"  /> Copy
-						</Button>
-						</Card.Body>
+							<Card.Body className=" mb-0">
+								<h4 className='border-btn-bot'>Referral Link</h4>
+								<Card.Text style={{ marginTop: 20 }}>
+									{referralLink}
+								</Card.Text>
+								<Button
+									onClick={() => copyReferralLink(referralLink)}
+									variant=" "
+									className="btn-card btn-success text-white mt-3"
+								>
+									<i className="fa fa-copy" /> {copied ? 'Copied!' : 'Copy'}
+								</Button>
+							</Card.Body>
 						</div>
-					
+
 					</div>
 				</Row>
-				<Row>
-				</Row>
+				<Snackbar
+					open={openSnackbar}
+					autoHideDuration={2000}
+					onClose={handleCloseSnackbar}
+					anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+					className='snackbar-it'
+				>
+					<Alert onClose={handleCloseSnackbar} sx={{
+						backgroundColor: '#cea62d;',
+						width: '100%',// custom background color
+						color: '#fff', // custom text color
+					}}>
+						Referral Link Copied to Clipboard
+					</Alert>
+				</Snackbar>
 			</Col>
 		</Row>
 	)
 }
 
-const Home = () => {	
+const Home = () => {
 	// const { changeBackground } = useContext(ThemeContext);
 	// useEffect(() => {
 	// 	changeBackground({ value: "dark", label: "Dark" });
@@ -108,8 +119,8 @@ const Home = () => {
 
 
 	const locact = useLocation()
-	
-	const { changeBackground, 
+
+	const { changeBackground,
 		changeNavigationHader,
 		chnageHaderColor,
 		changePrimaryColor,
@@ -120,18 +131,18 @@ const Home = () => {
 	useEffect(() => {
 
 		switch (locact.search) {
-			case "?theme=1" :
-				changeBackground({ value: "dark", label: "Dark" });				
+			case "?theme=1":
+				changeBackground({ value: "dark", label: "Dark" });
 				changeNavigationHader('color_3')
 				chnageHaderColor('color_3')
 				changePrimaryColor('color_1')
 				break;
 			case "?theme=2":
-					changeBackground({ value: "dark", label: "Dark" });
-					changeSideBarStyle({ value: "mini", label: "Mini" });
-					changeNavigationHader('color_13')
-					chnageHaderColor('color_13')
-					changePrimaryColor('color_13')
+				changeBackground({ value: "dark", label: "Dark" });
+				changeSideBarStyle({ value: "mini", label: "Mini" });
+				changeNavigationHader('color_13')
+				chnageHaderColor('color_13')
+				changePrimaryColor('color_13')
 				break;
 			case "?theme=4":
 				changeBackground({ value: "dark", label: "Dark" });
@@ -143,7 +154,7 @@ const Home = () => {
 				changePrimaryColor('color_7')
 				break;
 
-			case "?theme=5" :
+			case "?theme=5":
 				changeBackground({ value: "dark", label: "Dark" });
 				changeSideBarLayout({ value: "horizontal", label: "Horizontal" });
 				changeSideBarStyle({ value: "full", label: "Full" });
@@ -153,26 +164,26 @@ const Home = () => {
 				changePrimaryColor('color_1')
 				break;
 			case "?theme=6":
-				changeBackground({ value: "dark", label: "Dark" });				
+				changeBackground({ value: "dark", label: "Dark" });
 				changeNavigationHader('color_10')
 				chnageHaderColor('color_13')
 				chnageSidebarColor('color_10')
 				changePrimaryColor('color_13')
-			break;
+				break;
 			default:
-				changeBackground({ value: "dark", label: "Dark" });				
+				changeBackground({ value: "dark", label: "Dark" });
 				changeNavigationHader('color_3')
 				chnageHaderColor('color_3')
 				changePrimaryColor('color_1')
 				break;
 		}
-			
-	}, [locact.pathname]);	
-	return(
+
+	}, [locact.pathname]);
+	return (
 		<>
 			<MainComponent />
 		</>
 	)
 }
- 
-export default Home ;
+
+export default Home;

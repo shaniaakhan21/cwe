@@ -27,7 +27,7 @@ function LogoutPage(){
     }
     return(
         <>
-            <button  className="dropdown-item ai-icon ms-1" onClick={onLogout}>
+            <button  className="dropdown-item ai-icon" onClick={onLogout}>
                 <svg
                   id="icon-logout" xmlns="http://www.w3.org/2000/svg"
                   className="text-white logout" width={18} height={18} viewBox="0 0 24 24" 
