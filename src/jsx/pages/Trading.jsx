@@ -263,7 +263,7 @@ const Trading = (props) => {
                 <div className="row">
 
                     <div className="col-xl-4">
-                        <div className="card">
+                        <div className="card border-white-leaders">
                             <div className="card-header border-0 pb-0">
                                 <h4 className="card-title mb-0">New Hybrid</h4>
                             </div>
@@ -366,26 +366,28 @@ const Trading = (props) => {
                     <div className="col-xl-12">
                         <div className="card card-btn-b-y">
                             <div className="card-header yellow-it">
-                                <h4 className="card-title mb-0">Stop Profit Global</h4>
-                                <Button onClick={() => { sellAllGroup() }} variant="dark" className="btn btn-sm  text-uppercase ">Sell All Group NOW</Button>
+                                <h4 className="card-title mb-0 yellow-txt">Stop Profit Global</h4>
                             </div>
                             <div className="card-body pt-2" style={{ fontSize: 18 }}>
                                 <div className='d-flex justify-content-between p-1 pt-2' >
-                                    <h4 className='w-50'>Current Global Investment:</h4><h4 className='w-50 text-end'><span >{Number(me?.investment).toFixed(2)} USDT</span></h4>  <br />
+                                    <h4 className='w-50 card-title'>Current Global Investment:</h4><h4 className='w-50 text-end'><span >{Number(me?.investment).toFixed(2)} USDT</span></h4>  <br />
                                 </div>
                                 <div className='d-flex justify-content-between p-1 pt-2' style={{ borderTop: '1px solid #cea62d' }}>
-                                    <h4 className='w-50'>Current Global Profit USDT: </h4><h4 className='w-50 text-end'><span style={{ color: Number(me?.profit_usd) > 0 ? 'green' : "#fd5353" }}>{Number(me?.profit_usd).toFixed(2)} USDT</span></h4>  <br />
+                                    <h4 className='w-50 card-title'>Current Global Profit USDT: </h4><h4 className='w-50 text-end'><span style={{ color: Number(me?.profit_usd) > 0 ? 'green' : "#fd5353" }}>{Number(me?.profit_usd).toFixed(2)} USDT</span></h4>  <br />
                                 </div>
                                 <div className='d-flex justify-content-between p-1 pt-2' style={{ borderTop: '1px solid #cea62d' }}>
-                                    <h4 className='w-50'>Current Global Profit %:</h4><h4 className='w-50 text-end'><span style={{ color: Number(me?.profit) > 0 ? 'green' : "#fd5353" }}>{Number(me?.profit).toFixed(2)} %</span></h4>  <br />
+                                    <h4 className='w-50 card-title'>Current Global Profit %:</h4><h4 className='w-50 text-end'><span style={{ color: Number(me?.profit) > 0 ? 'green' : "#fd5353" }}>{Number(me?.profit).toFixed(2)} %</span></h4>  <br />
                                 </div>
 
-                                <div style={{ borderTop: '1px solid #cea62d', paddingTop: 10 }} className='d-flex justify-content-between align-items-center'>
+                                <div style={{ borderTop: '1px solid #cea62d', paddingTop: 10 }} className='d-flex justify-content-between align-items-center p-1'>
                                     <h4>Closes At </h4>
-                                    <div className='d-flex justify-content-between align-items-center'>
+                                    <div className='d-flex justify-content-between align-items-center pt-4'>
                                         <input type="text" value={meStopGain} onChange={(e) => { setMeStopGain(e.target.value) }} />
                                         <Button style={{ marginLeft: 20 }} onClick={() => { updateStopGain() }} variant="success" className="btn py-2 text-uppercase ">Save</Button>
                                     </div>
+                                </div>
+                                <div  className='d-flex justify-content-end pt-4'>
+                                    <Button onClick={() => { sellAllGroup() }} variant="dark" className="btn text-uppercase yellow-newbtn">Sell All Group NOW</Button>
                                 </div>
                             </div>
                         </div>
@@ -395,11 +397,11 @@ const Trading = (props) => {
                 <div className="col-xl-12">
                     <div className="card">
                         <Tab.Container defaultActiveKey={'Open'}>
-                            <div className="card-header border-0 pb-3 flex-wrap">
+                            <div className="card-header border-0 pb-3 flex-wrap pe-0 ps-0">
                                 <h4 className="card-title">My Orders</h4>
                                 <nav>
                                     <Nav as="div" className="nav-pills light" >
-                                        <Nav.Link onClick={() => { getHybridTrades(); fetchMe(); }} as="button" eventKey="Open">Refresh</Nav.Link>
+                                        <Nav.Link onClick={() => { getHybridTrades(); fetchMe(); }} as="button" className="yellow-newbtn" eventKey="Open">Refresh</Nav.Link>
                                     </Nav>
                                 </nav>
                             </div>

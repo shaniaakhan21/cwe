@@ -102,11 +102,11 @@ const TradingTable = (params) => {
             renderCell: (params) => {
 
                 if (params.value === 97) {
-                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer", backgroundColor: '#e79e01' }} bg="">Pending Buy <i className='fa fa-circle-info' /></Button>
+                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer" }} bg="">Pending Buy <i className='fa fa-circle-info' /></Button>
                 }
 
                 if ([99, 0].includes(params.value)) {
-                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer", backgroundColor: '#e79e01' }} bg="">Buying <i className='fa fa-circle-info' /></Button>
+                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer" }} bg="">Buying <i className='fa fa-circle-info' /></Button>
                 }
 
                 if ([67].includes(params.value)) {
@@ -118,7 +118,7 @@ const TradingTable = (params) => {
                 }
 
                 if (params.value === 4) {
-                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer", backgroundColor: 'green', borderColor: 'green' }} className='btn-new-complete'>Completed <i className='fa fa-circle-info' /></Button>
+                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer" }} className='btn-new-complete'>Completed <i className='fa fa-circle-info' /></Button>
                 }
 
 

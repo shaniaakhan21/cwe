@@ -74,15 +74,15 @@ export function MainComponent() {
 				<Row>
 					<div className=" col-12">
 						<div className='card borderShadow'>
-							<Card.Body className=" mb-0">
-								<h4 className='border-btn-bot'>Referral Link</h4>
-								<Card.Text style={{ marginTop: 20 }}>
+							<Card.Body className="d-flex align-items-center justify-content-between mb-0">
+								<h4 className=''>Referral Link</h4>
+								<Card.Text>
 									{referralLink}
 								</Card.Text>
 								<Button
 									onClick={() => copyReferralLink(referralLink)}
 									variant=" "
-									className="btn-card btn-success text-white mt-3"
+									className="btn-card btn-success text-white"
 								>
 									<i className="fa fa-copy" /> {copied ? 'Copied!' : 'Copy'}
 								</Button>
