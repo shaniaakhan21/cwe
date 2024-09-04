@@ -38273,7 +38273,7 @@ table.dataTable>tfoot>tr>td {
 .authincation {
   background: black;
   display: flex;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 .authincation .login-aside {
