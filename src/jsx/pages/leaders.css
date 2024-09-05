@@ -1,0 +1,51 @@
+.some-yellow {
+    background-color: #cea62d5e !important;
+    border-color: #cea62d70 !important;
+    border-radius: 0 !important;
+    color: #cea62d !important;
+}
+
+.stop-it {
+    border-radius: 0 !important;
+    color: #cea62d !important;
+    border: 1px solid #cea62d !important;
+}
+
+.follow-it {
+    border-radius: 0 !important;
+    background-color: #cea62d !important;
+}
+
+.follow-it:hover,
+.follow-it:active {
+    color: black !important;
+}
+
+.stop-it:hover {
+    color: white !important;
+}
+
+
+
+@media (max-width: 600px) {
+
+    .some-yellow h3 {
+        font-size: 0.6rem !important;
+        margin: 0 !important;
+    }
+
+    .some-yellow .badge{
+        font-size: 0.4rem !important;  
+        margin-top: 1px!important;
+    }
+
+    .some-yellow p,
+    .some-yellow a {
+        font-size: 0.5rem !important;
+        margin: 0 !important;
+    }
+
+    .card-body {
+        padding: 0.4rem !important;
+    }
+}

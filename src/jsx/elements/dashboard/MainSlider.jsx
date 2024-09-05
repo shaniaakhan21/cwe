@@ -77,56 +77,56 @@ const MainSlider = () => {
             >
                 <SwiperSlide>
                     <div className={`card card-box borderShadow`}>
-                        <div className="card-header border-0 pb-0">
+                        <div className="card-header border-0 p-4">
                             <div className="chart-num">
-                                <p>
+                                <p className='pb-4'>
                                     <i className="fa-solid fa-sort-down me-2" />
                                     Total Hybrid Operations
                                 </p>
                                 <h2 className="font-w600 mb-0">{dashboardData[0]}</h2>
                             </div>
                         </div>
-                        <div className="card-body p-0">
+                        {/* <div className="card-body p-0">
                             <div id="widgetChart1" className="chart-primary">
                                 <SwiperLineChart chartcolor="#cea62d" />
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className={`card card-box  borderShadow`}>
-                        <div className="card-header border-0 pb-0">
+                        <div className="card-header border-0 p-4">
                             <div className="chart-num">
-                                <p>
+                                <p className='pb-4'>
                                     <i className="fa-solid fa-sort-down me-2" />
                                     Total Positive Operations
                                 </p>
                                 <h2 className="font-w600 mb-0">{dashboardData[1]}</h2>
                             </div>
                         </div>
-                        <div className="card-body p-0">
+                        {/* <div className="card-body p-0">
                             <div id="widgetChart1" className="chart-primary">
                                 <SwiperLineChart chartcolor="#cea62d" />
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className={`card card-box  borderShadow`}>
-                        <div className="card-header border-0 pb-0">
+                        <div className="card-header border-0 p-4">
                             <div className="chart-num">
-                                <p>
+                                <p className='pb-4'>
                                     <i className="fa-solid fa-sort-down me-2" />
                                     Average Profit
                                 </p>
                                 <h2 className="font-w600 mb-0">{dashboardData[2]}</h2>
                             </div>
                         </div>
-                        <div className="card-body p-0">
+                        {/* <div className="card-body p-0">
                             <div id="widgetChart1" className="chart-primary">
                                 <SwiperLineChart chartcolor="#cea62d" />
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </SwiperSlide>                
             </Swiper>

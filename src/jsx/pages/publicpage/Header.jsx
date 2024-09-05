@@ -19,12 +19,17 @@ import XIcon from '@mui/icons-material/X'; // X (Twitter) icon
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TikTokYellowIcon from '../../../assets/images/tiktok-yellow.png'
 import TikTokWhiteIcon from '../../../assets/images/tiktok-white.png'
+import Dialog from '@mui/material/Dialog';
+import LoginPop from '../authentication/LoginPop';
+import RegisterPop from '../authentication/RegisterPop'
 
 const Header = ({ showLinks = true }) => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [hovered, setHovered] = useState(false);
+    const [isLoginOpen, setIsLoginOpen] = useState(false);
+    const [isSignUpOpen, setIsSignUpOpen] = useState(false);
 
     const handleMenu = (event) => {
         setAnchorEl(event.currentTarget);
@@ -37,18 +42,31 @@ const Header = ({ showLinks = true }) => {
     const navigate = useNavigate();
 
     const handleNavigationSignUp = () => {
-        navigate('/register');
+        if (isMobile) {
+            navigate('/register');
+        } else {
+            setIsSignUpOpen(true);
+        }
     };
 
     const handleNavigationLogIn = () => {
-        navigate('/login');
+        if (isMobile) {
+            navigate('/login');
+        } else {
+            setIsLoginOpen(true);
+        }
+    };
+
+    const handleCloseDialog = () => {
+        setIsLoginOpen(false);
+        setIsSignUpOpen(false);
     };
 
     return (
         <AppBar position="sticky" color="transparent" elevation={0} className='header-cwe'>
             <Toolbar sx={{ background: '#000' }}>
                 {/* Logo */}
-                <Link href="#" sx={{ flexGrow: 1 }} className='w-10 mt-2'>
+                <Link href="/" sx={{ flexGrow: 1 }} className='w-10 mt-2'>
                     <img
                         src={logo}
                         className="ImgPhn"
@@ -59,8 +77,8 @@ const Header = ({ showLinks = true }) => {
                 {/* Navigation Links for Desktop */}
                 {!isMobile && (
                     <Box sx={{ display: 'flex', flexGrow: 1, justifyContent: 'left', gap: 3 }} className='w-25 mt-3'>
-                        { showLinks &&  (
-                        <><Link href="/#markets-section" color="inherit" underline="none">
+                        {showLinks && (
+                            <><Link href="/#markets-section" color="inherit" underline="none">
                                 Markets
                             </Link><Link href="/#buy-crypto-section" color="inherit" underline="none">
                                     Buy Crypto
@@ -137,7 +155,18 @@ const Header = ({ showLinks = true }) => {
                             </div>
                             <Button variant="outlined" color="inherit" className='btn-white-cwe padding-cstm-2' onClick={handleNavigationLogIn}>Login</Button>
                             <Button variant="contained" className='btn-yellow-cwe padding-cstm-2' onClick={handleNavigationSignUp}>Sign Up</Button>
-                        </Box></>
+                        </Box>
+
+                        {/* Login Dialog */}
+                        <Dialog open={isLoginOpen} onClose={handleCloseDialog} fullWidth maxWidth="sm">
+                            <LoginPop isVisible={isLoginOpen} onClose={handleCloseDialog} />
+                        </Dialog>
+
+                        {/* Sign Up Dialog */}
+                        <Dialog open={isSignUpOpen} onClose={handleCloseDialog} fullWidth maxWidth="sm">
+                           <RegisterPop isVisible={isSignUpOpen} onClose={handleCloseDialog} />
+                        </Dialog>
+                    </>
                 )}
             </Toolbar>
         </AppBar>

@@ -20,6 +20,10 @@
 
 .MuiDataGrid-root {
     border-color: #cea62d!important;
+    color: white!important;
+}
+
+.MuiDataGrid-topContainer{
     color: #cea62d!important;
 }
 
