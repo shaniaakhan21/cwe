@@ -4037,7 +4037,7 @@ fieldset:disabled .btn {
   background-color: #cea62d !important;
   border-radius: 8px !important;
   color: black !important;
-  border: 2px solid #cea62d !important;
+  border: 1px solid #cea62d !important;
   font-weight: 700 !important;
 }
 
@@ -17611,7 +17611,7 @@ svg.pulse-svg .third-circle {
   content: "";
   height: 8px;
   width: 8px;
-  border: 2px solid #cccccc;
+  border: 1px solid #cccccc;
   top: 50%;
   left: 22px;
   -webkit-transition: all 0.5s;
@@ -17684,7 +17684,7 @@ svg.pulse-svg .third-circle {
   width: 3.125rem;
   border-radius: 50%;
   margin-left: 0.8rem;
-  border: 2px solid #cea62d80;
+  border: 1px solid #cea62d80;
   padding: 5px;
 }
 
@@ -34122,10 +34122,6 @@ button:focus {
   }
 }
 
-.card-body {
-  padding: 1.5rem 1.875rem 1.25rem;
-}
-
 @media only screen and (max-width: 35.9375rem) {
   .card-body {
     padding: 1rem;
@@ -34206,6 +34202,13 @@ button:focus {
   background: transparent;
   border: 0.0625rem solid transparent;
   box-shadow: none;
+}
+
+.yellow-newbtn{
+  background: #cea62c52!important;
+  color: #cea62c!important;
+  border: 1px solid #cea62c!important;
+  border-radius: 0.5rem!important;
 }
 
 .card-action>a {
@@ -34453,12 +34456,12 @@ button:focus {
 }
 
 .dropdown-menu:hover {
-  border: 2px solid #cea62d !important;
+  border: 1px solid #cea62d !important;
   background-color: black;
 }
 
 .dropdown-menu {
-  border: 2px solid #cea62d !important;
+  border: 1px solid #cea62d !important;
   background-color: black;
 }
 
@@ -38270,7 +38273,7 @@ table.dataTable>tfoot>tr>td {
 .authincation {
   background: black;
   display: flex;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 .authincation .login-aside {
@@ -39139,7 +39142,7 @@ body>* {
 }
 
 .card-select .card-in{
-  border: 2px solid #cea62d;
+  border: 1px solid #cea62d;
   height: 150px;
   padding: 5%;
   border-radius: 20px;
@@ -39153,19 +39156,19 @@ body>* {
 }
 
 .card-btn-b-y{
-  border: 2px solid #cea62d;
+  border: 1px solid #cea62d;
   border-radius: 4px;
 }
 
 .yellow-it{ 
-  background: #cea62d;
+  background: #cea62c52;
   border-top-left-radius: 0px!important;
   border-top-right-radius: 0px!important;
   padding: 1%;
 }
 
-.yellow-it h4{
-  text-transform: uppercase!important;
+.yellow-txt{
+  color: #cea62c!important;
 }
 
 .card-btn-b-y input{
@@ -43722,7 +43725,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .bg-bitcoin-2 {
   background-image: url(../images/publicpages/bitcoin-bg-2.png);
-  background-size: 32% 100%;
+  background-size: 20% 100%;
   background-position: left;
   background-repeat: no-repeat;
 }
@@ -43906,7 +43909,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .SS .firstSS img {
-  border: 2px solid #cea62dc4;
+  border: 1px solid #cea62dc4;
   border-radius: 24px;
 }
 
@@ -43938,7 +43941,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .border-white-leaders{
-  border: 2px solid #cea62d;
+  border: 1px solid #cea62d;
   border-radius: 20px;
 }
 
@@ -44056,6 +44059,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .bg-bitcoin-3 h1 {
     font-size: 18px !important;
     line-height: 20px !important;
+  }
+
+  .bg-bitcoin-2 {
+    background-size: 32% 100%;
   }
 
   .pdg {

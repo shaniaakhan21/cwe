@@ -20,11 +20,11 @@
 
 .MuiDataGrid-root {
     border-color: #cea62d!important;
-    color: white!important;
+    color: #cea62d!important;
 }
 
 .MuiDataGrid-root {
-    --DataGrid-containerBackground: #cea62d!important;
+    --DataGrid-containerBackground: #cea62c52!important;
     --DataGrid-rowBorderColor: #cea62d!important;
   }
 
@@ -37,13 +37,24 @@
 }
 
 div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
-    background-color: #fd5353!important;
-    border: 2px solid #fd5353!important;
+    background-color: #00800057!important;
+    border-color: #00800057!important;
+    border-radius: 0!important;
+    color: #00aa00!important;
+}
+
+div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny), 
+div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel) {
+    background-color: #fd53535c!important;
+    border-color: #fd53535c!important;
+    border-radius: 0!important;
+    color: #fd5353!important;
+
 }
 
 div:where(.swal2-container).swal2-center>.swal2-popup {
     display: grid;
-    border: 2px solid #cea62d;
+    border: 1px solid #cea62d;
     border-radius: 12px;
     box-shadow: 2px 2px 6px 1px #cea62d52;
 }
@@ -57,10 +68,9 @@ div:where(.swal2-container) .swal2-html-container p{
     justify-content: space-between;
 }
 
-div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel){
-    background-color: transparent!important;
-    border-color: white!important;
-    border: 2px solid white!important;
+div:where(.swal2-icon).swal2-warning {
+    border-color: #cea62d !important;
+    color: #cea62d !important;
 }
 
 .btn-new-complete{
@@ -92,10 +102,10 @@ div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel){
 
 .btn-user-sold{
     cursor: pointer!important;
-    background-color: #1e21d45e!important;
-    border-color: #1e21d470!important;
+    background-color: #3498ff61!important;
+    color: #3498ff !important;
+    border: 1px solid #3498ff!important;
     border-radius: 0!important;
-    color: #5356ff!important;
     text-transform: uppercase;
 }
 
@@ -117,3 +127,4 @@ div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel){
         padding: 0 1.1%!important;
       }
   }
+}

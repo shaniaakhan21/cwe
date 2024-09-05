@@ -27,20 +27,17 @@ const PublicPage = () => {
 
     return (
         <>
-            <Header />
+            <Header showLinks={true}/>
             <section >
                 <div className="bg-bitcoin" >
                     <div className="pdg" data-aos="fade-up" data-aos-duration="3000">
                         <div>
                             <h1>
-                                <b>Revolutionizing</b> <br />  Cryptocurrency Trading
+                                Revolutionizing <br />  Cryptocurrency Trading
                             </h1>
                             <h5 className="line-it py-2">
-                                One Subscription at a Time
+                                Register for trading for Free
                             </h5>
-                        </div>
-                        <div className="py-3">
-                            <Button variant="contained" className='btn-yellow-cwe padding-cstm-2' onClick={handleNavigation}><b>Get Started</b></Button>
                         </div>
                     </div>
                 </div>
@@ -51,7 +48,7 @@ const PublicPage = () => {
                     <div className="pdgn-2">
                         <div>
                             <h1>
-                                A New Era of <b>Crypto</b> Trading Services
+                                A New Era of Crypto Trading Services
                             </h1>
                         </div>
                         <div className="w-100 justify-content-end d-flex-end">
@@ -62,9 +59,6 @@ const PublicPage = () => {
                                     Our subscription model is designed to give you continuous access to advanced trading tools and analytics.
                                     From beginners to professional traders, we cater to all your trading needs with unparalleled ease and efficiency.
                                 </p>
-                            </div>
-                            <div className="py-3 w-50 btn-end">
-                                <Button variant="contained" className='btn-yellow-cwe padding-cstm-2' onClick={handleNavigation}><b>Trade Now!</b></Button>
                             </div>
                         </div>
                     </div>
@@ -87,17 +81,17 @@ const PublicPage = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="w-100 d-flex cryptosFlex">
+                        <div className="w-100 d-flex cryptosFlex  justify-content-center">
                             <div className="w-50 mx-5  d-flex justify-content-center listC">
                                 <div className="w-65 listC2"  data-aos="fade-right" data-aos-duration="2000">
                                     <CryptoList />
                                 </div>
                             </div>
-                            <div className="w-50 mx-5  d-flex justify-content-start listC justify-content-c">
+                            {/* <div className="w-50 mx-5  d-flex justify-content-start listC justify-content-c">
                                 <div className="w-65 listC2"  data-aos="fade-left" data-aos-duration="2000">
                                     <BuySell />
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
@@ -126,7 +120,7 @@ const PublicPage = () => {
                                     alt=""
                                 />
                             </div>
-                            <div className="w-25 d-flex col-flex justify-content-between align-items-center borderWhite py-5 px-2 listC2" data-aos="fade-left" data-aos-duration="3000">
+                            <div className="w-25 d-flex col-flex justify-content-start align-items-center borderWhite py-5 px-2 listC2" data-aos="fade-left" data-aos-duration="3000">
                                 <h3>
                                     <b>Copy </b>and <b>Share</b>  referral link with your friends and
                                     <span style={{ color: '#cea62d' }}><b> earn points </b></span>
@@ -137,11 +131,6 @@ const PublicPage = () => {
                                     className="w-75"
                                     alt=""
                                 />
-                                <div className='w-100 px-4'>
-                                    <Button variant="contained" className='btn-yellow-cwe padding-cstm-2 w-100' onClick={handleNavigation}>
-                                        Get Started Now!
-                                    </Button>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -197,24 +186,6 @@ const PublicPage = () => {
                     </div>
                 </div>
             </section> */}
-
-            <section className="mt-5 Start2Day">
-                <div className="bg-bitcoin-3 SS">
-                    <div className="pdgn-3">
-                        <div>
-                            <h1>
-                                Start earning today
-                            </h1>
-                        </div>
-                        <div className="align-btn">
-                            <Button variant="contained" className='btn-black padding-cstm-2 w-25' onClick={handleNavigation}>
-                                Sign Up Now!
-                            </Button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <Footer />
         </>
 

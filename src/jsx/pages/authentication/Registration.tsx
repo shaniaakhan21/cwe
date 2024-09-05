@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { z } from "zod";
 import { zodResolver } from '@hookform/resolvers/zod';
 import axios from "axios";
+import Header from "../publicpage/Header";
 
 export type FormData = {
   email: string;
@@ -69,7 +70,7 @@ function Register(props) {
     }
   }
   return (
-    <div className="bg-black">
+    <><Header showLinks={false} /><div className="bg-black">
       <div className="fix-wrapper">
         <div className="container ">
           <div className="row justify-content-center">
@@ -134,7 +135,7 @@ function Register(props) {
           </div>
         </div>
       </div>
-    </div>
+    </div></>
   );
 }
 

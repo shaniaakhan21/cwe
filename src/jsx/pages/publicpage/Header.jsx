@@ -20,7 +20,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TikTokYellowIcon from '../../../assets/images/tiktok-yellow.png'
 import TikTokWhiteIcon from '../../../assets/images/tiktok-white.png'
 
-const Header = () => {
+const Header = ({ showLinks = true }) => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -59,15 +59,15 @@ const Header = () => {
                 {/* Navigation Links for Desktop */}
                 {!isMobile && (
                     <Box sx={{ display: 'flex', flexGrow: 1, justifyContent: 'left', gap: 3 }} className='w-25 mt-3'>
-                        <Link href="/#markets-section" color="inherit" underline="none">
-                            Markets
-                        </Link>
-                        <Link href="/#buy-crypto-section" color="inherit" underline="none">
-                            Buy Crypto
-                        </Link>
-                        <Link href="/#earn-section" color="inherit" underline="none">
-                            Earn
-                        </Link>
+                        { showLinks &&  (
+                        <><Link href="/#markets-section" color="inherit" underline="none">
+                                Markets
+                            </Link><Link href="/#buy-crypto-section" color="inherit" underline="none">
+                                    Buy Crypto
+                                </Link><Link href="/#earn-section" color="inherit" underline="none">
+                                    Earn
+                                </Link></>
+                        )}
                     </Box>
                 )}
 

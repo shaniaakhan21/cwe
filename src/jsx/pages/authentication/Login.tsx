@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 // import logoFull from "../../../assets/images/logo-full.png";
 import { IMAGES } from "../../constant/theme";
 import axiosInstance from "../../../services/AxiosInstance";
+import Header from "../publicpage/Header";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -30,6 +31,7 @@ function Login() {
 
   return (
     <>
+    <Header showLinks={false} />
       <div className="authincation d-flex flex-column flex-lg-row flex-column-fluid">
         <div className="container flex-row-fluid d-flex flex-column justify-content-center position-relative overflow-hidden p-7 mx-auto">
           <div className="d-flex justify-content-center h-100 align-items-center">
