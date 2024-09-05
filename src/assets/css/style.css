@@ -4059,7 +4059,7 @@ fieldset:disabled .btn {
 
 .header-cwe a:hover,
 .footer-cwe .links-btm a:hover {
-  color: #cea62d ;
+  color: #cea62d;
   font-size: 16.5px !important;
 }
 
@@ -4514,7 +4514,7 @@ fieldset:disabled .btn {
   color: var(--bs-dropdown-link-color);
 }
 
-.header-profile2 .dropdown-menu .dropdown-item:hover{
+.header-profile2 .dropdown-menu .dropdown-item:hover {
   color: #fff;
   background: #cea62d;
 }
@@ -5404,7 +5404,7 @@ fieldset:disabled .btn {
   border-bottom: var(--bs-card-border-width) solid var(--bs-card-border-color);
 }
 
-.border-btn-bot{
+.border-btn-bot {
   border-bottom: 1px solid #cea62d8c !important;
   padding-bottom: 2%;
 }
@@ -34204,11 +34204,11 @@ button:focus {
   box-shadow: none;
 }
 
-.yellow-newbtn{
-  background: #cea62c52!important;
-  color: #cea62c!important;
-  border: 1px solid #cea62c!important;
-  border-radius: 0.5rem!important;
+.yellow-newbtn {
+  background: #cea62c52 !important;
+  color: #cea62c !important;
+  border: 1px solid #cea62c !important;
+  border-radius: 0.5rem !important;
 }
 
 .card-action>a {
@@ -39127,21 +39127,21 @@ body>* {
 }
 
 .snackbar-it .MuiAlert-icon {
-  color: #000000!important;
+  color: #000000 !important;
 }
 
 .trading-tb .MuiDataGrid-overlay {
-  background-color: #000!important;
+  background-color: #000 !important;
 }
 
-.card-select{
+.card-select {
   display: flex;
   align-content: center;
   align-items: center;
   justify-content: center;
 }
 
-.card-select .card-in{
+.card-select .card-in {
   border: 1px solid #cea62d;
   height: 150px;
   padding: 5%;
@@ -39151,37 +39151,37 @@ body>* {
   align-items: center;
 }
 
-.card-select .card-in h3{
+.card-select .card-in h3 {
   margin-left: 3%;
 }
 
-.card-btn-b-y{
+.card-btn-b-y {
   border: 1px solid #cea62d;
   border-radius: 4px;
 }
 
-.yellow-it{ 
+.yellow-it {
   background: #cea62c52;
-  border-top-left-radius: 0px!important;
-  border-top-right-radius: 0px!important;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
   padding: 1%;
 }
 
-.yellow-txt{
-  color: #cea62c!important;
+.yellow-txt {
+  color: #cea62c !important;
 }
 
-.card-btn-b-y input{
-  width: 100px!important;
-  text-align: center!important;
-  background: transparent!important;
-  color: white!important;
-  border: 1px solid white!important;
+.card-btn-b-y input {
+  width: 100px !important;
+  text-align: center !important;
+  background: transparent !important;
+  color: white !important;
+  border: 1px solid white !important;
   padding: 1.7%;
 }
 
-.btn-bt{
-  border: 2px solid white!important;
+.btn-bt {
+  border: 2px solid white !important;
 }
 
 .card-box {
@@ -43694,12 +43694,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-size: 0.875rem;
 }
 
-.MuiTablePagination-root{
-  color: white!important;
+.MuiTablePagination-root {
+  color: white !important;
 }
 
-.MuiTablePagination-selectLabel, .MuiTablePagination-displayedRows{
-  margin-bottom: 0!important;
+.MuiTablePagination-selectLabel,
+.MuiTablePagination-displayedRows {
+  margin-bottom: 0 !important;
 }
 
 @media only screen and (max-width: 35.9375rem) {
@@ -43940,7 +43941,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-weight: 400;
 }
 
-.border-white-leaders{
+.border-white-leaders {
   border: 1px solid #cea62d;
   border-radius: 20px;
 }
@@ -44123,7 +44124,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 
   .CryptoTable .MuiSvgIcon-root {
-    display: none!important;
+    display: none !important;
   }
 
   .bg-bitcoin-3 .d-flex-center {
@@ -44143,33 +44144,33 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 
   .css-1821gv5 {
-    gap: 4px!important;
+    gap: 4px !important;
   }
 
-  .css-hyum1k-MuiToolbar-root{
-    padding-left: 4%!important;
-    padding-right: 4%!important;
+  .css-hyum1k-MuiToolbar-root {
+    padding-left: 4% !important;
+    padding-right: 4% !important;
   }
 
-  .footer-cwe button{
+  .footer-cwe button {
     font-size: 5px;
     padding: 2px !important;
   }
 
-  .footer-cwe .widthSh{
-    width: 50%!important;
+  .footer-cwe .widthSh {
+    width: 50% !important;
   }
 
   .mt-4 {
     margin-top: 0.5rem !important;
   }
 
-  .footer-cwe .widthSh2{
-    width: 30%!important;
+  .footer-cwe .widthSh2 {
+    width: 30% !important;
   }
 
-  .footer-cwe .widthSh3{
-    width: 20%!important;
+  .footer-cwe .widthSh3 {
+    width: 20% !important;
   }
 
   .footer-cwe .MuiSvgIcon-root {
@@ -44208,12 +44209,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 
   .padding-cstm {
-    padding: 2px 4%  !important;
-}
+    padding: 2px 4% !important;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
+
   /* Styles for medium devices */
   .bg-bitcoin h1,
   .bg-bitcoin-2 h1,
@@ -44223,12 +44225,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 
   .padding-cstm {
-    padding: 2px 4%  !important;
-}
+    padding: 2px 4% !important;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
+
   /* Styles for large devices */
   .bg-bitcoin h1,
   .bg-bitcoin-2 h1,
@@ -44239,12 +44242,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   .padding-cstm {
     padding: 3px 9% !important;
-}
+  }
 
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) and (max-width: 1439.98px) {
+
   /* Styles for extra large devices */
   .bg-bitcoin h1,
   .bg-bitcoin-2 h1,
@@ -44255,16 +44259,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   .padding-cstm {
     padding: 3px 11% !important;
-}
+  }
 
 }
 
 /* Extra extra large devices (very large desktops, 1440px and up) */
 @media (min-width: 1440px) {
+
   /* Styles for extra extra large devices */
   .padding-cstm {
     padding: 3px 11% !important;
-}
+  }
 }
 
 
@@ -44484,6 +44489,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 [data-theme-version="dark"] .sidebar-right .nice-select .option {
   background: #fff;
+}
+
+@media (max-width: 600px) {
+  .borderShadow .btn-m {
+    padding: 4px 16px !important;
+    margin: 2% !important;
+  }
+
+  .borderShadow .card-body{
+    flex-direction: column!important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
