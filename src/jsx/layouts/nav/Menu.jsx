@@ -1,5 +1,10 @@
 export const MenuList = [
-       
+    {
+        title: 'Upgrade',	
+        classsChange: 'mm-collapse',		
+        iconStyle: <i className="material-symbols-outlined">dashboard</i>,
+        to: 'upgrade',
+    },
     {
         title: 'Dashboard',	
         classsChange: 'mm-collapse',		

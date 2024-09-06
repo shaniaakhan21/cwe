@@ -9,6 +9,7 @@ import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
 import Swal from 'sweetalert2';
 import { TechnicalAnalysis } from "react-ts-tradingview-widgets";
 import { useParams } from 'react-router-dom';
+import './Trading.css'
 
 
 const Trading = (props) => {

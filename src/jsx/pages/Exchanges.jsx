@@ -127,7 +127,7 @@ const Exchanges = () => {
             <div className="row">
                 {apikeys && apikeys.map((apiKey) => {
                     return (
-                        <div key={apiKey.id} className="col-11 col-md-3 m-3" style={{ border: "1px solid grey", padding: 20, borderRadius: 10 }}>
+                        <div key={apiKey.id} className="col-11 col-md-3 m-3" style={{ border: "1px solid #cea62d", padding: 20, borderRadius: 10 }}>
                             <div style={{ textAlign: "center" }}>
 
                                 <img src={exchanges[`plataforma-${apiKey.idPlataforma}`]} alt="Binance" style={{ width: "80%" }} />
