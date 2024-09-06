@@ -878,3 +878,21 @@ button.react-calendar__tile.react-calendar__tile--active.react-calendar__tile--r
   background: #08c !important;
   color: #fff;
 }
+
+.MuiDialog-paperScrollPaper, .tab-content, .no-gutters, .authincation-content {
+  background-color: transparent!important;
+}
+
+#sign-up{
+  background-color: black!important;
+}
+
+.MuiDialog-container {
+  display: flex!important;
+  justify-content: flex-end!important;
+  margin: 0!important;
+}
+
+.MuiBackdrop-root, .MuiModal-backdrop{
+  background-color: transparent!important;
+}

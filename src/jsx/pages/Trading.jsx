@@ -262,7 +262,7 @@ const Trading = (props) => {
             <div className="col">
                 <div className="row">
 
-                    <div className="col-xl-4">
+                    <div className="col-xl-6">
                         <div className="card border-white-leaders">
                             <div className="card-header border-0 pb-0">
                                 <h4 className="card-title mb-0">New Hybrid</h4>
@@ -327,7 +327,7 @@ const Trading = (props) => {
                         </div>
                     </div>
                     {selectedOption && (
-                        <div className="col-xl-8">
+                        <div className="col-xl-6">
                             <div className="card" style={{ height: '100%' }}>
                                 <>
                                     <TechnicalAnalysis symbol={`${selectedOption.label}USDT`} colorTheme="dark" width="100%"></TechnicalAnalysis>
