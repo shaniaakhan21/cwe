@@ -17418,7 +17418,7 @@ svg.pulse-svg .third-circle {
 }
 
 .dlabnav .menu-scroll {
-  height: calc(100% - 7.5rem);
+  height: calc(100% - 1.5rem);
 }
 
 .dlabnav .dlabnav-scroll {
@@ -17519,6 +17519,10 @@ svg.pulse-svg .third-circle {
   margin-right: 0.3125rem;
   margin-top: -0.1875rem;
   color: var(--primary);
+}
+
+.dlabnav .metismenu>li>.mm-active svg {
+  color: white;
 }
 
 .dlabnav .metismenu>li>a g [fill] {
