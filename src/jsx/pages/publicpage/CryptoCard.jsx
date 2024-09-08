@@ -10,6 +10,7 @@ import {
     LineElement,
     Tooltip,
     Legend,
+    Filler,
 } from 'chart.js';
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -20,7 +21,8 @@ ChartJS.register(
     PointElement,
     LineElement,
     Tooltip,
-    Legend
+    Legend,
+    Filler // Enable gradient fill
 );
 
 const CryptoCard = () => {
@@ -33,7 +35,7 @@ const CryptoCard = () => {
     useEffect(() => {
         AOS.init();
         AOS.refresh();
-      }, []);
+    }, []);
 
     const fetchCryptoData = async () => {
         try {
@@ -53,23 +55,25 @@ const CryptoCard = () => {
     };
 
     return (
-        <Box display="flex" justifyContent="space-between" className='CardSec'>
+        <Box display="flex" justifyContent="space-between" className="CardSec">
             {cryptos.map((crypto) => (
                 <Card
                     key={crypto.id}
                     sx={{ width: '18%', backgroundColor: '#000', color: 'white', padding: '10px' }}
-                    className='cryptCard'
-                    data-aos="flip-left" data-aos-duration="2000"
+                    className="cryptCard"
+                    data-aos="flip-left"
+                    data-aos-duration="2000"
                 >
-
                     <Box display="flex" alignItems="center" mb={1}>
                         <img src={crypto.image} alt={crypto.symbol} width="24px" height="24px" />
                     </Box>
-                    <Box className='d-flex justify-content-between items-align-center'>
+                    <Box className="d-flex justify-content-between items-align-center">
                         <Typography variant="h6" sx={{ marginLeft: '10px' }}>
                             {crypto.symbol.toUpperCase()}
                         </Typography>
-                        <Typography className='text-our-yellow' variant="h5"><b>${crypto.current_price.toFixed(2)}</b></Typography>
+                        <Typography className="text-our-yellow" variant="h5">
+                            <b>${crypto.current_price.toFixed(2)}</b>
+                        </Typography>
                     </Box>
 
                     <Line
@@ -78,9 +82,18 @@ const CryptoCard = () => {
                             datasets: [
                                 {
                                     data: crypto.sparkline_in_7d.price,
-                                    borderColor: '#26E3B6', 
-                                    borderWidth: 1,
-                                    fill: false,
+                                    borderColor: 'rgba(206, 166, 45, 1)',
+                                    backgroundColor: (context) => {
+                                        const ctx = context.chart.ctx;
+                                        const gradient = ctx.createLinearGradient(0, 0, 0, 180);
+                                        gradient.addColorStop(0, 'rgba(206, 166, 45, 0.4)');
+                                        gradient.addColorStop(1, 'rgba(206, 166, 45, 0)');
+                                        return gradient;
+                                    },
+                                    borderWidth: 2,
+                                    fill: true, // Enable gradient fill
+                                    pointRadius: 0, // Remove points from the graph
+                                    pointHoverRadius: 4, // Display points on hover
                                 },
                             ],
                         }}
@@ -91,10 +104,19 @@ const CryptoCard = () => {
                             },
                             elements: {
                                 line: {
-                                    tension: 0.2,
+                                    tension: 0.4, // Increase tension for smoother curves
                                 },
                             },
                             plugins: {
+                                tooltip: {
+                                    enabled: true,
+                                    mode: 'nearest',
+                                    callbacks: {
+                                        label: function (tooltipItem) {
+                                            return `$${tooltipItem.raw.toFixed(2)}`;
+                                        },
+                                    },
+                                },
                                 legend: {
                                     display: false,
                                 },

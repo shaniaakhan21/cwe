@@ -1,72 +1,82 @@
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import LanIcon from '@mui/icons-material/Lan';
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import GroupIcon from '@mui/icons-material/Group';
+import Diversity3Icon from '@mui/icons-material/Diversity3';
+import ScatterPlotIcon from '@mui/icons-material/ScatterPlot';
+import WalletIcon from '@mui/icons-material/AccountBalanceWallet'; 
+import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
+import CurrencyBitcoinIcon from '@mui/icons-material/CurrencyBitcoin';
+import UpgradeIcon from '@mui/icons-material/Upgrade';
+import NotificationImportantIcon from '@mui/icons-material/NotificationImportant';
+
 export const MenuList = [
-       
+    {
+        title: 'Upgrade',	
+        classsChange: 'mm-collapse',		
+        iconStyle: <UpgradeIcon />,
+        to: 'upgrade',
+    },
     {
         title: 'Dashboard',	
         classsChange: 'mm-collapse',		
-        iconStyle: <i className="material-symbols-outlined">dashboard</i>,
+        iconStyle: <DashboardIcon />,
         to: 'dashboard',
     },
     {
         title: 'Exchanges',	
         classsChange: 'mm-collapse',		
-        iconStyle: <i className="material-symbols-outlined">dashboard</i>,
+        iconStyle: <CurrencyBitcoinIcon />, 
         to: 'exchanges',
     },
     {
         title: 'Single Trading',	
         classsChange: 'mm-collapse',		
-        iconStyle: <i className="material-symbols-outlined">monitoring</i>,
+        iconStyle: <TrendingUpIcon />,
         to: 'single-trading',
     },
     {
         title: 'Group Trading',	
         classsChange: 'mm-collapse',		
-        iconStyle: <i className="material-symbols-outlined">monitoring</i>,
+        iconStyle: <ScatterPlotIcon />,
         to: 'group-trading',
     },
     {
         title: 'Network',	
         classsChange: 'mm-collapse',		
-        iconStyle: <i className="material-symbols-outlined">dashboard</i>,
+        iconStyle: <LanIcon />,
         to: 'network'
     },
     {
         title: 'Wallet',	
         classsChange: 'mm-collapse',		
-        iconStyle: <i className="material-symbols-outlined">wallet</i>,
+        iconStyle: <WalletIcon />,
         to: 'wallet'
     },
     {
         title: 'Leaders',	
         classsChange: 'mm-collapse',		
-        iconStyle: <i className="material-symbols-outlined">dashboard</i>,
+        iconStyle: <Diversity3Icon />,
         to: 'leaders'
     },
     {
         title: 'Feed',	
         classsChange: 'mm-collapse',		
-        iconStyle: <i className="material-symbols-outlined">dashboard</i>,
+        iconStyle: <NotificationImportantIcon />,
         to: 'Feed'
     },
-    // {
-    //     title: 'Profile',	
-    //     classsChange: 'mm-collapse',		
-    //     iconStyle: <i className="material-symbols-outlined">dashboard</i>,
-    //     to: 'Profile'
-    // },
     {
         title: 'Users [Admin]',	
         classsChange: 'mm-collapse',		
-        iconStyle: <i className="material-symbols-outlined">dashboard</i>,
+        iconStyle: <GroupIcon />,
         to: 'users',
         isAdmin: true
     },
     {
         title: 'Sales [Admin]',	
         classsChange: 'mm-collapse',		
-        iconStyle: <i className="material-symbols-outlined">dashboard</i>,
+        iconStyle: <MonetizationOnIcon />,  
         to: 'sales',
         isAdmin: true
-    },
-    
-]
+    }
+];

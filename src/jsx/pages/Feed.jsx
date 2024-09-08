@@ -33,7 +33,7 @@ export const Feed = () => {
         fetchTimeline();
     }, [])
 
-    
+
     const createTimeline = async () => {
         try {
             const token = localStorage.getItem('token')
@@ -41,9 +41,11 @@ export const Feed = () => {
                 await axiosInstance.post("/api/robots/createTimeline", {
                     message: post
                 },
-                    { headers: {
-                        Authorization: `Bearer ${token}`,
-                    } },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        }
+                    },
                 );
                 await fetchTimeline();
             }
@@ -63,28 +65,38 @@ export const Feed = () => {
             </div>
 
             {timeline.map((post, index) => {
-            const metadata = JSON.parse(post.metadata)
-            return  (
-            <div key={index} className="profile-uoloaded-post border-bottom-1 pb-5">
-                <Link className="post-title" to="/post-details">
-                    <h3 >{post.name}</h3>
-                    <h5 >{post.message}</h5>
-                </Link>
-                <p>
-                    {post.createdAt.split('T')[0]}  {post.createdAt.split('T')[1].split('.')[0]}
-                </p>
-                {post?.type === 1 && (
-                <Link className="btn btn-primary me-2" to={`/single-trading/${metadata?.mercado ||''}`} >
+                const metadata = JSON.parse(post.metadata)
+                return (
+                    <div key={index} className="profile-uoloaded-post border-bottom-1 mb-5 p-4  border-post">
+                        <div>
+                            <div className="d-flex justify-content-between align-items-center mb-4">
+                                <Link className="post-title" to="/post-details">
+                                    <h3 >{post.name}</h3>
+                                </Link>
+                                {post?.type === 1 && (
+                                    <Link className="btn btn-primary me-2" to={`/single-trading/${metadata?.mercado || ''}`} >
 
-                        <>
-                            <span className="me-2"> <i className="fa fa-share" /> </span>Replicate Order
-                        </>
-                   
-                    
-                </Link>
-                )}
-            </div>
-            )})}
+                                        <>
+                                            <span className="me-2"> <i className="fa fa-share" /> </span>Replicate Order
+                                        </>
+
+                                    </Link>
+                                )}
+                            </div>
+                            <div className="d-flex aligh-items-center my-3 p-2 border-green-feed">
+                                <Link className="post-title w-50 text-capitalize" to="/post-details">
+                                    <p className="mb-0">{post.message}</p>
+                                </Link>
+
+                                <p className="w-50 text-end mb-0">
+                                    {post.createdAt.split('T')[0]}  {post.createdAt.split('T')[1].split('.')[0]}
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                )
+            })}
         </div>
     )
 }

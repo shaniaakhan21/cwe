@@ -140,14 +140,13 @@ const SideBar = () => {
         }`}
     >
 
-      <SidebarExtraContent />
-      <span className="main-menu">Main Menu</span>
+      {/* <span className="main-menu">Main Menu</span> */}
       <div className="menu-scroll">
         <div className="dlabnav-scroll">
 
-          <Link to="/upgrade" className="upgrade">
+          {/* <Link to="/upgrade" className="upgrade">
             UPGRADE
-          </Link>
+          </Link> */}
           <ul className="metismenu" id="menu">
             {MenuList.map((data, index) => {
               console.log(data.isAdmin, me?.isAdmin)

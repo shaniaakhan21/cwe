@@ -18860,7 +18860,7 @@ pre {
   font-size: 0.9rem;
   border-color: var(--border);
   height: 2.75rem;
-  border-radius: 0.5rem; }
+  border-radius: 10px; }
   .form-control:hover, .form-control:focus, .form-control.active {
     box-shadow: none;
     background: var(--card);

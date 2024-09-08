@@ -1,8 +1,28 @@
-import  { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Line } from 'react-chartjs-2';
 import { Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography, Paper } from '@mui/material';
 import StarPurple500Icon from '@mui/icons-material/StarPurple500';
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Tooltip,
+    Legend,
+    Filler, // For gradient fill
+} from 'chart.js';
+
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Tooltip,
+    Legend,
+    Filler
+);
 
 const CryptoTable = () => {
     const [cryptos, setCryptos] = useState([]);
@@ -45,7 +65,10 @@ const CryptoTable = () => {
                 <TableBody>
                     {cryptos.map((crypto, index) => (
                         <TableRow key={crypto.id}>
-                            <TableCell><StarPurple500Icon sx={{ color: '#cea62d', marginRight: '5px' }} />{index + 1}</TableCell>
+                            <TableCell>
+                                <StarPurple500Icon sx={{ color: '#cea62d', marginRight: '5px' }} />
+                                {index + 1}
+                            </TableCell>
                             <TableCell>
                                 <Box display="flex" alignItems="center">
                                     <img src={crypto.image} alt={crypto.name} width="24px" height="24px" />
@@ -58,21 +81,33 @@ const CryptoTable = () => {
                             <TableCell
                                 sx={{ color: crypto.price_change_percentage_24h >= 0 ? '#26E3B6!important' : '#F6465D!important' }}
                             >
-                                 <b>{crypto.price_change_percentage_24h < 0 ? '-' : '+'}
-                                 {Math.abs(crypto.price_change_percentage_24h).toFixed(2)}%</b>
+                                <b>{crypto.price_change_percentage_24h < 0 ? '-' : '+'}
+                                    {Math.abs(crypto.price_change_percentage_24h).toFixed(2)}%</b>
                             </TableCell>
                             <TableCell>${crypto.total_volume.toLocaleString()}</TableCell>
                             <TableCell>${crypto.market_cap.toLocaleString()}</TableCell>
                             <TableCell className='w-25'>
                                 <Line
                                     data={{
-                                        labels: Array.from({ length: crypto.sparkline_in_7d.price.length }, (_, i) => i),
+                                        labels: Array.from(
+                                            { length: crypto.sparkline_in_7d.price.length },
+                                            (_, i) => i
+                                        ),
                                         datasets: [
                                             {
                                                 data: crypto.sparkline_in_7d.price,
-                                                borderColor: '#26E3B6',
-                                                borderWidth: 1,
-                                                fill: false,
+                                                borderColor: 'rgba(206, 166, 45, 1)',
+                                                backgroundColor: (context) => {
+                                                    const ctx = context.chart.ctx;
+                                                    const gradient = ctx.createLinearGradient(0, 0, 0, 180);
+                                                    gradient.addColorStop(0, 'rgba(206, 166, 45, 0.4)');
+                                                    gradient.addColorStop(1, 'rgba(206, 166, 45, 0)');
+                                                    return gradient;
+                                                },
+                                                borderWidth: 2,
+                                                fill: true, // Gradient fill
+                                                pointRadius: 0, // Hide points
+                                                pointHoverRadius: 4, // Show points on hover
                                             },
                                         ],
                                     }}
@@ -83,10 +118,19 @@ const CryptoTable = () => {
                                         },
                                         elements: {
                                             line: {
-                                                tension: 0.2,
+                                                tension: 0.4, // Smoother curves
                                             },
                                         },
                                         plugins: {
+                                            tooltip: {
+                                                enabled: true,
+                                                mode: 'nearest',
+                                                callbacks: {
+                                                    label: function (tooltipItem) {
+                                                        return `$${tooltipItem.raw.toFixed(2)}`;
+                                                    },
+                                                },
+                                            },
                                             legend: {
                                                 display: false,
                                             },

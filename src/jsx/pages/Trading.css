@@ -1,0 +1,4 @@
+/* Customizing the background of the TradingView widgets */
+.tv-embed-widget-wrapper__body  {
+    background-color: #000 !important;
+}
