@@ -1,60 +1,74 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline';
 import { CountryDropdown } from 'react-country-region-selector';
 import { Button, Snackbar } from '@mui/material';
 import MuiAlert from '@mui/material/Alert';
 import './Profile.css'
+import axiosInstance from '../../services/AxiosInstance';
 
 const Profile = () => {
-    const sampleUser = {
-        name: 'John',
-        lastName: 'Doe',
-        email: 'john.doe@example.com',
-        dateOfBirth: '1990-01-01',
-        companyName: 'Example Inc.',
-        country: 'United States',
-        phoneNumber: '123-456-7890',
-        address: '123 Example Street, NY',
-        vat: 'US123456789',
+
+
+    const [currentPassword, setCurrentPassword] = useState('');
+    const [newPassword, setNewPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+
+    const getMe = async () => {
+        try{
+            const token = localStorage.getItem('token')
+            if (token) {
+               const response=  await axiosInstance.get("/api/user/me",
+                     {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+
+                const user = response.data.user;
+
+                const _userDetails = {
+                    email : user.email,
+                }
+
+                if(user.personalInfo){
+                    _userDetails.name = user.personalInfo.name;
+                    _userDetails.lastName = user.personalInfo.lastName;
+                    _userDetails.companyName = user.personalInfo.companyName;
+                    _userDetails.country = user.personalInfo.country;
+                    _userDetails.phoneNumber = user.personalInfo.phoneNumber;
+                    _userDetails.address = user.personalInfo.address;
+                }
+                setUserDetails({ ... _userDetails});
+            }
+
+
+
+        } catch (error) {
+
+            console.log(error)
+        }
+
     };
+
+    useEffect(() => {
+        getMe();
+    }, []);
+
+
 
     const [editMode, setEditMode] = useState(false);
     const [snackbarOpen, setSnackbarOpen] = useState(false);
     const [snackbarMessage, setSnackbarMessage] = useState('');
-    const [userDetails, setUserDetails] = useState({
-        ...sampleUser,
-        currentPassword: '',
-        newPassword: '',
-        confirmPassword: '',
-    });
+    const [snackbarType, setSnackbarType] = useState('');
+    const [userDetails, setUserDetails] = useState({});
 
     const handleEditToggle = () => {
         if (editMode) {
-            setUserDetails({
-                ...userDetails,
-                currentPassword: '',
-                newPassword: '',
-                confirmPassword: '',
-            });
+            setUserDetails({ ...userDetails});
         }
         setEditMode(!editMode);
     };
 
-    const formatDateToYYYYMMDD = (date) => {
-        const d = new Date(date);
-        const day = String(d.getDate()).padStart(2, '0');
-        const month = String(d.getMonth() + 1).padStart(2, '0');
-        const year = d.getFullYear();
-        return `${year}-${month}-${day}`;
-    };
-
-    const formatDateToDDMMYYYY = (date) => {
-        const d = new Date(date);
-        const day = String(d.getDate()).padStart(2, '0');
-        const month = String(d.getMonth() + 1).padStart(2, '0');
-        const year = d.getFullYear();
-        return `${day}-${month}-${year}`;
-    };
 
     const handleChange = (key, value) => {
         setUserDetails({ ...userDetails, [key]: value });
@@ -69,22 +83,50 @@ const Profile = () => {
         setSnackbarOpen(false);
     };
 
-    const handleSave = () => {
-        handleOpenSnackbar('Profile Updated Successfully!');
-        setEditMode(false);
-    };
+    const handleSave = async () => {
+        try{
+            const token = localStorage.getItem('token')
+            if (token) {
+                await axiosInstance.post("/api/user/updatePersonalInfo", {
+                    personalInfo: {
+                        name: userDetails.name,
+                        lastName: userDetails.lastName,
+                        companyName: userDetails.companyName,
+                        country: userDetails.country,
+                        phoneNumber: userDetails.phoneNumber,
+                        address: userDetails.address,
+                    },
+                    passwordData: {
+                        currentPassword,
+                        newPassword,
+                        confirmPassword,
+                    }
+                },
+                     {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+            }
 
-    const dateOfBirth = userDetails.dateOfBirth ? new Date(userDetails.dateOfBirth) : null;
-    const formattedDate = dateOfBirth ? formatDateToYYYYMMDD(dateOfBirth) : '';
-    const formattedDatespan = dateOfBirth ? formatDateToDDMMYYYY(dateOfBirth) : '';
+            setSnackbarType('success');
+            handleOpenSnackbar('Profile Updated Successfully!');
+            setEditMode(false);
+        } catch (error) {
+            setSnackbarType('error');
+            handleOpenSnackbar('Error while updating password, check your password and try again');
+        }
+
+ 
+    };
 
     return (
         <div className='profile d-flex flex-column Info-page my-4 ml-4  mr-10 '>
-            {/* <div className='d-flex justify-content-end'>
+            <div className='d-flex justify-content-end'>
                 <h4 className='text-[#F55937] text-lg cursor-pointer mb-4 sm:mb-0' onClick={handleEditToggle}>
                     {editMode ? 'Cancel Changes' : 'Edit Information'} <DriveFileRenameOutlineIcon />
                 </h4>
-            </div> */}
+            </div>
             <div className='d-flex flex-row rounded-lg pl-4 pt-4 my-2 pr-4 '>
                 <div className="d-flex flex-column col-xl-4">
                     <div className="d-flex flex-column mb-4 justify-content-between">
@@ -104,19 +146,6 @@ const Profile = () => {
                         <span className='w-fit' style={{ maxWidth: '80%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{userDetails.email}</span>
                     </div>
 
-                    <div className="d-flex flex-column mb-4 justify-content-between">
-                        <label>Birthday</label>
-                        {editMode ? (
-                            <input
-                                type="date"
-                                value={formattedDate}
-                                onChange={(e) => handleChange('dateOfBirth', e.target.value)}
-                                className='bg-transparent border-b text-white border-[#F55937] py-1 w-full sm:w-10/12 text-[12px] sm:text-[22px]'
-                            />
-                        ) : (
-                            <span>{formattedDatespan}</span>
-                        )}
-                    </div>
                     <div className="d-flex flex-column mb-4 justify-content-between">
                         <label>Company Name</label>
                         {editMode ? (
@@ -162,7 +191,7 @@ const Profile = () => {
                             <CountryDropdown
                                 value={userDetails.country}
                                 onChange={(val) => handleChange('country', val)}
-                                classes="bg-transparent border-b border-[#F55937] py-1 w-full sm:w-10/12 text-[12px] sm:text-[22px] text-white"
+                                classes="bg-black border-b border-[#F55937] py-1 w-full sm:w-10/12 text-[12px] sm:text-[22px] text-white"
                             />
                         ) : (
                             <span>{userDetails.country}</span>
@@ -180,8 +209,52 @@ const Profile = () => {
                             <span>{userDetails.address}</span>
                         )}
                     </div>
+
+                    <div className="d-flex flex-column mb-4 justify-content-between">
+                        <label>Current Password</label>
+                        {editMode ? (
+                            <input
+                                type="password"
+                                className='bg-transparent border-b border-[#F55937] text-white py-1 w-full text-[12px] sm:text-[22px]'
+                                value={currentPassword}
+                                onChange={(e) => setCurrentPassword(e.target.value)}
+                            />
+                        ) : (
+                            <span>***************</span>
+                        )}
+                    </div>
+                    {editMode && (
+                    <div className="d-flex flex-column mb-4 justify-content-between">
+                        <label>New Password</label>
+                       
+                            <input
+                                type="password"
+                                className='bg-transparent border-b border-[#F55937] text-white py-1 w-full text-[12px] sm:text-[22px]'
+                                value={newPassword}
+                                placeholder='************'
+                                onChange={(e) => setNewPassword(e.target.value)}
+                            />
+                        
+                    </div>
+                    )}
+                    {editMode && (
+                    <div className="d-flex flex-column mb-4 justify-content-between">
+                        <label>Confirm Password</label>
+                        
+                            <input
+                                type="password"
+                                className='bg-transparent border-b border-[#F55937] text-white py-1 w-full text-[12px] sm:text-[22px]'
+                                value={confirmPassword}
+                                placeholder='************'
+                                onChange={(e) => setConfirmPassword(e.target.value)}
+                            />
+                       
+                    </div>
+                     )}
                 </div>
             </div>
+
+           
             {editMode && (
                 <div className='d-flex flex-column-reverse sm:flex-row justify-between mt-2'>
                     <div className='d-flex justify-start sm:justify-start'>
@@ -211,7 +284,7 @@ const Profile = () => {
                 autoHideDuration={3000}
                 onClose={handleCloseSnackbar}
             >
-                <MuiAlert elevation={6} variant="filled" onClose={handleCloseSnackbar} severity="success">
+                <MuiAlert elevation={6} variant="filled" onClose={handleCloseSnackbar} severity={snackbarType}>
                     {snackbarMessage}
                 </MuiAlert>
             </Snackbar>

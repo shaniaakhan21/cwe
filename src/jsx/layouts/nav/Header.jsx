@@ -10,6 +10,7 @@ import avatar from "../../../assets/images/avatar/1.jpg";
 import { ThemeContext } from "../../../context/ThemeContext";
 import Logout from "../nav/Logout";
 import { SVGICON } from "../../constant/theme";
+import axiosInstance from "../../../services/AxiosInstance";
 
 const listBlog = [
   { icon: SVGICON.LtcSvgIcon, name: 'LTC in DexignLab' },
@@ -88,6 +89,38 @@ const Header = ({ onNote }) => {
     }
   }, [walletActive])
 
+  const [nameProfile, setName] = useState("");
+  const [lastNameProfile, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+
+
+  const getMe = async () => {
+    try{
+        const token = localStorage.getItem('token')
+        if (token) {
+           const response=  await axiosInstance.get("/api/user/me",
+                 {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            const user = response.data.user;
+            setEmail(user.email)
+            if(user.personalInfo){
+                setName(user.personalInfo.name);
+                setLastName(user.personalInfo.lastName);
+            }
+        }
+    } catch (error) {
+        console.log(error)
+    }
+
+};
+
+useEffect(() => {
+    getMe();
+}, []);
+
   return (
     <>
       <div className={`header ${path === "dashboard" || path === "index-2" ? 'home' : ''} ${headerFix ? 'is-fixed' : ''}`}>
@@ -114,23 +147,23 @@ const Header = ({ onNote }) => {
                     <div className="header-info2 d-flex align-items-center">
                       <div className="d-flex align-items-center sidebar-info">
                         <div>
-                          <h5 className="mb-0 text-white">Hello!</h5>
+                          <h5 className="mb-0 text-white">Hello {nameProfile}!</h5>
                         </div>
                       </div>
                       <img src={profile} alt="profile" />
                     </div>
                   </Dropdown.Toggle>
                   <Dropdown.Menu align="end" className="mt-0 dropdown-menu dropdown-menu-right profile-dropdown">
-                    {/* <div className="profile-info text-center mb-3 p-2">
+                     <div className="profile-info text-center mb-3 p-2">
                       <img src={profile} alt="profile" className="mb-2"/>
-                      <h6 className="text-dark">John Doe</h6>
-                      <p className="text-white mb-0">john.doe@example.com</p>
+                      <h6 className="text-dark">{nameProfile} {lastNameProfile}</h6>
+                      <p className="text-white mb-0">{email}</p>
                     </div>
                     <Dropdown.Item as={Link} to="/profile" className="dropdown-item">
                       {SVGICON.EditSvgIcon}
                       <span className="ms-2">Edit Profile</span>
                     </Dropdown.Item> 
-                    <Dropdown.Divider /> */}
+                    <Dropdown.Divider /> 
                     <Logout />
                   </Dropdown.Menu>
                 </Dropdown>
