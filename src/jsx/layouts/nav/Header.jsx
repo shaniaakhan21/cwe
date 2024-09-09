@@ -161,7 +161,7 @@ useEffect(() => {
                     </div>
                     <Dropdown.Item as={Link} to="/profile" className="dropdown-item">
                       {SVGICON.EditSvgIcon}
-                      <span className="ms-2">Edit Profile</span>
+                      <span className="ms-2">Profile</span>
                     </Dropdown.Item> 
                     <Dropdown.Divider /> 
                     <Logout />

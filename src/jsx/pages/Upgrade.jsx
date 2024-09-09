@@ -27,7 +27,7 @@ const Upgrade = () => {
 
     return (
         <div className="text-center">
-           <div className="col-md-6 col-xs-12 mx-auto" style={{border: "1px solid grey", padding: 20}}> 
+           <div className="col-md-6 col-xs-12 mx-auto border-yellow-01"> 
             <h3>CWEBuster PRO</h3>
             <div style={{backgroundColor: 'black', width: 200, marginLeft: "auto", marginRight: "auto", color: "white", marginBottom: 20, fontSize: 28}}>100 $</div>
             <ul>

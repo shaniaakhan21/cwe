@@ -384,11 +384,11 @@ const Trading = (props) => {
                                     <h4>Closes At </h4>
                                     <div className='d-flex justify-content-between align-items-center pt-4'>
                                         <input type="text" value={meStopGain} onChange={(e) => { setMeStopGain(e.target.value) }} />
-                                        <Button style={{ marginLeft: 20 }} onClick={() => { updateStopGain() }} variant="success" className="btn py-2 text-uppercase ">Save</Button>
+                                        <Button style={{ marginLeft: 20 }} onClick={() => { updateStopGain() }} variant="success" className="btn py-2">Save</Button>
                                     </div>
                                 </div>
                                 <div  className='d-flex justify-content-end pt-4'>
-                                    <Button onClick={() => { sellAllGroup() }} variant="dark" className="btn text-uppercase yellow-newbtn">Sell All Group NOW</Button>
+                                    <Button onClick={() => { sellAllGroup() }} variant="dark" className="btn yellow-newbtn">Sell all group now</Button>
                                 </div>
                             </div>
                         </div>

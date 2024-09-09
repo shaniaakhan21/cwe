@@ -132,10 +132,10 @@ const Exchanges = () => {
                 </Button>
             </div>
 
-            <div className="row">
+            <div className="row d-flex justify-content-between">
                 {apikeys && apikeys.map((apiKey) => {
                     return (
-                        <div key={apiKey.id} className="col-11 col-md-3 m-3" style={{ border: "1px solid #cea62d", padding: 20, borderRadius: 10 }}>
+                        <div key={apiKey.id} className="col-11 col-md-2 m-3" style={{ border: "1px solid #cea62d", padding: 20, borderRadius: 10 }}>
                             <div style={{ textAlign: "center" }}>
 
                                 <img src={exchanges[`plataforma-${apiKey.idPlataforma}`]} alt="Binance" style={{ width: "80%" }} />
@@ -148,46 +148,48 @@ const Exchanges = () => {
                     )
                 })}
 
+                <div className="col-11 col-md-2 m-3 d-flex justify-content-center" style={{ border: "1px solid #cea62d", padding: 20, borderRadius: 10 }}>
+                    <div className="d-flex-it">
+                        <div style={{ textAlign: "center" }}>
+                            <img src={exchanges[`plataforma-4`]} alt="Binance" style={{ height: '100px', width: '80%' }} />
+                        </div>
+                        <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
+                            Coming Soon
+                        </div>
+                    </div>
+                </div>
+                <div className="col-11 col-md-2 m-3 d-flex justify-content-center" style={{ border: "1px solid #cea62d", padding: 20, borderRadius: 10 }}>
+                    <div className="d-flex-it">
+                        <div style={{ textAlign: "center" }}>
+                            <img src={exchanges[`plataforma-5`]} alt="Binance" style={{ height: '100px', width: '80%' }} />
+                        </div>
+                        <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
+                            Coming Soon
+                        </div>
+                    </div>
+                </div>
+                <div className="col-11 col-md-2 m-3 d-flex justify-content-center" style={{ border: "1px solid #cea62d", padding: 20, borderRadius: 10 }}>
+                    <div className="d-flex-it">
+                        <div style={{ textAlign: "center" }}>
+                            <img src={exchanges[`plataforma-6`]} alt="Binance" style={{ height: '100px', width: '80%' }} />
+                        </div>
+                        <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
+                            Coming Soon
+                        </div>
+                    </div>
+                </div>
+                <div className="col-11 col-md-2 m-3 d-flex justify-content-center" style={{ border: "1px solid #cea62d", padding: 20, borderRadius: 10 }}>
+                    <div className="d-flex-it">
+                        <div style={{ textAlign: "center" }}>
+                            <img src={exchanges[`plataforma-7`]} alt="Binance" style={{ height: '100px', width: '80%' }} />
+                        </div>
+                        <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
+                            Coming Soon
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div className="row">
-                <div className="col-11 col-md-3 m-3" style={{ border: "1px solid #cea62d", padding: 20, borderRadius: 10 }}>
-                    <div style={{ textAlign: "center" }}>
-
-                        <img src={exchanges[`plataforma-4`]} alt="Binance" style={{ height: 130 }} />
-                    </div>
-                    <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
-                        COMING SOON
-                    </div>
-                </div>
-                <div className="col-11 col-md-3 m-3" style={{ border: "1px solid #cea62d", padding: 20, borderRadius: 10 }}>
-                    <div style={{ textAlign: "center" }}>
-
-                        <img src={exchanges[`plataforma-5`]} alt="Binance" style={{ height: 130 }} />
-                    </div>
-                    <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
-                        COMING SOON
-                    </div>
-                </div>
-                <div className="col-11 col-md-3 m-3" style={{ border: "1px solid #cea62d", padding: 20, borderRadius: 10 }}>
-                    <div style={{ textAlign: "center" }}>
-
-                        <img src={exchanges[`plataforma-6`]} alt="Binance" style={{ height: 130 }} />
-                    </div>
-                    <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
-                        COMING SOON
-                    </div>
-                </div>
-                <div className="col-11 col-md-3 m-3" style={{ border: "1px solid #cea62d", padding: 20, borderRadius: 10 }}>
-                    <div style={{ textAlign: "center" }}>
-
-                        <img src={exchanges[`plataforma-7`]} alt="Binance" style={{ height: 130 }} />
-                    </div>
-                    <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
-                        COMING SOON
-                    </div>
-                </div>
-            </div>
             {apikeys === undefined && (
                 <div style={{ textAlign: "center", marginTop: 50 }}>
                     <div className="spinner-border" style={{ width: "8rem", height: "8rem" }} role="status">
@@ -237,7 +239,7 @@ const Exchanges = () => {
                         <strong>ACTION! </strong>
                         <br />
                         <br />
-                        <a style={{ color: '#FFAB2D' }} rel="noreferrer" href="https://youtu.be/80Izk4cBeTI" target="_blank">
+                        <a style={{ color: '#FFAB2D' }} rel="noreferrer" href="https://www.youtube.com/watch?v=pdvzeHSd0f0" target="_blank">
                             Click here for Tutorial for creating Binance API KEY
                         </a>
                     </Alert>

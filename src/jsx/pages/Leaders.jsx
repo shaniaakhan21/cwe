@@ -84,7 +84,7 @@ const Leaders = () => {
                                 <div className="card-body d-flex flex-row justify-content-between">
                                     <div className="profile-statistics w-100">
                                         <div className="text-center d-flex flex-row justify-content-between align-items-center">
-                                            <div className="row">
+                                            <div className="row w-20 text-start">
                                                 <div className="col" style={{ marginBottom: 10 }}>
                                                     <h3 style={{ marginBottom: -2 }}>{leader.name}</h3>
                                                     {leader.follows === 1 && (
@@ -92,13 +92,13 @@ const Leaders = () => {
                                                     )}
                                                 </div>
                                             </div>
-                                            <div className="col">
+                                            <div className="col w-20">
                                                 <h3 className="m-b-0">{leader.followers}</h3><span><p>Followers</p></span>
                                             </div>
-                                            <div className="col">
+                                            <div className="col w-20">
                                                 <h3 className="m-b-0">{leader.totalPositive}</h3> <span><p>Total Positive Operations</p></span>
                                             </div>
-                                            <div className="col">
+                                            <div className="col w-20">
                                                 <h3 className="m-b-0">{leader.totalPositivePercent}</h3><span><p>Average Profit</p></span>
                                             </div>
 
