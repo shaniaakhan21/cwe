@@ -156,6 +156,9 @@ const Exchanges = () => {
                         <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
                             Coming Soon
                         </div>
+                        <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
+                            <Button target="_blank" href="" variant="success" className="btn-block" style={{ marginTop: 20 }}>Create Account</Button>
+                        </div>
                     </div>
                 </div>
                 <div className="col-11 col-md-2 m-3 d-flex justify-content-center" style={{ border: "1px solid #cea62d", padding: 20, borderRadius: 10 }}>
@@ -165,6 +168,9 @@ const Exchanges = () => {
                         </div>
                         <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
                             Coming Soon
+                        </div>
+                        <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
+                            <Button target="_blank" href="https://www.htx.com/invite/en-us/1f?invite_code=dyma4" variant="success" className="btn-block" style={{ marginTop: 20 }}>Create Account</Button>
                         </div>
                     </div>
                 </div>
@@ -176,15 +182,21 @@ const Exchanges = () => {
                         <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
                             Coming Soon
                         </div>
+                        <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
+                            <Button target="_blank" href="https://www.okx.com/join/10134391" variant="success" className="btn-block" style={{ marginTop: 20 }}>Create Account</Button>
+                        </div>
                     </div>
                 </div>
                 <div className="col-11 col-md-2 m-3 d-flex justify-content-center" style={{ border: "1px solid #cea62d", padding: 20, borderRadius: 10 }}>
                     <div className="d-flex-it">
                         <div style={{ textAlign: "center" }}>
-                            <img src={exchanges[`plataforma-7`]} alt="Binance" style={{ height: '100px', width: '80%' }} />
+                            <img src={exchanges[`plataforma-7`]} alt="Binance" style={{ height: '100px', width: '100%' }} />
                         </div>
                         <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
                             Coming Soon
+                        </div>
+                        <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
+                            <Button target="_blank" href="https://www.gate.io/signup/UAUQXF1W?ref_type=103" variant="success" className="btn-block" style={{ marginTop: 20 }}>Create Account</Button>
                         </div>
                     </div>
                 </div>
