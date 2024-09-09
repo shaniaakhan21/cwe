@@ -351,7 +351,7 @@ const Trading = (props) => {
                         <div className="card" style={{ height: 500 }}>
 
                             <>
-                                <AdvancedRealTimeChart symbol={`${selectedOption.label}USDT`} colorTheme="dark" autosize></AdvancedRealTimeChart>
+                                <AdvancedRealTimeChart symbol={`${selectedOption.label}USDT`} theme="dark" autosize></AdvancedRealTimeChart>
                             </>
                         </div>
                     </div>
