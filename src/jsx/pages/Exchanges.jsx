@@ -190,7 +190,7 @@ const Exchanges = () => {
                         <strong>ACTION! </strong>
                         <br />
                         <br />
-                        <a style={{ color: '#FFAB2D'}} rel="noreferrer" href="https://youtu.be/80Izk4cBeTI" target="_blank">
+                        <a style={{ color: '#FFAB2D'}} rel="noreferrer" href="https://www.youtube.com/watch?v=pdvzeHSd0f0" target="_blank">
                             Click here for Tutorial for creating Binance API KEY
                         </a>
                     </Alert>

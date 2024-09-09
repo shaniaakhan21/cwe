@@ -14,23 +14,23 @@ const Profile = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
 
     const getMe = async () => {
-        try{
+        try {
             const token = localStorage.getItem('token')
             if (token) {
-               const response=  await axiosInstance.get("/api/user/me",
-                     {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                });
+                const response = await axiosInstance.get("/api/user/me",
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    });
 
                 const user = response.data.user;
 
                 const _userDetails = {
-                    email : user.email,
+                    email: user.email,
                 }
 
-                if(user.personalInfo){
+                if (user.personalInfo) {
                     _userDetails.name = user.personalInfo.name;
                     _userDetails.lastName = user.personalInfo.lastName;
                     _userDetails.companyName = user.personalInfo.companyName;
@@ -38,7 +38,7 @@ const Profile = () => {
                     _userDetails.phoneNumber = user.personalInfo.phoneNumber;
                     _userDetails.address = user.personalInfo.address;
                 }
-                setUserDetails({ ... _userDetails});
+                setUserDetails({ ..._userDetails });
             }
 
 
@@ -64,7 +64,7 @@ const Profile = () => {
 
     const handleEditToggle = () => {
         if (editMode) {
-            setUserDetails({ ...userDetails});
+            setUserDetails({ ...userDetails });
         }
         setEditMode(!editMode);
     };
@@ -84,7 +84,7 @@ const Profile = () => {
     };
 
     const handleSave = async () => {
-        try{
+        try {
             const token = localStorage.getItem('token')
             if (token) {
                 await axiosInstance.post("/api/user/updatePersonalInfo", {
@@ -102,11 +102,11 @@ const Profile = () => {
                         confirmPassword,
                     }
                 },
-                     {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                });
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    });
             }
 
             setSnackbarType('success');
@@ -117,23 +117,32 @@ const Profile = () => {
             handleOpenSnackbar('Error while updating password, check your password and try again');
         }
 
- 
+
     };
 
     return (
-        <div className='profile d-flex flex-column Info-page my-4 ml-4  mr-10 '>
+        <div className='profile d-flex flex-column Info-page ml-4  mr-10 '>
             <div className='d-flex justify-content-end'>
-                <h4 className='text-[#F55937] text-lg cursor-pointer mb-4 sm:mb-0' onClick={handleEditToggle}>
-                    {editMode ? 'Cancel Changes' : 'Edit Information'} <DriveFileRenameOutlineIcon />
-                </h4>
+                {editMode ? (
+                    <span className='text-[#F55937] text-lg cursor-pointer mb-1 sm:mb-0' onClick={handleEditToggle}>
+                        Exit edit mode <DriveFileRenameOutlineIcon />
+                    </span>
+
+                ) : (
+                    <span className='text-[#F55937] text-lg cursor-pointer mb-1 sm:mb-0' onClick={handleEditToggle}>
+                        Edit Information <DriveFileRenameOutlineIcon />
+                    </span>
+                )
+                }
+
             </div>
-            <div className='d-flex flex-row rounded-lg pl-4 pt-4 my-2 pr-4 '>
+            <div className='d-flex rounded-lg pl-4 pt-1 my-2 pr-4 mob-col'>
                 <div className="d-flex flex-column col-xl-4">
-                    <div className="d-flex flex-column mb-4 justify-content-between">
-                        <label>First Name:</label>
+                    <div className="d-flex flex-column margii justify-content-between">
+                        <label>First Name</label>
                         {editMode ? (
                             <input
-                                className='bg-transparent border-b border-[#F55937] text-white py-1 w-full sm:w-10/12 text-[12px] sm:text-[22px]'
+                                className='input-edit bg-transparent border-b border-[#F55937] text-white py-1'
                                 value={userDetails.name}
                                 onChange={(e) => handleChange('name', e.target.value)}
                             />
@@ -141,16 +150,20 @@ const Profile = () => {
                             <span>{userDetails.name}</span>
                         )}
                     </div>
-                    <div className="d-flex flex-column mb-4 justify-content-between">
+                    <div className="d-flex flex-column justify-content-between margii">
                         <label>Email</label>
-                        <span className='w-fit' style={{ maxWidth: '80%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{userDetails.email}</span>
+                        {editMode ? (
+                            <p className='input-edit bg-transparent border-b border-[#F55937] text-white py-1 '>{userDetails.email}</p>
+                        ) : (
+                            <span className='w-fit' style={{ maxWidth: '80%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{userDetails.email}</span>
+                        )}
                     </div>
 
-                    <div className="d-flex flex-column mb-4 justify-content-between">
+                    <div className="d-flex flex-column margii justify-content-between">
                         <label>Company Name</label>
                         {editMode ? (
                             <input
-                                className='bg-transparent border-b border-[#F55937] text-white py-1 w-full sm:w-10/12 text-[12px] sm:text-[22px]'
+                                className='input-edit bg-transparent border-b border-[#F55937] text-white py-1 '
                                 value={userDetails.companyName}
                                 onChange={(e) => handleChange('companyName', e.target.value)}
                             />
@@ -159,49 +172,11 @@ const Profile = () => {
                         )}
                     </div>
 
-                </div>
-                <div className='col-xl-4'>
-                    <div className="d-flex flex-column mb-4 justify-content-between">
-                        <label>Last Name</label>
-                        {editMode ? (
-                            <input
-                                className='bg-transparent border-b border-[#F55937] text-white py-1 w-full text-[12px] sm:text-[22px]'
-                                value={userDetails.lastName}
-                                onChange={(e) => handleChange('lastName', e.target.value)}
-                            />
-                        ) : (
-                            <span>{userDetails.lastName}</span>
-                        )}
-                    </div>
-                    <div className="d-flex flex-column mb-4 justify-content-between">
-                        <label>Phone Number</label>
-                        {editMode ? (
-                            <input
-                                className='bg-transparent border-b border-[#F55937] text-white py-1 w-full text-[12px] sm:text-[22px]'
-                                value={userDetails.phoneNumber}
-                                onChange={(e) => handleChange('phoneNumber', e.target.value)}
-                            />
-                        ) : (
-                            <span>{userDetails.phoneNumber}</span>
-                        )}
-                    </div>
-                    <div className="d-flex flex-column mb-4 justify-content-between">
-                        <label>Country</label>
-                        {editMode ? (
-                            <CountryDropdown
-                                value={userDetails.country}
-                                onChange={(val) => handleChange('country', val)}
-                                classes="bg-black border-b border-[#F55937] py-1 w-full sm:w-10/12 text-[12px] sm:text-[22px] text-white"
-                            />
-                        ) : (
-                            <span>{userDetails.country}</span>
-                        )}
-                    </div>
-                    <div className="d-flex flex-column mb-4 justify-content-between">
+                    <div className="d-flex flex-column margii justify-content-between">
                         <label>Address</label>
                         {editMode ? (
                             <input
-                                className='bg-transparent border-b border-[#F55937] text-white py-1 w-full sm:w-10/12 text-[12px] sm:text-[22px]'
+                                className='input-edit bg-transparent border-b border-[#F55937] text-white py-1 '
                                 value={userDetails.address}
                                 onChange={(e) => handleChange('address', e.target.value)}
                             />
@@ -209,14 +184,54 @@ const Profile = () => {
                             <span>{userDetails.address}</span>
                         )}
                     </div>
+                    <div className="d-flex flex-column mb-2 justify-content-between">
+                        <label>Country</label>
+                        {editMode ? (
+                            <CountryDropdown
+                                value={userDetails.country}
+                                onChange={(val) => handleChange('country', val)}
+                                classes="bg-black input-edit py-1  text-white"
+                            />
+                        ) : (
+                            <span>{userDetails.country}</span>
+                        )}
+                    </div>
 
-                    <div className="d-flex flex-column mb-4 justify-content-between">
+                </div>
+                <div className='col-xl-4'>
+                    <div className="d-flex flex-column margii justify-content-between">
+                        <label>Last Name</label>
+                        {editMode ? (
+                            <input
+                                className='input-edit bg-transparent border-b border-[#F55937] text-white py-1 '
+                                value={userDetails.lastName}
+                                onChange={(e) => handleChange('lastName', e.target.value)}
+                            />
+                        ) : (
+                            <span>{userDetails.lastName}</span>
+                        )}
+                    </div>
+                    <div className="d-flex flex-column margii justify-content-between">
+                        <label>Phone Number</label>
+                        {editMode ? (
+                            <input
+                                className='input-edit bg-transparent border-b border-[#F55937] text-white py-1 '
+                                value={userDetails.phoneNumber}
+                                onChange={(e) => handleChange('phoneNumber', e.target.value)}
+                            />
+                        ) : (
+                            <span>{userDetails.phoneNumber}</span>
+                        )}
+                    </div>
+
+                    <div className="d-flex flex-column margii justify-content-between">
                         <label>Current Password</label>
                         {editMode ? (
                             <input
                                 type="password"
-                                className='bg-transparent border-b border-[#F55937] text-white py-1 w-full text-[12px] sm:text-[22px]'
+                                className='input-edit bg-transparent border-b border-[#F55937] text-white py-1 '
                                 value={currentPassword}
+                                placeholder='************'
                                 onChange={(e) => setCurrentPassword(e.target.value)}
                             />
                         ) : (
@@ -224,57 +239,55 @@ const Profile = () => {
                         )}
                     </div>
                     {editMode && (
-                    <div className="d-flex flex-column mb-4 justify-content-between">
-                        <label>New Password</label>
-                       
+                        <div className="d-flex flex-column margii justify-content-between">
+                            <label>New Password</label>
+
                             <input
                                 type="password"
-                                className='bg-transparent border-b border-[#F55937] text-white py-1 w-full text-[12px] sm:text-[22px]'
+                                className='input-edit bg-transparent border-b border-[#F55937] text-white py-1 '
                                 value={newPassword}
                                 placeholder='************'
                                 onChange={(e) => setNewPassword(e.target.value)}
                             />
-                        
-                    </div>
+
+                        </div>
                     )}
                     {editMode && (
-                    <div className="d-flex flex-column mb-4 justify-content-between">
-                        <label>Confirm Password</label>
-                        
+                        <div className="d-flex flex-column mb-2 justify-content-between">
+                            <label>Confirm Password</label>
+
                             <input
                                 type="password"
-                                className='bg-transparent border-b border-[#F55937] text-white py-1 w-full text-[12px] sm:text-[22px]'
+                                className='input-edit bg-transparent border-b border-[#F55937] text-white py-1 '
                                 value={confirmPassword}
                                 placeholder='************'
                                 onChange={(e) => setConfirmPassword(e.target.value)}
                             />
-                       
-                    </div>
-                     )}
+
+                        </div>
+                    )}
                 </div>
             </div>
 
-           
+
             {editMode && (
-                <div className='d-flex flex-column-reverse sm:flex-row justify-between mt-2'>
-                    <div className='d-flex justify-start sm:justify-start'>
-                        <h4 className='text-[#F55937] text-lg cursor-pointer' onClick={handleEditToggle}>
-                            Cancel Changes <DriveFileRenameOutlineIcon />
-                        </h4>
-                    </div>
-                    <div className='d-flex justify-end'>
+                <div className='d-flex flex-row justify-start mt-2 w-100 mb-55'>
+                    <div className='d-flex justify-start w-11-35'>
                         <Button
                             onClick={handleSave}
                             variant='contained'
-                            sx={{
-                                backgroundColor: '#F55937',
-                                color: '#fff',
-                                '&:hover': {
-                                    backgroundColor: '#F55937',
-                                },
-                            }}
+                            className='save-chn'
                         >
                             Save Changes
+                        </Button>
+                    </div>
+                    <div className='w-15-47 d-flex justify-content-start'>
+                        <Button
+                            onClick={handleEditToggle}
+                            variant='contained'
+                            className='cancel-chng'
+                        >
+                            Cancel Changes
                         </Button>
                     </div>
                 </div>

@@ -5338,7 +5338,7 @@ fieldset:disabled .btn {
   background-color: black !important;
   z-index: 1;
   border-radius: 10px !important;
-  border: 1.2px solid #cea62d !important;
+  border: 1px solid #cea62d !important;
   overflow: hidden;
   /* This ensures the pseudo-element border is clipped to the border-radius */
 }
@@ -8882,6 +8882,12 @@ fieldset:disabled .btn {
   border-radius: 24px !important;
 }
 
+.border-yellow-01{
+  border: 1px solid #cea62d;
+  border-radius: 0.5rem!important;
+  padding: 2%;
+}
+
 .border-primary-subtle {
   border-color: var(--bs-primary-border-subtle) !important;
 }
@@ -8956,6 +8962,18 @@ fieldset:disabled .btn {
 
 .w-10 {
   width: 10% !important;
+}
+
+.w-11 {
+  width: 11% !important;
+}
+
+.w-15 {
+  width: 15% !important;
+}
+
+.w-20 {
+  width: 20% !important;
 }
 
 .w-25 {
@@ -14520,7 +14538,7 @@ h6,
 .content-body .container-lg,
 .content-body .container-xl,
 .content-body .container-xxl {
-  padding-top: 2.5rem;
+  padding-top: 1rem;
   padding-right: 2.5rem;
   padding-left: 2.5rem;
 }
@@ -15464,7 +15482,7 @@ h6,
 
 .nav-header .brand-logo .image-dash {
   width: 142px;
-  padding: 15%;
+  padding: 2% 15%;
 }
 
 @media only screen and (max-width: 87.5rem) {
@@ -15835,7 +15853,7 @@ h6,
   height: 100%;
   width: 100%;
   top: 0;
-  left: 0;
+  left: 15%;
   background-size: cover;
   background-position: 70px -50px;
   box-shadow: 0px 1px 0 0px #cea62d;
@@ -17381,6 +17399,7 @@ svg.pulse-svg .third-circle {
   transition: all .2s ease;
   box-shadow: 0rem 0.9375rem 1.875rem 0rem rgba(0, 0, 0, 0.02);
   border-right: 1px solid #cea62d;
+  margin-top: 0.4%!important;
 }
 
 @media (max-width: 100rem) {
@@ -17519,10 +17538,6 @@ svg.pulse-svg .third-circle {
   margin-right: 0.3125rem;
   margin-top: -0.1875rem;
   color: var(--primary);
-}
-
-.dlabnav .metismenu>li>.mm-active svg {
-  color: white;
 }
 
 .dlabnav .metismenu>li>a g [fill] {
@@ -18152,9 +18167,10 @@ svg.pulse-svg .third-circle {
 }
 
 [data-sidebar-style="full"][data-layout="vertical"] .dlabnav .metismenu>li.mm-active>a {
-  font-weight: 500;
-  background: var(--primary);
-  color: white;
+  background-color: #cea62d5e!important;
+  border-color: #cea62d70!important;
+  border-radius: 0.5rem!important;
+  color: #cea62d!important;
 }
 
 [data-sidebar-style="full"][data-layout="vertical"] .dlabnav .metismenu>li.mm-active>a:before {
@@ -20060,7 +20076,7 @@ svg.pulse-svg .third-circle {
 [data-sidebar-style="overlay"] .dlabnav .metismenu>li>a {
   font-size: 0.938rem;
   padding: 0.7375rem 1rem;
-  color: #7f7184;
+  color: White;
   border-radius: 0.5rem;
   -webkit-transition: all 0.5s;
   -ms-transition: all 0.5s;
@@ -26580,7 +26596,7 @@ svg.pulse-svg .third-circle {
 }
 
 [data-theme-version="dark"] .custom-react-select>div:nth-child(4)>div {
-  border: 2px solid var(--border) !important;
+  border: 1px solid var(--border) !important;
 }
 
 [data-theme-version="dark"] .css-b62m3t-container>div {
@@ -34162,7 +34178,7 @@ button:focus {
   border-color: var(--border);
   position: relative;
   background: transparent;
-  padding: 1.5rem 1.875rem 1.25rem;
+  padding: 1.5rem 1.875rem 1.25rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -39150,7 +39166,7 @@ body>* {
   border: 1px solid #cea62d;
   height: 150px;
   padding: 5%;
-  border-radius: 20px;
+  border-radius: 0.5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -39183,6 +39199,7 @@ body>* {
   color: white !important;
   border: 1px solid white !important;
   padding: 1.7%;
+  border-radius: 0.5rem;
 }
 
 .btn-bt {
@@ -41973,7 +41990,7 @@ table.tb-transaction tbody td {
   border: 2px solid rgba(252, 252, 252, 0.5);
   height: 114px;
   width: 173px;
-  border-radius: 20px;
+  border-radius: 0.5rem;
   position: absolute;
   top: -56px;
   right: -66px;
@@ -41983,7 +42000,7 @@ table.tb-transaction tbody td {
   border: 2px solid rgba(252, 252, 252, 0.5);
   height: 114px;
   width: 173px;
-  border-radius: 20px;
+  border-radius: 0.5rem;
   position: absolute;
   top: -29px;
   right: -98px;
@@ -43825,7 +43842,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .cryptos {
-  border-radius: 20px;
+  border-radius: 0.5rem;
   border: 2px solid #646464;
 }
 
@@ -43948,11 +43965,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .border-white-leaders {
   border: 1px solid #cea62d;
-  border-radius: 20px;
+  border-radius: 0.5rem!important;
 }
 
 .CardSec .cryptCard {
-  border-radius: 20px;
+  border-radius: 0.5rem;
   border: 2px solid #646464;
 }
 
@@ -44350,7 +44367,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 [data-theme-version="dark"] .custom-react-select>div:nth-child(4)>div {
-  border: 2px solid var(--border) !important;
+  border: 1px solid var(--border) !important;
 }
 
 [data-theme-version="dark"] .css-b62m3t-container>div {
@@ -44510,9 +44527,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .border-green-feed{
   background-color: #00800057 !important;
   border-color: #00800057 !important;
-  border-radius: 0 !important;
+  border-radius: 0.5rem !important;
   color: #00aa00 !important;
   border: 1px solid #00800057!important;
+}
+
+.border-green-feed p{
+  color: #00aa00 !important;
 }
 
 .border-post{

@@ -19,55 +19,54 @@
 }
 
 .MuiDataGrid-root {
-    border-color: #cea62d!important;
-    color: white!important;
+    border-color: #cea62d !important;
+    color: white !important;
 }
 
-.MuiDataGrid-topContainer{
-    color: #cea62d!important;
+.MuiDataGrid-topContainer {
+    color: #cea62d !important;
 }
 
 .MuiDataGrid-root {
-    --DataGrid-containerBackground: #cea62c52!important;
-    --DataGrid-rowBorderColor: #cea62d!important;
-  }
+    --DataGrid-containerBackground: #cea62c52 !important;
+    --DataGrid-rowBorderColor: #cea62d !important;
+}
 
-  .MuiDataGrid-withBorderColor{
-    border-color: #cea62d!important;
-  }
+.MuiDataGrid-withBorderColor {
+    border-color: #cea62d !important;
+}
 
 .css-1oudwrl::after {
-    background-color: #cea62d!important;
+    background-color: #cea62d !important;
 }
 
 div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
-    background-color: #00800057!important;
-    border-color: #00800057!important;
-    border-radius: 0!important;
-    color: #00aa00!important;
+    background-color: #00800057 !important;
+    border-color: #00800057 !important;
+    border-radius: 0.5rem !important;
+    color: #00aa00 !important;
 }
 
-div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny), 
+div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny),
 div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel) {
-    background-color: #fd53535c!important;
-    border-color: #fd53535c!important;
-    border-radius: 0!important;
-    color: #fd5353!important;
-
+    background-color: #fd53535c !important;
+    border-color: #fd53535c !important;
+    border-radius: 0.5rem !important;
+    color: #fd5353 !important;
 }
 
 div:where(.swal2-container).swal2-center>.swal2-popup {
     display: grid;
     border: 1px solid #cea62d;
-    border-radius: 12px;
+    border-radius: 0.5rem;
     box-shadow: 2px 2px 6px 1px #cea62d52;
 }
 
-div:where(.swal2-container) h2:where(.swal2-title){
-    color: #cea62d!important;
+div:where(.swal2-container) h2:where(.swal2-title) {
+    color: #cea62d !important;
 }
 
-div:where(.swal2-container) .swal2-html-container p{
+div:where(.swal2-container) .swal2-html-container p {
     display: flex;
     justify-content: space-between;
 }
@@ -77,57 +76,57 @@ div:where(.swal2-icon).swal2-warning {
     color: #cea62d !important;
 }
 
-.btn-new-complete{
-    cursor: pointer!important;
-    background-color: #00800057!important;
-    border-color: #00800057!important;
-    border-radius: 0!important;
-    color: #00aa00!important;
-    text-transform: uppercase!important;
+.btn-new-complete {
+    cursor: pointer !important;
+    background-color: #00800057 !important;
+    border-color: #00800057 !important;
+    border-radius: 0.5rem !important;
+    color: #00aa00 !important;
 }
 
-.btn-new-operating{
-    cursor: pointer!important;
-    background-color: #cea62d5e!important;
-    border-color: #cea62d70!important;
-    border-radius: 0!important;
-    color: #cea62d!important;
-    text-transform: uppercase;
+.btn-new-operating {
+    cursor: pointer !important;
+    background-color: #cea62d5e !important;
+    border-color: #cea62d70 !important;
+    border-radius: 0.5rem !important;
+    color: #cea62d !important;
 }
 
-.btn-new-sell{
-    cursor: pointer!important;
-    background-color: #fd53535e!important;
-    border-color: #fd535370!important;
-    border-radius: 0!important;
-    color: #fd5353!important;
-    text-transform: uppercase;
+.btn-new-sell {
+    cursor: pointer !important;
+    background-color: #fd53535e !important;
+    border-color: #fd535370 !important;
+    border-radius: 0.5rem !important;
+    color: #fd5353 !important;
 }
 
-.btn-user-sold{
-    cursor: pointer!important;
-    background-color: #3498ff61!important;
+.btn-user-sold {
+    cursor: pointer !important;
+    background-color: #3498ff61 !important;
     color: #3498ff !important;
-    border: 1px solid #3498ff!important;
-    border-radius: 0!important;
-    text-transform: uppercase;
+    border: 1px solid #3498ff !important;
+    border-radius: 0.5rem !important;
 }
 
 
 @media (max-width: 600px) {
-    .MuiDataGrid-sortIcon{
-        display: none!important;
+    .MuiDataGrid-sortIcon {
+        display: none !important;
     }
 
     .MuiDataGrid-cell[data-field='estado'] {
         flex: 1 !important;
-      }
-    
-      .MuiDataGrid-cell[data-field='coin'] {
-        flex: 1 !important;
-      }
+    }
 
-      .MuiDataGrid-cell{
-        padding: 0 1.1%!important;
-      }
-  }
+    .MuiDataGrid-cell[data-field='coin'] {
+        flex: 1 !important;
+    }
+
+    .MuiDataGrid-cell {
+        padding: 0 1.1% !important;
+    }
+
+    .btn-xs {
+        padding: 4px 6px!important;
+    }
+}

@@ -12,7 +12,7 @@ const TradingTable = (params) => {
 
     useEffect(() => {
         const hasPendingBuy = params.rows.some((row) => row.mercado && row.estado === 97);
-        setTableWidth(hasPendingBuy ? '200%' : '115%');
+        setTableWidth(hasPendingBuy ? '200%' : '100%');
     }, [params.rows]);
 
     const verifyBuyNow = async (id) => {
@@ -172,12 +172,12 @@ const TradingTable = (params) => {
 
                 if (params.row.sell_now === 1 && params.row.global_profit) {
                     return <div>
-                        <Button size='xs' style={{  marginRight: 20 }} className='btn-user-sold'>GLOBAL PROFIT</Button>
+                        <Button size='xs' style={{  marginRight: 20 }} className='btn-user-sold'>Global Profit</Button>
                     </div>
                 }
                 if (params.row.sell_now === 1) {
                     return <div>
-                        <Button size='xs' style={{ marginRight: 20 }} className='btn-user-sold'>USER SOLD</Button>
+                        <Button size='xs' style={{ marginRight: 20 }} className='btn-user-sold'>User Sold</Button>
                     </div>
                 }
                 return <></>

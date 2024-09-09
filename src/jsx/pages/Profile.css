@@ -1,9 +1,92 @@
-.profile label{
+.profile label {
     font-size: 16px;
     font-weight: bold;
     color: #cea62d;
 }
 
-.profile span{
+.profile span {
     font-size: 16px;
+}
+
+.input-edit {
+    border: 1px solid #cea62d !important;
+    padding: 3% !important;
+    border-radius: 0 !important;
+    margin: 1% 2% 1% 0% !important;
+    width: 75%;
+}
+
+.cancel-chng {
+    cursor: pointer !important;
+    background-color: #fd53535e !important;
+    border-color: #fd535370 !important;
+    border-radius: 0.5rem !important;
+    color: #fd5353 !important;
+    text-transform: none !important;
+}
+
+.save-chn {
+    cursor: pointer !important;
+    background-color: #00800057 !important;
+    border-color: #00800057 !important;
+    border-radius: 0.5rem !important;
+    color: #00aa00 !important;
+    text-transform: none !important;
+}
+
+.mob-col {
+    flex-direction: row;
+}
+
+.margii {
+    margin-bottom: 1.5rem;
+}
+
+.w-15-47{
+    width: 15%!important;
+}
+
+.w-11-35{
+    width: 11%!important;
+}
+
+
+.justify-start{
+    justify-content: flex-start!important;
+}
+
+@media (max-width: 600px) {
+    [data-headerbg="color_3"] .header:not(.home):after {
+        left: 0 !important;
+    }
+
+    .mob-col {
+        flex-direction: column !important;
+    }
+
+    .input-edit {
+        width: 100% !important;
+    }
+
+
+    .margii {
+        margin-bottom: 0.5rem!important;
+    }
+
+    .w-15-47{
+        width: 50%!important;
+    }
+
+    .w-11-35{
+        width: 50%!important;
+    }
+
+    .justify-start{
+        justify-content: center!important;
+    }
+
+    .mb-55{
+        margin-bottom: 2%;
+    }
+
 }
