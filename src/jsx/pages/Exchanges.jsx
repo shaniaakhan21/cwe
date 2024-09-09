@@ -4,9 +4,17 @@ import axiosInstance from "../../services/AxiosInstance";
 import Swal from "sweetalert2";
 
 import Binance from "../../assets/images/plataforma-3.png";
+import KuCoin from "../../assets/images/plataforma-4.png";
+import HTX from "../../assets/images/plataforma-5.png";
+import Okx from "../../assets/images/plataforma-6.png";
+import GateIo from "../../assets/images/plataforma-7.png";
 import { isAxiosError } from "axios";
 const exchanges = {
     'plataforma-3': Binance,
+    'plataforma-4': KuCoin,
+    'plataforma-5': HTX,
+    'plataforma-6': Okx,
+    'plataforma-7': GateIo,
 }
 
 const Exchanges = () => {
@@ -141,6 +149,45 @@ const Exchanges = () => {
                 })}
 
             </div>
+
+            <div className="row">
+                <div className="col-11 col-md-3 m-3" style={{ border: "1px solid #cea62d", padding: 20, borderRadius: 10 }}>
+                    <div style={{ textAlign: "center" }}>
+
+                        <img src={exchanges[`plataforma-4`]} alt="Binance" style={{ height: 130 }} />
+                    </div>
+                    <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
+                        COMING SOON
+                    </div>
+                </div>
+                <div className="col-11 col-md-3 m-3" style={{ border: "1px solid #cea62d", padding: 20, borderRadius: 10 }}>
+                    <div style={{ textAlign: "center" }}>
+
+                        <img src={exchanges[`plataforma-5`]} alt="Binance" style={{ height: 130 }} />
+                    </div>
+                    <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
+                        COMING SOON
+                    </div>
+                </div>
+                <div className="col-11 col-md-3 m-3" style={{ border: "1px solid #cea62d", padding: 20, borderRadius: 10 }}>
+                    <div style={{ textAlign: "center" }}>
+
+                        <img src={exchanges[`plataforma-6`]} alt="Binance" style={{ height: 130 }} />
+                    </div>
+                    <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
+                        COMING SOON
+                    </div>
+                </div>
+                <div className="col-11 col-md-3 m-3" style={{ border: "1px solid #cea62d", padding: 20, borderRadius: 10 }}>
+                    <div style={{ textAlign: "center" }}>
+
+                        <img src={exchanges[`plataforma-7`]} alt="Binance" style={{ height: 130 }} />
+                    </div>
+                    <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
+                        COMING SOON
+                    </div>
+                </div>
+            </div>
             {apikeys === undefined && (
                 <div style={{ textAlign: "center", marginTop: 50 }}>
                     <div className="spinner-border" style={{ width: "8rem", height: "8rem" }} role="status">
@@ -190,7 +237,7 @@ const Exchanges = () => {
                         <strong>ACTION! </strong>
                         <br />
                         <br />
-                        <a style={{ color: '#FFAB2D'}} rel="noreferrer" href="https://youtu.be/80Izk4cBeTI" target="_blank">
+                        <a style={{ color: '#FFAB2D' }} rel="noreferrer" href="https://youtu.be/80Izk4cBeTI" target="_blank">
                             Click here for Tutorial for creating Binance API KEY
                         </a>
                     </Alert>
