@@ -76,7 +76,7 @@ const MainSlider = () => {
                 }}
             >
                 <SwiperSlide>
-                    <div className={`card card-box borderShadow`}>
+                    <div className={`card card-box border-yellow-02`}>
                         <div className="card-header border-0 p-4">
                             <div className="chart-num">
                                 <p className='pb-4'>
@@ -94,7 +94,7 @@ const MainSlider = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className={`card card-box  borderShadow`}>
+                    <div className={`card card-box  border-yellow-02`}>
                         <div className="card-header border-0 p-4">
                             <div className="chart-num">
                                 <p className='pb-4'>
@@ -112,7 +112,7 @@ const MainSlider = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className={`card card-box  borderShadow`}>
+                    <div className={`card card-box  border-yellow-02`}>
                         <div className="card-header border-0 p-4">
                             <div className="chart-num">
                                 <p className='pb-4'>

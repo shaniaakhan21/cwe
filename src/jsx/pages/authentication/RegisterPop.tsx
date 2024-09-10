@@ -71,7 +71,7 @@ const RegisterForm: React.FC<{ errorMessage?: string; successMessage?: string; }
                     <div className="row justify-content-end">
                         <div className="col-lg-8 col-md-6">
                             <div className="card mb-0 h-auto bg-black">
-                                <div className="card-body bg-black border-grey" style={{ padding: '7%', paddingTop: '2%' }}>
+                                <div className="card-body bg-black border-yellow-01" style={{ padding: '7%', paddingTop: '2%' }}>
                                     <div className="d-flex justify-content-end">
                                         <button
                                             className="close-button"

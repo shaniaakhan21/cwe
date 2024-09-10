@@ -31,7 +31,7 @@ const MarketBarChart = () => {
                 columnWidth: "20%",
                 endingShape: "rounded",
                 startingShape: "rounded",
-                borderRadius: 5,              
+                borderRadius: 3,              
                 colors: {
                     backgroundBarColors: ['#F8F8F8', '#F8F8F8', '#F8F8F8', '#F8F8F8','#F8F8F8','#F8F8F8','#F8F8F8','#F8F8F8','#F8F8F8','#F8F8F8','#F8F8F8','#F8F8F8'],
                     backgroundBarOpacity: 1,

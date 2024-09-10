@@ -2,9 +2,9 @@
     padding: 0.625rem 1.5625rem;
 	background: var(--card);
     border: 0.0625rem solid var(--border);
-    border-radius: 0.5rem;
+    border-radius: 3px;
     margin-bottom: 1.875rem;
-    border-radius: 0.5rem;
+    border-radius: 3px;
 	.nav{
 		.nav-item{
 			border-#{$dlab-pos-right}: 0.0625rem solid var(--border);
@@ -139,7 +139,7 @@
 	.guest-calendar{
 	    border: 0.0625rem solid var(--border);
 		padding: 0.49375rem 0.875rem;
-	    border-radius: 0.5rem;
+	    border-radius: 3px;
 	    span{
 	    	svg{
 	    		margin-#{$dlab-pos-right}: 0.625rem;
@@ -157,7 +157,7 @@
 	.default-select{
 		padding: 0.59375rem 1.25rem;
 		background-color: transparent;
-		border-radius: 0.5rem;
+		border-radius: 3px;
 		width: 12.5rem;
 		color: #1D1B23;
 		font-size: 1rem;

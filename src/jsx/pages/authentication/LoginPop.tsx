@@ -34,7 +34,7 @@ const LoginForm: React.FC = ({ isVisible, onClose }) => {
                             <div className="col-xl-12 tab-content">
                                 <div
                                     id="sign-up"
-                                    className="auth-form tab-pane fade show active border-grey form-validation pt-4"
+                                    className="auth-form tab-pane fade show active border-yellow-01 form-validation pt-4"
                                 >
                                     <form onSubmit={onLogin}>
                                         <div className="d-flex justify-content-end">

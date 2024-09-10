@@ -11,6 +11,7 @@ import { ThemeContext } from "../../../context/ThemeContext";
 import Logout from "../nav/Logout";
 import { SVGICON } from "../../constant/theme";
 import axiosInstance from "../../../services/AxiosInstance";
+import PersonSharpIcon from '@mui/icons-material/PersonSharp';
 
 const listBlog = [
   { icon: SVGICON.LtcSvgIcon, name: 'LTC in DexignLab' },
@@ -154,14 +155,13 @@ useEffect(() => {
                     </div>
                   </Dropdown.Toggle>
                   <Dropdown.Menu align="end" className="mt-0 dropdown-menu dropdown-menu-right profile-dropdown">
-                     <div className="profile-info text-center mb-3 p-2">
+                     <div className="profile-info text-center p-2">
                       <img src={profile} alt="profile" className="mb-2"/>
                       <h6 className="text-dark">{nameProfile} {lastNameProfile}</h6>
-                      <p className="text-white mb-0">{email}</p>
                     </div>
                     <Dropdown.Item as={Link} to="/profile" className="dropdown-item">
                       {SVGICON.EditSvgIcon}
-                      <span className="ms-2">Profile</span>
+                      <span className="d-flex justify-content-center align-items-center text-white"><PersonSharpIcon className="me-1"/> Profile</span>
                     </Dropdown.Item> 
                     <Dropdown.Divider /> 
                     <Logout />

@@ -321,7 +321,7 @@ const Trading = (props) => {
 
 
                                     <div className="mt-3 d-flex justify-content-between">
-                                        <Button disabled={saving || !balance} onClick={() => { createHybrid() }} variant="success" className="btn btn-sm  text-uppercase  btn-block">Start Hybrid</Button>
+                                        <Button disabled={saving || !balance} onClick={() => { createHybrid() }} variant="success" className="btn btn-block">Start Hybrid</Button>
                                     </div>
                                 </form>
                             </div>
