@@ -58,7 +58,7 @@ export const Feed = () => {
 
 
     return (
-        <div className="my-post-content pt-3">
+        <div className="my-post-content">
             <div className="post-input">
                 <textarea name="textarea" value={post} onChange={(e) => setPost(e.target.value)} id="textarea" cols={30} rows={5} className="form-control bg-transparent border-yellow-02" placeholder="Please type what you want...." defaultValue={""} />
                 <Link to={"#"} className="btn btn-primary ms-1" onClick={() => createTimeline()}>Post</Link>

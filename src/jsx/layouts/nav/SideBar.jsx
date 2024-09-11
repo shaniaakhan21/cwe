@@ -10,6 +10,7 @@ import SidebarExtraContent from "./SidebarExtraContent";
 import { useDispatch } from "react-redux";
 import { navtoggle } from "../../../store/actions/AuthActions";
 import axiosInstance from "../../../services/AxiosInstance";
+import { useNavigate } from "react-router-dom";
 
 const reducer = (previousState, updatedState) => ({
   ...previousState,
@@ -125,6 +126,11 @@ const SideBar = () => {
 	}, [])
 
   console.log(me?.isAdmin)
+  const navigate = useNavigate();
+  const onLogout = () => {
+    localStorage.removeItem('token');
+    navigate('/login');
+};
 
   return (
     <div
@@ -153,6 +159,18 @@ const SideBar = () => {
               if(data.isAdmin && (me?.isAdmin || 0) === 0){
                 return
               }
+
+              if (data.title === "Logout") {
+                return (
+                  <li key={index} className="">
+                    <button onClick={onLogout} className="btn-logout btn-logout-02">
+                      {data.iconStyle}
+                      <span className="nav-text">{data.title}</span>
+                    </button>
+                  </li>
+                );
+              }
+              
               let menuClass = data.classsChange;
               if (menuClass === "menu-title") {
                 return (

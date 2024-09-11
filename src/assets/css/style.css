@@ -4039,7 +4039,7 @@ fieldset:disabled .btn {
   color: black !important;
   border: 1px solid #cea62d !important;
   font-weight: 700 !important;
-  text-transform: none!important;
+  text-transform: none !important;
 }
 
 .btn-yellow-cwe:hover {
@@ -4091,7 +4091,7 @@ fieldset:disabled .btn {
   color: #fff !important;
   border: 1px solid #fff !important;
   font-weight: 700 !important;
-  text-transform: none!important;
+  text-transform: none !important;
 }
 
 .padding-cstm-2 {
@@ -14545,7 +14545,7 @@ h6,
 .content-body .container-lg,
 .content-body .container-xl,
 .content-body .container-xxl {
-  padding-top: 1rem;
+  padding-top: 2.5rem;
   padding-right: 2.5rem;
   padding-left: 2.5rem;
 }
@@ -17562,8 +17562,8 @@ svg.pulse-svg .third-circle {
 }
 
 .dlabnav .metismenu>li.mm-active>a {
-  color: #cea62d!important;
-  background: var(--primary);
+  color: #cea62d !important;
+  background: #cea62d5e;
   font-weight: 600;
   box-shadow: none;
 }
@@ -17693,7 +17693,7 @@ svg.pulse-svg .third-circle {
 }
 
 .dlabnav.follow-info .menu-scroll {
-  height: calc(100% - 5.5rem);
+  height: calc(100% - 1.5rem);
 }
 
 .dlabnav .copyright {
@@ -18690,7 +18690,7 @@ svg.pulse-svg .third-circle {
   }
 
   [data-sidebar-style="mini"][data-layout="vertical"] .dlabnav .metismenu>li.mm-active>a {
-    background: var(--primary);
+    background: #cea62d5e;
     color: #fff;
     border-radius: 3px;
   }
@@ -18700,7 +18700,7 @@ svg.pulse-svg .third-circle {
   }
 
   [data-sidebar-style="mini"][data-layout="vertical"] .dlabnav .metismenu>li:hover>a {
-    background: var(--primary);
+    background: #cea62d5e;
     color: #fff;
     border-radius: 3px;
     position: unset;
@@ -18994,7 +18994,7 @@ svg.pulse-svg .third-circle {
 
   [data-layout="horizontal"] .dlabnav .metismenu>li:hover>a,
   [data-layout="horizontal"] .dlabnav .metismenu>li.mm-active>a {
-    background: var(--primary);
+    background: #cea62d5e;
     color: #fff;
     border-radius: 3px;
   }
@@ -19648,7 +19648,7 @@ svg.pulse-svg .third-circle {
 
   [data-sidebar-style="icon-hover"][data-layout="vertical"] .dlabnav .metismenu>li:hover>a,
   [data-sidebar-style="icon-hover"][data-layout="vertical"] .dlabnav .metismenu>li.mm-active>a {
-    background: var(--primary);
+    background: #cea62d5e;
     color: #fff;
   }
 
@@ -20105,7 +20105,7 @@ svg.pulse-svg .third-circle {
 }
 
 [data-sidebar-style="overlay"] .dlabnav .metismenu>li.mm-active>a {
-  background: var(--primary);
+  background: #cea62d5e;
   color: #fff;
 }
 
@@ -32243,11 +32243,13 @@ div:where(.swal2-container) div:where(.swal2-popup) {
 
 .badge {
   line-height: 1.2;
-  border-radius: 3px;
   font-weight: 600;
   padding: 0.25rem 0.625rem;
   border: 0.0625rem solid transparent;
-  color: black!important;
+  background-color: transparent !important;
+  color: #cea62d !important;
+  font-size: 0.813rem!important;
+  border-radius: 3px !important;
 }
 
 .badge-rounded {
@@ -44559,14 +44561,63 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   justify-content: center;
 }
 
-.btn-logout{
+.btn-logout {
   background-color: #cea62d !important;
-    border-color: #cea62d70 !important;
-    border-radius: 3px !important;
-    color: black!important;
-    width: 85%;
-    position: relative;
-    left: 7%;
+  border-color: #cea62d !important;
+  border-radius: 3px !important;
+  color: black !important;
+  width: 85%;
+  position: relative;
+  left: 7%;
+  border: 0;
 }
 
+.btn-logout-02 {
+  display: flex;
+  justify-content: flex-start;
+  padding: 4% 8%!important;
+  align-items: center;
+  width: 100%;
+  margin-top: 4%;
+  margin-bottom: 3%;
+  left: 0%!important;
+}
+
+.btn-logout-02 span{
+  margin-left: 2%;
+}
+
+.profile {
+  padding: 1rem !important;
+}
+
+.MuiDataGrid-root .MuiDataGrid-columnHeader .MuiDataGrid-menuIcon {
+  display: none!important;
+}
+
+.MuiDataGrid-root .MuiDataGrid-columnHeader:focus, .MuiDataGrid-root .MuiDataGrid-cell:focus {
+  outline: none!important;
+}
+
+.MuiDataGrid-root .MuiDataGrid-columnSeparator {
+  display: none!important;
+}
+
+.MuiDataGrid-root .MuiDataGrid-columnHeaderTitleContainer {
+  justify-content: center!important;
+}
+
+.MuiDataGrid-root .MuiDataGrid-cell--textLeft{
+  text-align: center!important;
+}
+
+.MuiDataGrid-root .MuiDataGrid-columnHeader:focus-within, .MuiDataGrid-root .MuiDataGrid-cell:focus-within {
+  outline: solid rgba(25, 118, 210, 0) 1px;
+  outline-width: 0px!important;
+  outline-offset: 0px!important;
+}
+
+.b-c{
+  border-color: #cea62d!important;
+}
 /*# sourceMappingURL=style.css.map */
