@@ -79,7 +79,7 @@ const FutureTrading = () => {
 
 
                                 <div className="mt-3 d-flex justify-content-between">
-                                    <Link to={"#"} className="btn btn-success btn-sm light text-uppercase  btn-block">Start Hybrid</Link>
+                                    <Link to={"#"} className="btn btn-success light btn-block">Start Hybrid</Link>
                                 </div>
                             </form>
                         </div>

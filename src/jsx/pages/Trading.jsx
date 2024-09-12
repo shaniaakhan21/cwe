@@ -303,25 +303,25 @@ const Trading = (props) => {
 
                                     <div className="input-group mb-3">
                                         <span className="input-group-text">Investment</span>
-                                        <input type="text" value={investment} onChange={(e) => { setInvesment(e.target.value) }} className="form-control" />
+                                        <input type="text" value={investment} onChange={(e) => { setInvesment(e.target.value) }} className="form-control b-c" />
                                         <span className="input-group-text">USDT</span>
                                     </div>
 
                                     <div className="input-group mb-3">
                                         <span className="input-group-text">Stop Gain</span>
-                                        <input type="text" value={stopgain} onChange={(e) => { setStopGain(e.target.value) }} className="form-control" />
+                                        <input type="text" value={stopgain} onChange={(e) => { setStopGain(e.target.value) }} className="form-control b-c" />
                                         <span className="input-group-text">%</span>
                                     </div>
 
                                     <div className="input-group mb-3">
                                         <span className="input-group-text">Stop Loss</span>
-                                        <input type="text" value={stoploss} onChange={(e) => { setStopLoss(e.target.value) }} className="form-control" />
+                                        <input type="text" value={stoploss} onChange={(e) => { setStopLoss(e.target.value) }} className="form-control b-c" />
                                         <span className="input-group-text">%</span>
                                     </div>
 
 
                                     <div className="mt-3 d-flex justify-content-between">
-                                        <Button disabled={saving || !balance} onClick={() => { createHybrid() }} variant="success" className="btn btn-sm  text-uppercase  btn-block">Start Hybrid</Button>
+                                        <Button disabled={saving || !balance} onClick={() => { createHybrid() }} variant="success" className="btn btn-block">Start Hybrid</Button>
                                     </div>
                                 </form>
                             </div>

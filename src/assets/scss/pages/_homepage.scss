@@ -554,7 +554,7 @@ body > *{
 	}
 	&.custom-image-select-2{
 		background:var(--rgba-primary-1);
-		border-radius: 0.5rem;
+		border-radius: 3px;
 		margin-bottom: 0.625rem;
 		margin-#{$dlab-pos-left}: 0.375rem;
 		width: 300px!important;
@@ -1045,7 +1045,7 @@ margin:0.525rem 0.25rem;
 	text-align: center;
 	display: block;
 	margin: 0 5px;
-	border-radius: 0.5rem;
+	border-radius: 3px;
 	cursor:pointer;
 	
 	@include respond ('phone'){

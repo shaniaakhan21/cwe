@@ -76,7 +76,7 @@ function Register(props) {
           <div className="row justify-content-center">
             <div className="col-lg-5 col-md-6">
               <div className="card mb-0 h-auto bg-black">
-                <div className="card-body bg-black border-grey ">
+                <div className="card-body bg-black border-yellow-01  auth-form ">
                   <div className="text-center mb-2">
                     <Link to="/login" className="logo">
                       <img src={logoFull} alt="" />
@@ -116,7 +116,7 @@ function Register(props) {
                       {errors.referralId && (<div className="text-danger">{errors.referralId?.message}</div>)}
                     </div>
                     <div className="text-center mt-4">
-                      <button type="submit" className="btn  btn-bg text-white btn-block">
+                      <button type="submit" className="btn  btn-bg text-black btn-block">
                         Sign me up
                       </button>
                     </div>

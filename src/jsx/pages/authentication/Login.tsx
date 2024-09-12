@@ -40,7 +40,7 @@ function Login() {
                 <div className="col-xl-12 tab-content">
                   <div
                     id="sign-up"
-                    className="auth-form tab-pane fade show active border-grey m-4 form-validation"
+                    className="auth-form tab-pane fade show active border-yellow-01 m-4 form-validation"
                   >
 
                     <form onSubmit={onLogin}>
@@ -84,7 +84,7 @@ function Login() {
                           <i className="fa fa-eye" />
                         </span>
                       </div>
-                      <button className="btn btn-block btn-bg text-white">
+                      <button className="btn btn-block btn-bg text-black">
                         Sign In
                       </button>
                     </form>

@@ -6,13 +6,13 @@
 }
 
 .stop-it {
-    border-radius: 0 !important;
+    border-radius: 3px !important;
     color: #cea62d !important;
     border: 1px solid #cea62d !important;
 }
 
 .follow-it {
-    border-radius: 0.5rem !important;
+    border-radius: 3px !important;
     background-color: #cea62d !important;
 }
 

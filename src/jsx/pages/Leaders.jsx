@@ -88,7 +88,7 @@ const Leaders = () => {
                                                 <div className="col" style={{ marginBottom: 10 }}>
                                                     <h3 style={{ marginBottom: -2 }}>{leader.name}</h3>
                                                     {leader.follows === 1 && (
-                                                        <Badge pill bg="primary mt-2">Following</Badge>
+                                                        <Badge pill bg="primary mt-2 stop-it btn bg-primary ">Following</Badge>
                                                     )}
                                                 </div>
                                             </div>

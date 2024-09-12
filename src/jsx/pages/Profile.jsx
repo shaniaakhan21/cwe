@@ -121,7 +121,7 @@ const Profile = () => {
     };
 
     return (
-        <div className='profile d-flex flex-column Info-page ml-4  mr-10 '>
+        <div className='profile d-flex flex-column Info-page ml-4  mr-10 border-yellow-02'>
             <div className='d-flex justify-content-end'>
                 {editMode ? (
                     <span className='text-[#F55937] text-lg cursor-pointer mb-1 sm:mb-0' onClick={handleEditToggle}>

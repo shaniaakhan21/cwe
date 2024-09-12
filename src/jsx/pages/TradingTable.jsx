@@ -102,7 +102,7 @@ const TradingTable = (params) => {
             renderCell: (params) => {
 
                 if (params.value === 97) {
-                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer" }} bg="">Pending Buy <i className='fa fa-circle-info' /></Button>
+                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer" }} bg="" className='btn-new-operating'>Pending Buy <i className='fa fa-circle-info' /></Button>
                 }
 
                 if ([99, 0].includes(params.value)) {
@@ -160,8 +160,8 @@ const TradingTable = (params) => {
             renderCell: (params) => {
                 if (params.row.estado === 97) {
                     return <div>
-                        <Button onClick={() => { verifyBuyNow(params.row.id) }} size='xs' variant='info'>Buy Now</Button>
-                        <Button onClick={() => { verifyCancel(params.row.id) }} style={{ marginLeft: 10 }} size='xs' variant='danger'>Cancel</Button>
+                        <Button onClick={() => { verifyBuyNow(params.row.id) }} size='xs' variant='info' className='btn-new-complete'>Buy Now</Button>
+                        <Button onClick={() => { verifyCancel(params.row.id) }} style={{ marginLeft: 10 }} size='xs' className='btn-new-sell'>Cancel</Button>
                     </div>
                 }
                 if (params.row.estado === 1) {

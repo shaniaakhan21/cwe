@@ -124,7 +124,6 @@ function MainLayout() {
             <Outlet />
           </div>
         </div>
-        <Footer />
       </div>
     </>
   )
@@ -150,7 +149,6 @@ function MainLayout2() {
             <Outlet />
           </div>
         </div>
-        <Footer />
       </div>
     </>
   )

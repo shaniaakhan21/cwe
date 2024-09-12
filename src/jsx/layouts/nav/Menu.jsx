@@ -9,6 +9,7 @@ import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import CurrencyBitcoinIcon from '@mui/icons-material/CurrencyBitcoin';
 import UpgradeIcon from '@mui/icons-material/Upgrade';
 import NotificationImportantIcon from '@mui/icons-material/NotificationImportant';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 export const MenuList = [
     {
@@ -78,5 +79,12 @@ export const MenuList = [
         iconStyle: <MonetizationOnIcon />,  
         to: 'sales',
         isAdmin: true
+    },
+    {
+        title: 'Logout',
+        classsChange: 'mm-collapse',
+        iconStyle: <LogoutIcon />,
+        to: '#',
+        onClick: 'logout', 
     }
 ];

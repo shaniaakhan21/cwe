@@ -3058,7 +3058,7 @@ svg.pulse-svg {
 .pulse-css {
   width: 1rem;
   height: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 3px;
   border-radius: 3.5rem;
   height: .4rem;
   position: absolute;
@@ -3070,7 +3070,7 @@ svg.pulse-svg {
     content: '';
     width: 1rem;
     height: 1rem;
-    border-radius: 0.5rem;
+    border-radius: 3px;
     position: absolute;
     top: 0;
     right: 0;
