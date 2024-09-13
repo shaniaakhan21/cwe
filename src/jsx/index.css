@@ -896,3 +896,7 @@ button.react-calendar__tile.react-calendar__tile--active.react-calendar__tile--r
 .MuiBackdrop-root, .MuiModal-backdrop{
   background-color: transparent!important;
 }
+
+.MuiDataGrid-sortIcon {
+  fill: #cea62d!important;
+}
