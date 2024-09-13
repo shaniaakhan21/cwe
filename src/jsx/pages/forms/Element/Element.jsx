@@ -376,7 +376,7 @@ const Element = () => {
                            </div>
                         </div>
                         <button type="submit" className="btn btn-primary">
-                           Sign in
+                           Login
                         </button>
                         </form>
                      </div>
@@ -480,7 +480,7 @@ const Element = () => {
                                     type="submit"
                                     className="btn btn-primary"
                                  >
-                                    Sign in
+                                    Login
                                  </button>
                               </div>
                            </div>

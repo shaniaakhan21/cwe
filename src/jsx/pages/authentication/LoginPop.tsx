@@ -92,8 +92,8 @@ const LoginForm: React.FC = ({ isVisible, onClose }) => {
                                                 <i className="fa fa-eye" />
                                             </span>
                                         </div>
-                                        <button className="btn btn-block btn-bg text-white">
-                                            Sign In
+                                        <button className="btn btn-block btn-bg text-black">
+                                            Login
                                         </button>
                                     </form>
                                 </div>

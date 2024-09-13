@@ -497,7 +497,7 @@ const AppProfile = () => {
 																	</label>
 																</div>
 															</div>
-															<button className="btn btn-primary" type="submit">Sign in</button>
+															<button className="btn btn-primary" type="submit">Login</button>
 														</form>
 													</div>
 												</div>

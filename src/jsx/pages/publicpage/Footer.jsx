@@ -7,6 +7,7 @@ import TikTokYellowIcon from '../../../assets/images/tiktok-yellow.png'
 import TikTokWhiteIcon from '../../../assets/images/tiktok-white.png'
 import logo from '../../../assets/images/publicpages/CWE-Logo1.png'
 import { useNavigate } from 'react-router-dom';
+import TelegramIcon from '@mui/icons-material/Telegram';
 
 const Footer = () => {
     const navigate = useNavigate();
@@ -52,6 +53,14 @@ const Footer = () => {
                             </Link>
                             <Link href="/#earn-section" color="inherit" underline="none">
                                 Earn
+                            </Link>
+                        </Box>
+                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }} className='links-btm'>
+                            <Link href="https://t.me/+EsQqUHblRMAyMmZk" color="inherit" underline="none">
+                                <TelegramIcon/> Apps Chat
+                            </Link>
+                            <Link href="https://t.me/+RAuK2_qq-zJkOGM0" color="inherit" underline="none">
+                            <TelegramIcon/> API Chat
                             </Link>
                         </Box>
                     </Box>
