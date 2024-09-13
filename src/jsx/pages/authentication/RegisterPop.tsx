@@ -121,8 +121,8 @@ const RegisterForm: React.FC<{ errorMessage?: string; successMessage?: string; }
                                             {errors.referralId && (<div className="text-danger">{errors.referralId?.message}</div>)}
                                         </div>
                                         <div className="text-center mt-4">
-                                            <button type="submit" className="btn btn-bg text-white btn-block" disabled={isSubmitting}>
-                                                Sign me up
+                                            <button type="submit" className="btn btn-bg text-black btn-block" disabled={isSubmitting}>
+                                                Sign Up
                                             </button>
                                         </div>
                                     </form>

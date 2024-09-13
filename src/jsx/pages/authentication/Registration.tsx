@@ -117,7 +117,7 @@ function Register(props) {
                     </div>
                     <div className="text-center mt-4">
                       <button type="submit" className="btn  btn-bg text-black btn-block">
-                        Sign me up
+                        Sign Up
                       </button>
                     </div>
                   </form>
@@ -125,7 +125,7 @@ function Register(props) {
                     <p className="text-white text-center">
                       Already have an account?{" "}
                       <Link className="text-our-yellow" to="/login">
-                        Sign in
+                        Login
                       </Link>
                     </p>
                   </div>

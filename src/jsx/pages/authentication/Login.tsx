@@ -85,7 +85,7 @@ function Login() {
                         </span>
                       </div>
                       <button className="btn btn-block btn-bg text-black">
-                        Sign In
+                        Login
                       </button>
                     </form>
                     <div className="new-account mt-3 text-center text-white">

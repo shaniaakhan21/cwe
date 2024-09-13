@@ -33034,6 +33034,10 @@ button:focus {
 .btn-block {
   display: block;
   width: 100%;
+  font-weight: 700 !important;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.75;
 }
 
 .light.tp-btn {
@@ -43943,7 +43947,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .SS .firstSS img {
   border: 1px solid #cea62dc4;
-  border-radius: 24px;
+  border-radius: 3px;
 }
 
 
@@ -43956,8 +43960,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .SS .borderWhite {
-  border: 2px solid #fff;
-  border-radius: 24px;
+  border: 1px solid #fff;
+  border-radius: 3px;
 }
 
 .SS .borderWhite h3 {
@@ -44189,8 +44193,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding: 2px !important;
   }
 
-  .footer-cwe .widthSh {
+  .footer-cwe .widthSh, .css-16wajk8 {
     width: 50% !important;
+    gap: 8px !important;
+  }
+
+  .footer-cwe .telegramicon{
+    display: none!important;
   }
 
   .mt-4 {
@@ -44199,6 +44208,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   .footer-cwe .widthSh2 {
     width: 30% !important;
+  }
+  
+  .footer-cwe{
+    padding: 1% 2%!important;
   }
 
   .footer-cwe .widthSh3 {
@@ -44222,6 +44235,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     width: 90% !important;
   }
 
+  .footer-cwe .links-btm a:hover {
+    font-size: 6px !important;
+}
 
 }
 
