@@ -44193,8 +44193,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding: 2px !important;
   }
 
-  .footer-cwe .widthSh {
+  .footer-cwe .widthSh, .css-16wajk8 {
     width: 50% !important;
+    gap: 8px !important;
+  }
+
+  .footer-cwe .telegramicon{
+    display: none!important;
   }
 
   .mt-4 {
@@ -44203,6 +44208,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   .footer-cwe .widthSh2 {
     width: 30% !important;
+  }
+  
+  .footer-cwe{
+    padding: 1% 2%!important;
   }
 
   .footer-cwe .widthSh3 {
@@ -44226,6 +44235,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     width: 90% !important;
   }
 
+  .footer-cwe .links-btm a:hover {
+    font-size: 6px !important;
+}
 
 }
 

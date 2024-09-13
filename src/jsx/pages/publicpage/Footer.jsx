@@ -38,7 +38,7 @@ const Footer = () => {
 
                     {/* Links */}
                     <Box sx={{ display: 'flex', gap: 5 }} className='w-25 widthSh2'>
-                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }} className='links-btm'>
+                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }} className='links-btm justify-content-center'>
                             <Link href="#" color="inherit" underline="none">
                                 Home
                             </Link>
@@ -47,7 +47,7 @@ const Footer = () => {
                             </Link>
 
                         </Box>
-                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }} className='links-btm'>
+                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }} className='links-btm justify-content-center'>
                             <Link href="/#buy-crypto-section" color="inherit" underline="none">
                                 Buy Crypto
                             </Link>
@@ -55,12 +55,12 @@ const Footer = () => {
                                 Earn
                             </Link>
                         </Box>
-                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }} className='links-btm'>
+                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }} className='links-btm justify-content-center'>
                             <Link href="https://t.me/+EsQqUHblRMAyMmZk" color="inherit" underline="none">
-                                <TelegramIcon/> Apps Chat
+                                <TelegramIcon className='telegramicon'/> Apps Chat
                             </Link>
                             <Link href="https://t.me/+RAuK2_qq-zJkOGM0" color="inherit" underline="none">
-                            <TelegramIcon/> API Chat
+                                <TelegramIcon className='telegramicon' /> API Chat
                             </Link>
                         </Box>
                     </Box>
