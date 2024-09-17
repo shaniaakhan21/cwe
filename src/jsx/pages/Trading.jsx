@@ -14,7 +14,7 @@ import './Trading.css'
 
 const Trading = (props) => {
     const { mercado } = useParams();
-    const [selectedOption, setSelectedOption] = useState({ value: 'BTC', label: 'BTC' })
+    const [selectedOption, setSelectedOption] = useState(undefined)
     const [options, setOptions] = useState([]);
     const [stopgain, setStopGain] = useState(3);
     const [stoploss, setStopLoss] = useState(99);
@@ -327,15 +327,13 @@ const Trading = (props) => {
                             </div>
                         </div>
                     </div>
-                    {selectedOption && (
-                        <div className="col-xl-6">
+                    <div className="col-xl-6">
                             <div className="card" style={{ height: '100%' }}>
                                 <>
-                                    <TechnicalAnalysis symbol={`${selectedOption.label}USDT`} colorTheme="dark" width="100%"></TechnicalAnalysis>
+                                    <TechnicalAnalysis symbol={`${selectedOption?.label || 'BTC'}USDT`} colorTheme="dark" width="100%"></TechnicalAnalysis>
                                 </>
                             </div>
                         </div>
-                    )}
                     {/* {!selectedOption && (
                         <div className="col-xl-8 card-select">
                             <div className='card-in col-xl-8'>
@@ -346,16 +344,14 @@ const Trading = (props) => {
 
                     )} */}
                 </div>
-                {selectedOption && (
-                    <div className="col-xl-12">
+                <div className="col-xl-12">
                         <div className="card" style={{ height: 500 }}>
 
                             <>
-                                <AdvancedRealTimeChart symbol={`${selectedOption.label}USDT`} theme="dark" autosize></AdvancedRealTimeChart>
+                                <AdvancedRealTimeChart symbol={`${selectedOption?.label || 'BTC'}USDT`} theme="dark" autosize></AdvancedRealTimeChart>
                             </>
                         </div>
                     </div>
-                )}
 
 
 
