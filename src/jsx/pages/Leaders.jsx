@@ -85,10 +85,10 @@ const Leaders = () => {
                                     <div className="profile-statistics w-100">
                                         <div className="text-center d-flex flex-row justify-content-between align-items-center">
                                             <div className="row w-20 text-start">
-                                                <div className="col" style={{ marginBottom: 10 }}>
-                                                    <h3 style={{ marginBottom: -2 }}>{leader.name}</h3>
+                                                <div className='leaders-name-col col'>
+                                                    <h4 className='leaders-name' style={{ marginBottom: -2 }}>{leader.name}</h4>
                                                     {leader.follows === 1 && (
-                                                        <Badge pill bg="primary mt-2 stop-it btn bg-primary ">Following</Badge>
+                                                        <Badge pill bg="primary mt-2 btn bg-primary ">Following</Badge>
                                                     )}
                                                 </div>
                                             </div>
@@ -107,7 +107,7 @@ const Leaders = () => {
                                                     <a onClick={() => { follow(leader.id) }} className="btn mb-1 me-1 follow-it" >Follow</a>
                                                 )}
                                                 {leader.follows === 1 && (
-                                                    <a onClick={() => { unfollow(leader.id) }} className="btn mb-1 me-1 stop-it" >Stop Following</a>
+                                                    <a onClick={() => { unfollow(leader.id) }} className="btn mb-1 me-1 badge" >Stop Following</a>
                                                 )}
                                             </div>
                                         </div>

@@ -231,12 +231,12 @@ const Banking = () => {
                                 <img src={IMAGES.AtmChip} alt="" />
                                 <div className="d-flex align-items-end justify-content-between">
                                     <div className="prim-info">
-                                        <p className="mb-0 text-white">Card Holder</p>
-                                        <h6 className="mb-0 text-white">Mukund</h6>
+                                        <p className="mb-0 text-greyish">Card Holder</p>
+                                        <h6 className="mb-0 text-greyish">Mukund</h6>
                                     </div>
                                     <div className="master-card">
                                         {SVGICON.masterCard}
-                                        <p className="text-white mb-0 mt-1">Master Card</p>
+                                        <p className="text-greyishmb-0 mt-1">Master Card</p>
                                     </div>
                                 </div>
                             </div>
@@ -309,13 +309,13 @@ const Banking = () => {
                                 <div className="d-flex justify-content-between align-items-center">
                                     <div className="earning">
                                         <h4 className="text-white">Monthly Target</h4>
-                                        <h6 className="text-white mt-4">Total Earning</h6>
-                                        <div className="count-num text-white">$25,365.25</div>
-                                        <p className="text-white mb-0">25% than last month</p>
+                                        <h6 className="text-greyishmt-4">Total Earning</h6>
+                                        <div className="count-num text-greyish">$25,365.25</div>
+                                        <p className="text-greyishmb-0">25% than last month</p>
                                     </div>
                                     <div className="d-inline-block position-relative donut-chart-sale">
                                         <DonughtChart value="75" backgroundColor="rgba(54, 147, 255,1)" backgroundColor2="rgba(239, 239, 239, 1)" />
-                                        <small className="fs-18 font-w700 text-white">75%</small>
+                                        <small className="fs-18 font-w700 text-greyish">75%</small>
                                     </div>
                                 </div>
                             </div>

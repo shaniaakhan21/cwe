@@ -424,7 +424,7 @@ const UiListGroup = () => {
                                   className="flex-column align-items-start"
                                 >
                                   <div className="d-flex w-100 justify-content-between">
-                                    <h5 className="mb-3 text-white">
+                                    <h5 className="mb-3 text-greyish">
                                       List group item heading
                                     </h5>
                                     <small>3 days ago</small>
@@ -480,7 +480,7 @@ const UiListGroup = () => {
       className="flex-column align-items-start"
     >
       <div className="d-flex w-100 justify-content-between">
-        <h5 className="mb-3 text-white">
+        <h5 className="mb-3 text-greyish">
           List group item heading
         </h5>
         <small>3 days ago</small>

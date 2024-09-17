@@ -46,7 +46,7 @@ const Checkout = () => {
                               </li>
                               <li className="list-group-item d-flex justify-content-between active">
                                  <div className="text-white">
-                                    <h6 className="my-0 text-white">
+                                    <h6 className="my-0 text-greyish">
                                        Promo code
                                     </h6>
                                     <small>EXAMPLECODE</small>

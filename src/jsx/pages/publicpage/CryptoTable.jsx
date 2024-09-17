@@ -66,7 +66,7 @@ const CryptoTable = () => {
                     {cryptos.map((crypto, index) => (
                         <TableRow key={crypto.id}>
                             <TableCell>
-                                <StarPurple500Icon sx={{ color: '#cea62d', marginRight: '5px' }} />
+                                <StarPurple500Icon sx={{ color: '#FCD535', marginRight: '5px' }} />
                                 {index + 1}
                             </TableCell>
                             <TableCell>

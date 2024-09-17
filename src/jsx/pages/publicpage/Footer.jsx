@@ -23,8 +23,8 @@ const Footer = () => {
     const [hovered, setHovered] = useState(false);
 
     return (
-        <AppBar position="static" color="transparent" elevation={0} sx={{ borderTop: '1px solid #cea62d', padding: '0' }} className='py-4 footer-cwe' >
-            <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', flexDirection: 'column', alignItems: 'flex-start', padding: '0' }}>
+        <AppBar position="static" color="transparent" elevation={0} sx={{ borderTop: '1px solid #FCD535', padding: '0' }} className='py-4 footer-cwe' >
+            <Toolbar sx={{ backgroundColor: 'black!important', display: 'flex', justifyContent: 'space-between', flexDirection: 'column', alignItems: 'flex-start', padding: '0' }}>
 
                 <Box sx={{ display: 'flex', justifyContent: 'start', width: '100%' }}>
                     {/* Logo */}

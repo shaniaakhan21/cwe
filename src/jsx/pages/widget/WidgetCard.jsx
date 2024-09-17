@@ -139,8 +139,8 @@ const WidgetCard = () => {
                             <div className="profile-photo">
                                 <img src={IMAGES.Profile} width="100" className="img-fluid rounded-circle" alt="" />
                             </div>
-                            <h3 className="mt-3 mb-1 text-white">Deangelo Sena</h3>
-                            <p className="text-white mb-0">Senior Manager</p>
+                            <h3 className="mt-3 mb-1 text-greyish">Deangelo Sena</h3>
+                            <p className="text-greyishmb-0">Senior Manager</p>
                         </div>
                         <ul className="list-group list-group-flush">
                             <li className="list-group-item d-flex justify-content-between"><span className="mb-0">Patient Gender</span> <strong className="text-muted">Female	</strong></li>
@@ -171,7 +171,7 @@ const WidgetCard = () => {
                     <div className="card overflow-hidden">
                         <div className="text-center p-5 overlay-box" style={{backgroundImage: `url(${IMAGES.BigImg5})`}}>
                             <img src={IMAGES.Profile} width="100" className="img-fluid rounded-circle" alt="" />
-                            <h3 className="mt-3 mb-0 text-white">Deangelo Sena</h3>
+                            <h3 className="mt-3 mb-0 text-greyish">Deangelo Sena</h3>
                         </div>
                         <div className="card-body">
                             <div className="row text-center">
@@ -197,7 +197,7 @@ const WidgetCard = () => {
                 <Col xl={4}  lg={12} sm={12}>
                     <div className="card bg-info activity_overview">
                         <div className="card-header  border-0 pb-3 ">
-                            <h4 className="card-title text-white">Activity</h4>
+                            <h4 className="card-title text-greyish">Activity</h4>
                         </div>
                         <ActivityTab />
                     </div>    

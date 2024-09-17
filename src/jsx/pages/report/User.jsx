@@ -223,7 +223,7 @@ const User = () => {
                                 <div className="prot-blog">
                                     <div className="d-flex post justify-content-between align-items-center">
                                         <div className="d-flex align-items-center mb-2">
-                                            <h5 className="text-white card-title mb-0 me-3">Current Plan</h5>
+                                            <h5 className="text-greyishcard-title mb-0 me-3">Current Plan</h5>
                                             <span className="badge badge-warning badge-sm">Premium</span>
                                         </div>
                                         

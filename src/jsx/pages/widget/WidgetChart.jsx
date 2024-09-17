@@ -38,8 +38,8 @@ import WeeklySales2 from './WidgetBasic/WeeklySales2';
 const TtitleCode  = (props) =>{
     return(
         <div className={`card-header border-0 ${props.design}`}>
-            <h3 className="card-title text-white">{props.title}</h3>
-            <h5 className="text-white mb-0">
+            <h3 className="card-title text-greyish">{props.title}</h3>
+            <h5 className="text-greyishmb-0">
                 <i className="fa fa-caret-up"/> {props.number}
             </h5>
         </div>
@@ -193,7 +193,7 @@ const WidgetChart = () => {
                 <Col xl={4} lg={12} sm={12}>
                     <div className="card active_users">
                         <div className="card-header bg-primary border-0 pb-0">
-                            <h4 className="card-title text-white">Active Users</h4>
+                            <h4 className="card-title text-greyish">Active Users</h4>
                             <span id="counter"></span>
                         </div>
                         <div className="bg-primary">
@@ -240,7 +240,7 @@ const WidgetChart = () => {
                 <Col xl={4} lg={12} sm={12}>
                     <div className="card bg-info activity_overview">
                         <div className="card-header  border-0 pb-3 ">
-                            <h4 className="card-title text-white">Activity</h4>
+                            <h4 className="card-title text-greyish">Activity</h4>
                         </div>
                         <ActivityTab />
                     </div>

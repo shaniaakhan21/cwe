@@ -148,7 +148,7 @@ useEffect(() => {
                     <div className="header-info2 d-flex align-items-center">
                       <div className="d-flex align-items-center sidebar-info">
                         <div>
-                          <h5 className="mb-0 text-white">Hello {nameProfile}!</h5>
+                          <h5 className="mb-0 text-greyish">Hello {nameProfile}!</h5>
                         </div>
                       </div>
                       <img src={profile} alt="profile" />
@@ -161,7 +161,7 @@ useEffect(() => {
                     </div>
                     <Dropdown.Item as={Link} to="/profile" className="dropdown-item">
                       {SVGICON.EditSvgIcon}
-                      <span className="d-flex justify-content-center align-items-center text-white"><PersonSharpIcon className="me-1"/> Profile</span>
+                      <span className="d-flex justify-content-center align-items-center text-greyish"><PersonSharpIcon className="me-1"/> Profile</span>
                     </Dropdown.Item> 
                     <Dropdown.Divider /> 
                     <Logout />
@@ -175,14 +175,14 @@ useEffect(() => {
           <div className="page-titles">
             <div className="sub-dz-head">
               <div className="d-flex align-items-center dz-head-title">
-                <h2 className="text-white m-0">Dashboard</h2>
+                <h2 className="text-greyishm-0">Dashboard</h2>
               </div>
             </div>
           </div>
           :
           <div className="page-titles">
             <div className="d-flex align-items-center">
-              <h2 className="text-white"
+              <h2 className="text-greyish"
                 style={{ textTransform: "capitalize" }}
               >
                 {finalName.join(" ").length === 0

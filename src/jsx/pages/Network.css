@@ -3,28 +3,30 @@
   }
   
   .orgchart-container {
-    background-color: #cea62d1c!important;
-    border: 2px dashed #cea62d36!important;
+    background-color: #2b313900!important;
+    border: 2px dashed #2B3139!important;
     height: fit-content!important;
     border-radius: 3px!important;
  }
 
  .orgchart ul li .oc-node {
   padding: 2px;
-  border: 2px dashed #cea62d7a;
+  border: 2px dashed #2B3139;
 
 }
 
   .orgchart ul li .oc-node .oc-heading{
-    background-color: #cea62d7a!important;
-    border: 1px solid #cea62d7a!important;
+    background-color: #2B3139!important;
+    border: 1px solid #2B3139!important;
     border-radius: 3px 3px 0 0!important;
+    color: #EAECEF;
+    font-weight: 400;
   }
   
   .orgchart ul li .oc-node .oc-content{
     height: 35px!important;
-    border: 1px solid #cea62d7a!important;
-    background-color: black!important;
+    border: 1px solid #2B3139!important;
+    background-color: #2b313946!important;
   }
   
   .orgchart ul li .oc-node .oc-heading-available{
@@ -52,6 +54,17 @@
   }
 
   .orgchart ul li .oc-node:hover {
-    background-color: #ffc0007a;
-}
+    background-color: #00000063;
+  }
+
+  .orgchart ul li .oc-node:not(:only-child)::after, .orgchart > ul > li > ul li > .oc-node::before  {
+    background-color: #2B3139;
+  }
   
+  .orgchart > ul > li > ul li::before {
+    border-top: 2px solid #2B3139;
+  }
+
+  .orgchart ul li .oc-node.selected{
+    background-color: #00000063;
+  }

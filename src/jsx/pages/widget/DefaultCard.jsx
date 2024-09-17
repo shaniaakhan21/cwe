@@ -21,8 +21,8 @@ const BgCard = (props) =>{
             <span className="me-3">
                 {props.icon}
             </span>
-            <div className="media-body text-white">
-                <p className="mb-1 text-white">{props.title}</p>
+            <div className="media-body text-greyish">
+                <p className="mb-1 text-greyish">{props.title}</p>
                 <h3 className="text-white">{props.number}</h3>
                 <div className={`progress mb-2 bg-${props.color}`}>
                     <div className="progress-bar progress-animated bg-white" style={{width: props.percent}}></div>

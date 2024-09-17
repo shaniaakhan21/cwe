@@ -87,7 +87,7 @@ const RegisterForm: React.FC<{ errorMessage?: string; successMessage?: string; }
                                             ×
                                         </button>
                                     </div>
-                                    <h4 className="text-center text-white mb-4 ">Register now for free</h4>
+                                    <h4 className="text-center text-greyish mb-4 ">Register now for free</h4>
                                     {errorMessage && (
                                         <div className="text-danger">{errorMessage}</div>
                                     )}
@@ -96,28 +96,28 @@ const RegisterForm: React.FC<{ errorMessage?: string; successMessage?: string; }
                                     )}
                                     <form onSubmit={handleSubmit(onSubmit)}>
                                         <div className="form-group">
-                                            <label className="form-label text-white">Name</label>
-                                            <input {...register('name')} className="form-control" placeholder="Name" />
+                                            <label className="form-label text-greyish">Name</label>
+                                            <input {...register('name')} className="form-control bg-black" placeholder="Name" />
                                             {errors.name && (<div className="text-danger">{errors.name?.message}</div>)}
                                         </div>
                                         <div className="form-group">
-                                            <label className="form-label text-white">Email</label>
-                                            <input {...register('email')} className="form-control" placeholder="E-mail" />
+                                            <label className="form-label text-greyish">Email</label>
+                                            <input {...register('email')} className="form-control bg-black" placeholder="E-mail" />
                                             {errors.email && (<div className="text-danger">{errors.email?.message}</div>)}
                                         </div>
                                         <div className="form-group">
-                                            <label className="form-label text-white">Password</label>
-                                            <input {...register('password')} className="form-control" type="password" placeholder="Password" />
+                                            <label className="form-label text-greyish">Password</label>
+                                            <input {...register('password')} className="form-control bg-black" type="password" placeholder="Password" />
                                             {errors.password && (<div className="text-danger">{errors.password?.message}</div>)}
                                         </div>
                                         <div className="form-group">
-                                            <label className="form-label text-white">Confirm Password</label>
-                                            <input {...register('confirmPassword')} className="form-control" type="password" placeholder="Confirm Password" />
+                                            <label className="form-label text-greyish">Confirm Password</label>
+                                            <input {...register('confirmPassword')} className="form-control bg-black" type="password" placeholder="Confirm Password" />
                                             {errors.confirmPassword && (<div className="text-danger">{errors.confirmPassword?.message}</div>)}
                                         </div>
                                         <div className="form-group">
-                                            <label className="form-label text-white">Referral Id</label>
-                                            <input defaultValue={referralId} disabled className="form-control" placeholder="" />
+                                            <label className="form-label text-greyish">Referral Id</label>
+                                            <input defaultValue={referralId} disabled className="form-control bg-black" placeholder="" />
                                             {errors.referralId && (<div className="text-danger">{errors.referralId?.message}</div>)}
                                         </div>
                                         <div className="text-center mt-4">

@@ -71,7 +71,7 @@
   --secondary: #391995;
   --primary-hover: #ff2e48;
   --primary-dark: #c70019;
-  --rgba-primary-1: rgba(255, 97, 117, 0.1);
+  --rgba-primary-1: #2B3139;
   --rgba-primary-2: rgba(255, 97, 117, 0.2);
   --rgba-primary-3: rgba(255, 97, 117, 0.3);
   --rgba-primary-4: rgba(255, 97, 117, 0.4);
@@ -816,7 +816,7 @@ progress {
 
 .col-11 {
   flex: 0 0 auto;
-  width: 91.6666666667%; }
+  width: 97%; }
 
 .col-12 {
   flex: 0 0 auto;
@@ -1112,7 +1112,7 @@ progress {
 
   .col-md-2 {
     flex: 0 0 auto;
-    width: 16.6666666667%; }
+    width: 18.6666666667%; }
 
   .col-md-3 {
     flex: 0 0 auto;
@@ -8685,7 +8685,7 @@ h1, .h1, .h1, h2, .h2, .h2, h3, .h3, .h3, h4, .h4, .h4, h5, .h5, .h5, h6, .h6, .
 .content-body .container {
   margin-top: 2.5rem; }
 .content-body .container-fluid, .content-body .container-sm, .content-body .container-md, .content-body .container-lg, .content-body .container-xl, .content-body .container-xxl {
-  padding-top: 2.5rem;
+  padding-top: 0.5rem;
   padding-right: 2.5rem;
   padding-left: 2.5rem; }
   @media only screen and (max-width: 75rem) {
@@ -11102,7 +11102,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
           right: 13rem; }
     [data-sidebar-style="mini"][data-layout="vertical"] .dlabnav .metismenu > li.mm-active > a {
       background: var(--rgba-primary-1);
-      color: #fff;
+      color: #EAECEF;
       border-radius: 3px;}
       [data-sidebar-style="mini"][data-layout="vertical"] .dlabnav .metismenu > li.mm-active > a i {
         color: var(--primary); }

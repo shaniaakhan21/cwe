@@ -1800,8 +1800,8 @@ const UiAlert = () => {
                                                   <span><i className="mdi mdi-facebook" /></span>
                                                 </div>
                                                 <div className="media-body">  
-                                                  <h5 className="mt-1 mb-2 text-white">Facebook</h5>
-                                                  <p className="mb-0 text-white">
+                                                  <h5 className="mt-1 mb-2 text-greyish">Facebook</h5>
+                                                  <p className="mb-0 text-greyish">
                                                     Cras sit amet nibh libero, in gravida nulla. tempus
                                                     viverra turpis. Fusce condimentum nunc ac nisi
                                                     vulputate fringilla. Donec lacinia congue felis in
@@ -1819,8 +1819,8 @@ const UiAlert = () => {
                                                   <span><i className="mdi mdi-twitter" /></span>
                                                 </div>
                                                 <div className="media-body">  
-                                                  <h5 className="mt-1 mb-2 text-white">Twitter</h5>
-                                                  <p className="mb-0 text-white">
+                                                  <h5 className="mt-1 mb-2 text-greyish">Twitter</h5>
+                                                  <p className="mb-0 text-greyish">
                                                     Cras sit amet nibh libero, in gravida nulla. tempus
                                                     viverra turpis. Fusce condimentum nunc ac nisi
                                                     vulputate fringilla. Donec lacinia congue felis in
@@ -1838,8 +1838,8 @@ const UiAlert = () => {
                                                   <span><i className="mdi mdi-linkedin" /></span>
                                                 </div>
                                                 <div className="media-body">  
-                                                  <h5 className="mt-1 mb-2 text-white">Linkedin</h5>
-                                                  <p className="mb-0 text-white">
+                                                  <h5 className="mt-1 mb-2 text-greyish">Linkedin</h5>
+                                                  <p className="mb-0 text-greyish">
                                                     Cras sit amet nibh libero, in gravida nulla. tempus
                                                     viverra turpis. Fusce condimentum nunc ac nisi
                                                     vulputate fringilla. Donec lacinia congue felis in
@@ -1857,8 +1857,8 @@ const UiAlert = () => {
                                                   <span><i className="mdi mdi-google-plus" /></span>
                                                 </div>
                                                 <div className="media-body">  
-                                                  <h5 className="mt-1 mb-2 text-white">Google Plus</h5>
-                                                  <p className="mb-0 text-white">
+                                                  <h5 className="mt-1 mb-2 text-greyish">Google Plus</h5>
+                                                  <p className="mb-0 text-greyish">
                                                     Cras sit amet nibh libero, in gravida nulla. tempus
                                                     viverra turpis. Fusce condimentum nunc ac nisi
                                                     vulputate fringilla. Donec lacinia congue felis in
@@ -1884,7 +1884,7 @@ const UiAlert = () => {
                   <span><i className="mdi mdi-facebook" /></span>
                 </div>
                 <div className="media-body">  
-                  <h5 className="mt-1 mb-2 text-white">Facebook</h5>
+                  <h5 className="mt-1 mb-2 text-greyish">Facebook</h5>
                   <p className="mb-0">
                     Cras sit amet nibh libero, in gravida nulla. tempus
                     viverra turpis. Fusce condimentum nunc ac nisi
@@ -1903,7 +1903,7 @@ const UiAlert = () => {
                   <span><i className="mdi mdi-twitter" /></span>
                 </div>
                 <div className="media-body">  
-                  <h5 className="mt-1 mb-2 text-white">Twitter</h5>
+                  <h5 className="mt-1 mb-2 text-greyish">Twitter</h5>
                   <p className="mb-0">
                     Cras sit amet nibh libero, in gravida nulla. tempus
                     viverra turpis. Fusce condimentum nunc ac nisi
@@ -1922,7 +1922,7 @@ const UiAlert = () => {
                   <span><i className="mdi mdi-linkedin" /></span>
                 </div>
                 <div className="media-body">  
-                  <h5 className="mt-1 mb-2 text-white">Linkedin</h5>
+                  <h5 className="mt-1 mb-2 text-greyish">Linkedin</h5>
                   <p className="mb-0">
                     Cras sit amet nibh libero, in gravida nulla. tempus
                     viverra turpis. Fusce condimentum nunc ac nisi
@@ -1941,7 +1941,7 @@ const UiAlert = () => {
                   <span><i className="mdi mdi-google-plus" /></span>
                 </div>
                 <div className="media-body">  
-                  <h5 className="mt-1 mb-2 text-white">Google Plus</h5>
+                  <h5 className="mt-1 mb-2 text-greyish">Google Plus</h5>
                   <p className="mb-0">
                     Cras sit amet nibh libero, in gravida nulla. tempus
                     viverra turpis. Fusce condimentum nunc ac nisi
@@ -2289,8 +2289,8 @@ const UiAlert = () => {
                                           <button className="btn-close" onClick={()=>dispatch({type:'solidmessageprimary'})}></button>
                                           <div className='media'>
                                               <div className="media-body">
-                                                  <h5 className="mt-1 mb-2 text-white">Notifications</h5>
-                                                  <p className="mb-0 text-white">
+                                                  <h5 className="mt-1 mb-2 text-greyish">Notifications</h5>
+                                                  <p className="mb-0 text-greyish">
                                                     Cras sit amet nibh libero, in gravida nulla. tempus
                                                     viverra turpis. Fusce condimentum nunc ac nisi
                                                     vulputate fringilla. Donec lacinia congue felis in
@@ -2305,8 +2305,8 @@ const UiAlert = () => {
                                           <button className="btn-close" onClick={()=>dispatch({type:'solidmessagesecondary'})}></button>
                                           <div className='media'>
                                               <div className="media-body">
-                                                  <h5 className="mt-1 mb-2 text-white">Notifications</h5>
-                                                  <p className="mb-0 text-white">
+                                                  <h5 className="mt-1 mb-2 text-greyish">Notifications</h5>
+                                                  <p className="mb-0 text-greyish">
                                                     Cras sit amet nibh libero, in gravida nulla. tempus
                                                     viverra turpis. Fusce condimentum nunc ac nisi
                                                     vulputate fringilla. Donec lacinia congue felis in
@@ -2321,8 +2321,8 @@ const UiAlert = () => {
                                           <button className="btn-close" onClick={()=>dispatch({type:'solidmessagesuccess'})}></button>
                                           <div className='media'>
                                               <div className="media-body">
-                                                  <h5 className="mt-1 mb-2 text-white">Notifications</h5>
-                                                  <p className="mb-0 text-white">
+                                                  <h5 className="mt-1 mb-2 text-greyish">Notifications</h5>
+                                                  <p className="mb-0 text-greyish">
                                                     Cras sit amet nibh libero, in gravida nulla. tempus
                                                     viverra turpis. Fusce condimentum nunc ac nisi
                                                     vulputate fringilla. Donec lacinia congue felis in
@@ -2337,8 +2337,8 @@ const UiAlert = () => {
                                           <button className="btn-close" onClick={()=>dispatch({type:'solidmessageinfo'})}></button>
                                           <div className='media'>
                                               <div className="media-body">
-                                                  <h5 className="mt-1 mb-2 text-white">Notifications</h5>
-                                                  <p className="mb-0 text-white">
+                                                  <h5 className="mt-1 mb-2 text-greyish">Notifications</h5>
+                                                  <p className="mb-0 text-greyish">
                                                     Cras sit amet nibh libero, in gravida nulla. tempus
                                                     viverra turpis. Fusce condimentum nunc ac nisi
                                                     vulputate fringilla. Donec lacinia congue felis in
@@ -2353,8 +2353,8 @@ const UiAlert = () => {
                                           <button className="btn-close" onClick={()=>dispatch({type:'solidmessagewarning'})}></button>
                                           <div className='media'>
                                               <div className="media-body">
-                                                  <h5 className="mt-1 mb-2 text-white">Notifications</h5>
-                                                  <p className="mb-0 text-white">
+                                                  <h5 className="mt-1 mb-2 text-greyish">Notifications</h5>
+                                                  <p className="mb-0 text-greyish">
                                                     Cras sit amet nibh libero, in gravida nulla. tempus
                                                     viverra turpis. Fusce condimentum nunc ac nisi
                                                     vulputate fringilla. Donec lacinia congue felis in
@@ -2369,8 +2369,8 @@ const UiAlert = () => {
                                           <button className="btn-close" onClick={()=>dispatch({type:'solidmessagedanger'})}></button>
                                           <div className='media'>
                                               <div className="media-body">
-                                                  <h5 className="mt-1 mb-2 text-white">Notifications</h5>
-                                                  <p className="mb-0 text-white">
+                                                  <h5 className="mt-1 mb-2 text-greyish">Notifications</h5>
+                                                  <p className="mb-0 text-greyish">
                                                     Cras sit amet nibh libero, in gravida nulla. tempus
                                                     viverra turpis. Fusce condimentum nunc ac nisi
                                                     vulputate fringilla. Donec lacinia congue felis in
@@ -2385,8 +2385,8 @@ const UiAlert = () => {
                                           <button className="btn-close" onClick={()=>dispatch({type:'solidmessagedark'})}></button>
                                           <div className='media'>
                                               <div className="media-body">
-                                                  <h5 className="mt-1 mb-2 text-white">Notifications</h5>
-                                                  <p className="mb-0 text-white">
+                                                  <h5 className="mt-1 mb-2 text-greyish">Notifications</h5>
+                                                  <p className="mb-0 text-greyish">
                                                     Cras sit amet nibh libero, in gravida nulla. tempus
                                                     viverra turpis. Fusce condimentum nunc ac nisi
                                                     vulputate fringilla. Donec lacinia congue felis in
@@ -2425,7 +2425,7 @@ const UiAlert = () => {
           <button className="btn-close" onClick={()=>dispatch({type:'solidmessageprimary'})}></button>
           <div className='media'>
               <div className="media-body">
-                  <h5 className="mt-1 mb-2 text-white">Notifications</h5>
+                  <h5 className="mt-1 mb-2 text-greyish">Notifications</h5>
                   <p className="mb-0">
                     Cras sit amet nibh libero, in gravida nulla. tempus
                     viverra turpis. Fusce condimentum nunc ac nisi
@@ -2441,7 +2441,7 @@ const UiAlert = () => {
           <button className="btn-close" onClick={()=>dispatch({type:'solidmessagesecondary'})}></button>
           <div className='media'>
               <div className="media-body">
-                  <h5 className="mt-1 mb-2 text-white">Notifications</h5>
+                  <h5 className="mt-1 mb-2 text-greyish">Notifications</h5>
                   <p className="mb-0">
                     Cras sit amet nibh libero, in gravida nulla. tempus
                     viverra turpis. Fusce condimentum nunc ac nisi
@@ -2457,7 +2457,7 @@ const UiAlert = () => {
           <button className="btn-close" onClick={()=>dispatch({type:'solidmessagesuccess'})}></button>
           <div className='media'>
               <div className="media-body">
-                  <h5 className="mt-1 mb-2 text-white">Notifications</h5>
+                  <h5 className="mt-1 mb-2 text-greyish">Notifications</h5>
                   <p className="mb-0">
                     Cras sit amet nibh libero, in gravida nulla. tempus
                     viverra turpis. Fusce condimentum nunc ac nisi
@@ -2473,7 +2473,7 @@ const UiAlert = () => {
           <button className="btn-close" onClick={()=>dispatch({type:'solidmessageinfo'})}></button>
           <div className='media'>
               <div className="media-body">
-                  <h5 className="mt-1 mb-2 text-white">Notifications</h5>
+                  <h5 className="mt-1 mb-2 text-greyish">Notifications</h5>
                   <p className="mb-0">
                     Cras sit amet nibh libero, in gravida nulla. tempus
                     viverra turpis. Fusce condimentum nunc ac nisi
@@ -2489,7 +2489,7 @@ const UiAlert = () => {
           <button className="btn-close" onClick={()=>dispatch({type:'solidmessagewarning'})}></button>
           <div className='media'>
               <div className="media-body">
-                  <h5 className="mt-1 mb-2 text-white">Notifications</h5>
+                  <h5 className="mt-1 mb-2 text-greyish">Notifications</h5>
                   <p className="mb-0">
                     Cras sit amet nibh libero, in gravida nulla. tempus
                     viverra turpis. Fusce condimentum nunc ac nisi
@@ -2505,7 +2505,7 @@ const UiAlert = () => {
           <button className="btn-close" onClick={()=>dispatch({type:'solidmessagedanger'})}></button>
           <div className='media'>
               <div className="media-body">
-                  <h5 className="mt-1 mb-2 text-white">Notifications</h5>
+                  <h5 className="mt-1 mb-2 text-greyish">Notifications</h5>
                   <p className="mb-0">
                     Cras sit amet nibh libero, in gravida nulla. tempus
                     viverra turpis. Fusce condimentum nunc ac nisi
@@ -2521,7 +2521,7 @@ const UiAlert = () => {
           <button className="btn-close" onClick={()=>dispatch({type:'solidmessagedark'})}></button>
           <div className='media'>
               <div className="media-body">
-                  <h5 className="mt-1 mb-2 text-white">Notifications</h5>
+                  <h5 className="mt-1 mb-2 text-greyish">Notifications</h5>
                   <p className="mb-0">
                     Cras sit amet nibh libero, in gravida nulla. tempus
                     viverra turpis. Fusce condimentum nunc ac nisi
@@ -2537,7 +2537,7 @@ const UiAlert = () => {
           <button className="btn-close" onClick={()=>dispatch({type:'solidmessagelight'})}></button>
           <div className='media'>
               <div className="media-body">
-                  <h5 className="mt-1 mb-2 text-white">Notifications</h5>
+                  <h5 className="mt-1 mb-2 text-greyish">Notifications</h5>
                   <p className="mb-0">
                     Cras sit amet nibh libero, in gravida nulla. tempus
                     viverra turpis. Fusce condimentum nunc ac nisi

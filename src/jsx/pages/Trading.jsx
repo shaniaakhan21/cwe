@@ -228,11 +228,11 @@ const Trading = (props) => {
     const customStyles = {
         control: (provided, state) => ({
             ...provided,
-            backgroundColor: '#cea62d80', // Background color of the control
-            borderColor: state.isFocused ? '#cea62d80' : '#7e7e7e', // Border color based on focus state
-            boxShadow: state.isFocused ? '0 0 0 1px #cea62d80' : null, // Box shadow on focus
+            backgroundColor: '#FCD53580', // Background color of the control
+            borderColor: state.isFocused ? '#FCD53580' : '#7e7e7e', // Border color based on focus state
+            boxShadow: state.isFocused ? '0 0 0 1px #FCD53580' : null, // Box shadow on focus
             '&:hover': {
-                borderColor: '#cea62d80' // Border color on hover
+                borderColor: '#FCD53580' // Border color on hover
             },
             color: '#7e7e7e', // Text color
             padding: '0 15px', // Padding inside the control
@@ -247,13 +247,13 @@ const Trading = (props) => {
         }),
         menu: (provided) => ({
             ...provided,
-            borderColor: '#cea62d80',
-            border: '1px solid #cea62d80',
-            backgroundColor: '#cea62d80'
+            borderColor: '#FCD53580',
+            border: '1px solid #2B313980',
+            backgroundColor: '#FCD53580'
         }),
         option: (provided, state) => ({
             ...provided,
-            backgroundColor: state.isFocused ? '#000' : '#cea62d80', // Background color on hover
+            backgroundColor: state.isFocused ? '#000' : '#FCD53580', // Background color on hover
             color: state.isFocused ? '#fff' : '#fff', // Text color on hover
         }),
     };
@@ -373,14 +373,14 @@ const Trading = (props) => {
                                 <div className='d-flex justify-content-between p-1 pt-2' >
                                     <h4 className='w-50 card-title'>Current Global Investment:</h4><h4 className='w-50 text-end'><span >{Number(me?.investment).toFixed(2)} USDT</span></h4>  <br />
                                 </div>
-                                <div className='d-flex justify-content-between p-1 pt-2' style={{ borderTop: '1px solid #cea62d' }}>
+                                <div className='d-flex justify-content-between p-1 pt-2' style={{ borderTop: '1px solid #2B3139' }}>
                                     <h4 className='w-50 card-title'>Current Global Profit USDT: </h4><h4 className='w-50 text-end'><span style={{ color: Number(me?.profit_usd) > 0 ? 'green' : "#fd5353" }}>{Number(me?.profit_usd).toFixed(2)} USDT</span></h4>  <br />
                                 </div>
-                                <div className='d-flex justify-content-between p-1 pt-2' style={{ borderTop: '1px solid #cea62d' }}>
+                                <div className='d-flex justify-content-between p-1 pt-2' style={{ borderTop: '1px solid #2B3139' }}>
                                     <h4 className='w-50 card-title'>Current Global Profit %:</h4><h4 className='w-50 text-end'><span style={{ color: Number(me?.profit) > 0 ? 'green' : "#fd5353" }}>{Number(me?.profit).toFixed(2)} %</span></h4>  <br />
                                 </div>
 
-                                <div style={{ borderTop: '1px solid #cea62d', paddingTop: 10 }} className='d-flex justify-content-between align-items-center p-1'>
+                                <div style={{ borderTop: '1px solid #2B3139', paddingTop: 10 }} className='d-flex justify-content-between align-items-center p-1'>
                                     <h4>Closes At </h4>
                                     <div className='d-flex justify-content-between align-items-center pt-4'>
                                         <input type="text" value={meStopGain} onChange={(e) => { setMeStopGain(e.target.value) }} />

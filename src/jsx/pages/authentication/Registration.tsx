@@ -70,19 +70,19 @@ function Register(props) {
     }
   }
   return (
-    <><Header showLinks={false} /><div className="bg-black">
+    <><Header showLinks={false} usePopup={false} bgColor='#181A20' /><div className="bg-greyish">
       <div className="fix-wrapper">
         <div className="container ">
           <div className="row justify-content-center">
             <div className="col-lg-5 col-md-6">
-              <div className="card mb-0 h-auto bg-black">
-                <div className="card-body bg-black border-yellow-01  auth-form ">
+              <div className="card mb-0 h-auto bg-greyish">
+                <div className="card-body bg-greyish border-yellow-01  auth-form ">
                   <div className="text-center mb-2">
                     <Link to="/login" className="logo">
                       <img src={logoFull} alt="" />
                     </Link>
                   </div>
-                  <h4 className="text-center text-white mb-4 ">Sign up your account</h4>
+                  <h4 className="text-center text-greyish mb-4 ">Sign up your account</h4>
                   {props.errorMessage && (
                     <div className="text-danger">{props.errorMessage}</div>
                   )}
@@ -91,27 +91,27 @@ function Register(props) {
                   )}
                   <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-group">
-                      <label className="form-label text-white">Name</label>
+                      <label className="form-label text-greyish">Name</label>
                       <input {...register('name')} className="form-control" placeholder="Name" />
                       {errors.name && (<div className="text-danger">{errors.name?.message}</div>)}
                     </div>
                     <div className="form-group">
-                      <label className="form-label text-white">Email</label>
+                      <label className="form-label text-greyish">Email</label>
                       <input {...register('email')} className="form-control" placeholder="E-mail" />
                       {errors.email && (<div className="text-danger">{errors.email?.message}</div>)}
                     </div>
                     <div className="form-group">
-                      <label className="form-label text-white">Password</label>
+                      <label className="form-label text-greyish">Password</label>
                       <input {...register('password')} className="form-control" type="password" placeholder="Password" />
                       {errors.password && (<div className="text-danger">{errors.password?.message}</div>)}
                     </div>
                     <div className="form-group">
-                      <label className="form-label text-white">Confirm Password</label>
+                      <label className="form-label text-greyish">Confirm Password</label>
                       <input {...register('confirmPassword')} className="form-control" type="password" placeholder="Password" />
                       {errors.confirmPassword && (<div className="text-danger">{errors.confirmPassword?.message}</div>)}
                     </div>
                     <div className="form-group">
-                      <label className="form-label text-white">Referral Id</label>
+                      <label className="form-label text-greyish">Referral Id</label>
                       <input defaultValue={referralId} disabled className="form-control" placeholder="" />
                       {errors.referralId && (<div className="text-danger">{errors.referralId?.message}</div>)}
                     </div>
@@ -122,7 +122,7 @@ function Register(props) {
                     </div>
                   </form>
                   <div className="new-account mt-3">
-                    <p className="text-white text-center">
+                    <p className="text-greyishtext-center">
                       Already have an account?{" "}
                       <Link className="text-our-yellow" to="/login">
                         Login

@@ -21,7 +21,7 @@ const ActivityTab = () =>{
 								<ChartwidgetCanvas4 />
 							</Tab.Pane>
 							<Tab.Pane eventKey="Overview">
-								<div className="pt-4 text-white">
+								<div className="pt-4 text-greyish">
 									<h4 className="text-white">This is home title</h4>
 									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.
 									</p>

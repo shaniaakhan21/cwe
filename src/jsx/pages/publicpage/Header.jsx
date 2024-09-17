@@ -23,7 +23,7 @@ import Dialog from '@mui/material/Dialog';
 import LoginPop from '../authentication/LoginPop';
 import RegisterPop from '../authentication/RegisterPop'
 
-const Header = ({ showLinks = true }) => {
+const Header = ({ showLinks = true, usePopup = false, bgColor = '#000!important' }) => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -42,18 +42,18 @@ const Header = ({ showLinks = true }) => {
     const navigate = useNavigate();
 
     const handleNavigationSignUp = () => {
-        if (isMobile) {
-            navigate('/register');
-        } else {
+        if (usePopup && !isMobile) {
             setIsSignUpOpen(true);
+        } else {
+            navigate('/register');
         }
     };
 
     const handleNavigationLogIn = () => {
-        if (isMobile) {
-            navigate('/login');
-        } else {
+        if (usePopup && !isMobile) {
             setIsLoginOpen(true);
+        } else {
+            navigate('/login');
         }
     };
 
@@ -63,8 +63,8 @@ const Header = ({ showLinks = true }) => {
     };
 
     return (
-        <AppBar position="sticky" color="transparent" elevation={0} className='header-cwe'>
-            <Toolbar sx={{ background: '#000' }}>
+        <AppBar position="sticky" color="transparent" elevation={0} className='header-cwe' style={{ backgroundColor: bgColor }}>
+            <Toolbar style={{ backgroundColor: bgColor }}>
                 {/* Logo */}
                 <Link href="/" sx={{ flexGrow: 1 }} className='w-10 mt-2'>
                     <img

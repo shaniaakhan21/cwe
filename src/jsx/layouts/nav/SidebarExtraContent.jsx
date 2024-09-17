@@ -19,12 +19,12 @@ const SidebarExtraContent = () => {
 					<div className="d-flex justify-content-center align-items-center">
 						<div className="item-1">
 							{SVGICON.UserFollower}
-							<h4 className="mb-0 text-white"><span className="counter">2023</span>k</h4>
+							<h4 className="mb-0 text-greyish"><span className="counter">2023</span>k</h4>
 							<small>Followers</small>
 						</div>
 						<div className="item-1">
 							{SVGICON.UserFollowing}
-							<h4 className="mb-0 text-white"><span className="counter">2024</span>k</h4>
+							<h4 className="mb-0 text-greyish"><span className="counter">2024</span>k</h4>
 							<small>Following</small>
 						</div>
 					</div>	

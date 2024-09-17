@@ -26,9 +26,9 @@ const PublicPage = () => {
       }, []);
 
     return (
-        <>
-            <Header showLinks={true}/>
-            <section >
+        <div className='pagepub'>
+            <Header showLinks={true} usePopup={true} bgColor='#000!important'/>
+            <section className='bg-black'>
                 <div className="bg-bitcoin" >
                     <div className="pdg" data-aos="fade-up" data-aos-duration="3000">
                         <div>
@@ -43,7 +43,7 @@ const PublicPage = () => {
                 </div>
             </section>
 
-            <section data-aos="fade-up" data-aos-duration="3000">
+            <section data-aos="fade-up" data-aos-duration="3000" className='bg-black'>
                 <div className="bg-bitcoin-2">
                     <div className="pdgn-2">
                         <div>
@@ -65,8 +65,8 @@ const PublicPage = () => {
                 </div>
             </section>
 
-            <section data-aos="fade-up" data-aos-duration="3000">
-                <div className="bg-bitcoin-3 mb-4" id="buy-crypto-section">
+            <section data-aos="fade-up" data-aos-duration="3000" className='bg-black'>
+                <div className="bg-bitcoin-3 pb-4" id="buy-crypto-section">
                     <div className="pdgn-3">
                         <div>
                             <h1>
@@ -97,7 +97,7 @@ const PublicPage = () => {
                 </div>
             </section>
 
-            <section className="mb-5" id="earn-section" data-aos="fade-up" data-aos-duration="3000">
+            <section className="pb-5 bg-black" id="earn-section" data-aos="fade-up" data-aos-duration="3000" >
                 <div className="bg-bitcoin-3 SS">
                     <div className="pdgn-3">
                         <div>
@@ -123,7 +123,7 @@ const PublicPage = () => {
                             <div className="w-25 d-flex col-flex justify-content-start align-items-center borderWhite py-5 px-2 listC2" data-aos="fade-left" data-aos-duration="3000">
                                 <h3>
                                     <b>Copy </b>and <b>Share</b>  referral link with your friends and
-                                    <span style={{ color: '#cea62d' }}><b> earn points </b></span>
+                                    <span style={{ color: '#FCD535' }}><b> earn points </b></span>
                                     on every trade they make.
                                 </h3>
                                 <img
@@ -137,7 +137,7 @@ const PublicPage = () => {
                 </div>
             </section>
 
-            <section className="mt-5 mb-5" id="markets-section" data-aos="fade-up" data-aos-duration="3000">
+            <section className="pt-5 pb-5 bg-black" id="markets-section" data-aos="fade-up" data-aos-duration="3000">
                 <div className="bg-bitcoin-3 SS">
                     <div className="pdgn-3">
                         <div>
@@ -187,7 +187,7 @@ const PublicPage = () => {
                 </div>
             </section> */}
             <Footer />
-        </>
+        </div>
 
     )
 }
