@@ -105,9 +105,9 @@
   --text: #717579;
   --body-bg: #e7e7e7;
   --light: #f3f3f3;
-  --border: #cea62d;
+  --border: #FCD535;
   --card-element-color:#f3f3f3;
-  --bs-border-color:#cea62d;
+  --bs-border-color:#FCD535;
   --bs-tertiary-bg:#f3f3f3; }
 
 .gradient_one {
@@ -21715,7 +21715,7 @@ div:where(.swal2-container) div:where(.swal2-popup) {
   position: relative;
   padding-right: 18.5rem;
   padding-left: 2.4rem;
-  z-index: -1;
+  z-index: -1!important;
   flex-flow: wrap; }
   .page-titles h2, .page-titles .h2 {
     margin: 0;
@@ -21723,6 +21723,7 @@ div:where(.swal2-container) div:where(.swal2-popup) {
   @media only screen and (max-width: 100rem) {
     .page-titles {
       padding: 1.75rem 0.075rem;
+      z-index: -1!important;
       padding-right: 18.5rem;
       padding-left: 2.4rem; }
       .page-titles h2, .page-titles .h2 {

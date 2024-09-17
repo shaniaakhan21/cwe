@@ -29,7 +29,7 @@ const Upgrade = () => {
         <div className="text-center">
            <div className="col-md-6 col-xs-12 mx-auto border-yellow-01"> 
             <h3>CWEBuster PRO</h3>
-            <div style={{backgroundColor: 'black', width: 200, marginLeft: "auto", marginRight: "auto", color: "white", marginBottom: 20, fontSize: 28}}>100 $</div>
+            <div style={{backgroundColor: '#2B3139', borderRadius: 3, width: 200, marginLeft: "auto", marginRight: "auto", color: "#EAECEF", marginBottom: 20, fontSize: 28}}>100 $</div>
             <ul>
                 <li>Trade up to 100k Monthly</li>
                 <li>Trade any coin</li>

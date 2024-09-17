@@ -142,7 +142,7 @@ const Profile = () => {
                         <label>First Name</label>
                         {editMode ? (
                             <input
-                                className='input-edit bg-transparent border-b border-[#F55937] text-white py-1'
+                                className='input-edit bg-transparent border-b border-[#F55937] text-greyish py-1'
                                 value={userDetails.name}
                                 onChange={(e) => handleChange('name', e.target.value)}
                             />
@@ -153,7 +153,7 @@ const Profile = () => {
                     <div className="d-flex flex-column justify-content-between margii">
                         <label>Email</label>
                         {editMode ? (
-                            <p className='input-edit bg-transparent border-b border-[#F55937] text-white py-1 '>{userDetails.email}</p>
+                            <p className='input-edit bg-transparent border-b border-[#F55937] text-greyish py-1 '>{userDetails.email}</p>
                         ) : (
                             <span className='w-fit' style={{ maxWidth: '80%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{userDetails.email}</span>
                         )}
@@ -163,7 +163,7 @@ const Profile = () => {
                         <label>Company Name</label>
                         {editMode ? (
                             <input
-                                className='input-edit bg-transparent border-b border-[#F55937] text-white py-1 '
+                                className='input-edit bg-transparent border-b border-[#F55937] text-greyish py-1 '
                                 value={userDetails.companyName}
                                 onChange={(e) => handleChange('companyName', e.target.value)}
                             />
@@ -176,7 +176,7 @@ const Profile = () => {
                         <label>Address</label>
                         {editMode ? (
                             <input
-                                className='input-edit bg-transparent border-b border-[#F55937] text-white py-1 '
+                                className='input-edit bg-transparent border-b border-[#F55937] text-greyish py-1 '
                                 value={userDetails.address}
                                 onChange={(e) => handleChange('address', e.target.value)}
                             />
@@ -190,7 +190,7 @@ const Profile = () => {
                             <CountryDropdown
                                 value={userDetails.country}
                                 onChange={(val) => handleChange('country', val)}
-                                classes="bg-black input-edit py-1  text-white"
+                                classes="bg-greyish input-edit py-1  text-greyish"
                             />
                         ) : (
                             <span>{userDetails.country}</span>
@@ -203,7 +203,7 @@ const Profile = () => {
                         <label>Last Name</label>
                         {editMode ? (
                             <input
-                                className='input-edit bg-transparent border-b border-[#F55937] text-white py-1 '
+                                className='input-edit bg-transparent border-b border-[#F55937] text-greyish py-1 '
                                 value={userDetails.lastName}
                                 onChange={(e) => handleChange('lastName', e.target.value)}
                             />
@@ -215,7 +215,7 @@ const Profile = () => {
                         <label>Phone Number</label>
                         {editMode ? (
                             <input
-                                className='input-edit bg-transparent border-b border-[#F55937] text-white py-1 '
+                                className='input-edit bg-transparent border-b border-[#F55937] text-greyish py-1 '
                                 value={userDetails.phoneNumber}
                                 onChange={(e) => handleChange('phoneNumber', e.target.value)}
                             />
@@ -229,7 +229,7 @@ const Profile = () => {
                         {editMode ? (
                             <input
                                 type="password"
-                                className='input-edit bg-transparent border-b border-[#F55937] text-white py-1 '
+                                className='input-edit bg-transparent border-b border-[#F55937] text-greyish py-1 '
                                 value={currentPassword}
                                 placeholder='************'
                                 onChange={(e) => setCurrentPassword(e.target.value)}
@@ -244,7 +244,7 @@ const Profile = () => {
 
                             <input
                                 type="password"
-                                className='input-edit bg-transparent border-b border-[#F55937] text-white py-1 '
+                                className='input-edit bg-transparent border-b border-[#F55937] text-greyish py-1 '
                                 value={newPassword}
                                 placeholder='************'
                                 onChange={(e) => setNewPassword(e.target.value)}
@@ -258,7 +258,7 @@ const Profile = () => {
 
                             <input
                                 type="password"
-                                className='input-edit bg-transparent border-b border-[#F55937] text-white py-1 '
+                                className='input-edit bg-transparent border-b border-[#F55937] text-greyish py-1 '
                                 value={confirmPassword}
                                 placeholder='************'
                                 onChange={(e) => setConfirmPassword(e.target.value)}

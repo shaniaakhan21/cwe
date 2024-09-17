@@ -31,7 +31,7 @@ function Login() {
 
   return (
     <>
-    <Header showLinks={false} />
+    <Header showLinks={false} usePopup={false} bgColor='#181A20' />
       <div className="authincation d-flex flex-column flex-lg-row flex-column-fluid">
         <div className="container flex-row-fluid d-flex flex-column justify-content-center position-relative overflow-hidden p-7 mx-auto">
           <div className="d-flex justify-content-center h-100 align-items-center">
@@ -48,7 +48,7 @@ function Login() {
                         <img src={IMAGES.LogoWhite} alt="" />
                       </div>
                       <div className="text-start mb-4">
-                        <h3 className="text-start mb-2 text-white">Welcome to CWE Buster</h3>
+                        <h3 className="text-start mb-2 text-greyish">Welcome to CWE Buster</h3>
                       </div>
                       {error && (
                         <div className='text-danger p-1 my-2'>
@@ -58,7 +58,7 @@ function Login() {
                       <div className="mb-3">
                         <label
                           htmlFor="exampleFormControlInput1"
-                          className="form-label required text-white"
+                          className="form-label required text-greyish"
                         >
                           Email address
                         </label>
@@ -71,7 +71,7 @@ function Login() {
                         />
                       </div>
                       <div className="mb-3 position-relative">
-                        <label className="form-label required text-white">Password</label>
+                        <label className="form-label required text-greyish">Password</label>
                         <input
                           type="password"
                           className="form-control"
@@ -88,7 +88,7 @@ function Login() {
                         Login
                       </button>
                     </form>
-                    <div className="new-account mt-3 text-center text-white">
+                    <div className="new-account mt-3 text-center text-greyish">
                       <p className="font-w500">
                         Create an account?{" "}
                         <Link className="text-our-yellow" to="/register">

@@ -3,11 +3,11 @@ import { Alert, Button, Modal } from "react-bootstrap";
 import axiosInstance from "../../services/AxiosInstance";
 import Swal from "sweetalert2";
 
-import Binance from "../../assets/images/plataforma-3.png";
-import KuCoin from "../../assets/images/plataforma-4.png";
-import HTX from "../../assets/images/plataforma-5.png";
-import Okx from "../../assets/images/plataforma-6.png";
-import GateIo from "../../assets/images/plataforma-7.png";
+import Binance from "../../assets/images/exchanges/binance.png";
+import KuCoin from "../../assets/images/exchanges/kucoin.png";
+import HTX from "../../assets/images/exchanges/htx.png";
+import Okx from "../../assets/images/exchanges/okx.png";
+import GateIo from "../../assets/images/exchanges/gate.io.png";
 import { isAxiosError } from "axios";
 const exchanges = {
     'plataforma-3': Binance,
@@ -135,68 +135,72 @@ const Exchanges = () => {
             <div className="row d-flex justify-content-between">
                 {apikeys && apikeys.map((apiKey) => {
                     return (
-                        <div key={apiKey.id} className="col-11 col-md-2 m-2" style={{ border: "1px solid #cea62d", padding: 20, borderRadius: '3px' }}>
-                            <div style={{ textAlign: "center" }}>
+                        <div key={apiKey.id} className="col-11 col-md-2 m-1 d-flex justify-content-center" style={{ border: "1px solid #2B3139", padding: '10px 2px 20px 2px', borderRadius: '3px' }}>
+                            <div className="d-flex-it">
+                                <div style={{ textAlign: "center" }} className="w-full">
 
-                                <img src={exchanges[`plataforma-${apiKey.idPlataforma}`]} alt="Binance" style={{ width: "80%" }} />
+                                    <img src={exchanges[`plataforma-${apiKey.idPlataforma}`]} alt="Binance" style={{ height: '100px', width: '100%' }} />
+                                </div>
+                                <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
+                                    ApiKey: ...{apiKey.last4}
+                                </div>
+                                <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
+                                    <Button onClick={() => { verifyDelete(apiKey.id) }} variant="danger" className="btn-block w-fit" style={{ marginTop: 20 }}>Delete Api Key</Button>
+                                </div>
                             </div>
-                            <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
-                                ApiKey: ...{apiKey.last4}
-                            </div>
-                            <Button onClick={() => { verifyDelete(apiKey.id) }} variant="danger" className="btn-block" style={{ marginTop: 20 }}>Delete Api Key</Button>
                         </div>
                     )
                 })}
 
-                <div className="col-11 col-md-2 m-2 d-flex justify-content-center" style={{ border: "1px solid #cea62d", padding: 20, borderRadius: '3px' }}>
+                <div className="col-11 col-md-2 m-1 d-flex justify-content-center" style={{ border: "1px solid #2B3139", padding: '10px 2px 20px 2px', borderRadius: '3px' }}>
                     <div className="d-flex-it">
-                        <div style={{ textAlign: "center" }}>
-                            <img src={exchanges[`plataforma-4`]} alt="Binance" style={{ height: '100px', width: '80%' }} />
+                        <div style={{ textAlign: "center" }} className="w-full">
+                            <img src={exchanges[`plataforma-4`]} alt="Binance" style={{ height: '100px', width: '100%' }} />
                         </div>
                         <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
                             Coming Soon
                         </div>
                         <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
-                            <Button target="_blank" href="" variant="success" className="btn-block" style={{ marginTop: 20 }}>Create Account</Button>
+                            <Button target="_blank" href="" variant="success" className="btn-block yellow-newbtn" style={{ marginTop: 20 }}>Create Account</Button>
                         </div>
                     </div>
                 </div>
-                <div className="col-11 col-md-2 m-2 d-flex justify-content-center" style={{ border: "1px solid #cea62d", padding: 20, borderRadius: '3px' }}>
+                <div className="col-11 col-md-2 m-1 d-flex justify-content-center" style={{ border: "1px solid #2B3139", padding: '10px 2px 20px 2px', borderRadius: '3px' }}>
                     <div className="d-flex-it">
-                        <div style={{ textAlign: "center" }}>
-                            <img src={exchanges[`plataforma-5`]} alt="Binance" style={{ height: '100px', width: '80%' }} />
+                        <div style={{ textAlign: "center" }} className="w-full">
+                            <img src={exchanges[`plataforma-5`]} alt="Binance" style={{ height: '100px', width: '100%' }} />
                         </div>
                         <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
                             Coming Soon
                         </div>
                         <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
-                            <Button target="_blank" href="https://www.htx.com/invite/en-us/1f?invite_code=dyma4" variant="success" className="btn-block" style={{ marginTop: 20 }}>Create Account</Button>
+                            <Button target="_blank" href="https://www.htx.com/invite/en-us/1f?invite_code=dyma4" variant="success" className="btn-block yellow-newbtn" style={{ marginTop: 20 }}>Create Account</Button>
                         </div>
                     </div>
                 </div>
-                <div className="col-11 col-md-2 m-2 d-flex justify-content-center" style={{ border: "1px solid #cea62d", padding: 20, borderRadius: '3px' }}>
+                <div className="col-11 col-md-2 m-1 d-flex justify-content-center" style={{ border: "1px solid #2B3139", padding: '10px 2px 20px 2px', borderRadius: '3px' }}>
                     <div className="d-flex-it">
-                        <div style={{ textAlign: "center" }}>
-                            <img src={exchanges[`plataforma-6`]} alt="Binance" style={{ height: '100px', width: '80%' }} />
+                        <div style={{ textAlign: "center" }} className="w-full">
+                            <img src={exchanges[`plataforma-6`]} alt="Binance" style={{ height: '100px', width: '100%' }} />
                         </div>
                         <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
                             Coming Soon
                         </div>
                         <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
-                            <Button target="_blank" href="https://www.okx.com/join/10134391" variant="success" className="btn-block" style={{ marginTop: 20 }}>Create Account</Button>
+                            <Button target="_blank" href="https://www.okx.com/join/10134391" variant="success" className="btn-block yellow-newbtn" style={{ marginTop: 20 }}>Create Account</Button>
                         </div>
                     </div>
                 </div>
-                <div className="col-11 col-md-2 m-2 d-flex justify-content-center" style={{ border: "1px solid #cea62d", padding: 20, borderRadius: '3px' }}>
+                <div className="col-11 col-md-2 m-1 d-flex justify-content-center" style={{ border: "1px solid #2B3139", padding: '10px 2px 20px 2px', borderRadius: '3px' }}>
                     <div className="d-flex-it">
-                        <div style={{ textAlign: "center" }}>
+                        <div style={{ textAlign: "center" }} className="w-full">
                             <img src={exchanges[`plataforma-7`]} alt="Binance" style={{ height: '100px', width: '100%' }} />
                         </div>
                         <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
                             Coming Soon
                         </div>
                         <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
-                            <Button target="_blank" href="https://www.gate.io/signup/UAUQXF1W?ref_type=103" variant="success" className="btn-block" style={{ marginTop: 20 }}>Create Account</Button>
+                            <Button target="_blank" href="https://www.gate.io/signup/UAUQXF1W?ref_type=103" variant="success" className="btn-block yellow-newbtn" style={{ marginTop: 20 }}>Create Account</Button>
                         </div>
                     </div>
                 </div>

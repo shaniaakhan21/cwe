@@ -629,9 +629,9 @@ const WidgetList = () => {
                 <Col xl={4} lg={12} xxl={4} sm={12}>
                   <div className="card  bg-primary">
                       <ul className="list-group list-group-flush style-4">
-                        <li className="list-group-item d-flex justify-content-between text-white"><span className="mb-0">Blood type :</span><strong>O+</strong></li>
+                        <li className="list-group-item d-flex justify-content-between text-greyish"><span className="mb-0">Blood type :</span><strong>O+</strong></li>
                         {dataListBlog.map((data, index)=>(
-                            <li className="list-group-item text-white d-flex justify-content-between" key={index}>
+                            <li className="list-group-item text-greyish d-flex justify-content-between" key={index}>
                               <span className="mb-0">{data.title} :</span><strong>{data.subtitle}</strong>
                             </li>
                         ))}                        
@@ -639,11 +639,11 @@ const WidgetList = () => {
                   </div>
                 </Col>
                 <Col xl={4} lg={6} xxl={4} sm={6}>
-                  <div className="card text-white bg-warning text-black">
+                  <div className="card text-greyish bg-warning text-black">
                     <ul className="list-group list-group-flush style-4">
-                        <li className="list-group-item d-flex justify-content-between text-white"><span className="mb-0">Regular Checkups</span></li>
+                        <li className="list-group-item d-flex justify-content-between text-greyish"><span className="mb-0">Regular Checkups</span></li>
                         {dataListBlog.map((data, index)=>(
-                          <li className="list-group-item d-flex justify-content-between text-white" key={index}>
+                          <li className="list-group-item d-flex justify-content-between text-greyish" key={index}>
                             <span className="mb-0">{data.title2} :</span><strong>{data.subtitle2}</strong>
                           </li>
                         ))}                      
@@ -651,11 +651,11 @@ const WidgetList = () => {
                   </div>
                 </Col>
                 <Col xl={4} lg={6} xxl={4} sm={6}>
-                  <div className="card text-white bg-success text-black">
+                  <div className="card text-greyish bg-success text-black">
                     <ul className="list-group list-group-flush style-4">
-                      <li className="list-group-item d-flex justify-content-between text-white"><span className="mb-0">Stations</span><strong>Capacity</strong></li>
+                      <li className="list-group-item d-flex justify-content-between text-greyish"><span className="mb-0">Stations</span><strong>Capacity</strong></li>
                       {dataListBlog.map((data, index)=>(
-                        <li className="list-group-item d-flex justify-content-between text-white" key={index}>
+                        <li className="list-group-item d-flex justify-content-between text-greyish" key={index}>
                           <span className="mb-0">{data.title3} :</span><strong>{data.subtitle3}</strong>
                         </li>
                       ))}

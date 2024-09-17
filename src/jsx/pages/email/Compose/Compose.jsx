@@ -38,7 +38,7 @@ const Compose = () => {
                       <Link to="/email-compose" className="list-group-item">
                         <i className="fas fa-star font-18 align-middle me-2"></i>
                         Important
-                        <span className="badge badge-danger text-white badge-sm float-end">
+                        <span className="badge badge-danger text-greyish badge-sm float-end">
                           47
                         </span>
                       </Link>

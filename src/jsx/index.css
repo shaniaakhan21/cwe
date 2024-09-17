@@ -883,8 +883,17 @@ button.react-calendar__tile.react-calendar__tile--active.react-calendar__tile--r
   background-color: transparent!important;
 }
 
+.MuiDialog-paperScrollPaper{
+  box-shadow: none!important;
+}
+
 #sign-up{
-  background-color: black!important;
+  background-color: #181A20!important;
+}
+
+
+#popsign-up{
+  background-color: #000!important;
 }
 
 .MuiDialog-container {
@@ -898,5 +907,6 @@ button.react-calendar__tile.react-calendar__tile--active.react-calendar__tile--r
 }
 
 .MuiDataGrid-sortIcon {
-  fill: #cea62d!important;
+  fill: #848E9C!important;
 }
+

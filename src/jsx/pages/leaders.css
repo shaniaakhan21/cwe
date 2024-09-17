@@ -1,19 +1,19 @@
 .some-yellow {
-    background-color: #cea62d5e !important;
-    border-color: #cea62d70 !important;
+    background-color: transparent !important;
+    border-color: #2B3139 !important;
     border-radius: 0 !important;
-    color: #cea62d !important;
+    color: #848E9C !important;
 }
 
 .stop-it {
     border-radius: 3px !important;
-    color: #cea62d !important;
-    border: 1px solid #cea62d !important;
+    color: #FCD535 !important;
+    border: 1px solid #FCD535 !important;
 }
 
 .follow-it {
     border-radius: 3px !important;
-    background-color: #cea62d !important;
+    background-color: #FCD535 !important;
 }
 
 .follow-it:hover,

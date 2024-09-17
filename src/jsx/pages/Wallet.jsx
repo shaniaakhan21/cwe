@@ -18,19 +18,19 @@ const Wallet = () => {
         <>
         <div className="row">
         <div className="col-md-4">
-                <div style={{border: "1px solid #cea62d", padding: 20, marginBottom: 20, borderRadius: '3px'}}>
+                <div style={{border: "1px solid #2B3139", padding: 20, marginBottom: 20, borderRadius: '3px'}}>
                     <h3>Points Wallet</h3>
                     <h4>Balance: 0 USDT</h4>
                 </div>
             </div>
             <div className="col-md-4">
-                <div style={{border: "1px solid #cea62d", padding: 20, marginBottom: 20, borderRadius: '3px'}}>
+                <div style={{border: "1px solid #2B3139", padding: 20, marginBottom: 20, borderRadius: '3px'}}>
                     <h3>Transfer Wallet</h3>
                     <h4>Balance: 0 USDT</h4>
                 </div>
             </div>
             <div className="col-md-4">
-                <div style={{border: "1px solid #cea62d", padding: 20, marginBottom: 20, borderRadius: '3px'}}>
+                <div style={{border: "1px solid #2B3139", padding: 20, marginBottom: 20, borderRadius: '3px'}}>
                     <h3>Earnings Wallet</h3>
                     <h4>Balance: 0 USDT</h4>
                 </div>

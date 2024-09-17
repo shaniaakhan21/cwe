@@ -19,26 +19,26 @@
 }
 
 .MuiDataGrid-root {
-    border-color: #cea62d !important;
-    color: white !important;
+    border-color: #2B3139 !important;
+    color: #EAECEF !important;
     border-radius: 3px!important;
 }
 
 .MuiDataGrid-topContainer {
-    color: #cea62d !important;
+    color: #EAECEF !important;
 }
 
 .MuiDataGrid-root {
-    --DataGrid-containerBackground: #cea62c52 !important;
-    --DataGrid-rowBorderColor: #cea62d !important;
+    --DataGrid-containerBackground: #2B3139!important;
+    --DataGrid-rowBorderColor: #2B3139 !important;
 }
 
 .MuiDataGrid-withBorderColor {
-    border-color: #cea62d !important;
+    border-color: #2B3139 !important;
 }
 
 .css-1oudwrl::after {
-    background-color: #cea62d !important;
+    background-color: #FCD535 !important;
 }
 
 div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
@@ -58,12 +58,12 @@ div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel) {
 
 div:where(.swal2-container).swal2-center>.swal2-popup {
     display: grid;
-    border: 1px solid #cea62d;
+    border: 1px solid #2B3139;
     border-radius: 3px;
 }
 
 div:where(.swal2-container) h2:where(.swal2-title) {
-    color: #cea62d !important;
+    color: #FCD535 !important;
 }
 
 div:where(.swal2-container) .swal2-html-container p {
@@ -72,8 +72,8 @@ div:where(.swal2-container) .swal2-html-container p {
 }
 
 div:where(.swal2-icon).swal2-warning {
-    border-color: #cea62d !important;
-    color: #cea62d !important;
+    border-color: #FCD535 !important;
+    color: #FCD535 !important;
 }
 
 .btn-new-complete {
@@ -86,10 +86,10 @@ div:where(.swal2-icon).swal2-warning {
 
 .btn-new-operating {
     cursor: pointer !important;
-    background-color: #cea62d5e !important;
-    border-color: #cea62d70 !important;
+    background-color: #FCD5355e !important;
+    border-color: #FCD53570 !important;
     border-radius: 3px !important;
-    color: #cea62d !important;
+    color: #FCD535 !important;
 }
 
 .btn-new-sell {

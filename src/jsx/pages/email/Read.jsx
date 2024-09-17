@@ -41,7 +41,7 @@ const Read = () => {
                                  <Link to="/email-read" className="list-group-item">
                                     <i className="fa fa-star font-18 align-middle me-2"></i>
                                     Important
-                                    <span className="badge badge-danger badge-sm text-white float-end">
+                                    <span className="badge badge-danger badge-sm text-greyish float-end">
                                        47
                                     </span>
                                  </Link>

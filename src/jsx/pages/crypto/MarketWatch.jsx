@@ -111,7 +111,7 @@ const MarketWatch = () => {
                         <div className="card bg-primary trade-history">
                             <div className="card-header border-0 pb-0">
                                 <div>
-                                    <h2 className="card-title mb-2 text-white">Sell Order</h2>
+                                    <h2 className="card-title mb-2 text-greyish">Sell Order</h2>
                                 </div>
                             </div>
                             <div className="card-body pt-0">

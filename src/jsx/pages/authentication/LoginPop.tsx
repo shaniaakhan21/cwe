@@ -33,7 +33,7 @@ const LoginForm: React.FC = ({ isVisible, onClose }) => {
                         <div className="row no-gutters">
                             <div className="col-xl-12 tab-content">
                                 <div
-                                    id="sign-up"
+                                    id="popsign-up"
                                     className="auth-form tab-pane fade show active border-yellow-01 form-validation pt-4"
                                 >
                                     <form onSubmit={onLogin}>
@@ -56,7 +56,7 @@ const LoginForm: React.FC = ({ isVisible, onClose }) => {
                                             <img src={IMAGES.LogoWhite} alt="Logo" />
                                         </div>
                                         <div className="text-start mb-4">
-                                            <h3 className="text-start mb-2 text-white">Welcome to CWE Buster</h3>
+                                            <h3 className="text-start mb-2 text-greyish">Welcome to CWE Buster</h3>
                                         </div>
                                         {error && (
                                             <div className='text-danger p-1 my-2'>
@@ -66,23 +66,23 @@ const LoginForm: React.FC = ({ isVisible, onClose }) => {
                                         <div className="mb-3">
                                             <label
                                                 htmlFor="exampleFormControlInput1"
-                                                className="form-label required text-white"
+                                                className="form-label required text-greyish"
                                             >
                                                 Email address
                                             </label>
                                             <input
                                                 type="email"
-                                                className="form-control"
+                                                className="form-control bg-black"
                                                 value={email}
                                                 onChange={(e) => setEmail(e.target.value)}
                                                 placeholder="Type Your Email Address"
                                             />
                                         </div>
                                         <div className="mb-3 position-relative">
-                                            <label className="form-label required text-white">Password</label>
+                                            <label className="form-label required text-greyish">Password</label>
                                             <input
                                                 type="password"
-                                                className="form-control"
+                                                className="form-control bg-black"
                                                 value={password}
                                                 placeholder="Type Your Password"
                                                 onChange={(e) => setPassword(e.target.value)}

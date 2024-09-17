@@ -88,7 +88,7 @@ const MainSlider = () => {
                         </div>
                         {/* <div className="card-body p-0">
                             <div id="widgetChart1" className="chart-primary">
-                                <SwiperLineChart chartcolor="#cea62d" />
+                                <SwiperLineChart chartcolor="#FCD535" />
                             </div>
                         </div> */}
                     </div>
@@ -106,7 +106,7 @@ const MainSlider = () => {
                         </div>
                         {/* <div className="card-body p-0">
                             <div id="widgetChart1" className="chart-primary">
-                                <SwiperLineChart chartcolor="#cea62d" />
+                                <SwiperLineChart chartcolor="#FCD535" />
                             </div>
                         </div> */}
                     </div>
@@ -124,7 +124,7 @@ const MainSlider = () => {
                         </div>
                         {/* <div className="card-body p-0">
                             <div id="widgetChart1" className="chart-primary">
-                                <SwiperLineChart chartcolor="#cea62d" />
+                                <SwiperLineChart chartcolor="#FCD535" />
                             </div>
                         </div> */}
                     </div>

@@ -112,7 +112,7 @@ const UiCards = () => {
                             Last updated 3 mins ago
                           </Card.Text>
 
-                          <Link to={"#"} className="btn btn-primary text-white">
+                          <Link to={"#"} className="btn btn-primary text-greyish">
                             Go somewhere
                           </Link>
                         </Card.Footer>
@@ -133,7 +133,7 @@ const UiCards = () => {
     Last updated 3 mins ago
   </Card.Text>
 
-  <Link to={"#"} className="btn btn-primary text-white">
+  <Link to={"#"} className="btn btn-primary text-greyish">
     Go somewhere
   </Link>
 </Card.Footer>
@@ -169,7 +169,7 @@ const UiCards = () => {
                             This is a wider card with supporting text and below as a natural
                             lead-in to the additional content. This content
                           </Card.Text>
-                          <Button as="a" variant="primary" href="#" className="text-white mt-3">
+                          <Button as="a" variant="primary" href="#" className="text-greyishmt-3">
                             Go somewhere
                           </Button>
                         </Card.Body>
@@ -188,7 +188,7 @@ const UiCards = () => {
     This is a wider card with supporting text and below as a natural
     lead-in to the additional content. This content
   </Card.Text>
-  <Button as="a" variant="outline-primary" href="#" className="text-white mt-3">
+  <Button as="a" variant="outline-primary" href="#" className="text-greyishmt-3">
     Go somewhere
   </Button>
 </Card.Body>
@@ -244,7 +244,7 @@ const UiCards = () => {
                             With supporting text below as a natural lead-in to additional
                             content.
                           </Card.Text>
-                          <Button variant="primary" href="#" className="text-white mt-3">
+                          <Button variant="primary" href="#" className="text-greyishmt-3">
                             Go somewhere
                           </Button>
                         </Card.Body>
@@ -274,7 +274,7 @@ const UiCards = () => {
     With supporting text below as a natural lead-in to additional
     content.
   </Card.Text>
-  <Button variant="outline-primary" href="#" className="text-white mt-3">
+  <Button variant="outline-primary" href="#" className="text-greyishmt-3">
     Go somewhere
   </Button>
 </Card.Body>
@@ -314,7 +314,7 @@ const UiCards = () => {
                             as="a"
                             variant=" "
                             href="#"
-                            className="btn-card btn-primary text-white mt-3"
+                            className="btn-card btn-primary text-greyish mt-3"
                           >
                             Go somewhere
                           </Button>
@@ -336,7 +336,7 @@ const UiCards = () => {
     as="a"
     variant=" "
     href="#"
-    className="btn-card btn-primary text-white mt-3"
+    className="btn-card btn-primary text-greyish mt-3"
   >
     Go somewhere
   </Button>
@@ -381,7 +381,7 @@ const UiCards = () => {
                             as="a"
                             variant=" "
                             href="#"
-                            className="btn-card btn-secondary text-white mt-3"
+                            className="btn-card btn-secondary text-greyish mt-3"
                           >
                             Go somewhere
                           </Button>
@@ -403,7 +403,7 @@ const UiCards = () => {
     as="a"
     variant=" "
     href="#"
-    className="btn-card btn-secondary text-white mt-3"
+    className="btn-card btn-secondary text-greyish mt-3"
   >
     Go somewhere
   </Button>
@@ -446,7 +446,7 @@ const UiCards = () => {
                             as="a"
                             variant=" "
                             href="#"
-                            className="btn-card btn-success text-white mt-3"
+                            className="btn-card btn-success text-greyish mt-3"
                           >
                             Go somewhere
                           </Button>
@@ -468,7 +468,7 @@ const UiCards = () => {
     as="a"
     variant=" "
     href="#"
-    className="btn-card btn-success text-white mt-3"
+    className="btn-card btn-success text-greyish mt-3"
   >
     Go somewhere
   </Button>
@@ -512,7 +512,7 @@ const UiCards = () => {
                             as="a"
                             variant=""
                             href="#"
-                            className="btn-card btn-danger text-white mt-3"
+                            className="btn-card btn-danger text-greyish mt-3"
                           >
                             Go somewhere
                           </Button>
@@ -534,7 +534,7 @@ const UiCards = () => {
     as="a"
     variant=""
     href="#"
-    className="btn-card btn-danger text-white mt-3"
+    className="btn-card btn-danger text-greyish mt-3"
   >
     Go somewhere
   </Button>
@@ -578,7 +578,7 @@ const UiCards = () => {
                             as="a"
                             variant=""
                             href="#"
-                            className="btn-card btn-warning text-white mt-3"
+                            className="btn-card btn-warning text-greyish mt-3"
                           >
                             Go somewhere
                           </Button>
@@ -600,7 +600,7 @@ const UiCards = () => {
     as="a"
     variant=""
     href="#"
-    className="btn-card btn-warning text-white mt-3"
+    className="btn-card btn-warning text-greyish mt-3"
   >
     Go somewhere
   </Button>
@@ -644,7 +644,7 @@ const UiCards = () => {
                             as="a"
                             variant=""
                             href="#"
-                            className="btn-card btn-info text-white mt-3"
+                            className="btn-card btn-info text-greyish mt-3"
                           >
                             Go somewhere
                           </Button>
@@ -666,7 +666,7 @@ const UiCards = () => {
     as="a"
     variant=""
     href="#"
-    className="btn-card btn-info text-white mt-3"
+    className="btn-card btn-info text-greyish mt-3"
   >
     Go somewhere
   </Button>
@@ -705,7 +705,7 @@ const UiCards = () => {
                             Some quick example text to build on the card title and make up
                             the bulk of the card's content.
                           </Card.Text>
-                          <Button as="a" variant="" href="#" className="btn-card btn-light text-white mt-3">
+                          <Button as="a" variant="" href="#" className="btn-card btn-light text-greyish mt-3">
                             Go somewhere
                           </Button>
                         </Card.Body>
@@ -722,7 +722,7 @@ const UiCards = () => {
     Some quick example text to build on the card title and make up
     the bulk of the card's content.
   </Card.Text>
-  <Button as="a" variant="" href="#" className="btn-card btn-light text-white mt-3">
+  <Button as="a" variant="" href="#" className="btn-card btn-light text-greyish mt-3">
     Go somewhere
   </Button>
   </Card.Body>
@@ -764,7 +764,7 @@ const UiCards = () => {
                             as="a"
                             variant=""
                             href="#"
-                            className="btn-card btn-dark mt-3 text-white"
+                            className="btn-card btn-dark mt-3 text-greyish"
                           >
                             Go somewhere
                           </Button>
@@ -786,7 +786,7 @@ const UiCards = () => {
     as="a"
     variant=""
     href="#"
-    className="btn-card btn-dark mt-3 text-white"
+    className="btn-card btn-dark mt-3 text-greyish"
   >
     Go somewhere
   </Button>

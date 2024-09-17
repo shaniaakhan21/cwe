@@ -67,14 +67,14 @@ export function MainComponent() {
 	return (
 		<Row>
 			<Col xl={12}>
-				<div className="row main-card">
+				<div className="row">
 					<MainSlider />
 				</div>
 
 				<Row>
 					<div className=" col-12">
 						<div className='card border-yellow-02'>
-							<Card.Body className="d-flex flex-row align-items-center justify-content-between mb-0">
+							<Card.Body className="d-flex reflink align-items-center justify-content-between mb-0">
 								<h4 className=''>Referral Link</h4>
 								<Card.Text>
 									{referralLink}
@@ -99,7 +99,7 @@ export function MainComponent() {
 					className='snackbar-it'
 				>
 					<Alert onClose={handleCloseSnackbar} sx={{
-						backgroundColor: '#cea62d;',
+						backgroundColor: '#FCD535;',
 						width: '100%',// custom background color
 						color: '#fff', // custom text color
 					}}>
