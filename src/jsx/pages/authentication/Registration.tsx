@@ -78,7 +78,7 @@ function Register(props) {
               <div className="card mb-0 h-auto bg-greyish">
                 <div className="card-body bg-greyish border-yellow-01  auth-form p-4">
                   <div className="text-center mb-2">
-                    <Link to="https://app.cwebooster.com/" className="logo">
+                    <Link to="https://www.cwebooster.com/" className="logo">
                       <img src={logoFull} alt="" />
                     </Link>
                   </div>

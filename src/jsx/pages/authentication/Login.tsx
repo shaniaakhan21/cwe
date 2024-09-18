@@ -45,7 +45,7 @@ function Login() {
 
                     <form onSubmit={onLogin}>
                       <div className="text-center mb-lg-4 mb-2 logo flex j">
-                        <Link to="https://app.cwebooster.com/" className="logo">
+                        <Link to="https://www.cwebooster.com/" className="logo">
                           <img src={IMAGES.LogoWhite} alt="" />
                         </Link>
                       </div>
