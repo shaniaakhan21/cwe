@@ -10,7 +10,7 @@ const Header = ({ bgColor = '#000!important' }) => {
         <AppBar position="sticky" color="transparent" elevation={0} className='header-cwe' style={{ backgroundColor: bgColor }}>
             <Toolbar style={{ backgroundColor: bgColor, width: '25%' }}>
                 {/* Logo */}
-                <Link href="https://app.cwebooster.com/" sx={{ flexGrow: 1 }} className='w-100 mt-2'>
+                <Link href="https://www.cwebooster.com/" sx={{ flexGrow: 1 }} className='w-100 mt-2'>
                     <img
                         src={logo}
                         className="ImgPhn"
