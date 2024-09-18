@@ -50,7 +50,7 @@ export function MainComponent() {
 
 	let referralLink = ''
 	if (me) {
-		referralLink = `https://www.cwebuster.com/register/${me.id}`
+		referralLink = `https://app.cwebooster.com/register/${me.id}`
 	}
 
 	const copyReferralLink = (referralLink) => {
