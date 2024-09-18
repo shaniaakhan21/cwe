@@ -1,12 +1,10 @@
- import React from "react";
-
 const Footer = () => {
   var d = new Date();
   return (
     <div className="footer">
       <div className="copyright">
         <p>
-          Copyright © CWE Buster
+          Copyright © CWE Booster
           {d.getFullYear()}
         </p>
       </div>

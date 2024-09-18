@@ -50,7 +50,7 @@ function Login() {
                         </Link>
                       </div>
                       <div className="text-start mb-4">
-                        <h3 className="text-center mb-2 text-greyish">Welcome to CWE Buster</h3>
+                        <h3 className="text-center mb-2 text-greyish">Welcome to CWE Booster</h3>
                       </div>
                       {error && (
                         <div className='text-danger p-1 my-2'>
@@ -100,7 +100,7 @@ function Login() {
                     </div>
                   </div>
                   <div className="d-flex align-items-center justify-content-center">
-                    <Link to={"#"} className="text-our-yellow">
+                    {/* <Link to={"#"} className="text-our-yellow">
                       Terms
                     </Link>
                     <Link to={"#"} className="text-our-yellow mx-5">
@@ -108,7 +108,7 @@ function Login() {
                     </Link>
                     <Link to={"#"} className="text-our-yellow">
                       Contact Us
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>
