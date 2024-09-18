@@ -56,7 +56,7 @@ const LoginForm: React.FC = ({ isVisible, onClose }) => {
                                             <img src={IMAGES.LogoWhite} alt="Logo" />
                                         </div>
                                         <div className="text-start mb-4">
-                                            <h3 className="text-start mb-2 text-greyish">Welcome to CWE Buster</h3>
+                                            <h3 className="text-start mb-2 text-greyish">Welcome to CWE Booster</h3>
                                         </div>
                                         {error && (
                                             <div className='text-danger p-1 my-2'>

@@ -242,7 +242,7 @@ const SideBar = () => {
             })}
           </ul>
           <div className="copyright">
-            <p><strong>CWE Buster</strong> © <span className="current-year">{Latest.getFullYear()}</span> All Rights Reserved</p>
+            <p><strong>CWE Booster</strong> © <span className="current-year">{Latest.getFullYear()}</span> All Rights Reserved</p>
 
           </div>
         </div>
