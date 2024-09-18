@@ -496,7 +496,7 @@ rect#chart_ChartBorder {
 
 .react-calendar {
   border: none !important;
-  font-family: "poppins", sans-serif !important;
+  font-family: 'Montserrat', sans-serif !important;
   width: 100% !important;
   font-size: 1rem;
 }
@@ -508,14 +508,14 @@ abbr[data-original-title] {
 
 button.react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--neighboringMonth {
   color: #dee2e6 !important;
-  font-family: "poppins", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 span.react-calendar__navigation__label__labelText.react-calendar__navigation__label__labelText--from {
   font-size: 18px;
   font-weight: 500;
   color: #717579;
-  font-family: "poppins", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 button.react-calendar__navigation__arrow.react-calendar__navigation__prev-button,
@@ -533,7 +533,7 @@ button.react-calendar__tile.react-calendar__month-view__days__day {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "poppins", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 button.react-calendar__navigation__label {

@@ -22,6 +22,7 @@
     border-color: #2B3139 !important;
     color: #EAECEF !important;
     border-radius: 3px!important;
+    font-family: 'Montserrat', sans-serif!important;
 }
 
 .MuiDataGrid-topContainer {
@@ -31,6 +32,7 @@
 .MuiDataGrid-root {
     --DataGrid-containerBackground: #2B3139!important;
     --DataGrid-rowBorderColor: #2B3139 !important;
+    font-family: 'Montserrat', sans-serif!important;
 }
 
 .MuiDataGrid-withBorderColor {

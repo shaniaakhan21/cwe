@@ -270,9 +270,10 @@ const Trading = (props) => {
                             </div>
                             <div className="card-body pt-2">
 
-                                <Alert variant="danger" show={errorSaving.length > 0}>
-                                    <strong>Error! </strong> {errorSaving}
-                                </Alert>
+                                <div className={` ${errorSaving ? 'show notify' : ''}`}>
+                                    {errorSaving}
+                                </div>
+
                                 <div className="d-flex align-items-center justify-content-between mt-3 mb-2">
                                     <span className="small text-muted">Available Balance</span>
 
@@ -328,12 +329,12 @@ const Trading = (props) => {
                         </div>
                     </div>
                     <div className="col-xl-6">
-                            <div className="card" style={{ height: '100%' }}>
-                                <>
-                                    <TechnicalAnalysis symbol={`${selectedOption?.label || 'BTC'}USDT`} colorTheme="dark" width="100%"></TechnicalAnalysis>
-                                </>
-                            </div>
+                        <div className="card" style={{ height: '100%' }}>
+                            <>
+                                <TechnicalAnalysis symbol={`${selectedOption?.label || 'BTC'}USDT`} colorTheme="dark" width="100%"></TechnicalAnalysis>
+                            </>
                         </div>
+                    </div>
                     {/* {!selectedOption && (
                         <div className="col-xl-8 card-select">
                             <div className='card-in col-xl-8'>
@@ -345,13 +346,13 @@ const Trading = (props) => {
                     )} */}
                 </div>
                 <div className="col-xl-12">
-                        <div className="card" style={{ height: 500 }}>
+                    <div className="card" style={{ height: 500, border: '1px solid #181A20' }}>
 
-                            <>
-                                <AdvancedRealTimeChart symbol={`${selectedOption?.label || 'BTC'}USDT`} theme="dark" autosize></AdvancedRealTimeChart>
-                            </>
-                        </div>
+                        <>
+                            <AdvancedRealTimeChart symbol={`${selectedOption?.label || 'BTC'}USDT`} theme="dark" autosize></AdvancedRealTimeChart>
+                        </>
                     </div>
+                </div>
 
 
 
@@ -383,7 +384,7 @@ const Trading = (props) => {
                                         <Button style={{ marginLeft: 20 }} onClick={() => { updateStopGain() }} variant="success" className="btn py-2">Save</Button>
                                     </div>
                                 </div>
-                                <div  className='d-flex justify-content-end pt-4'>
+                                <div className='d-flex justify-content-end pt-4'>
                                     <Button onClick={() => { sellAllGroup() }} variant="dark" className="btn yellow-newbtn">Sell all group now</Button>
                                 </div>
                             </div>

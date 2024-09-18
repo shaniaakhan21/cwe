@@ -1,24 +1,14 @@
-import { useEffect } from 'react';
 import Header from "./Header";
 import Footer from "./Footer";
-import Button from '@mui/material/Button';
 import CryptoList from "./TopCrypto";
-import BuySell from "./BuySell";
 import ReferralImg from '../../../assets/images/publicpages/ss-refer.png'
 import RewardImg from '../../../assets/images/publicpages/rewards.png'
 import CryptoCard from "./CryptoCard";
 import CryptoTable from "./CryptoTable";
-import { useNavigate } from 'react-router-dom';
-import AOS from "aos";
 import "aos/dist/aos.css";
 
 
 const PublicPage = () => {
-    const navigate = useNavigate();
-
-    const handleNavigation = () => {
-        navigate('/register');
-    };
 
     return (
         <div className='pagepub'>

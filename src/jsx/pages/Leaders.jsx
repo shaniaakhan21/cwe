@@ -102,7 +102,7 @@ const Leaders = () => {
                                                 <h3 className="m-b-0">{leader.totalPositivePercent}</h3><span><p>Average Profit</p></span>
                                             </div>
 
-                                            <div>
+                                            <div className="col w-20">
                                                 {leader.follows === 0 && (
                                                     <a onClick={() => { follow(leader.id) }} className="btn mb-1 me-1 follow-it" >Follow</a>
                                                 )}
