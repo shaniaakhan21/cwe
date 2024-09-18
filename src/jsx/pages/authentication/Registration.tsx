@@ -76,9 +76,9 @@ function Register(props) {
           <div className="row justify-content-center">
             <div className="col-lg-5 col-md-6">
               <div className="card mb-0 h-auto bg-greyish">
-                <div className="card-body bg-greyish border-yellow-01  auth-form ">
+                <div className="card-body bg-greyish border-yellow-01  auth-form p-4">
                   <div className="text-center mb-2">
-                    <Link to="/login" className="logo">
+                    <Link to="https://app.cwebooster.com/" className="logo">
                       <img src={logoFull} alt="" />
                     </Link>
                   </div>
@@ -122,7 +122,7 @@ function Register(props) {
                     </div>
                   </form>
                   <div className="new-account mt-3">
-                    <p className="text-greyishtext-center">
+                    <p className="text-greyish text-center">
                       Already have an account?{" "}
                       <Link className="text-our-yellow" to="/login">
                         Login

@@ -31,9 +31,9 @@ function Login() {
 
   return (
     <>
-    <Header showLinks={false} usePopup={false} bgColor='#181A20' />
+      <Header showLinks={false} usePopup={false} bgColor='#181A20' />
       <div className="authincation d-flex flex-column flex-lg-row flex-column-fluid">
-        <div className="container flex-row-fluid d-flex flex-column justify-content-center position-relative overflow-hidden p-7 mx-auto">
+        <div className="container flex-row-fluid d-flex flex-column justify-content-start position-relative overflow-hidden p-7 mx-auto">
           <div className="d-flex justify-content-center h-100 align-items-center">
             <div className="authincation-content style-2">
               <div className="row no-gutters">
@@ -44,11 +44,13 @@ function Login() {
                   >
 
                     <form onSubmit={onLogin}>
-                      <div className="text-center mb-lg-4 mb-2 logo">
-                        <img src={IMAGES.LogoWhite} alt="" />
+                      <div className="text-center mb-lg-4 mb-2 logo flex j">
+                        <Link to="https://app.cwebooster.com/" className="logo">
+                          <img src={IMAGES.LogoWhite} alt="" />
+                        </Link>
                       </div>
                       <div className="text-start mb-4">
-                        <h3 className="text-start mb-2 text-greyish">Welcome to CWE Buster</h3>
+                        <h3 className="text-center mb-2 text-greyish">Welcome to CWE Buster</h3>
                       </div>
                       {error && (
                         <div className='text-danger p-1 my-2'>
