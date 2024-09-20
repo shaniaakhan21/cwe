@@ -43,6 +43,8 @@ import Leaders from "../pages/Leaders";
 import Feed from "../pages/Feed";
 import Wallet from "../pages/Wallet";
 import Profile from "../pages/Profile";
+import Reset from "../pages/authentication/ResetPassword";
+import ChangePassword from "../pages/authentication/ChangePassword";
 
 const Markup = () => {
   const allroutes = [
@@ -69,6 +71,8 @@ const Markup = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/register/:referralId' element={<Registration />} />
         <Route path='/register' element={<Registration />} />
+        <Route path='/reset-password' element={<Reset />} />
+        <Route path='/change-password' element={<ChangePassword />} />
         <Route path='/page-lock-screen' element={<LockScreen />} />
         <Route path='/page-error-400' element={<Error400 />} />
         <Route path='/page-error-403' element={<Error403 />} />
