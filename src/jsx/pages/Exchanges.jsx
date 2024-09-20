@@ -145,7 +145,7 @@ const Exchanges = () => {
                                     ApiKey: ...{apiKey.last4}
                                 </div>
                                 <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
-                                    <Button onClick={() => { verifyDelete(apiKey.id) }} variant="danger" className="btn-block w-fit" style={{ marginTop: 20 }}>Delete Api Key</Button>
+                                    <Button onClick={() => { verifyDelete(apiKey.id) }} className="btn-block w-fit cancel-chng" style={{ marginTop: 20 }}>Delete Api Key</Button>
                                 </div>
                             </div>
                         </div>
@@ -262,7 +262,7 @@ const Exchanges = () => {
 
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button disabled={savingApiKey} onClick={() => { saveApiKey() }} variant="primary">
+                    <Button disabled={savingApiKey} onClick={() => { saveApiKey() }} variant="success">
                         {savingApiKey ?
                             <div className="spinner-border spinner-border-sm" role="status">
                                 <span className="visually-hidden">Loading...</span>
