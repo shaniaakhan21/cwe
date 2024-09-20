@@ -15262,7 +15262,7 @@ h6,
   font-size: 6px;
   font-weight: 900;
   color: #fd5353;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Font Awesome 6 Free";
   padding-left: 3px;
 }
 
@@ -32921,7 +32921,7 @@ button:focus {
 .btn {
   padding: 0.59375rem 1.5rem;
   border-radius: 3px;
-  font-weight: 400 !important;
+  font-weight: 500!important;
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -34071,7 +34071,7 @@ button:focus {
 .btn-close {
   background: none;
   position: relative;
-  font-family: 'Montserrat', sans-serif;
+  font-family:  "Font Awesome 6 Free";
   margin-left: auto !important;
   margin-right: unset !important;
   color: var(--text-dark);

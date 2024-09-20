@@ -18,19 +18,19 @@
 
 .cancel-chng {
     cursor: pointer !important;
-    background-color: #fd53535e !important;
-    border-color: #fd535370 !important;
+    background-color: #d54545ab !important;
+    border-color: #d54545 !important;
+    color: #fff !important;
     border-radius: 3px !important;
-    color: #fd5353 !important;
     text-transform: none !important;
 }
 
 .save-chn {
     cursor: pointer !important;
-    background-color: #00800057 !important;
-    border-color: #00800057 !important;
+    background-color: rgb(58 182 122 / 62%) !important;
+    border-color: rgb(58 182 122) !important;
+    color: #fff !important;
     border-radius: 3px !important;
-    color: #00aa00 !important;
     text-transform: none !important;
 }
 
