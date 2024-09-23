@@ -8,6 +8,9 @@ import KuCoin from "../../assets/images/exchanges/kucoin.png";
 import HTX from "../../assets/images/exchanges/htx.png";
 import Okx from "../../assets/images/exchanges/okx.png";
 import GateIo from "../../assets/images/exchanges/gate.io.png";
+import Kraken from "../../assets/images/exchanges/kraken.png";
+import Coinbase from "../../assets/images/exchanges/coinbase.png";
+import Bybit from "../../assets/images/exchanges/bybit.png";
 import { isAxiosError } from "axios";
 const exchanges = {
     'plataforma-3': Binance,
@@ -15,6 +18,9 @@ const exchanges = {
     'plataforma-5': HTX,
     'plataforma-6': Okx,
     'plataforma-7': GateIo,
+    'plataforma-8': Kraken,
+    'plataforma-9': Coinbase,
+    'plataforma-10': Bybit,
 }
 
 const Exchanges = () => {
@@ -122,88 +128,47 @@ const Exchanges = () => {
         await getAllApiKeys()
     }
 
+    const exchangeLinks = {
+        'plataforma-5': 'https://www.htx.com/invite/en-us/1f?invite_code=dyma4',
+        'plataforma-6': 'https://www.okx.com/join/10134391',
+        'plataforma-7': 'https://www.gate.io/signup/UAUQXF1W?ref_type=103',
+    };
+
+
 
     return (
         <>
             <div style={{ textAlign: "right", marginTop: 0 }}>
                 <Button variant="success" className="mb-4" onClick={() => { openModal(), setErrorSaving("") }}>
                     <i className="fa-solid fa-add me-2"></i>
-                    {apikeys && apikeys.length === 0 ? "+ Add Exchange" : "Add Exchange"}
+                    {apikeys && apikeys.length === 0 ? "Add Exchange" : "Add Exchange"}
                 </Button>
             </div>
 
             <div className="row d-flex justify-content-between">
-                {apikeys && apikeys.map((apiKey) => {
+                {exchanges && Object.keys(exchanges).map((platformId) => {
+                    const apiKey = apikeys ? apikeys.find(key => key.idPlataforma === parseInt(platformId.split('-')[1])) : null;
+                    const isBinance = platformId === 'plataforma-3';
                     return (
-                        <div key={apiKey.id} className="col-11 col-md-2 m-1 d-flex justify-content-center" style={{ border: "1px solid #2B3139", padding: '10px 2px 20px 2px', borderRadius: '3px' }}>
+                        <div key={`platform-${platformId}`} className="col-11 col-md-3 m-2 mb-3 d-flex justify-content-center" style={{ border: "1px solid #2B3139", padding: '10px 2px 20px 2px', borderRadius: '3px' }}>
                             <div className="d-flex-it">
                                 <div style={{ textAlign: "center" }} className="w-full">
-
-                                    <img src={exchanges[`plataforma-${apiKey.idPlataforma}`]} alt="Binance" style={{ height: '100px', width: '100%' }} />
+                                    <img src={exchanges[platformId]} alt="Exchange" style={{ height: '100px', width: '100%' }} />
                                 </div>
                                 <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
-                                    ApiKey: ...{apiKey.last4}
+                                    {apiKey ? `ApiKey: ...${apiKey.last4}` : (isBinance ? '' : 'Coming Soon')}
                                 </div>
                                 <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
-                                    <Button onClick={() => { verifyDelete(apiKey.id) }} className="btn-block w-fit cancel-chng" style={{ marginTop: 20 }}>Delete Api Key</Button>
+                                    {apiKey ? (
+                                        <Button onClick={() => { verifyDelete(apiKey.id) }} className="btn-block w-fit cancel-chng" style={{ marginTop: 20 }}>Delete Api Key</Button>
+                                    ) : (
+                                        <Button target="_blank" href={exchangeLinks[platformId]} variant="success" className="btn-block yellow-newbtn" style={{ marginTop: 20 }}>Create Account</Button>
+                                    )}
                                 </div>
                             </div>
                         </div>
-                    )
+                    );
                 })}
-
-                <div className="col-11 col-md-2 m-1 d-flex justify-content-center" style={{ border: "1px solid #2B3139", padding: '10px 2px 20px 2px', borderRadius: '3px' }}>
-                    <div className="d-flex-it">
-                        <div style={{ textAlign: "center" }} className="w-full">
-                            <img src={exchanges[`plataforma-4`]} alt="Binance" style={{ height: '100px', width: '100%' }} />
-                        </div>
-                        <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
-                            Coming Soon
-                        </div>
-                        <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
-                            <Button target="_blank" href="" variant="success" className="btn-block yellow-newbtn" style={{ marginTop: 20 }}>Create Account</Button>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-11 col-md-2 m-1 d-flex justify-content-center" style={{ border: "1px solid #2B3139", padding: '10px 2px 20px 2px', borderRadius: '3px' }}>
-                    <div className="d-flex-it">
-                        <div style={{ textAlign: "center" }} className="w-full">
-                            <img src={exchanges[`plataforma-5`]} alt="Binance" style={{ height: '100px', width: '100%' }} />
-                        </div>
-                        <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
-                            Coming Soon
-                        </div>
-                        <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
-                            <Button target="_blank" href="https://www.htx.com/invite/en-us/1f?invite_code=dyma4" variant="success" className="btn-block yellow-newbtn" style={{ marginTop: 20 }}>Create Account</Button>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-11 col-md-2 m-1 d-flex justify-content-center" style={{ border: "1px solid #2B3139", padding: '10px 2px 20px 2px', borderRadius: '3px' }}>
-                    <div className="d-flex-it">
-                        <div style={{ textAlign: "center" }} className="w-full">
-                            <img src={exchanges[`plataforma-6`]} alt="Binance" style={{ height: '100px', width: '100%' }} />
-                        </div>
-                        <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
-                            Coming Soon
-                        </div>
-                        <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
-                            <Button target="_blank" href="https://www.okx.com/join/10134391" variant="success" className="btn-block yellow-newbtn" style={{ marginTop: 20 }}>Create Account</Button>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-11 col-md-2 m-1 d-flex justify-content-center" style={{ border: "1px solid #2B3139", padding: '10px 2px 20px 2px', borderRadius: '3px' }}>
-                    <div className="d-flex-it">
-                        <div style={{ textAlign: "center" }} className="w-full">
-                            <img src={exchanges[`plataforma-7`]} alt="Binance" style={{ height: '100px', width: '100%' }} />
-                        </div>
-                        <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
-                            Coming Soon
-                        </div>
-                        <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
-                            <Button target="_blank" href="https://www.gate.io/signup/UAUQXF1W?ref_type=103" variant="success" className="btn-block yellow-newbtn" style={{ marginTop: 20 }}>Create Account</Button>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             {apikeys === undefined && (
