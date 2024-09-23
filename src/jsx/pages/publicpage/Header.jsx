@@ -1,7 +1,7 @@
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Link from '@mui/material/Link';
-import logo from '../../../assets/images/publicpages/CWE-Logo1.png';
+import logo from '../../../assets/images/logo-white.png';
 
 
 const Header = ({ bgColor = '#000!important' }) => {

@@ -15510,8 +15510,8 @@ h6,
 
 .nav-header .brand-logo .image-dash {
   margin-top: 6%;
-  padding: 2% 15%;
-  width: 75%;
+  padding: 1%;
+  width: 100%;
 }
 
 @media only screen and (max-width: 87.5rem) {
@@ -15585,8 +15585,8 @@ h6,
   }
 
   .nav-header .image-dash {
-    padding: 1% 43% !important;
-    width: 103px !important;
+    padding: 1% 10% !important;
+    width: 100% !important;
   }
 }
 
@@ -32921,7 +32921,7 @@ button:focus {
 .btn {
   padding: 0.59375rem 1.5rem;
   border-radius: 3px;
-  font-weight: 500!important;
+  font-weight: 500 !important;
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -34071,7 +34071,7 @@ button:focus {
 .btn-close {
   background: none;
   position: relative;
-  font-family:  "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Free";
   margin-left: auto !important;
   margin-right: unset !important;
   color: var(--text-dark);
@@ -37753,7 +37753,7 @@ table.dataTable>tfoot>tr>td {
 }
 
 .logo img {
-  width: 100px !important;
+  width: 70%!important;
 }
 
 .error-page {
@@ -38446,13 +38446,13 @@ table.dataTable>tfoot>tr>td {
 
 @media only screen and (max-width: 61.9375rem) {
   .logo img {
-    width: 50px!important;
+    width: 50% !important;
   }
 }
 
 @media only screen and (max-width: 35.9375rem) {
   .logo img {
-    width: 80px!important;
+    width: 60% !important;
   }
 }
 
@@ -44070,7 +44070,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .header-cwe .ImgPhn {
-  width: 18% !important;
+  width: 57% !important;
+  padding: 1%;
 }
 
 .header-cwe .headerMenu,
@@ -44121,7 +44122,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   /* Styles for extra small devices */
   .header-cwe .ImgPhn {
-    width: 35% !important;
+    width: 100% !important;
   }
 
   .bg-bitcoin h1,
