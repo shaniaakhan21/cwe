@@ -26569,7 +26569,7 @@ svg.pulse-svg .third-circle {
 }
 
 [data-theme-version="dark"] a {
-  color: #fff;
+  color: #000;
 }
 
 [data-theme-version="dark"] a:hover {
@@ -44390,7 +44390,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 [data-theme-version="dark"] a {
-  color: #fff;
+  color: #000;
 }
 
 [data-theme-version="dark"] a:hover {
