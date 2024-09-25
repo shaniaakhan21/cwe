@@ -15650,8 +15650,7 @@ h6,
 }
 
 .hamburger {
-  display: inline-block;
-  left: 0.2rem;
+  display: flex;
   position: relative;
   -webkit-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
@@ -44622,6 +44621,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   position: relative;
   left: 7%;
   border: 0;
+  font-weight: 500;
 }
 
 .btn-logout-02 {
