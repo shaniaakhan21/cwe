@@ -12,6 +12,7 @@ const Profile = () => {
     const [currentPassword, setCurrentPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [socialMedia, setSocialMedia] = useState([{ platform: '', url: '' }]);
 
     const getMe = async () => {
         try {
@@ -37,6 +38,10 @@ const Profile = () => {
                     _userDetails.country = user.personalInfo.country;
                     _userDetails.phoneNumber = user.personalInfo.phoneNumber;
                     _userDetails.address = user.personalInfo.address;
+
+                    if (user.personalInfo.socialMedia) {
+                        setSocialMedia(user.personalInfo.socialMedia);
+                    }
                 }
                 setUserDetails({ ..._userDetails });
             }
@@ -72,6 +77,21 @@ const Profile = () => {
 
     const handleChange = (key, value) => {
         setUserDetails({ ...userDetails, [key]: value });
+    };
+
+    const handleSocialMediaChange = (index, key, value) => {
+        const updatedSocialMedia = [...socialMedia];
+        updatedSocialMedia[index][key] = value;
+        setSocialMedia(updatedSocialMedia);
+    };
+
+    const addSocialMedia = () => {
+        setSocialMedia([...socialMedia, { platform: '', url: '' }]);
+    };
+
+    const removeSocialMedia = (index) => {
+        const updatedSocialMedia = socialMedia.filter((_, i) => i !== index);
+        setSocialMedia(updatedSocialMedia);
     };
 
     const handleOpenSnackbar = (message) => {
@@ -224,6 +244,44 @@ const Profile = () => {
                         )}
                     </div>
 
+                    <div className='d-flex flex-column margii justify-content-between'>
+                        {/* Other profile fields here... */}
+                        <label>Social Media</label>
+                        {socialMedia.map((item, index) => (
+                            editMode ? (
+                                <>
+                                    <input
+                                        className='input-edit bg-transparent border-b border-[#F55937] text-greyish py-1 mr-2'
+                                        value={item.platform}
+                                        placeholder="Platform (e.g., Twitter)"
+                                        onChange={(e) => handleSocialMediaChange(index, 'platform', e.target.value)}
+                                    />
+                                    <input
+                                        className='input-edit bg-transparent border-b border-[#F55937] text-greyish py-1 mr-2'
+                                        value={item.url}
+                                        placeholder="URL"
+                                        onChange={(e) => handleSocialMediaChange(index, 'url', e.target.value)}
+                                    />
+
+                                    <div className='d-flex flex-row justify-content-start mt-2  mb-2' >
+                                        <Button className='cancel-chng me-3' onClick={() => removeSocialMedia(index)}>
+                                            Remove
+                                        </Button>
+                                        <Button className='save-chn' onClick={addSocialMedia}>
+                                            Add Social Media
+                                        </Button>
+                                    </div>
+                                </>
+                            ) : (
+                                item.url ? (
+                                    <span>{item.platform}: {item.url}</span>
+                                ) : (
+                                    <span style={{ color: '#707985' }}>Add your social media link</span>
+                                )
+                            )
+                        ))}
+                    </div>
+
                     <div className="d-flex flex-column margii justify-content-between">
                         <label>Current Password</label>
                         {editMode ? (
@@ -270,28 +328,30 @@ const Profile = () => {
             </div>
 
 
-            {editMode && (
-                <div className='d-flex flex-row justify-start mt-2 w-100 mb-55'>
-                    <div className='d-flex justify-start w-11-35'>
-                        <Button
-                            onClick={handleSave}
-                            variant='contained'
-                            className='save-chn'
-                        >
-                            Save Changes
-                        </Button>
+            {
+                editMode && (
+                    <div className='d-flex flex-row justify-start mt-2 w-100 mb-55'>
+                        <div className='d-flex justify-start w-11-35'>
+                            <Button
+                                onClick={handleSave}
+                                variant='contained'
+                                className='save-chn'
+                            >
+                                Save Changes
+                            </Button>
+                        </div>
+                        <div className='w-15-47 d-flex justify-content-start'>
+                            <Button
+                                onClick={handleEditToggle}
+                                variant='contained'
+                                className='cancel-chng'
+                            >
+                                Cancel Changes
+                            </Button>
+                        </div>
                     </div>
-                    <div className='w-15-47 d-flex justify-content-start'>
-                        <Button
-                            onClick={handleEditToggle}
-                            variant='contained'
-                            className='cancel-chng'
-                        >
-                            Cancel Changes
-                        </Button>
-                    </div>
-                </div>
-            )}
+                )
+            }
             <Snackbar
                 open={snackbarOpen}
                 autoHideDuration={3000}
@@ -301,7 +361,7 @@ const Profile = () => {
                     {snackbarMessage}
                 </MuiAlert>
             </Snackbar>
-        </div>
+        </div >
     );
 };
 
