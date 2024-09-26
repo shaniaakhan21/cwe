@@ -43,6 +43,7 @@ import Leaders from "../pages/Leaders";
 import Feed from "../pages/Feed";
 import Wallet from "../pages/Wallet";
 import Profile from "../pages/Profile";
+import Futures from "../pages/futures";
 
 const Markup = () => {
   const allroutes = [
@@ -54,6 +55,7 @@ const Markup = () => {
     { url: "network", component: <Network /> },
     { url: "feed", component: <Feed /> },
     { url: "leaders", component: <Leaders /> },
+    { url: "futures", component: <Futures /> },
     { url: "users", component: <Users /> },
     { url: "sales", component: <Sales /> },
     { url: "wallet", component: <Wallet /> },

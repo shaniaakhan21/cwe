@@ -31,16 +31,25 @@ export const MenuList = [
         to: 'exchanges',
     },
     {
-        title: 'Single Trading',	
+        title: 'Spot Trading',	
         classsChange: 'mm-collapse',		
         iconStyle: <TrendingUpIcon />,
-        to: 'single-trading',
+        content: [
+            {
+                title: 'Single Trading',
+                to: 'single-trading',					
+            },
+            {
+                title: 'Group Trading',
+                to: 'group-trading',
+            }          
+        ],
     },
     {
-        title: 'Group Trading',	
+        title: 'Futures Trading',	
         classsChange: 'mm-collapse',		
         iconStyle: <ScatterPlotIcon />,
-        to: 'group-trading',
+        to: 'futures',
     },
     {
         title: 'Network',	
