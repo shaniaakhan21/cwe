@@ -265,9 +265,6 @@ const Trading = (props) => {
 
                     <div className="col-xl-6">
                         <div className="card border-white-leaders">
-                            <div className="card-header border-0 pb-0">
-                                <h4 className="card-title mb-0">New Hybrid</h4>
-                            </div>
                             <div className="card-body pt-2">
 
                                 <div className={` ${errorSaving ? 'show notify' : ''}`}>
