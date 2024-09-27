@@ -15599,13 +15599,14 @@ h6,
   transform: translateY(-43%);
   z-index: 9999;
   font-size: 1.4rem;
-  background: #2B3139;
+  background-color: #2B3139;
   height: 45px;
   width: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 3px;
+  z-index: 10!important;
 }
 
 @media only screen and (max-width: 100rem) {
@@ -15646,6 +15647,10 @@ h6,
     height: 24px;
     width: 24px;
     right: -1.6rem;
+  }
+
+  .hamburger{
+    padding: 4px 4px 4px 4px;
   }
 }
 
@@ -15723,8 +15728,23 @@ h6,
   }
 }
 
+.image-phone {
+  display: none;
+  margin-top: -20%;
+  padding: 23%;
+  width: 100%;
+}
+
 [data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .image-dash {
-  padding: 50% !important;
+  padding: 4% !important;
+  display: none;
+}
+
+[data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .image-phone {
+  display: block;
+  margin-top: -20%;
+  padding: 23%;
+  width: 100%;
 }
 
 [data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .nav-header .logo-abbr {
@@ -21621,7 +21641,7 @@ svg.pulse-svg .third-circle {
 
   [data-nav-headerbg="color_3"][data-theme-version="dark"] .nav-control,
   [data-nav-headerbg="color_3"] .nav-control {
-    background-color: transparent;
+    background-color: #2B3139;
   }
 }
 
@@ -37752,7 +37772,7 @@ table.dataTable>tfoot>tr>td {
 }
 
 .logo img {
-  width: 70%!important;
+  width: 70% !important;
 }
 
 .error-page {
@@ -44313,6 +44333,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .padding-cstm {
     padding: 2px 4% !important;
   }
+
 }
 
 /* Large devices (desktops, 992px and up) */
