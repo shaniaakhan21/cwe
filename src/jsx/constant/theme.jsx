@@ -33,6 +33,7 @@ import smallpic9 from '../../assets/images/profile/small/pic9.jpg'
 import smallpic10 from '../../assets/images/profile/small/pic10.jpg'
 import tab1 from '../../assets/images/tab/1.jpg'
 import AtmChip from '../../assets/images/atm-chip.png'
+import LogoPhone from '../../assets/images/phone-cwe.png'
 
 export const IMAGES = {
     BigImg1: BigImg1,
@@ -70,6 +71,7 @@ export const IMAGES = {
     smallpic10: smallpic10,
     tab1: tab1,
     AtmChip: AtmChip,
+    LogoPhone: LogoPhone
 
 };
 
