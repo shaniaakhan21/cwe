@@ -44,6 +44,7 @@ import Feed from "../pages/Feed";
 import Wallet from "../pages/Wallet";
 import Profile from "../pages/Profile";
 import Futures from "../pages/futures";
+import Balances from "../pages/Balances";
 
 const Markup = () => {
   const allroutes = [
@@ -58,6 +59,7 @@ const Markup = () => {
     { url: "futures", component: <Futures /> },
     { url: "users", component: <Users /> },
     { url: "sales", component: <Sales /> },
+    { url: "balances", component: <Balances /> },
     { url: "wallet", component: <Wallet /> },
     { url: "/profile", component: <Profile /> },
     { url: "empty-page", component: <EmptyPage /> },

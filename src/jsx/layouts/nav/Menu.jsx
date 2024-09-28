@@ -31,6 +31,12 @@ export const MenuList = [
         to: 'exchanges',
     },
     {
+        title: 'Balances',	
+        classsChange: 'mm-collapse',		
+        iconStyle: <CurrencyBitcoinIcon />, 
+        to: 'balances',
+    },
+    {
         title: 'Spot Trading',	
         classsChange: 'mm-collapse',		
         iconStyle: <TrendingUpIcon />,
