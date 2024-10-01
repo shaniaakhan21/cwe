@@ -23,7 +23,7 @@ function Login() {
       if (response.data.token) {
         localStorage.setItem('token', response.data.token)
       }
-      navigate('/dashboard', { replace: true })
+      navigate('/verify-code', { replace: true })
     } catch (error) {
       setError(true)
     }

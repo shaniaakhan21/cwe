@@ -45,6 +45,7 @@ import Wallet from "../pages/Wallet";
 import Profile from "../pages/Profile";
 import Futures from "../pages/futures";
 import Balances from "../pages/Balances";
+import TwoFactor from "../pages/authentication/TwoFactor";
 
 const Markup = () => {
   const allroutes = [
@@ -73,6 +74,7 @@ const Markup = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/register/:referralId' element={<Registration />} />
         <Route path='/register' element={<Registration />} />
+        <Route path='/verify-code' element={<TwoFactor />} />
         <Route path='/page-lock-screen' element={<LockScreen />} />
         <Route path='/page-error-400' element={<Error400 />} />
         <Route path='/page-error-403' element={<Error403 />} />
