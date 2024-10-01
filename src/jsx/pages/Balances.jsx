@@ -12,15 +12,15 @@ import Coinbase from "../../assets/images/exchanges/coinbase.png";
 import Bybit from "../../assets/images/exchanges/bybit.png";
 import BalancesTable from "./BalancesTable";
 const exchanges = {
-    'plataforma-3': Binance,
-    'plataforma-4': KuCoin,
-    'plataforma-5': HTX,
-    'plataforma-6': Okx,
-    'plataforma-7': GateIo,
-    'plataforma-8': Kraken,
-    'plataforma-9': Coinbase,
-    'plataforma-10': Bybit,
-}
+    'plataforma-3': { name: "Binance", logo: Binance },
+    'plataforma-4': { name: "KuCoin", logo: KuCoin },
+    'plataforma-5': { name: "HTX", logo: HTX },
+    'plataforma-6': { name: "OKX", logo: Okx },
+    'plataforma-7': { name: "Gate.io", logo: GateIo },
+    'plataforma-8': { name: "Kraken", logo: Kraken },
+    'plataforma-9': { name: "Coinbase", logo: Coinbase },
+    'plataforma-10': { name: "Bybit", logo: Bybit },
+};
 
 const Balances = () => {
     const [apikeys, setApiKeys] = useState(undefined);
@@ -48,12 +48,23 @@ const Balances = () => {
         getAllApiKeys()
     }, [])
 
+    const currentExchange = selectedExchange !== null ? exchanges[selectedExchange] : null;
 
     return (
         <>
             {selectedExchange !== null && (
-                <div style={{ textAlign: "left", fontSize: 17, marginBottom: 40 }}>
-                    <Button onClick={() => { setSelectedExchange(null) }} variant="danger" className=" cancel-chng" style={{ marginTop: 20 }}>Go Back</Button>
+                <div className='d-flex flex-row justify-content-between align-items-center' style={{ textAlign: "left", fontSize: 17, marginBottom: 5 }}>
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                        <img
+                            src={currentExchange.logo}
+                            alt={currentExchange.name}
+                            className="w-70"
+                        />
+                    </div>
+
+                    <Button onClick={() => { setSelectedExchange(null); }} variant="danger" className=" cancel-chng btn btn-danger">
+                        Go Back
+                    </Button>
                 </div>
             )}
             {selectedExchange === null && (
@@ -66,7 +77,7 @@ const Balances = () => {
                             <div key={`platform-${platformId}`} className="col-11 col-md-3 m-2 mb-3 d-flex justify-content-center" style={{ border: "1px solid #2B3139", padding: '10px 2px 20px 2px', borderRadius: '3px' }}>
                                 <div className="d-flex-it">
                                     <div style={{ textAlign: "center" }} className="w-full">
-                                        <img src={exchanges[platformId]} alt="Exchange" style={{ height: '100px', width: '100%' }} />
+                                        <img src={exchanges[platformId].logo} alt="Exchange" style={{ height: '100px', width: '100%' }} />
                                     </div>
                                     <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
                                         {apiKey ? `ApiKey: ...${apiKey.last4}` : (isBinance ? '' : 'Coming Soon')}

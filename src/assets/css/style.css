@@ -17484,7 +17484,7 @@ svg.pulse-svg .third-circle {
 }
 
 .dlabnav .menu-scroll {
-  height: calc(100% - 1.5rem);
+  height: calc(82% - 1.5rem);
 }
 
 .dlabnav .dlabnav-scroll {
@@ -44598,6 +44598,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background: #fff;
 }
 
+.on-phone{
+  display: none;
+}
+
 @media (max-width: 600px) {
   .borderShadow .btn-m {
     padding: 4px 16px !important;
@@ -44606,6 +44610,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   .borderShadow .card-body {
     flex-direction: column !important;
+  }
+
+  .dlabnav.follow-info .menu-scroll {
+    height: calc(100% - 1.5rem);
+  }
+
+  .on-phone{
+    display: block;
+  }
+
+  .fix-footer{
+    display: none;
   }
 }
 

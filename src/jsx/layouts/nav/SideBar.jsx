@@ -242,9 +242,16 @@ const SideBar = () => {
               }
             })}
           </ul>
+          <div className="copyright on-phone">
+            <div className="btn-logout btn-logout-02">
+              <Logout />
+            </div>
+            <p><strong>CWE Booster</strong> © <span className="current-year">{Latest.getFullYear()}</span> All Rights Reserved</p>
+
+          </div>
         </div>
       </div>
-      <div className="copyright fix-footer">
+      <div className="copyright fix-footer hidden">
         <div className="btn-logout btn-logout-02">
           <Logout />
         </div>
