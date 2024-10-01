@@ -95,11 +95,11 @@ export const MenuList = [
         to: 'sales',
         isAdmin: true
     },
-    {
-        title: 'Logout',
-        classsChange: 'mm-collapse',
-        iconStyle: <LogoutIcon />,
-        to: '#',
-        onClick: 'logout', 
-    }
+    // {
+    //     title: 'Logout',
+    //     classsChange: 'mm-collapse',
+    //     iconStyle: <LogoutIcon />,
+    //     to: '#',
+    //     onClick: 'logout', 
+    // }
 ];

@@ -19,11 +19,9 @@ function withRouter(Component) {
 }
 
 function LogoutPage(){
-    const navigate = useNavigate();
     function onLogout() {
         localStorage.removeItem('token');
-        navigate('/login');
-       //
+        window.location.href = 'https://www.cwebooster.com/';
     }
     return(
         <>
