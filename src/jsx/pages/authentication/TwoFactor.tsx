@@ -54,7 +54,7 @@ function TwoFactor() {
                                             </div>
                                             {error && (
                                                 <div className='text-danger p-1 my-2'>
-                                                    Invalid email or password, please try again.
+                                                    Invalid Code, please try again.
                                                 </div>
                                             )}
                                             <div className="mb-3">
