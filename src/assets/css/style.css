@@ -15606,7 +15606,7 @@ h6,
   align-items: center;
   justify-content: center;
   border-radius: 3px;
-  z-index: 10!important;
+  z-index: 10 !important;
 }
 
 @media only screen and (max-width: 100rem) {
@@ -15649,7 +15649,7 @@ h6,
     right: -1.6rem;
   }
 
-  .hamburger{
+  .hamburger {
     padding: 4px 4px 4px 4px;
   }
 }
@@ -17738,7 +17738,7 @@ svg.pulse-svg .third-circle {
 }
 
 .dlabnav.follow-info .menu-scroll {
-  height: calc(100% - 1.5rem);
+  height: calc(80% - 1.5rem);
 }
 
 .dlabnav .copyright {
@@ -44713,6 +44713,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: #1F8DF9;
   padding: 2%;
   border-radius: 3px;
+}
+
+.fix-footer {
+  position: fixed;
+  bottom: 1%;
+  background: #181A20;
 }
 
 /*# sourceMappingURL=style.css.map */
