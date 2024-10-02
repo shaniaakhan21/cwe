@@ -76,7 +76,7 @@ const Markup = () => {
         <Route path='/register/:referralId' element={<Registration />} />
         <Route path='/register' element={<Registration />} />
         <Route path='/reset-password' element={<Reset />} />
-        <Route path='/change-password' element={<ChangePassword />} />
+        <Route path='/change-password/:token' element={<ChangePassword />} />
         <Route path='/page-lock-screen' element={<LockScreen />} />
         <Route path='/page-error-400' element={<Error400 />} />
         <Route path='/page-error-403' element={<Error403 />} />

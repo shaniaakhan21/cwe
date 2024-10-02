@@ -2,19 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { IMAGES } from "../../constant/theme";
 import Header from "../publicpage/Header";
-
-
-const simulatePasswordReset = async (email: string) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (email === "test@example.com") {
-                resolve({ message: "Password reset email sent" });
-            } else {
-                reject(new Error("Email not found"));
-            }
-        }, 2000);
-    });
-};
+import axiosInstance from "../../../services/AxiosInstance";
 
 function Reset() {
     const [email, setEmail] = useState("");
@@ -28,9 +16,11 @@ function Reset() {
         setError(null);
         setSuccess(false);
         try {
-            const data = await simulatePasswordReset(email);
-            console.log("Password reset requested:", data);
+            await axiosInstance.post("/api/user/reset-password", {
+                email: email.toLowerCase().trim(),
+              });
             setSuccess(true);
+            setEmail('');
         } catch (err) {
             setError("Failed to request password reset. Please try again.");
             console.error(err);
