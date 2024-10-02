@@ -44602,6 +44602,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   display: none;
 }
 
+.download-fab{
+  background-color: #298a5b!important;
+}
+
 @media (max-width: 600px) {
   .borderShadow .btn-m {
     padding: 4px 16px !important;
