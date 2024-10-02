@@ -31977,9 +31977,11 @@ a.ck.ck-button.ck-on:not(.ck-disabled):hover {
 }
 
 .alert-success {
-  background: rgba(58, 182, 122, 0.2);
-  border-color: rgba(58, 182, 122, 0.2);
-  color: #3ab67a;
+  background: rgb(58 182 122 / 62%);
+  border-color: rgb(58 182 122);
+  color: #fff;
+  font-size: 11px;
+  text-align: center;
 }
 
 .alert-warning {
@@ -31989,9 +31991,10 @@ a.ck.ck-button.ck-on:not(.ck-disabled):hover {
 }
 
 .alert-danger {
-  background: rgba(253, 83, 83, 0.2);
-  border-color: rgba(253, 83, 83, 0.2);
-  color: #fd5353;
+  background: #d54545ab;
+  border-color: #d54545;
+  color: #fff;
+  font-size: 11px;
 }
 
 .alert-info {
@@ -44614,6 +44617,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   .borderShadow .card-body {
     flex-direction: column !important;
+  }
+
+  .passtext{
+    font-size: 9px;
   }
 
   .dlabnav.follow-info .menu-scroll {
