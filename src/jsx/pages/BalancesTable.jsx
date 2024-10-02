@@ -3,11 +3,13 @@ import { useState, useEffect } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import axiosInstance from '../../services/AxiosInstance';
 import * as XLSX from 'xlsx';
-import { Button } from '@mui/material';
+import { Button, useMediaQuery, Fab } from '@mui/material';
+import DownloadIcon from '@mui/icons-material/Download';
 
 const BalancesTable = (props) => {
 
     const [balances, setBalances] = useState(undefined);
+    const isMobile = useMediaQuery('(max-width:600px)');
 
     const getBalances = async () => {
         try {
@@ -35,28 +37,28 @@ const BalancesTable = (props) => {
 
 
     const columns = [
-        { field: 'name', headerName: 'Name', flex: 1 },
-        { field: 'balance', headerName: 'Balance', flex: 1 },
-        { field: 'price', headerName: 'Price', flex: 1 },
-        { field: 'total', headerName: 'Total in USDT', flex: 1 },
-        {
+        { field: 'name', headerName: 'Name', flex: isMobile ? 1.2 : 1 },
+        { field: 'balance', headerName: 'Balance', flex: isMobile ? 1.5 : 1 },
+        { field: 'price', headerName: 'Price', flex: isMobile ? 1.2 : 1 },
+        { field: 'total', headerName: 'Total in USDT', flex: isMobile ? 1.6 : 1 },
+        !isMobile && {
             field: 'download',
-            headerName: '', // No header text, only the button
+            headerName: '', 
             flex: 0.4,
-            sortable: false, // Disable sorting for this column
+            sortable: false, 
             renderHeader: () => (
                 <Button
                     color="primary"
-                    className='save-chn'
+                    className="save-chn"
                     onClick={handleDownload}
                 >
                     Download
                 </Button>
             ),
-            // Render empty cells
-            renderCell: () => null,
+            renderCell: () => null, 
         },
-    ];
+    ].filter(Boolean);
+
     // Conditional check for balances being undefined or empty
     const rows = balances && balances.length > 0
         ? balances.map((balance, index) => ({
@@ -109,6 +111,18 @@ const BalancesTable = (props) => {
                     />
                 </div>
             </div>
+
+            {isMobile && (
+                <Fab 
+                    color="primary" 
+                    className='download-fab'
+                    aria-label="download" 
+                    onClick={handleDownload} 
+                    style={{ position: 'fixed', bottom: '20px', right: '20px' }}
+                >
+                    <DownloadIcon />
+                </Fab>
+            )}
         </div>
     );
 };
