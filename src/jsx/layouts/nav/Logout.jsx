@@ -19,15 +19,13 @@ function withRouter(Component) {
 }
 
 function LogoutPage(){
-    const navigate = useNavigate();
     function onLogout() {
         localStorage.removeItem('token');
-        navigate('/login');
-       //
+        window.location.href = 'https://www.cwebooster.com/';
     }
     return(
         <>
-            <button  className="dropdown-item ai-icon btn-logout" onClick={onLogout}>
+            <button  className="dropdown-item ai-icon btn-logout d-flex justify-content-center align-items-center" onClick={onLogout}>
                 <svg
                   id="icon-logout" xmlns="http://www.w3.org/2000/svg"
                   className="logout" width={18} height={18} viewBox="0 0 24 24" 
@@ -37,7 +35,7 @@ function LogoutPage(){
                     <polyline points="16 17 21 12 16 7" />
                     <line x1={21} y1={12} x2={9} y2={12} />
                 </svg>
-                <span className="ms-2" >Logout </span>
+                <h6 className="ms-1 mb-0 text-black w-fit" >Logout </h6>
             </button>
         </>
     )

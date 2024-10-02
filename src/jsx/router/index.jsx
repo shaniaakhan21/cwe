@@ -45,6 +45,8 @@ import Wallet from "../pages/Wallet";
 import Profile from "../pages/Profile";
 import Reset from "../pages/authentication/ResetPassword";
 import ChangePassword from "../pages/authentication/ChangePassword";
+import Futures from "../pages/futures";
+import Balances from "../pages/Balances";
 
 const Markup = () => {
   const allroutes = [
@@ -56,8 +58,10 @@ const Markup = () => {
     { url: "network", component: <Network /> },
     { url: "feed", component: <Feed /> },
     { url: "leaders", component: <Leaders /> },
+    { url: "futures", component: <Futures /> },
     { url: "users", component: <Users /> },
     { url: "sales", component: <Sales /> },
+    { url: "balances", component: <Balances /> },
     { url: "wallet", component: <Wallet /> },
     { url: "/profile", component: <Profile /> },
     { url: "empty-page", component: <EmptyPage /> },

@@ -1,11 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 /// Image
 import profile from "../../../assets/images/user.png";
-import avatar from "../../../assets/images/avatar/1.jpg";
+import { Avatar } from '@mui/material';
+import PersonIcon from '@mui/icons-material/Person';
 
 import { ThemeContext } from "../../../context/ThemeContext";
 import Logout from "../nav/Logout";
@@ -96,31 +97,31 @@ const Header = ({ onNote }) => {
 
 
   const getMe = async () => {
-    try{
-        const token = localStorage.getItem('token')
-        if (token) {
-           const response=  await axiosInstance.get("/api/user/me",
-                 {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            });
-            const user = response.data.user;
-            setEmail(user.email)
-            if(user.personalInfo){
-                setName(user.personalInfo.name);
-                setLastName(user.personalInfo.lastName);
-            }
+    try {
+      const token = localStorage.getItem('token')
+      if (token) {
+        const response = await axiosInstance.get("/api/user/me",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+        const user = response.data.user;
+        setEmail(user.email)
+        if (user.personalInfo) {
+          setName(user.personalInfo.name);
+          setLastName(user.personalInfo.lastName);
         }
+      }
     } catch (error) {
-        console.log(error)
+      console.log(error)
     }
 
-};
+  };
 
-useEffect(() => {
+  useEffect(() => {
     getMe();
-}, []);
+  }, []);
 
   return (
     <>
@@ -151,19 +152,23 @@ useEffect(() => {
                           <h5 className="mb-0 text-greyish">Hello {nameProfile}!</h5>
                         </div>
                       </div>
-                      <img src={profile} alt="profile" />
+                      <Avatar className="bg-transparent">
+                        <PersonSharpIcon />
+                      </Avatar>
                     </div>
                   </Dropdown.Toggle>
                   <Dropdown.Menu align="end" className="mt-0 dropdown-menu dropdown-menu-right profile-dropdown">
-                     <div className="profile-info text-center p-2">
-                      <img src={profile} alt="profile" className="mb-2"/>
+                    <div className="profile-info text-center p-2">
                       <h6 className="text-dark">{nameProfile} {lastNameProfile}</h6>
                     </div>
                     <Dropdown.Item as={Link} to="/profile" className="dropdown-item">
                       {SVGICON.EditSvgIcon}
-                      <span className="d-flex justify-content-center align-items-center text-greyish"><PersonSharpIcon className="me-1"/> Profile</span>
-                    </Dropdown.Item> 
-                    <Dropdown.Divider /> 
+                      <h6 className="d-flex justify-content-center align-items-center text-greyish">
+                        <PersonSharpIcon className="me-1" />
+                        Profile
+                      </h6>
+                    </Dropdown.Item>
+                    <Dropdown.Divider />
                     <Logout />
                   </Dropdown.Menu>
                 </Dropdown>

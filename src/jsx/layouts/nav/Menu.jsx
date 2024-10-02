@@ -31,16 +31,31 @@ export const MenuList = [
         to: 'exchanges',
     },
     {
-        title: 'Single Trading',	
+        title: 'Balances',	
         classsChange: 'mm-collapse',		
-        iconStyle: <TrendingUpIcon />,
-        to: 'single-trading',
+        iconStyle: <CurrencyBitcoinIcon />, 
+        to: 'balances',
     },
     {
-        title: 'Group Trading',	
+        title: 'Spot Trading',	
+        classsChange: 'mm-collapse',		
+        iconStyle: <TrendingUpIcon />,
+        content: [
+            {
+                title: 'Single Trading',
+                to: 'single-trading',					
+            },
+            {
+                title: 'Group Trading',
+                to: 'group-trading',
+            }          
+        ],
+    },
+    {
+        title: 'Futures Trading',	
         classsChange: 'mm-collapse',		
         iconStyle: <ScatterPlotIcon />,
-        to: 'group-trading',
+        to: 'futures',
     },
     {
         title: 'Network',	
@@ -80,11 +95,11 @@ export const MenuList = [
         to: 'sales',
         isAdmin: true
     },
-    {
-        title: 'Logout',
-        classsChange: 'mm-collapse',
-        iconStyle: <LogoutIcon />,
-        to: '#',
-        onClick: 'logout', 
-    }
+    // {
+    //     title: 'Logout',
+    //     classsChange: 'mm-collapse',
+    //     iconStyle: <LogoutIcon />,
+    //     to: '#',
+    //     onClick: 'logout', 
+    // }
 ];

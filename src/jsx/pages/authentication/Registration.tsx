@@ -110,11 +110,11 @@ function Register(props) {
                           placeholder="Password"
                         />
                         <span
-                          className="show-pass eye"
-                          onClick={() => setShowPassword((prev) => !prev)}
-                          style={{ cursor: "pointer", position: "absolute", right: 10, top: 35 }}
+                          className={`show-pass eye ${showPassword ? "active" : ""}`}
+                          onClick={() => setShowPassword((prev) => !prev)} // Toggle password visibility
+                          style={{ cursor: 'pointer', position: 'absolute', right: 10, top: 35 }}
                         >
-                          {showPassword ? <i className="fa fa-eye" /> : <i className="fa fa-eye-slash" />}
+                          <i className={`fa ${showPassword ? "fa-eye" : "fa-eye-slash"}`} />
                         </span>
                         {errors.password && (<div className="text-danger">{errors.password?.message}</div>)}
                       </div>
@@ -126,11 +126,11 @@ function Register(props) {
                           placeholder="Confirm Password"
                         />
                         <span
-                          className="show-pass eye"
-                          onClick={() => setShowConfirmPassword((prev) => !prev)}
-                          style={{ cursor: "pointer", position: "absolute", right: 10, top: 35 }}
+                          className={`show-pass eye ${showConfirmPassword ? "active" : ""}`}
+                          onClick={() => setShowConfirmPassword((prev) => !prev)} // Toggle password visibility
+                          style={{ cursor: 'pointer', position: 'absolute', right: 10, top: 35 }}
                         >
-                          {showConfirmPassword ? <i className="fa fa-eye" /> : <i className="fa fa-eye-slash" />}
+                          <i className={`fa ${showConfirmPassword ? "fa-eye" : "fa-eye-slash"}`} />
                         </span>
                         {errors.confirmPassword && (<div className="text-danger">{errors.confirmPassword?.message}</div>)}
                       </div>
