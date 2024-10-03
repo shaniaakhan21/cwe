@@ -172,12 +172,12 @@ const TradingTable = (params) => {
 
                 if (params.row.sell_now === 1 && params.row.global_profit) {
                     return <div>
-                        <Button size='xs' style={{  marginRight: 20 }} className='btn-user-sold'>Global Profit</Button>
+                        <Button size='xs' className='btn-user-sold'>Global Profit</Button>
                     </div>
                 }
                 if (params.row.sell_now === 1) {
                     return <div>
-                        <Button size='xs' style={{ marginRight: 20 }} className='btn-user-sold'>User Sold</Button>
+                        <Button size='xs' className='btn-user-sold'>User Sold</Button>
                     </div>
                 }
                 return <></>
