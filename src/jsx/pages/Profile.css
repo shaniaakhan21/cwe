@@ -83,6 +83,10 @@
         width: 70%;
     }
 
+    .btn-xs{
+        font-size: 10px!important;
+    }
+
     .w-15-47{
         width: 50%!important;
     }
