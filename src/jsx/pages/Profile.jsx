@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline';
 import { CountryDropdown } from 'react-country-region-selector';
 import { Button, Snackbar } from '@mui/material';
 import MuiAlert from '@mui/material/Alert';
@@ -11,7 +10,10 @@ const Profile = () => {
 
     const [currentPassword, setCurrentPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
+    const [token2FA, setToken2FA] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [data2FA, setData2FA] = useState({});
+    const [is2FAEnabled, setis2FAEnabled] = useState(undefined);
 
     const getMe = async () => {
         try {
@@ -28,6 +30,20 @@ const Profile = () => {
 
                 const _userDetails = {
                     email: user.email,
+                }
+
+                if (!user.is2FAEnabled) {
+                    const response = await axiosInstance.post("/api/user/create2FASecret", {},
+                        {
+                            headers: {
+                                Authorization: `Bearer ${token}`,
+                            },
+                        });
+                    console.log(response.data)
+                    setData2FA(response.data);
+                    setis2FAEnabled(false);
+                } else {
+                    setis2FAEnabled(true);
                 }
 
                 if (user.personalInfo) {
@@ -119,6 +135,29 @@ const Profile = () => {
 
 
     };
+
+    const verify2FA = async () => {
+        try {
+            const token = localStorage.getItem('token')
+            if (token) {
+                await axiosInstance.post("/api/user/verify2FAToken", {
+                    token: token2FA
+                },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    });
+            }
+            setis2FAEnabled(true);
+            setSnackbarType('success');
+            handleOpenSnackbar('2FA Enabled Successfully!');
+        } catch (error) {
+            setSnackbarType('error');
+            handleOpenSnackbar('Error while enabling 2FA, check your token and try again');
+        }
+    }
+
 
     return (
         <><div className='d-flex justify-content-end'>
@@ -284,7 +323,43 @@ const Profile = () => {
                         {snackbarMessage}
                     </MuiAlert>
                 </Snackbar>
-            </div></>
+            </div>
+
+            <div className='profile d-flex flex-column Info-page ml-4  mr-10 border-yellow-02 mt-3' style={{ marginBottom: 20 }}>
+                <div className='rounded-lg pl-4 pt-0 my-0 pr-4 mob-col'>
+                    <h3>2FA</h3>
+                    {is2FAEnabled === false && (
+                        <>
+                            <h5>To Enable 2FA please scan the QR code with your authenticator app and input the code to confirm it.</h5>
+                            <div>
+                                <img src={data2FA.url} />
+                            </div>
+                            <div style={{ marginTop: 20 }}>
+                                KEY: {data2FA.secret}
+                            </div>
+                            <div style={{ marginTop: 10 }}>
+                                <input
+                                    type="text"
+                                    name="code"
+                                    className='input-edit bg-transparent border-b border-[#F55937] text-greyish py-1 '
+                                    value={token2FA}
+                                    style={{ width: 200 }}
+                                    autoComplete='false'
+                                    onChange={(e) => setToken2FA(e.target.value)} />
+                            </div>
+                            <button style={{ marginTop: 10 }} className='text-black btn btn-success text-lg cursor-pointer mb-2 sm:mb-0' onClick={() => { verify2FA() }}>
+                                Enable Now
+                            </button>
+                        </>
+                    )}
+                    {is2FAEnabled === true && (
+                        <>
+                            <h5>2FA is enabled <span>&#10003;</span></h5>
+                        </>
+                    )}
+                </div>
+            </div>
+        </>
     );
 };
 

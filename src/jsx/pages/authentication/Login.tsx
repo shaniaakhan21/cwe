@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { IMAGES } from "../../constant/theme";
 import axiosInstance from "../../../services/AxiosInstance";
 import Header from "../publicpage/Header";
+import Swal from "sweetalert2"; 
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -21,6 +22,35 @@ function Login() {
         email: email.toLowerCase().trim(),
         password
       });
+
+      if(response.data.requires2FA) {
+
+        return Swal.fire({
+          title: 'Enter 2FA Code',
+          input: 'text',
+          showCancelButton: true,
+          confirmButtonText: 'Submit',
+          showLoaderOnConfirm: true,
+          preConfirm: (token) => {
+            return axiosInstance.post("/api/user/login", {
+              email: email.toLowerCase().trim(),
+              password,
+              token
+            }).then((response) => {
+              if (response.data.token) {
+                localStorage.setItem('token', response.data.token)
+                navigate('/dashboard', { replace: true })
+              }
+            }).catch((error) => {
+              Swal.showValidationMessage(
+                `Invalid 2FA code`
+              )
+            })
+          },
+          allowOutsideClick: () => !Swal.isLoading()
+        })
+      }
+
       if (response.data.token) {
         localStorage.setItem('token', response.data.token)
       }
