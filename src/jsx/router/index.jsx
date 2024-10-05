@@ -43,9 +43,10 @@ import Leaders from "../pages/Leaders";
 import Feed from "../pages/Feed";
 import Wallet from "../pages/Wallet";
 import Profile from "../pages/Profile";
+import Reset from "../pages/authentication/ResetPassword";
+import ChangePassword from "../pages/authentication/ChangePassword";
 import Futures from "../pages/futures";
 import Balances from "../pages/Balances";
-import TwoFactor from "../pages/authentication/TwoFactor";
 
 const Markup = () => {
   const allroutes = [
@@ -74,7 +75,8 @@ const Markup = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/register/:referralId' element={<Registration />} />
         <Route path='/register' element={<Registration />} />
-        <Route path='/verify-code' element={<TwoFactor />} />
+        <Route path='/reset-password' element={<Reset />} />
+        <Route path='/change-password/:token' element={<ChangePassword />} />
         <Route path='/page-lock-screen' element={<LockScreen />} />
         <Route path='/page-error-400' element={<Error400 />} />
         <Route path='/page-error-403' element={<Error403 />} />
@@ -113,8 +115,8 @@ function MainLayout() {
   const navigate = useNavigate()
   useEffect(() => {
     const token = localStorage.getItem('token');
-    if(!token){
-        navigate('/login')
+    if (!token) {
+      navigate('/login')
     }
   }, [navigate]);
 
@@ -126,7 +128,7 @@ function MainLayout() {
         <Nav />
         <div className="content-body" >
           <div className="container-fluid" style={{ minHeight: '65vh' }}>
-          <ToastContainer />
+            <ToastContainer />
             <Outlet />
           </div>
         </div>
@@ -141,8 +143,8 @@ function MainLayout2() {
   const navigate = useNavigate()
   useEffect(() => {
     const token = localStorage.getItem('token');
-    if(!token){
-        navigate('/login')
+    if (!token) {
+      navigate('/login')
     }
   }, [navigate]);
 
@@ -158,6 +160,6 @@ function MainLayout2() {
       </div>
     </>
   )
-};
+}
 
 export default Markup;

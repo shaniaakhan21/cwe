@@ -6,12 +6,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { IMAGES } from "../../constant/theme";
 import axiosInstance from "../../../services/AxiosInstance";
 import Header from "../publicpage/Header";
+import Swal from "sweetalert2"; 
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
-  const navigate = useNavigate()
+  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   async function onLogin(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -20,10 +22,39 @@ function Login() {
         email: email.toLowerCase().trim(),
         password
       });
+
+      if(response.data.requires2FA) {
+
+        return Swal.fire({
+          title: 'Enter 2FA Code',
+          input: 'text',
+          showCancelButton: true,
+          confirmButtonText: 'Submit',
+          showLoaderOnConfirm: true,
+          preConfirm: (token) => {
+            return axiosInstance.post("/api/user/login", {
+              email: email.toLowerCase().trim(),
+              password,
+              token
+            }).then((response) => {
+              if (response.data.token) {
+                localStorage.setItem('token', response.data.token)
+                navigate('/dashboard', { replace: true })
+              }
+            }).catch((error) => {
+              Swal.showValidationMessage(
+                `Invalid 2FA code`
+              )
+            })
+          },
+          allowOutsideClick: () => !Swal.isLoading()
+        })
+      }
+
       if (response.data.token) {
         localStorage.setItem('token', response.data.token)
       }
-      navigate('/verify-code', { replace: true })
+      navigate('/dashboard', { replace: true })
     } catch (error) {
       setError(true)
     }
@@ -75,15 +106,18 @@ function Login() {
                       <div className="mb-3 position-relative">
                         <label className="form-label required text-greyish">Password</label>
                         <input
-                          type="password"
+                          type={showPassword ? "text" : "password"}
                           className="form-control"
                           value={password}
                           placeholder="Type Your Password"
                           onChange={(e) => setPassword(e.target.value)}
                         />
-                        <span className="show-pass eye">
-                          <i className="fa fa-eye-slash" />
-                          <i className="fa fa-eye" />
+                        <span
+                          className={`show-pass eye ${showPassword ? "active" : ""}`}
+                          onClick={() => setShowPassword((prev) => !prev)} // Toggle password visibility
+                          style={{ cursor: 'pointer', position: 'absolute', right: 10, top: 35 }}
+                        >
+                          <i className={`fa ${showPassword ? "fa-eye" : "fa-eye-slash"}`} />
                         </span>
                       </div>
                       <button className="btn btn-block btn-bg text-black">
@@ -95,6 +129,14 @@ function Login() {
                         Create an account?{" "}
                         <Link className="text-our-yellow" to="/register">
                           Sign Up
+                        </Link>
+                      </p>
+                    </div>
+                    <div className="new-account mt-1 text-center text-greyish">
+                      <p className="font-w500">
+                        Forgot your password?{" "}
+                        <Link className="text-our-yellow" to="/reset-password">
+                          Reset Password
                         </Link>
                       </p>
                     </div>

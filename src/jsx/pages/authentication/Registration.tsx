@@ -48,6 +48,9 @@ function Register(props) {
     resolver: zodResolver(SignupSchema),
   });
 
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
   async function onSubmit(formData: FormData) {
     try {
       const response = await axiosInstance.post("/api/user/register", { ...formData, referralId });
@@ -101,14 +104,36 @@ function Register(props) {
                       {errors.email && (<div className="text-danger">{errors.email?.message}</div>)}
                     </div>
                     <div className="form-group">
-                      <label className="form-label text-greyish">Password</label>
-                      <input {...register('password')} className="form-control" type="password" placeholder="Password" />
-                      {errors.password && (<div className="text-danger">{errors.password?.message}</div>)}
+                      <div className="mb-3 position-relative">
+                        <label className="form-label text-greyish">Password</label>
+                        <input {...register('password')} className="form-control" type={showPassword ? "text" : "password"}
+                          placeholder="Password"
+                        />
+                        <span
+                          className={`show-pass eye ${showPassword ? "active" : ""}`}
+                          onClick={() => setShowPassword((prev) => !prev)} // Toggle password visibility
+                          style={{ cursor: 'pointer', position: 'absolute', right: 10, top: 35 }}
+                        >
+                          <i className={`fa ${showPassword ? "fa-eye" : "fa-eye-slash"}`} />
+                        </span>
+                        {errors.password && (<div className="text-danger">{errors.password?.message}</div>)}
+                      </div>
                     </div>
                     <div className="form-group">
-                      <label className="form-label text-greyish">Confirm Password</label>
-                      <input {...register('confirmPassword')} className="form-control" type="password" placeholder="Password" />
-                      {errors.confirmPassword && (<div className="text-danger">{errors.confirmPassword?.message}</div>)}
+                      <div className="mb-3 position-relative">
+                        <label className="form-label text-greyish">Confirm Password</label>
+                        <input {...register('confirmPassword')} className="form-control" type={showConfirmPassword ? "text" : "password"}
+                          placeholder="Confirm Password"
+                        />
+                        <span
+                          className={`show-pass eye ${showConfirmPassword ? "active" : ""}`}
+                          onClick={() => setShowConfirmPassword((prev) => !prev)} // Toggle password visibility
+                          style={{ cursor: 'pointer', position: 'absolute', right: 10, top: 35 }}
+                        >
+                          <i className={`fa ${showConfirmPassword ? "fa-eye" : "fa-eye-slash"}`} />
+                        </span>
+                        {errors.confirmPassword && (<div className="text-danger">{errors.confirmPassword?.message}</div>)}
+                      </div>
                     </div>
                     <div className="form-group">
                       <label className="form-label text-greyish">Referral Id</label>
@@ -129,13 +154,21 @@ function Register(props) {
                       </Link>
                     </p>
                   </div>
+                  <div className="new-account mt-1 text-center text-greyish">
+                    <p className="font-w500">
+                      Forgot your password?{" "}
+                      <Link className="text-our-yellow" to="/reset-password">
+                        Reset Password
+                      </Link>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div></>
+      </div >
+    </div ></>
   );
 }
 

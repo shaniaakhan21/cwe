@@ -11,6 +11,10 @@ import GateIo from "../../assets/images/exchanges/gate.io.png";
 import Kraken from "../../assets/images/exchanges/kraken.png";
 import Coinbase from "../../assets/images/exchanges/coinbase.png";
 import Bybit from "../../assets/images/exchanges/bybit.png";
+import Bitmart from "../../assets/images/exchanges/bitmart-logo.png";
+import Bitmex from "../../assets/images/exchanges/bitmex.logo.png";
+import Bittrue from "../../assets/images/exchanges/bittrue-logo.png";
+import Lbank from "../../assets/images/exchanges/lbank-logo.png";
 import { isAxiosError } from "axios";
 const exchanges = {
     'plataforma-3': Binance,
@@ -21,6 +25,11 @@ const exchanges = {
     'plataforma-8': Kraken,
     'plataforma-9': Coinbase,
     'plataforma-10': Bybit,
+    'plataforma-11': Bitmart,
+    'plataforma-12': Bitmex,
+    'plataforma-13': Bittrue,
+    'plataforma-14': Lbank,
+
 }
 
 const Exchanges = () => {
@@ -129,9 +138,17 @@ const Exchanges = () => {
     }
 
     const exchangeLinks = {
+        'plataforma-3': 'https://www.binance.com/activity/referral-entry/CPA?ref=CPA_0095Q662EP',
+        'plataforma-4': 'https://www.kucoin.com/r/QBSDMMF7',
         'plataforma-5': 'https://www.htx.com/invite/en-us/1f?invite_code=dyma4',
         'plataforma-6': 'https://www.okx.com/join/10134391',
         'plataforma-7': 'https://www.gate.io/signup/UAUQXF1W?ref_type=103',
+        'plataforma-10': 'https://www.bybit.com/invite?ref=KN3BDQD',
+        'plataforma-11': 'https://www.bitmart.com/invite/RFPXfs/en',
+        'plataforma-12': 'https://www.bitmex.com/app/register/VmUb0P',
+        'plataforma-13': 'https://www.bitrue.com/referral/landing?cn=600008&inviteCode-ZLQLLVZ',
+        'plataforma-14': 'https://www.lbank.com/en-US/login/?icode=1K86K',
+
     };
 
 

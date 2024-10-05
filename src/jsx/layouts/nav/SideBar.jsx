@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux";
 import { navtoggle } from "../../../store/actions/AuthActions";
 import axiosInstance from "../../../services/AxiosInstance";
 import { useNavigate } from "react-router-dom";
+import Logout from "./Logout";
 
 const reducer = (previousState, updatedState) => ({
   ...previousState,
@@ -58,14 +59,14 @@ const SideBar = () => {
   }
   const [width, setWidth] = useState(window.innerWidth);
 
-    function handleWindowSizeChange() {
-      setWidth(window.innerWidth);
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
   }
   useEffect(() => {
-      window.addEventListener('resize', handleWindowSizeChange);
-      return () => {
-          window.removeEventListener('resize', handleWindowSizeChange);
-      }
+    window.addEventListener('resize', handleWindowSizeChange);
+    return () => {
+      window.removeEventListener('resize', handleWindowSizeChange);
+    }
   }, []);
 
 
@@ -100,37 +101,37 @@ const SideBar = () => {
   const [me, setMe] = useState(null)
 
 
-	const fetchMe = async () => {
+  const fetchMe = async () => {
 
-		try{
-			const token = localStorage.getItem('token')
-			if(token){
-					const response = await axiosInstance.get("/api/user/me", {
-						headers: {
-						Authorization: `Bearer ${token}`,
-						},
-					});
+    try {
+      const token = localStorage.getItem('token')
+      if (token) {
+        const response = await axiosInstance.get("/api/user/me", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
-					setMe(response.data.user)
-				}
-		} catch (error) {
-			// do nothing
-			console.log(error)
-		}
-  
+        setMe(response.data.user)
+      }
+    } catch (error) {
+      // do nothing
+      console.log(error)
+    }
 
-	}
 
-	useEffect(() => {
-		fetchMe();
-	}, [])
+  }
+
+  useEffect(() => {
+    fetchMe();
+  }, [])
 
   console.log(me?.isAdmin)
   const navigate = useNavigate();
   const onLogout = () => {
     localStorage.removeItem('token');
     navigate('/login');
-};
+  };
 
   return (
     <div
@@ -156,7 +157,7 @@ const SideBar = () => {
           <ul className="metismenu" id="menu">
             {MenuList.map((data, index) => {
               console.log(data.isAdmin, me?.isAdmin)
-              if(data.isAdmin && (me?.isAdmin || 0) === 0){
+              if (data.isAdmin && (me?.isAdmin || 0) === 0) {
                 return
               }
 
@@ -170,7 +171,7 @@ const SideBar = () => {
                   </li>
                 );
               }
-              
+
               let menuClass = data.classsChange;
               if (menuClass === "menu-title") {
                 return (
@@ -231,7 +232,7 @@ const SideBar = () => {
                         </Collapse>
                       </>
                       :
-                      <Link onClick={() => {handleToogle()}} to={data.to} className={`${data.to === path ? 'mm-active' : ''}`}>
+                      <Link onClick={() => { handleToogle() }} to={data.to} className={`${data.to === path ? 'mm-active' : ''}`}>
                         {data.iconStyle}
                         <span className="nav-text">{data.title}</span>
                       </Link>
@@ -241,13 +242,22 @@ const SideBar = () => {
               }
             })}
           </ul>
-          <div className="copyright">
+          <div className="copyright on-phone">
+            <div className="btn-logout btn-logout-02">
+              <Logout />
+            </div>
             <p><strong>CWE Booster</strong> © <span className="current-year">{Latest.getFullYear()}</span> All Rights Reserved</p>
 
           </div>
         </div>
       </div>
+      <div className="copyright fix-footer hidden">
+        <div className="btn-logout btn-logout-02">
+          <Logout />
+        </div>
+        <p><strong>CWE Booster</strong> © <span className="current-year">{Latest.getFullYear()}</span> All Rights Reserved</p>
 
+      </div>
 
     </div>
   );
