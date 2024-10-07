@@ -177,7 +177,6 @@ const Exchanges = () => {
             <div className="row d-flex justify-content-between">
                 {exchanges && Object.keys(exchanges).map((platformId) => {
                     const apiKey = apikeys ? apikeys.find(key => key.idPlataforma === parseInt(platformId.split('-')[1])) : null;
-                    const isBinance = platformId === 'plataforma-3';
                     return (
                         <div key={`platform-${platformId}`} className="col-11 col-md-3 m-2 mb-3 d-flex justify-content-center" style={{ border: "1px solid #2B3139", padding: '10px 2px 20px 2px', borderRadius: '3px' }}>
                             <div className="d-flex-it">
@@ -220,6 +219,9 @@ const Exchanges = () => {
                     Select Exchange
                     <select onChange={(e) => { setidPlataforma(e.target.value) }} className="form-control">
                         <option value="3" selected={idPlataforma === 3} >Binance</option>
+                        <option value="4" selected={idPlataforma === 4} >KuCoin</option>
+                        <option value="5" selected={idPlataforma === 5} >Htx</option>
+                        <option value="6" selected={idPlataforma === 6} >Okx</option>
                     </select>
 
                     <br />
