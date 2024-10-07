@@ -152,6 +152,18 @@ const Exchanges = () => {
     };
 
 
+    const isEnabled = (id) => {
+        const enabledSet = new Set([
+            'plataforma-3',
+            'plataforma-4',
+            'plataforma-5',
+            'plataforma-6',
+        ]);
+        if(enabledSet.has(id)) {
+            return true;
+        }
+    }
+
 
     return (
         <>
@@ -173,7 +185,7 @@ const Exchanges = () => {
                                     <img src={exchanges[platformId]} alt="Exchange" style={{ height: '100px', width: '100%' }} />
                                 </div>
                                 <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
-                                    {apiKey ? `ApiKey: ...${apiKey.last4}` : (isBinance ? '' : 'Coming Soon')}
+                                    {apiKey ? `ApiKey: ...${apiKey.last4}` : (isEnabled(platformId) ? '' : 'Coming Soon')}
                                 </div>
                                 <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
                                     {apiKey ? (
