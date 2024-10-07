@@ -44628,15 +44628,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .upgrade-p ol { 
-  padding-left: 16%;
-  padding-right: 12%;
+  padding-left: 10%;
+  padding-right: 9%;
 }
 
 .upgrade-main {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 @media (max-width: 600px) {
@@ -44678,8 +44678,26 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 
   .upgrade-p ol { 
-    padding-left: 0%;
+    padding-left: 14%;
     padding-right: 0%;
+    margin-bottom: 0.1rem;
+  }
+
+  .upgrade-p{
+    width: 80%;
+  }
+
+  .upgrade-p p {
+    font-size: 12px;
+    margin-bottom: 0.2rem;
+  }
+  
+  .upgrade-p h3 {
+    font-size: 30px;
+  }
+
+  .upgrade-p ol li{
+    font-size: 12px;
   }
 }
 
