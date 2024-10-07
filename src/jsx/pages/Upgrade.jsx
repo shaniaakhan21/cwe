@@ -1,10 +1,23 @@
 import { Button } from "react-bootstrap";
 import axiosInstance from "../../services/AxiosInstance";
-import { useState } from "react";
-import PropTypes from 'prop-types'; // Import prop-types
+import { useState, useEffect } from "react";
+import PropTypes from 'prop-types'; 
 
 const Upgrade = ({ heading, subheading, listItems, buttonText }) => {
     const [sending, setSending] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    const handleResize = () => {
+        setIsMobile(window.innerWidth <= 600); 
+    };
+
+    useEffect(() => {
+        handleResize(); 
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const handleUpgrade = async () => {
         setSending(true);
@@ -25,20 +38,22 @@ const Upgrade = ({ heading, subheading, listItems, buttonText }) => {
     };
 
     return (
-        <div className="col-md-3 col-sm-12 m-1 p-2 text-center upgrade-p">
+        <div className="col-md-3 m-1 p-2 text-center upgrade-p">
             <div >
                 {subheading && <p>{subheading}</p>}
                 <h3>{heading}</h3>
                 <ol>
                     {listItems.map((item, index) => (
                         <li key={index}>
-                            {/* Render the string split by line breaks */}
-                            {item.split('\n').map((line, i) => (
-                                <span key={i}>
-                                    {line}
-                                    <br />
-                                </span>
-                            ))}
+                            {isMobile 
+                                ? item.split('\n').map((line, i) => (
+                                    <span key={i}>
+                                        {line}
+                                        <br />
+                                    </span>
+                                )) 
+                                : item
+                            }
                         </li>
                     ))}
                 </ol>
@@ -68,7 +83,7 @@ const UpgradeComponent = () => {
                     listItems={[
                         "Real-time dashboard",
                         "Access to Multiple exchanges",
-                        "Balance overview Easy Spot Trading", 
+                        "Balance overview Easy Spot\nTrading", 
                         "Secure wallet",
                         "Networking & Follow Leaders",
                         "AI Solutions",
