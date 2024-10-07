@@ -25,7 +25,7 @@ const Upgrade = ({ heading, subheading, listItems, buttonText }) => {
     };
 
     return (
-        <div className="col-md-3 col-xs-12 m-1 p-2 text-center upgrade-p">
+        <div className="col-md-3 col-sm-12 m-1 p-2 text-center upgrade-p">
             <div >
                 {subheading && <p>{subheading}</p>}
                 <h3>{heading}</h3>
@@ -54,6 +54,7 @@ Upgrade.propTypes = {
 const UpgradeComponent = () => {
     return (
         <>
+        <div className="upgrade-main-0"> 
             <div className="upgrade-main">
                 <Upgrade
                     heading="Free"
@@ -75,6 +76,7 @@ const UpgradeComponent = () => {
                     subheading="Expert"
                     listItems={["Real-time dashboard", "Access to Multiple exchanges", "Balance overview", "Easy Spot Trading", "Secure wallet", "Networking & Follow Leaders", "AI Solutions", "Easily Trade up to $10M monthly"]}
                     buttonText="Upgrade Now!" />
+            </div>
             </div>
         </>
     );
