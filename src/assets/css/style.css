@@ -21345,7 +21345,6 @@ svg.pulse-svg .third-circle {
 
 .wallet-open.active .header .page-titles,
 .wallet-open.active .header .header-content {
-  padding-right: 25.75rem;
   transition: all ease 0.5s;
 }
 
@@ -44612,6 +44611,34 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: #298a5b!important;
 }
 
+.upgrade-p p {
+  font-size: 20px;
+  margin-bottom: 0.3rem;
+}
+
+.upgrade-p h3 {
+  font-size: 40px;
+}
+
+.upgrade-p ol li{
+  text-align: start;
+  list-style: disc;
+  color: #848E9C;
+  font-size: 14px;
+}
+
+.upgrade-p ol { 
+  padding-left: 16%;
+  padding-right: 12%;
+}
+
+.upgrade-main {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
 @media (max-width: 600px) {
   .borderShadow .btn-m {
     padding: 4px 16px !important;
@@ -44636,6 +44663,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   .fix-footer{
     display: none;
+  }
+
+  .upgrade-main {
+    flex-direction: column;
   }
 }
 
