@@ -44667,9 +44667,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   .upgrade-main {
     flex-direction: column;
-    width: 95%;
-    align-items: center;
-    padding-left: 5%;
+    width: 100%;
+    align-items: center!important;
   }
 
   .upgrade-main-0{
