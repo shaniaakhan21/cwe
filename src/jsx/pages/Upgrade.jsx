@@ -87,7 +87,7 @@ const UpgradeComponent = () => {
                         "Secure wallet",
                         "Networking & Follow Leaders",
                         "AI Solutions",
-                        "Get Started Easily Today with our\nBeginner Plan"
+                        "Get Started Easily Today with \nour Beginner Plan"
                     ]}
                     buttonText="Start Trading" />
                 <Upgrade
