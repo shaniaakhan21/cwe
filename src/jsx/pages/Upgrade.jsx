@@ -1,15 +1,15 @@
 import { Button } from "react-bootstrap";
 import axiosInstance from "../../services/AxiosInstance";
 import { useState } from "react";
+import PropTypes from 'prop-types'; // Import prop-types
 
-const Upgrade = () => {
-
+const Upgrade = ({ heading, subheading, listItems, buttonText }) => {
     const [sending, setSending] = useState(false);
 
-    const Upgrade = async () =>{
-        setSending(true)
+    const handleUpgrade = async () => {
+        setSending(true);
         try {
-            const token = localStorage.getItem('token')
+            const token = localStorage.getItem('token');
             if (token) {
                 const response = await axiosInstance.post("/api/user/upgrade", {}, {
                     headers: {
@@ -19,28 +19,65 @@ const Upgrade = () => {
                 window.location.href = response.data.url;
             }
         } catch (error) {
-            console.error(error)
-            
-        setSending(false)
+            console.error(error);
+            setSending(false);
         }
-    }
+    };
 
     return (
-        <div className="text-center">
-           <div className="col-md-6 col-xs-12 mx-auto border-yellow-01"> 
-            <h3>CWE Booster PRO</h3>
-            <div style={{backgroundColor: '#2B3139', borderRadius: 3, width: 200, marginLeft: "auto", marginRight: "auto", color: "#EAECEF", marginBottom: 20, fontSize: 28}}>100 $</div>
-            <ul>
-                <li>Trade up to 100k Monthly</li>
-                <li>Trade any coin</li>
-            </ul>
-
-            <Button disabled={sending} onClick={() => {Upgrade()}} className="me-2" variant="success" style={{marginTop: 20}}>
-                    Buy Now
-            </Button>
-           </div>
+        <div className="col-md-3 col-xs-12 m-1 p-2 text-center upgrade-p">
+            <div >
+                {subheading && <p>{subheading}</p>}
+                <h3>{heading}</h3>
+                <ol>
+                    {listItems.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))}
+                </ol>
+                <Button disabled={sending} onClick={handleUpgrade} className="me-2" variant="success" style={{ marginTop: 20 }}>
+                    {buttonText}
+                </Button>
+            </div>
         </div>
     );
 };
 
-export default Upgrade;
+
+Upgrade.propTypes = {
+    heading: PropTypes.string.isRequired,
+    subheading: PropTypes.string,
+    listItems: PropTypes.arrayOf(PropTypes.string).isRequired,
+    buttonText: PropTypes.string.isRequired,
+};
+
+
+const UpgradeComponent = () => {
+    return (
+        <>
+            <div className="upgrade-main">
+                <Upgrade
+                    heading="Free"
+                    subheading="Beginner"
+                    listItems={["Real-time dashboard", "Access to Multiple exchanges", "Balance overview", "Easy Spot Trading", "Secure wallet", "Networking & Follow Leaders", "AI Solutions", "Get Started Easily Today with our Beginner Plan"]}
+                    buttonText="Start Trading" />
+                <Upgrade
+                    heading="100 $"
+                    subheading="Pro starter"
+                    listItems={["Real-time dashboard", "Access to Multiple exchanges", "Balance overview", "Easy Spot Trading", "Secure wallet", "Networking & Follow Leaders", "AI Solutions", "Easily Trade up to $100K monthly"]}
+                    buttonText="Upgrade Now!" />
+                <Upgrade
+                    heading="1000 $"
+                    subheading="Premium"
+                    listItems={["Real-time dashboard", "Access to Multiple exchanges", "Balance overview", "Easy Spot Trading", "Secure wallet", "Networking & Follow Leaders", "AI Solutions", "Easily Trade up to $1M monthly"]}
+                    buttonText="Upgrade Now!" />
+                <Upgrade
+                    heading="10000 $"
+                    subheading="Expert"
+                    listItems={["Real-time dashboard", "Access to Multiple exchanges", "Balance overview", "Easy Spot Trading", "Secure wallet", "Networking & Follow Leaders", "AI Solutions", "Easily Trade up to $10M monthly"]}
+                    buttonText="Upgrade Now!" />
+            </div>
+        </>
+    );
+};
+
+export default UpgradeComponent;

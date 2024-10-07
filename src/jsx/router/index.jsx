@@ -115,8 +115,8 @@ function MainLayout() {
   const navigate = useNavigate()
   useEffect(() => {
     const token = localStorage.getItem('token');
-    if(!token){
-        navigate('/login')
+    if (!token) {
+      navigate('/login')
     }
   }, [navigate]);
 
@@ -128,7 +128,7 @@ function MainLayout() {
         <Nav />
         <div className="content-body" >
           <div className="container-fluid" style={{ minHeight: '65vh' }}>
-          <ToastContainer />
+            <ToastContainer />
             <Outlet />
           </div>
         </div>
@@ -143,8 +143,8 @@ function MainLayout2() {
   const navigate = useNavigate()
   useEffect(() => {
     const token = localStorage.getItem('token');
-    if(!token){
-        navigate('/login')
+    if (!token) {
+      navigate('/login')
     }
   }, [navigate]);
 
@@ -160,6 +160,6 @@ function MainLayout2() {
       </div>
     </>
   )
-};
+}
 
 export default Markup;
