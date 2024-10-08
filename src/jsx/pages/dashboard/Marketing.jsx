@@ -12,12 +12,14 @@ const ImageWithActions = ({ imageSrc, referralLink }) => {
     const [openSnackbar, setOpenSnackbar] = useState(false);
 
     const handleShare = (platform) => {
+        const message = `Check out this referral link: ${referralLink}`;
+        const encodedMessage = encodeURIComponent(message);
         const url = encodeURIComponent(referralLink);
         let shareUrl = '';
 
         switch (platform) {
             case 'whatsapp':
-                shareUrl = `https://wa.me/?text=${url}`;
+                shareUrl = `https://wa.me/?text=${encodedMessage}`;
                 break;
             case 'telegram':
                 shareUrl = `https://t.me/share/url?url=${url}`;
