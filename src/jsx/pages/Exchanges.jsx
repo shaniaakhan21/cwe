@@ -39,6 +39,7 @@ const Exchanges = () => {
     const [apikeys, setApiKeys] = useState(undefined);
     const [apikey, setApikey] = useState("");
     const [secret, setSecret] = useState("");
+    const [password, setPassword] = useState("");
     const [errorSaving, setErrorSaving] = useState('');
 
     const openModal = () => {
@@ -56,6 +57,7 @@ const Exchanges = () => {
                     exchange: "binance",
                     apikey,
                     secret,
+                    password,
                     idPlataforma
                 }, {
                     headers: {
@@ -159,7 +161,7 @@ const Exchanges = () => {
             'plataforma-5',
             'plataforma-6',
         ]);
-        if(enabledSet.has(id)) {
+        if (enabledSet.has(id)) {
             return true;
         }
     }
@@ -231,6 +233,14 @@ const Exchanges = () => {
                     <br />
                     API Secret
                     <input type="text" value={secret} onChange={(e) => { setSecret(e.target.value) }} className="form-control" />
+
+                    {idPlataforma === 6 && (
+                        <>
+                            <br />
+                            Password
+                            <input type="text" value={password} onChange={(e) => { setPassword(e.target.value) }} className="form-control" />
+                        </>
+                    )}
 
                     <Alert variant="warning" show={true} style={{ marginTop: 20 }}>
                         <strong>IMPORTANT! </strong>
