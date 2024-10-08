@@ -234,7 +234,7 @@ const Exchanges = () => {
                     API Secret
                     <input type="text" value={secret} onChange={(e) => { setSecret(e.target.value) }} className="form-control" />
 
-                    {idPlataforma === 6 && (
+                    {idPlataforma === "6" && (
                         <>
                             <br />
                             Password
