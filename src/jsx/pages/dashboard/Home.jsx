@@ -12,6 +12,7 @@ import { ThemeContext } from '../../../context/ThemeContext';
 import axiosInstance from '../../../services/AxiosInstance';
 import { toast } from 'react-toastify';
 import { Snackbar, Alert } from '@mui/material';
+import Marketing from './Marketing';
 
 //Charts
 // const SurveyChart = loadable(() =>
@@ -100,12 +101,15 @@ export function MainComponent() {
 				>
 					<Alert onClose={handleCloseSnackbar} sx={{
 						backgroundColor: '#FCD535;',
-						width: '100%',// custom background color
-						color: '#fff', // custom text color
+						width: '100%',
+						color: '#fff',
 					}}>
 						Referral Link Copied to Clipboard
 					</Alert>
 				</Snackbar>
+				<Row>
+					<Marketing referralLink={referralLink} />
+				</Row>
 			</Col>
 		</Row>
 	)

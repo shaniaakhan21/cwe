@@ -38,8 +38,8 @@ const Upgrade = ({ heading, subheading, listItems, buttonText }) => {
     };
 
     return (
-        <div className="col-md-3 m-2 p-4 text-center upgrade-p border-yellow-02">
-            <div >
+        <div className="col-sm-6 col-md-3 m-2 p-4 text-center upgrade-p border-yellow-02">
+            <div className="consistent-div">
                 {subheading && <p>{subheading}</p>}
                 <h3>{heading}</h3>
                 <ol>

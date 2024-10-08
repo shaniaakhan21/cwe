@@ -491,7 +491,9 @@ hr {
   opacity: 0.25;
 }
 
-label, span, .MuiButton-root {
+label,
+span,
+.MuiButton-root {
   font-family: 'Montserrat', sans-serif !important;
 }
 
@@ -1464,7 +1466,7 @@ progress {
 
   .col-sm-12 {
     flex: 0 0 auto;
-    width: 100%!important;
+    width: 100% !important;
   }
 
   .offset-sm-0 {
@@ -17440,7 +17442,7 @@ svg.pulse-svg .third-circle {
 }
 
 .dlabnav {
-  width: 16.2rem;
+  width: 16rem;
   padding-bottom: 0;
   height: calc(100% - 5.1rem);
   position: absolute;
@@ -17499,7 +17501,7 @@ svg.pulse-svg .third-circle {
 
 @media only screen and (max-width: 87.5rem) {
   .dlabnav {
-    width: 17rem;
+    width: 13.2rem;
   }
 }
 
@@ -21333,7 +21335,7 @@ svg.pulse-svg .third-circle {
 }
 
 .wallet-open .content-body {
-  padding-right: 0!important;
+  padding-right: 0 !important;
   -webkit-transition: all 0.5s;
   -ms-transition: all 0.5s;
   transition: all 0.5s;
@@ -44603,12 +44605,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background: #fff;
 }
 
-.on-phone{
+.on-phone {
   display: none;
 }
 
-.download-fab{
-  background-color: #298a5b!important;
+.download-fab {
+  background-color: #298a5b !important;
 }
 
 .upgrade-p p {
@@ -44620,14 +44622,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-size: 40px;
 }
 
-.upgrade-p ol li{
+.upgrade-p ol li {
   text-align: start;
   list-style: disc;
   color: #848E9C;
   font-size: 14px;
 }
 
-.upgrade-p ol { 
+.upgrade-p ol {
   padding-left: 10%;
   padding-right: 9%;
 }
@@ -44637,6 +44639,42 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
+}
+
+.page-market h2 {
+  font-weight: 500;
+}
+
+.page-market p {
+  color: #848E9C;
+}
+
+.bg-light-greyish {
+  background-color: #2B3139;
+  width: 96%;
+}
+
+.image-with-actions .MuiIconButton-root {
+  color: #848E9C;
+}
+
+.page-market .all-posts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.image-with-actions .img-post{
+  width: 96%;
+}
+
+.upgrade-p .consistent-div{
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media (max-width: 600px) {
@@ -44649,7 +44687,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     flex-direction: column !important;
   }
 
-  .passtext{
+  .passtext {
     font-size: 9px;
   }
 
@@ -44657,33 +44695,33 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     height: calc(100% - 1.5rem);
   }
 
-  .on-phone{
+  .on-phone {
     display: block;
   }
 
-  .fix-footer{
+  .fix-footer {
     display: none;
   }
 
   .upgrade-main {
     flex-direction: column;
     width: 100%;
-    align-items: center!important;
+    align-items: center !important;
   }
 
-  .upgrade-main-0{
+  .upgrade-main-0 {
     width: 100%;
     display: flex;
     justify-content: center;
   }
 
-  .upgrade-p ol { 
+  .upgrade-p ol {
     padding-left: 14%;
     padding-right: 0%;
     margin-bottom: 0.1rem;
   }
 
-  .upgrade-p{
+  .upgrade-p {
     width: 80%;
   }
 
@@ -44691,14 +44729,54 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 12px;
     margin-bottom: 0.2rem;
   }
-  
+
   .upgrade-p h3 {
     font-size: 30px;
   }
 
-  .upgrade-p ol li{
+  .upgrade-p ol li {
     font-size: 12px;
   }
+
+
+  .page-market .all-posts {
+    flex-direction: column;
+  }
+
+  .image-with-actions .img-post{
+    width: 100%;
+  }
+
+  .upgrade-p .consistent-div{
+    height: 100%!important;
+  }
+}
+
+@media (max-width: 768px) {
+  .upgrade-p .consistent-div{
+    height: 400px
+  }
+
+  .upgrade-main {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1100px) {
+  .upgrade-p .consistent-div{
+    height: 400px
+  }
+
+  .upgrade-main {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1600px) {
+  .upgrade-p .consistent-div{
+    height: 412px
+  }
+
 }
 
 .border-green-feed {
@@ -44786,7 +44864,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .MuiDataGrid-root {
   font-family: 'Montserrat', sans-serif !important;
-  font-size: 12px!important;
+  font-size: 12px !important;
 }
 
 .b-c {
