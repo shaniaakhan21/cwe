@@ -115,7 +115,8 @@ const ImageWithActions = ({ imageSrc, referralLink }) => {
                 onClose={handleCloseSnackbar}
                 anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
             >
-                <Alert onClose={handleCloseSnackbar} severity="success" sx={{ width: '100%' }}>
+                <Alert onClose={handleCloseSnackbar} severity="success" sx={{ width: '100%', backgroundColor: '#FCD535;',
+						color: '#fff', }}>
                     Referral Link Copied to Clipboard
                 </Alert>
             </Snackbar>
