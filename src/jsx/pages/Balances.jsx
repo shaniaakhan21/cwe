@@ -68,10 +68,10 @@ const Balances = () => {
                 </div>
             )}
             {selectedExchange === null && (
-                <div className="row d-flex justify-content-between">
+                <div className="row d-flex">
                     {exchanges && Object.keys(exchanges).map((platformId) => {
                         const apiKey = apikeys ? apikeys.find(key => key.idPlataforma === parseInt(platformId.split('-')[1])) : null;
-                        const isBinance = platformId === 'plataforma-3';
+
                         if (!apiKey) return null
                         return (
                             <div key={`platform-${platformId}`} className="col-11 col-md-3 m-2 mb-3 d-flex justify-content-center" style={{ border: "1px solid #2B3139", padding: '10px 2px 20px 2px', borderRadius: '3px' }}>
@@ -80,7 +80,7 @@ const Balances = () => {
                                         <img src={exchanges[platformId].logo} alt="Exchange" style={{ height: '100px', width: '100%' }} />
                                     </div>
                                     <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
-                                        {apiKey ? `ApiKey: ...${apiKey.last4}` : (isBinance ? '' : 'Coming Soon')}
+                                        {`ApiKey: ...${apiKey.last4}`}
                                     </div>
                                     <div style={{ textAlign: "center", fontSize: 17, marginTop: 10 }}>
                                         <Button onClick={() => { setSelectedExchange(platformId) }} variant="success" className="btn-block yellow-newbtn" style={{ marginTop: 20 }}>View Balances</Button>
