@@ -18,8 +18,8 @@
 
 .cancel-chng {
     cursor: pointer !important;
-    background-color: #d54545ab !important;
-    border-color: #d54545 !important;
+    background-color: #ff0042 !important;
+    border-color: #ff0042 !important;
     color: #fff !important;
     border-radius: 3px !important;
     text-transform: none !important;
@@ -27,8 +27,8 @@
 
 .save-chn {
     cursor: pointer !important;
-    background-color: rgb(58 182 122 / 62%) !important;
-    border-color: rgb(58 182 122) !important;
+    background-color: #43c200 !important;
+    border-color: #43c200!important;
     color: #fff !important;
     border-radius: 3px !important;
     text-transform: none !important;

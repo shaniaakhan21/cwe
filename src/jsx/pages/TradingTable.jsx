@@ -37,8 +37,8 @@ const TradingTable = (params) => {
             text: "This will cause the bot to sell the coin immediately",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#dd6b55',
-            cancelButtonColor: '#aaa',
+            confirmButtonColor: '#43c200',
+            cancelButtonColor: '#ff0042',
             confirmButtonText: 'Yes, sell it now'
         }).then((result) => {
             if (result.isConfirmed) {
@@ -53,8 +53,8 @@ const TradingTable = (params) => {
             text: "This will cause the bot to not make the purchase of the coin",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#dd6b55',
-            cancelButtonColor: '#aaa',
+            confirmButtonColor: '#43c200',
+            cancelButtonColor: '#ff0042',
             confirmButtonText: 'Yes, cancel it now'
         }).then((result) => {
             if (result.isConfirmed) {
@@ -102,23 +102,23 @@ const TradingTable = (params) => {
             renderCell: (params) => {
 
                 if (params.value === 97) {
-                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer" }} bg="" className='btn-new-operating'>Pending Buy <i className='fa fa-circle-info' /></Button>
+                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer" }} bg="" id='btn-xs' className='btn-new-operating btn-w'>Pending Buy <i className='fa fa-circle-info' /></Button>
                 }
 
                 if ([99, 0].includes(params.value)) {
-                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer" }} bg="">Buying <i className='fa fa-circle-info' /></Button>
+                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer" }} bg="" id='btn-xs'>Buying <i className='fa fa-circle-info' /></Button>
                 }
 
                 if ([67].includes(params.value)) {
-                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer" }} className='btn-new-sell'>Canceled <i className='fa fa-circle-info' /></Button>
+                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer" }} id='btn-xs' className='btn-new-stop btn-w'>Stopped  <i className='fa fa-circle-info' /></Button>
                 }
 
                 if (params.value === 1) {
-                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer" }} className='btn-new-operating'>Operating <i className='fa fa-circle-info' /></Button>
+                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer" }} id='btn-xs' className='btn-new-operating btn-w'>Operating <i className='fa fa-circle-info' /></Button>
                 }
 
                 if (params.value === 4) {
-                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer" }} className='btn-new-complete'>Completed <i className='fa fa-circle-info' /></Button>
+                    return <Button size='xs' onClick={() => { openDetails(params.row) }} style={{ cursor: "pointer" }} id='btn-xs' className='btn-new-complete btn-w'>Completed <i className='fa fa-circle-info' /></Button>
                 }
 
 
@@ -160,24 +160,24 @@ const TradingTable = (params) => {
             renderCell: (params) => {
                 if (params.row.estado === 97) {
                     return <div>
-                        <Button onClick={() => { verifyBuyNow(params.row.id) }} size='xs' variant='info' className='btn-new-complete'>Buy Now</Button>
-                        <Button onClick={() => { verifyCancel(params.row.id) }} style={{ marginLeft: 10 }} size='xs' className='btn-new-sell'>Cancel</Button>
+                        <Button onClick={() => { verifyBuyNow(params.row.id) }} size='xs' variant='info' id='btn-xs' className='btn-new-complete btn-w'>Buy Now</Button>
+                        <Button onClick={() => { verifyCancel(params.row.id) }} style={{ marginLeft: 10 }} size='xs' id='btn-xs' className='btn-new-sell btn-w'>Cancel</Button>
                     </div>
                 }
                 if (params.row.estado === 1) {
                     return <div>
-                        <Button onClick={() => { verifySellNow(params.row.id) }} className='m-1 btn-new-sell' size='xs' >Sell Now</Button>
+                        <Button onClick={() => { verifySellNow(params.row.id) }} className='m-1 btn-new-sell btn-w' size='xs' id='btn-xs' >Sell Now</Button>
                     </div>
                 }
 
                 if (params.row.sell_now === 1 && params.row.global_profit) {
                     return <div>
-                        <Button size='xs' className='btn-user-sold'>Global Profit</Button>
+                        <Button size='xs' id='btn-xs' className='btn-user-sold btn-w' >Global Profit</Button>
                     </div>
                 }
                 if (params.row.sell_now === 1) {
                     return <div>
-                        <Button size='xs' className='btn-user-sold'>User Sold</Button>
+                        <Button size='xs' id='btn-xs' className='btn-user-sold btn-w'>User Sold</Button>
                     </div>
                 }
                 return <></>

@@ -3,11 +3,11 @@
 }
 
 .positive-trade {
-    color: green;
+    color: #43c200;
 }
 
 .negative-trade {
-    color: #fd5353;
+    color: #ff0042;
 }
 
 .neutral-trade {
@@ -45,18 +45,18 @@
 }
 
 div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
-    background-color: #00800057 !important;
-    border-color: #00800057 !important;
+    background-color: #43c200 !important;
+    border-color: #43c200 !important;
     border-radius: 3px !important;
-    color: #00aa00 !important;
+    color: #fff !important;
 }
 
 div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny),
 div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel) {
-    background-color: #fd53535c !important;
-    border-color: #fd53535c !important;
+    background-color: #ff0042 !important;
+    border-color: #ff0042 !important;
     border-radius: 3px !important;
-    color: #fd5353 !important;
+    color: #fff !important;
 }
 
 div:where(.swal2-container).swal2-center>.swal2-popup {
@@ -81,38 +81,54 @@ div:where(.swal2-icon).swal2-warning {
 
 .btn-new-complete {
     cursor: pointer !important;
-    background-color: #00800057 !important;
-    border-color: #00800057 !important;
+    background-color: #43c200 !important;
+    border-color: #43c200 !important;
     border-radius: 3px !important;
-    color: #00aa00 !important;
+    color: #fff !important;
 }
 
 .btn-new-operating {
     cursor: pointer !important;
-    background-color: #FCD5355e !important;
-    border-color: #FCD53570 !important;
+    background-color: #FCD535 !important;
+    border-color: #FCD535 !important;
     border-radius: 3px !important;
-    color: #FCD535 !important;
+    color: #000 !important;
 }
 
 .btn-new-sell {
     cursor: pointer !important;
-    background-color: #fd53535e !important;
-    border-color: #fd535370 !important;
+    background-color: #ff0042 !important;
+    border-color: #ff0042 !important;
     border-radius: 3px !important;
-    color: #fd5353 !important;
+    color: #fff !important;
+}
+
+.btn-new-stop {
+    cursor: pointer !important;
+    background-color: #2B3139 !important;
+    border-color: #2B3139 !important;
+    border-radius: 3px !important;
+    color: #fff !important;
 }
 
 .btn-user-sold {
     cursor: pointer !important;
-    background-color: #3498ff61 !important;
-    color: #3498ff !important;
+    background-color: #3498ff !important;
+    color: #fff !important;
     border: 1px solid #3498ff !important;
     border-radius: 3px !important;
 }
 
+.btn-w{
+    width: 111px;
+}
+
 
 @media (max-width: 600px) {
+    .btn-w{
+        width: 70px;
+        font-size: 9px!important;
+    }
     .MuiDataGrid-sortIcon {
         display: none !important;
     }
@@ -129,7 +145,8 @@ div:where(.swal2-icon).swal2-warning {
         padding: 0 1.1% !important;
     }
 
-    .btn-xs {
+    #btn-xs {
         padding: 4px 6px!important;
+        font-size: 8px!important;
     }
 }
